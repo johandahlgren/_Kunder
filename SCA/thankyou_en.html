@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Survey thank yoy page</title>
+        
+        <style type="text/css">
+            body {background: #efefef; font-family: Helvetica; font-size: 14px; margin: 0; padding: 20px;}
+            li {margin: 7px 0;}
+            select {margin-top: 10px; background: #fff;}
+            textarea {width: 100%; height: 50px; border: 1px solid #ddd; font-size: 14px; margin-top: 10px;}
+            ul {list-style: none; padding: 0;}
+
+            #detailedIndustry {display: none;}
+            #privateButtons {display: none;}
+            #professionalButtons {display: block;}
+            #ss-submit {float: left; background: #666; border-radius: 20px; color: #fff; padding: 5px 15px 8px 15px; border: none; font-size: 15px; margin: 10px 0 0 0;}
+
+            .active {display: block !important;}
+            .buttons {clear: both; height: 50px;}
+            .errorMessage {color: rgb(255, 0, 0); display: none;}
+            .input-text {font-size: 14px; border: 1px solid #ddd; width: 180px; padding: 4px 3px;}
+            .next, .submit, .close {float: left; background: #666; border-radius: 20px; color: #fff; padding: 5px 15px 8px 15px; border: none; font-size: 15px; margin: 10px 0 0 0;}
+            .next:hover, .submit:hover, .close:hover {background: #333; cursor: pointer;}
+            .progress-label {float: right; background: #fff; display: block; margin: 10px 0 0 20px; padding: 3px 5px;}
+            .question {display: none;}
+            .required-message {margin-top: 20px;}
+            .required-message:before{content: "*"; color: red; font-size: 20px; line-height: 12px; padding-right: 10px;}
+            div.ss-form-question:first-child .ss-q-title, .ss-q-title-thank-you {font-size: 22px; font-weight: normal; background: #003366; color: #fff; padding: 15px 10px; margin-top: 0;}
+            .ss-q-other {display: none;}
+            .ss-q-title {font-size: 16px; margin-top: 20px;}
+            .ss-question-list {margin: 0;}
+            .ss-required-asterisk {font-size: 20px; color: rgb(255, 0, 0); line-height: 12px;}
+        </style>
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-34871083-1', 'tork.co.uk');
+            ga('send', 'pageview', '/virtual/JADSurvey2.0/thankyou_en');
+        </script>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".close").click(function() {
+                    parent.closeSurvey();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="ss-q-title-thank-you">Thank you!</div>
+        <p>
+            Thank you for completing this survey and helping us improve our website!
+        </p>
+        <p>
+            Please click the "Close" button below to close this window and return to the site.
+        </p>
+        <div class="buttons">
+            <div class="close">Close</div>
+        </div>
+    </body>
+</html>

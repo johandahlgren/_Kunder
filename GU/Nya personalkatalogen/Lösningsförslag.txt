@@ -1,0 +1,28 @@
+Integration mot nya personalkatalogen
+
+Efterfrågad funktionalitet:
+GU önskar byta ut KataGU som källa för persondata och istället använda den nya personalkatalog som tagits fram och som tillhandahåller sin data via den nya integrationsplattformen.
+
+Lösningsförslag:
+För att lösa dessa önskemål på Infogluesidan behöver vi bygga om de tre funktioner som nyttjar personaldata. Dessa tjänster är GU Research, de sidor som indexeras för personalsöken på www.gu.se och den tjänst som levererar data till mobilapparna.
+
+För att underlätta för liknande framtida lösningar och säkerställa bra prestanda föreslår vi att vi bygger en gemensam kopplingspunkt för IG-tjänster mot integrationsplattformen. I denna kopplingspunkt indexerar vi upp den data som våra tjänster behöver och kan på så sätt tillhandahålla sökning och hämtning av data på ett standardiserat sätt för alla IG-funktioner. Vi får även möjlighet att cachea datan på vår sida för att snabba upp svarstider och skydda oss mot problem om integrationsplattformen av någon anledning inte går att nå. 
+
+Tekniska detaljer:
+Datan indexeras i kopplingspunkten med hjälp av Lucene. Vi bygger vidare på den Lucene-lösning som togs fram i samband med GU Research-projektet då denna är både snabb och stabil.
+Indexeringen byggs på ett generellt sätt så vi kan använda den även för andra funktioner än personaldata.
+För att ge adminstratörer möjlighet att underhålla indexen (skapa/rensa/radera) byggs en ny funktion in i Infoglues administrationsgränssnitt.
+
+
+Oklarheter:
+
+Avgränsningar:
+I projektet ingår inga förändringar i befitnlig funktionalitet i de befitliga tjänsterna, utan det handlar enbart om att byta källsystem. All övrig funktionalitet ska vara oförändrad.
+
+Tidsuppskattning:
+Anpassa de tre tjänsterna till att använda den nya datan: 40-50h
+Bygga integrationspunkt + admingränssnitt i IG: 40-50h
+
+Frågor
+
+Hur ofta datan ska uppdateras i cachen är en diskussionsfråga.

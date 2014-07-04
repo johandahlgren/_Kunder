@@ -1,0 +1,43 @@
+Mallar som behöver språkstyras
+- Startsida
+- Reseplaneraren
+- Sök hållplats
+- Sök tidtabeller
+- Sök försäljningsställen
+- Sök frågor och svar
+- Sök på mobilsidan
+- Trafikstörningar
+- Infosidor (många sidor)
+- Mina sidor
+- Nyheter
+- Sök hittegods
+
+Externa tjänster med data vi kanske inte kan få på andra språk:
+- Reseplaneraren
+- Sök hållplats
+- Sök tidtabeller
+- Sök försäljningsställen
+- Sök frågor och svar
+- Trafikstörningar
+- Mina sidor
+
+Finns det språkfiler idag?
+- Ingen aning.
+
+Javascript
+- Borde inte behöva ändras
+
+CSS
+- Borde inte behöva ändras
+
+Backendjobb
+- Alla texter borde hanteras på backendsidan.
+
+Övrigt
+- Vem gör översättningarna?
+- Kommer vi att få alla texter?
+- Ska vi ta höjd för att stödja fler språk i framtiden?
+- Ska vi ha stöd för bilder med text på olika språk?
+
+Jobb att göra på frontend
+- Standby om det behövs CSS-förändringar när texterna blir för långa/korta och layouten buggar ur.

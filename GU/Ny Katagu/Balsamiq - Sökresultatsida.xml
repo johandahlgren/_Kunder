@@ -1,0 +1,196 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="915" measuredH="713" mockupW="636" mockupH="598">
+  <controls>
+    <control controlID="391" controlTypeID="com.balsamiq.mockups::Canvas" x="279" y="115" w="636" h="577" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="392" controlTypeID="com.balsamiq.mockups::TextInput" x="294" y="307" w="85" h="-1" measuredW="51" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lorem</text>
+      </controlProperties>
+    </control>
+    <control controlID="393" controlTypeID="com.balsamiq.mockups::TextInput" x="388" y="307" w="87" h="-1" measuredW="79" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="394" controlTypeID="com.balsamiq.mockups::Label" x="294" y="286" w="-1" h="-1" measuredW="51" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>F%F6rnamn</text>
+      </controlProperties>
+    </control>
+    <control controlID="395" controlTypeID="com.balsamiq.mockups::Label" x="388" y="286" w="-1" h="-1" measuredW="63" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Efternamn</text>
+      </controlProperties>
+    </control>
+    <control controlID="396" controlTypeID="com.balsamiq.mockups::TextInput" x="482" y="307" w="59" h="-1" measuredW="79" measuredH="26" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="397" controlTypeID="com.balsamiq.mockups::Label" x="482" y="286" w="-1" h="-1" measuredW="26" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Titel</text>
+      </controlProperties>
+    </control>
+    <control controlID="398" controlTypeID="com.balsamiq.mockups::MenuBar" x="279" y="186" w="636" h="40" measuredW="506" measuredH="29" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Utbildning%2C%20Forskning%2C%20Samverkan%2C%20Bibliotek%2C%20Om%20universitetet%2C%20Kontakt</text>
+      </controlProperties>
+    </control>
+    <control controlID="399" controlTypeID="com.balsamiq.mockups::Canvas" x="279" y="115" w="636" h="70" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>545684</color>
+      </controlProperties>
+    </control>
+    <control controlID="400" controlTypeID="com.balsamiq.mockups::Label" x="335" y="130" w="339" h="-1" measuredW="313" measuredH="40" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <size>32</size>
+        <text>G%F6teborgs%20universitet</text>
+      </controlProperties>
+    </control>
+    <control controlID="401" controlTypeID="com.balsamiq.mockups::Icon" x="294" y="134" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <icon>CircleIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="402" controlTypeID="com.balsamiq.mockups::BreadCrumbs" x="294" y="226" w="-1" h="-1" measuredW="335" measuredH="24" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>G%F6teborgs%20universitet%2C%20Om%20universitetet%2C%20S%F6k%20personal</text>
+      </controlProperties>
+    </control>
+    <control controlID="403" controlTypeID="com.balsamiq.mockups::SearchBox" x="778" y="194" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="404" controlTypeID="com.balsamiq.mockups::SubTitle" x="729" y="379" w="-1" h="-1" measuredW="162" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>V%E5ra%20fakulteter</text>
+      </controlProperties>
+    </control>
+    <control controlID="405" controlTypeID="com.balsamiq.mockups::SubTitle" x="294" y="259" w="-1" h="-1" measuredW="141" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%F6k%20personal</text>
+      </controlProperties>
+    </control>
+    <control controlID="406" controlTypeID="com.balsamiq.mockups::List" x="719" y="421" w="183" h="256" measuredW="100" measuredH="237" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>Naturvetenskapliga%20fak.%0ASamh%E4llsvetenskapliga%20fak.%0ASahlgrenska%20akademin%0AHumanistiska%20fak.%0AG%F6teborgs%20universitetsbib.%0AKonstn%E4rliga%20fak.%0AHandelsh%F6gskolan%0AIT-fakulteten%0AUtbildningsvetensk.%20fak.%0AL%E4rarutb-n%E4mnden%20%28LUN%29%0ARektor</text>
+      </controlProperties>
+    </control>
+    <control controlID="407" controlTypeID="com.balsamiq.mockups::SubTitle" x="294" y="375" w="-1" h="-1" measuredW="123" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%F6kresultat</text>
+      </controlProperties>
+    </control>
+    <control controlID="408" controlTypeID="__group__" x="286" y="411" w="109" h="171" measuredW="109" measuredH="171" zOrder="17" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::List" x="0" y="19" w="109" h="152" measuredW="100" measuredH="126" zOrder="0" locked="false" isInGroup="408">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <rowHeight>21</rowHeight>
+            <text>Lorem%20Ipsum%0ALorem%20Dolor%0ALorem%20Sit%0ALorem%20Amet</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="8" y="0" w="-1" h="-1" measuredW="36" measuredH="21" zOrder="1" locked="false" isInGroup="408">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Namn</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="409" controlTypeID="__group__" x="490" y="411" w="105" h="171" measuredW="105" measuredH="171" zOrder="18" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::List" x="0" y="19" w="105" h="152" measuredW="100" measuredH="126" zOrder="0" locked="false" isInGroup="409">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <text>031%20-%20123456%0A031%20-%20345665%0A031%20-%20456745%0A031%20-%20786485</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="8" y="0" w="-1" h="-1" measuredW="46" measuredH="21" zOrder="1" locked="false" isInGroup="409">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Telefon</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="410" controlTypeID="__group__" x="584" y="411" w="135" h="162" measuredW="135" measuredH="162" zOrder="19" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::List" x="0" y="19" w="135" h="143" measuredW="100" measuredH="126" zOrder="0" locked="false" isInGroup="410">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <text>lorem.ipsum@gu.se%0Alorem.dolor@gu.se%0Alorem.sit@gu.se%0Alorem.amet@gu.se</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="6" y="0" w="70" h="-1" measuredW="36" measuredH="21" zOrder="1" locked="false" isInGroup="410">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Epost</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="411" controlTypeID="com.balsamiq.mockups::Label" x="294" y="692" w="528" h="-1" measuredW="506" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%A9%20G%F6teborgs%20universitet%2C%20Box%20100%20%2C%20405%2030%20G%F6teborg%20Tel.%20031-786%200000%2C%20Kontakta%20oss</text>
+      </controlProperties>
+    </control>
+    <control controlID="412" controlTypeID="__group__" x="377" y="411" w="109" h="171" measuredW="109" measuredH="171" zOrder="21" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::List" x="0" y="19" w="109" h="152" measuredW="100" measuredH="126" zOrder="0" locked="false" isInGroup="412">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+            <rowHeight>21</rowHeight>
+            <text>Inst%20f%F6r%20Ek.%20hist%0AInst%20f%F6r%20Ek.%20hist%0AInst%20f%F6r%20Ek.%20hist%0AInst%20f%F6r%20Ek.%20hist</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="8" y="0" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="1" locked="false" isInGroup="412">
+          <controlProperties>
+            <bold>true</bold>
+            <text>Tj%E4nstest%E4lle</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="413" controlTypeID="com.balsamiq.mockups::TextInput" x="552" y="307" w="85" h="-1" measuredW="79" measuredH="26" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="414" controlTypeID="com.balsamiq.mockups::TextInput" x="646" y="307" w="69" h="-1" measuredW="79" measuredH="26" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="415" controlTypeID="com.balsamiq.mockups::Label" x="552" y="286" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Kompetens</text>
+      </controlProperties>
+    </control>
+    <control controlID="416" controlTypeID="com.balsamiq.mockups::Label" x="646" y="286" w="-1" h="-1" measuredW="34" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Enhet</text>
+      </controlProperties>
+    </control>
+    <control controlID="417" controlTypeID="com.balsamiq.mockups::TextInput" x="724" y="307" w="82" h="-1" measuredW="79" measuredH="26" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="418" controlTypeID="com.balsamiq.mockups::Label" x="724" y="286" w="-1" h="-1" measuredW="58" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chefstitel</text>
+      </controlProperties>
+    </control>
+    <control controlID="419" controlTypeID="com.balsamiq.mockups::Button" x="821" y="305" w="-1" h="-1" measuredW="49" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%D6K</text>
+      </controlProperties>
+    </control>
+    <control controlID="420" controlTypeID="com.balsamiq.mockups::HRule" x="294" y="353" w="597" h="-1" measuredW="100" measuredH="10" zOrder="29" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>

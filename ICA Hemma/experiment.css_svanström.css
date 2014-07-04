@@ -1,0 +1,67 @@
+a.ButtonBuyBlue img, a.ButtonBuyGreen img {
+display: none !important;
+}
+
+a.ButtonBuyBlue, a.ButtonBuyGreen {
+	width: 63px;
+	height: 31px;
+	display: block;
+}
+
+td.PurchaseBlockBuyBlue img#ctl00_main_showproduct1_atc_imgAdd, td.PurchaseBlockBuyGreen img#ctl00_main_showproduct1_atc_imgAdd {
+display: none !important;
+}
+
+.PurchaseBlockBuyBlue a, .PurchaseBlockBuyGreen a {
+width: 95px;
+height: 37px;
+display: block;
+}
+
+div.ProductButtons a.ButtonBuyBlue {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png') 0 0 no-repeat; width: 63px; height: 31px !important;
+}
+
+div.ProductButtons a.ButtonBuyBlue:hover {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png') 0 -40px no-repeat; width: 63px; height: 31px !important;
+}
+
+div.ProductButtons a.ButtonBuyBlue:active {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png') 0 -80px no-repeat; width: 63px; height: 31px !important;
+}
+
+div.ProductButtons a.ButtonBuyGreen {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png') -77px 0 no-repeat; width: 63px; height: 31px !important;
+}
+
+div.ProductButtons a.ButtonBuyGreen:hover {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png') -77px -40px no-repeat; width: 63px; height: 31px !important;
+}
+
+div.ProductButtons a.ButtonBuyGreen:active {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png') -77px -80px no-repeat; width: 63px; height: 31px !important;
+}
+
+.PurchaseBlockBuyBlue {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png') 0 0 no-repeat; width: 95px; height: 37px !important;
+}
+
+.PurchaseBlockBuyBlue a:hover {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png') 0 -49px no-repeat; width: 95px; height: 37px !important;
+}
+
+.PurchaseBlockBuyBlue a:active {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png') 0 -98px no-repeat; width: 95px; height: 37px !important;
+}
+
+.PurchaseBlockBuyGreen {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png') -117px 0 no-repeat; width: 95px; height: 37px !important;
+}
+
+.PurchaseBlockBuyGreen a:hover {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png') -117px -49px no-repeat; width: 95px; height: 37px !important;
+}
+
+.PurchaseBlockBuyGreen a:active {
+background: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png') -117 -98px no-repeat; width: 95px; height: 37px !important;
+}

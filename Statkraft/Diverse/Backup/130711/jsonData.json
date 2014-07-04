@@ -1,0 +1,112 @@
+{
+	"measurements": {
+		"windspeed": 
+		[
+			{
+				"plantId": 2,
+				"name": "Instaspin",
+				"long": 7,
+				"lat": 60,
+				"value": 25,
+				"unit": "m/s"
+			},
+			{
+				"plantId": 1,
+				"name": "Superpower",
+				"long": 34,
+				"lat": 12,
+				"value": 15,
+				"unit": "m/s"
+			},
+			{
+				"plantId": 3,
+				"name": "Windmaster",
+				"long": 23,
+				"lat": -17,
+				"value": 1,
+				"unit": "m/s"
+			}
+		],
+		"capacity":
+		[
+			{
+				"plantId": 2,
+				"name": "Instaspin",
+				"long": -1,
+				"lat": 67,
+				"value": 86,
+				"unit": "%"
+			},
+			{
+				"plantId": 1,
+				"name": "Superpower",
+				"long": 34,
+				"lat": 12,
+				"value": 35,
+				"unit": "%"
+			},
+			{
+				"plantId": 3,
+				"name": "Windmaster",
+				"long": 23,
+				"lat": -67,
+				"value": 32,
+				"unit": "%"
+			}
+		],
+		"availability": 
+		[
+			{
+				"plantId": 3,
+				"name": "Windmaster",
+				"long": 23,
+				"lat": -67,
+				"value": 56,
+				"unit": "%"
+			},
+			{
+				"plantId": 2,
+				"name": "Instaspin",
+				"long": -1,
+				"lat": 67,
+				"value": 44,
+				"unit": "%"
+			},
+			{
+				"plantId": 1,
+				"name": "Superpower",
+				"long": 34,
+				"lat": 12,
+				"value": 14,
+				"unit": "%"
+			}
+		]
+	},
+	"marketValue": 
+	{
+		"nordpool": 120,
+		"nasdaq": 79
+	},
+	"totalProductionValue": 640,
+	"maximumProduction": 826,
+	"oneUnitConsumes": 0.150,
+	"what": "Norske hytter",
+	"oneIconEqualsXUnits": 50,
+	"labels": 
+	{
+		"label_welcomeTitle": "Velkommen til datapresentasjonen!",
+		"label_welcomeText": "Dette er en kjempefin applikasjone! Den må följe med till hytten i neste uke.",
+		"label_totalProductionToday": "Total produksjon idag",
+		"label_marketValue": "Markedsverde",
+		"label_windspeed": "Vindhastighed - Topp 3",
+		"label_capacity": "Kapasitet - Topp 3",
+		"label_availability": "Tilgengelighed - Topp 3",
+		"label_maximumProduction": "Maksimalt mulig produksjon",
+		"label_thisWillPower": "Dette vill drive",
+		"label_icon": "ikon",
+		"label_units": "hytter",
+		"label_updated": "Oppdatert",
+		"label_updating": "Oppdaterer...",
+		"currency": "NOK"
+	}
+}

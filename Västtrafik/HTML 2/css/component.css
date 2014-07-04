@@ -1,0 +1,543 @@
+
+
+html,
+body,
+.vt-container,
+.vt-pusher,
+.vt-content {
+	height: 100%;
+}
+
+.vt-content {
+	overflow-y: auto; /* was scroll */
+	background: #ffffff;
+}
+
+.vt-content,
+.vt-content-inner {
+	position: relative;
+}
+
+.mainWrapper {
+	position: relative;
+	overflow: hidden;
+}
+
+.vt-pusher {
+	position: relative;
+	left: 0;
+	z-index: 99;
+	height: 100%;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.vt-pusher::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+.vt-menu-open .vt-pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.vt-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	visibility: hidden;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.vt-menu::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.vt-menu-open .vt-menu::after {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+
+/* content style */
+
+.vt-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.vt-menu h2 {
+	margin: 0;
+	padding: 1em;
+	color: rgba(0,0,0,0.4);
+	text-shadow: 0 0 1px rgba(0,0,0,0.1);
+	font-weight: 300;
+	font-size: 2em;
+}
+
+.vt-menu ul li a {
+	display: block;
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+	transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Individual effects */
+
+/* Effect 1: Slide in on top */
+.vt-effect-1.vt-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.vt-effect-1.vt-menu-open .vt-effect-1.vt-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.vt-effect-1.vt-menu::after {
+	display: none;
+}
+
+/* Effect 2: Reveal */
+.vt-effect-2.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-2.vt-menu {
+	z-index: 1;
+}
+
+.vt-effect-2.vt-menu-open .vt-effect-2.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.vt-effect-2.vt-menu::after {
+	display: none;
+}
+
+/* Effect 3: Push*/
+.vt-effect-3.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-3.vt-menu {
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.vt-effect-3.vt-menu-open .vt-effect-3.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+
+.vt-effect-3.vt-menu::after {
+	display: none;
+}
+
+/* Effect 4: Slide along */
+.vt-effect-4.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-4.vt-menu {
+	z-index: 1;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+}
+
+.vt-effect-4.vt-menu-open .vt-effect-4.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.vt-effect-4.vt-menu::after {
+	display: none;
+}
+
+/* Effect 5: Reverse slide out */
+.vt-effect-5.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-5.vt-menu {
+	z-index: 1;
+	-webkit-transform: translate3d(50%, 0, 0);
+	transform: translate3d(50%, 0, 0);
+}
+
+.vt-effect-5.vt-menu-open .vt-effect-5.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+/* Effect 6: Rotate pusher */
+
+.vt-effect-6.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.vt-effect-6 .vt-pusher {
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-6.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0) rotateY(-15deg);
+	transform: translate3d(280px, 0, 0) rotateY(-15deg);
+}
+
+.vt-effect-6.vt-menu {
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-6.vt-menu-open .vt-effect-6.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(15deg);
+	transform: translate3d(-100%, 0, 0) rotateY(15deg);
+}
+
+.vt-effect-6.vt-menu::after {
+	display: none;
+}
+
+/* Effect 7: 3D rotate in */
+
+.vt-effect-7.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+}
+
+.vt-effect-7 .vt-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-7.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-7.vt-menu {
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(-90deg);
+	transform: translate3d(-100%, 0, 0) rotateY(-90deg);
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-7.vt-menu-open .vt-effect-7.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
+	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+}
+
+/* Effect 8: 3D rotate out */
+
+.vt-effect-8.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+}
+
+.vt-effect-8 .vt-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-8.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-8.vt-menu {
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
+	transform: translate3d(-100%, 0, 0) rotateY(90deg);
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-8.vt-menu-open .vt-effect-8.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
+	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+}
+
+.vt-effect-8.vt-menu::after {
+	display: none;
+}
+
+/* Effect 9: Scale down pusher */
+
+.vt-effect-9.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.vt-effect-9 .vt-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-9.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(0, 0, -280px);
+	transform: translate3d(0, 0, -280px);
+}
+
+.vt-effect-9.vt-menu {
+	opacity: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.vt-effect-9.vt-menu-open .vt-effect-9.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.vt-effect-9.vt-menu::after {
+	display: none;
+}
+
+/* Effect 10: Scale up */
+
+.vt-effect-10.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+}
+
+.vt-effect-10.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-10.vt-menu {
+	z-index: 1;
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, -280px);
+	transform: translate3d(0, 0, -280px);
+}
+
+.vt-effect-10.vt-menu-open .vt-effect-10.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+/* Effect 11: Scale and rotate pusher */
+
+.vt-effect-11.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.vt-effect-11 .vt-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-11.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(100px, 0, -600px) rotateY(-20deg);
+	transform: translate3d(100px, 0, -600px) rotateY(-20deg);
+}
+
+.vt-effect-11.vt-menu {
+	opacity: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.vt-effect-11.vt-menu-open .vt-effect-11.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.vt-effect-11.vt-menu::after {
+	display: none;
+}
+
+/* Effect 12: Open door */
+
+.vt-effect-12.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+}
+
+.vt-effect-12 .vt-pusher {
+	-webkit-transform-origin: 100% 50%;
+	transform-origin: 100% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-12.vt-menu-open .vt-pusher {
+	-webkit-transform: rotateY(-10deg);
+	transform: rotateY(-10deg);
+}
+
+.vt-effect-12.vt-menu {
+	opacity: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.vt-effect-12.vt-menu-open .vt-effect-12.vt-menu {
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.vt-effect-12.vt-menu::after {
+	display: none;
+}
+
+/* Effect 13: Fall down */
+
+.vt-effect-13.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+}
+
+.vt-effect-13.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-13.vt-menu {
+	z-index: 1;
+	opacity: 1;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+}
+
+.vt-effect-13.vt-menu-open .vt-effect-13.vt-menu {
+	visibility: visible;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	-webkit-transition-speed: 0.2s;
+	transition-speed: 0.2s;
+}
+
+/* Effect 14: Delayed 3D rotate */
+
+.vt-effect-14.mainWrapper {
+	-webkit-perspective: 1500px;
+	perspective: 1500px;
+	-webkit-perspective-origin: 0% 50%;
+	perspective-origin: 0% 50%;
+}
+
+.vt-effect-14 .vt-pusher {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-14.vt-menu-open .vt-pusher {
+	-webkit-transform: translate3d(280px, 0, 0);
+	transform: translate3d(280px, 0, 0);
+}
+
+.vt-effect-14.vt-menu {
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(90deg);
+	transform: translate3d(-100%, 0, 0) rotateY(90deg);
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.vt-effect-14.vt-menu-open .vt-effect-14.vt-menu {
+	visibility: visible;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-property: -webkit-transform;
+	transition-property: transform;
+	-webkit-transform: translate3d(-100%, 0, 0) rotateY(0deg);
+	transform: translate3d(-100%, 0, 0) rotateY(0deg);
+}
+
+/* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
+.no-csstransforms3d .vt-pusher,
+.no-js .vt-pusher {
+	padding-left: 280px;
+}

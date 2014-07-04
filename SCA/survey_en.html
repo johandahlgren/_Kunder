@@ -1,0 +1,752 @@
+<!doctype html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>SCA Survey</title>
+
+        <style type="text/css">
+            body {
+                background: #efefef;
+                font-family: Helvetica;
+                font-size: 14px;
+                margin: 0;
+                padding: 20px;
+            }
+            li {
+                margin: 7px 0;
+            }
+            select {
+                margin-top: 10px;
+                background: #fff;
+            }
+            textarea {
+                width: 100%;
+                height: 50px;
+                border: 1px solid #ddd;
+                font-size: 14px;
+                margin-top: 10px;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            #detailedIndustry {
+                display: none;
+            }
+            #privateButtons {
+                display: none;
+            }
+            #professionalButtons {
+                display: block;
+            }
+            #ss-submit {
+                float: left;
+                background: #666;
+                border-radius: 20px;
+                color: #fff;
+                padding: 5px 15px 8px 15px;
+                border: none;
+                font-size: 15px;
+                margin: 10px 0 0 0;
+            }
+            .active {
+                display: block !important;
+            }
+            .buttons {
+                clear: both;
+                height: 50px;
+            }
+            .errorMessage {
+                color: rgb(255, 0, 0);
+                display: none;
+            }
+            .input-text {
+                font-size: 14px;
+                border: 1px solid #ddd;
+                width: 180px;
+                padding: 4px 3px;
+            }
+            .next,
+            .submit,
+            .close {
+                float: left;
+                background: #666;
+                border-radius: 20px;
+                color: #fff;
+                padding: 5px 15px 8px 15px;
+                border: none;
+                font-size: 15px;
+                margin: 10px 0 0 0;
+            }
+            .next:hover,
+            .submit:hover,
+            .close:hover {
+                background: #333;
+                cursor: pointer;
+            }
+            .prev {
+                float: left;
+                background: #ccc;
+                border-radius: 20px;
+                color: rgb(150, 150, 150);
+                padding: 5px 15px 8px 15px;
+                border: none;
+                font-size: 15px;
+                margin: 10px 20px 0 0;
+            }
+            .prev:hover {
+                background: #ddd;
+                cursor: pointer;
+            }
+            .progress-label {
+                float: right;
+                background: #fff;
+                display: block;
+                margin: 10px 0 0 20px;
+                padding: 3px 5px;
+            }
+            .question {
+                display: none;
+            }
+            .required-message {
+                margin-top: 20px;
+            }
+            .required-message:before {
+                content: "*";
+                color: red;
+                font-size: 20px;
+                line-height: 12px;
+                padding-right: 10px;
+            }
+            div.ss-form-question:first-child .ss-q-title,
+            .ss-q-title-thank-you {
+                font-size: 22px;
+                font-weight: normal;
+                background: #003366;
+                color: #fff;
+                padding: 15px 10px;
+                margin-top: 0;
+            }
+            .ss-q-other {
+                display: none;
+            }
+            .ss-q-title {
+                font-size: 16px;
+                margin-top: 20px;
+            }
+            .ss-question-list {
+                margin: 0;
+            }
+            .ss-required-asterisk {
+                font-size: 20px;
+                color: rgb(255, 0, 0);
+                line-height: 12px;
+            }
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-34871083-1', 'tork.co.uk');
+            ga('send', 'pageview', '/virtual/JADSurvey2.0');
+        </script>
+
+        <script type="text/javascript">
+            var animationSpeed = 200;
+            var previousQuestionArray = [];
+
+            $(document).ready(function () {
+                $(".next").click(function () {
+                    if (validateFields($(this))) {
+                        var next = $(this).closest("[data-next]").attr("data-next");
+
+                        if ($(this).closest("[data-next-conditional]").attr("data-next-conditional")) {
+                            var conditions = $(this).closest("[data-next-conditional]").attr("data-next-conditional").split(",");
+
+                            $.each(conditions, function (index, condition) {
+                                var conditionQuery = condition.substring(0, condition.indexOf("-"));
+                                var conditionValue = condition.substring(condition.indexOf("-") + 1, condition.lastIndexOf("-"));
+                                var conditionNext = condition.substring(condition.lastIndexOf("-") + 1);
+                                var selection = getValue(conditionQuery);
+
+                                if (selection == conditionValue) {
+                                    next = conditionNext;
+                                }
+                            });
+                        }
+                        $(".active").removeClass("active");
+                        $("#question" + next).addClass("active");
+
+                        var currentQuestionId = $(this).closest("[id^='question']").attr("id");
+                        previousQuestionArray.push(currentQuestionId.substring(8));
+                    }
+                });
+
+                $(".prev").click(function () {
+                    $(".active").removeClass("active");
+                    $("#question" + previousQuestionArray.pop()).addClass("active");
+                });
+
+                $(".submit").click(function () {
+                    if (validateFields($(this))) {
+                        sendToAnalytics();
+                        $("#ss-form").submit();
+                    }
+                });
+
+                $(".ss-q-radio").click(function () {
+                    if ($(this).hasClass("ss-q-other-toggle")) {
+                        var otherTextField = $(this).closest("li").find(".ss-q-other");
+                        otherTextField.fadeIn(animationSpeed);
+                        otherTextField.focus();
+                    } else {
+                        $(this).closest("ul").find(".ss-q-other").fadeOut(animationSpeed)
+                    }
+                });
+
+                $(".ss-q-checkbox").click(function () {
+                    if ($(this).hasClass("ss-q-other-toggle")) {
+                        var otherTextField = $(this).closest("li").find(".ss-q-other");
+                        otherTextField.fadeToggle(animationSpeed);
+                        otherTextField.focus();
+                    }
+                });
+
+                $("#entry_250862909").change(function () {
+                    populateDetailedIndustry();
+                });
+
+                $(".close").click(function () {
+                    parent.closeSurvey();
+                });
+
+                $("[name='entry.709213519']").click(function () {
+                    var selectedId = $(this).attr("id");
+
+                    if (selectedId == "group_709213519_1") {
+                        $("#professionalButtons").show();
+                        $("#privateButtons").hide();
+                    } else {
+                        $("#professionalButtons").hide();
+                        $("#privateButtons").show();
+                    }
+                });
+            });
+
+            function myTrim(x) {
+                x = x.replace(/^\s+|\s+$/gm, '');
+                x = x.replace(/(\r\n|\n|\r)/gm, "");
+                return x;
+            }
+
+            function sendToAnalytics() {
+                var questions = $("[type='radio'], [type='text'], textarea, select");
+
+                var processedAnswers = [];
+
+                $.each(questions, function (index, element) {
+                    var elementName = $(element).attr("name");
+                    var question = myTrim($(this).closest(".ss-form-entry").find(".ss-q-title").html());
+                    question = question.substring(0, question.indexOf("<"));
+                    var answer = getValue(elementName);
+                    var questionIndex = $(element).attr("data-dimension");
+
+                    if (answer) {
+                        if ($.inArray(questionIndex, processedAnswers) == -1) {
+                            var params = {};
+                            params["dimension" + questionIndex] = answer;
+
+                            ga('send', 'event', 'JAD Survey 2.0', question, answer, params);
+
+                            processedAnswers.push(questionIndex);
+                        }
+                    }
+                });
+            }
+
+            function getValue(name) {
+                var value = $("[name='" + name + "']");
+                var type = value.attr("type");
+
+                if (type && (type.toLowerCase() == "radio" || type.toLowerCase() == "checkbox"))
+                    value = value.filter(":checked").val();
+                else
+                    value = value.val();
+                return value;
+            }
+
+            function validateFields(nextButton) {
+                $(".errorMessage").hide();
+                var returnValue = true;
+                var page = nextButton.closest("[data-next-conditional]");
+
+                if (page.size() == 0) {
+                    page = nextButton.closest("[data-next]")[0];
+                }
+
+                var fields = $(page).find("input, select, textarea");
+
+                $.each(fields, function (index, element) {
+                    var elementName = $(element).attr("name");
+                    var value = getValue(elementName);
+                    var fieldIsVisible = $(element).is(":visible");
+
+                    if (fieldIsVisible && !value) {
+                        var errorMessageDiv = $(element).closest(".ss-form-entry").find(".errorMessage");
+                        errorMessageDiv.fadeIn(animationSpeed);
+                        returnValue = false;
+                    }
+                });
+
+                return returnValue;
+            }
+
+            function populateDetailedIndustry() {
+
+                var subIndustries = [];
+
+                subIndustries[1] = '<option value=""></option>' +
+                    '<option value="Universities">Universities</option>' +
+                    '<option value="Secondary Schools">Secondary Schools</option>' +
+                    '<option value="Primary Schools">Primary Schools</option>' +
+                    '<option value="Pre Primary (e.g. Kindergartens)">Pre Primary (e.g. Kindergartens)</option>' +
+                    '<option value="Defense">Defense</option>' +
+                    '<option value="Government &amp; Judiciary Administration">Government &amp; Judiciary Administration</option>' +
+                    '<option value="Legal Law Enforcement &amp; Protection (e.g. police officers, fire fighters)">Legal Law Enforcement &amp; Protection (e.g. police officers, fire fighters)</option>' +
+                    '<option value="Prisons">Prisons</option>' +
+                    '<option value="Other Public Administration">Other Public Administration</option>' +
+                    '<option value="Non-Governmental Organizations">Non-Governmental Organizations</option>' +
+                    '<option value="Religious Institutions">Religious Institutions</option>' +
+                    '<option value="Other">Other</option>';
+                subIndustries[2] = '<option value=""></option>' +
+                    '<option value="Petrol Stations">Petrol Stations</option>' +
+                    '<option value="Retail Outlets">Retail Outlets</option>' +
+                    '<option value="Wholesalers">Wholesalers</option>' +
+                    '<option value="Financial Institutions">Financial Institutions</option>' +
+                    '<option value="Media &amp; Entertainment">Media &amp; Entertainment</option>' +
+                    '<option value="Small service providers (e.g. hairdressers, beauty salons)">Small service providers (e.g. hairdressers, beauty salons)</option>' +
+                    '<option value="General Office Buildings">General Office Buildings</option>' +
+                    '<option value="Flight">Flight</option>' +
+                    '<option value="Rail">Rail</option>' +
+                    '<option value="Sailing">Sailing</option>' +
+                    '<option value="Trucking &amp; Warehousing">Trucking &amp; Warehousing</option>' +
+                    '<option value="Other">Other</option>';
+                subIndustries[3] = '<option value=""></option>' +
+                    '<option value="Luxury Hotels &amp; Resorts">Luxury Hotels &amp; Resorts</option>' +
+                    '<option value="3* Hotels">3* Hotels</option>' +
+                    '<option value="1*-2* Hotels">1*-2* Hotels</option>' +
+                    '<option value="Budget Accommodation (e.g. camping)">Budget Accommodation (e.g. camping)</option>' +
+                    '<option value="Cruise Ships">Cruise Ships</option>' +
+                    '<option value="Catering Services">Catering Services</option>' +
+                    '<option value="Caf&eacute;s, bars and pubs">Cafés, bars and pubs</option>' +
+                    '<option value="Quick Service Restaurants">Quick Service Restaurants</option>' +
+                    '<option value="Full Service Restaurants">Full Service Restaurants</option>' +
+                    '<option value="Self Service Restaurants">Self Service Restaurants</option>' +
+                    '<option value="Casinos &amp; Gambling">Casinos &amp; Gambling</option>' +
+                    '<option value="Amusement Parks and Zoos">Amusement Parks and Zoos</option>' +
+                    '<option value="Cinemas, Museums &amp; Theatres">Cinemas, Museums &amp; Theatres</option>' +
+                    '<option value="Event catering (e.g. conferences and exhibitions)">Event catering (e.g. conferences and exhibitions)</option>' +
+                    '<option value="Sports, Health and Social Clubs">Sports, Health and Social Clubs</option>' +
+                    '<option value="Stadiums">Stadiums</option>' +
+                    '<option value="Other">Other</option>';
+                subIndustries[4] = '<option value=""></option>' +
+                    '<option value="Homes for the elderly">Homes for the elderly</option>' +
+                    '<option value="Other Long Term Care">Other Long Term Care</option>' +
+                    '<option value="Public hospital &amp; clinics">Public hospital &amp; clinics</option>' +
+                    '<option value="Private hospital &amp; clinics">Private hospital &amp; clinics</option>' +
+                    '<option value="Small General Practitioners">Small General Practitioners</option>' +
+                    '<option value="Other HC Practitioners (e.g. dentists, veterinarians)">Other HC Practitioners (e.g. dentists, veterinarians)</option>' +
+                    '<option value="Medical Centers, Labs &amp; Research">Medical Centers, Labs &amp; Research</option>' +
+                    '<option value="Other">Other</option>';
+                subIndustries[5] = '<option value=""></option>' +
+                    '<option value="Agriculture">Agriculture</option>' +
+                    '<option value="Fishing">Fishing</option>' +
+                    '<option value="Food &amp; Beverage Processing">Food &amp; Beverage Processing</option>' +
+                    '<option value="Clean Hi-Tech Industry">Clean Hi-Tech Industry</option>' +
+                    '<option value="Chemical Industry">Chemical Industry</option>' +
+                    '<option value="Natural Resource Industry">Natural Resource Industry</option>' +
+                    '<option value="Printing">Printing</option>' +
+                    '<option value="Utilities (e.g. electricity, water treatment)">Utilities (e.g. electricity, water treatment)</option>' +
+                    '<option value="Construction">Construction</option>' +
+                    '<option value="General Manufacturing">General Manufacturing</option>' +
+                    '<option value="Tradesmen (e.g. painter, electrician, carpenter etc.)">Tradesmen (e.g. painter, electrician, carpenter etc.)</option>' +
+                    '<option value="Workshops (e.g. maintenance, repair)">Workshops (e.g. maintenance, repair)</option>' +
+                    '<option value="Other">Other</option>';
+
+                var selectedIndustry = $("#entry_250862909")[0].selectedIndex;
+
+                $("#entry_686877910").empty();
+                $("#detailedIndustry").hide();
+
+                if (selectedIndustry != 6) {
+                    $("#entry_686877910").append(subIndustries[selectedIndustry]);
+                    $("#detailedIndustry").show();
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="container">
+
+            <iframe name="iframe_txlbrchf" id="iframe_txlbrchf" style="display:none;" onload="if(typeof sent_txlbrchf!='undefined') {window.location='thankyou_en.html';}"></iframe>
+            <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="iframe_txlbrchf" onsubmit="sent_txlbrchf=true">
+                <ol role="list" class="ss-question-list" style="padding-left: 0">
+                    <div id="question1" class="question active" data-next="2">
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_1023764457">
+                                        <div class="ss-q-title">What is your main reason for visiting this site?
+                                        </div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+                                    <ul class="ss-choices" role="radiogroup" aria-label="What is your main reason for visiting this site?  ">
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="1" name="entry.25969295" value="Looking to equip / refurbish washroom" id="group_25969295_1" role="radio" class="ss-q-radio" aria-label="Looking to equip / refurbish washroom" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Looking to equip / refurbish washroom</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="1" name="entry.25969295" value="Considering a new hand-drying system" id="group_25969295_2" role="radio" class="ss-q-radio" aria-label="Considering a new hand-drying system" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Considering a new hand-drying system</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="1" name="entry.25969295" value="Looking for information on hand dryers" id="group_25969295_3" role="radio" class="ss-q-radio" aria-label="Looking for information on hand dryers" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Looking for information on hand dryers</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="1" name="entry.25969295" value="Looking for information on paper towels" id="group_25969295_4" role="radio" class="ss-q-radio" aria-label="Looking for information on paper towels" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Looking for information on paper towels</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="1" name="entry.25969295" value="__other_option__" id="group_25969295_5" role="radio" class="ss-q-radio ss-q-other-toggle" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Other</span>
+                                            </label>
+                                            <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.25969295.other_option_response" value="" class="ss-q-other" id="entry_25969295_other_option_response" dir="auto" aria-label="Other"></span>
+                                        </li>
+                                    </ul>
+                                    <div class="errorMessage">Please select a reason above.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="next">Next</div>
+                            <div id="progress-label" class="progress-label">16 % done</div>
+                        </div>
+                    </div>
+                    <div id="question2" class="question" data-next-conditional="entry.303289529-Yes-3,entry.303289529-No-4">
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_1575765675">
+                                        <div class="ss-q-title">Did you find what you were looking for?
+                                        </div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+
+                                    <ul class="ss-choices" role="radiogroup" aria-label="Did you find what you were looking for?  ">
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="2" name="entry.303289529" value="Yes" id="group_303289529_1" role="radio" class="ss-q-radio" aria-label="Yes (Go to question 3)" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Yes</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="2" name="entry.303289529" value="No" id="group_303289529_2" role="radio" class="ss-q-radio" aria-label="No&nbsp;(Go to question 4)" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">No</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="errorMessage">Please make a selection above.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="prev">Previous</div>
+                            <div class="next">Next</div>
+                            <div id="progress-label" class="progress-label">33 % done</div>
+                        </div>
+                    </div>
+                    <div id="question3" class="question" data-next="5">
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-checkbox">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_1329879838">
+                                        <div class="ss-q-title">Please select what content on this site you found useful
+                                        </div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+
+                                    <ul class="ss-choices" role="group" aria-label="Please select what content on this site you found useful?  ">
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="Video" id="group_1329879838_1" role="checkbox" class="ss-q-checkbox"></span>
+                                                <span class="ss-choice-label">Video</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="Downloads" id="group_1329879838_2" role="checkbox" class="ss-q-checkbox"></span>
+                                                <span class="ss-choice-label">Downloads</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="General site content" id="group_1329879838_3" role="checkbox" class="ss-q-checkbox"></span>
+                                                <span class="ss-choice-label">General site content</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="List of Key decisions&nbsp;" id="group_1329879838_4" role="checkbox" class="ss-q-checkbox"></span>
+                                                <span class="ss-choice-label">List of Key decisions </span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="__other_option__" id="group_1329879838_5" role="checkbox" class="ss-q-checkbox ss-q-other-toggle"></span>
+                                                <span class="ss-choice-label">Other:</span>
+                                            </label>
+                                            <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.1329879838.other_option_response" value="" class="ss-q-other" id="entry_1329879838_other_option_response" dir="auto" aria-label="Other"></span>
+                                        </li>
+                                    </ul>
+                                    <div class="errorMessage">Please make at least one selection above.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="prev">Previous</div>
+                            <div class="next">Next</div>
+                            <div id="progress-label" class="progress-label">50 % done</div>
+                        </div>
+                    </div>
+                    <div id="question4" class="question" data-next="5">
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_2038864358">
+                                        <div class="ss-q-title">Please state why?
+                                        </div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+                                    <textarea data-dimension="4" name="entry.2038864358" class="ss-q-short" id="entry_2038864358" dir="auto" aria-label="Please state why?  " aria-required="true" required="" title=""></textarea>
+                                    <div class="errorMessage">Please help us improve by stating a reason.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="prev">Previous</div>
+                            <div class="next">Next</div>
+                            <div id="progress-label" class="progress-label">66 % done</div>
+                        </div>
+                    </div>
+                    <div id="question5" class="question" data-next-conditional="entry.709213519-Professional reasons-6,entry.709213519-Private reasons-7">
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_118870593">
+                                        <div class="ss-q-title">In what capacity are you visiting this site?
+                                        </div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+
+                                    <ul class="ss-choices" role="radiogroup" aria-label="In what capacity are you visiting this site?">
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="5" name="entry.709213519" value="Professional reasons" id="group_709213519_1" role="radio" class="ss-q-radio" aria-label="Professional reasons" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Professional reasons</span>
+                                            </label>
+                                        </li>
+                                        <li class="ss-choice-item">
+                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="5" name="entry.709213519" value="Private reasons" id="group_709213519_2" role="radio" class="ss-q-radio" aria-label="Private reasons" required="" aria-required="true"></span>
+                                                <span class="ss-choice-label">Private reasons</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                    <div class="errorMessage">Please make a selection above.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="professionalButtons" class="buttons">
+                            <div class="prev">Previous</div>
+                            <div class="next">Next</div>
+                            <div id="progress-label" class="progress-label">83 % done</div>
+                        </div>
+                        <div id="privateButtons" class="buttons">
+                            <div class="prev">Previous</div>
+                            <div class="submit">Submit</div>
+                            <div id="progress-label" class="progress-label">100 % You're done</div>
+                        </div>
+                    </div>
+                    <div id="question6" class="question" data-next="999">
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_250862909">
+                                        <div class="ss-q-title">Tell us something about yourself
+                                        </div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ss-form-question errorbox-good" role="listitem">
+                            <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-item-label" for="entry_250862909">
+                                        <div class="ss-q-title">Please select industry</div>
+                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                    </label>
+                                    <select data-dimension="6" name="entry.250862909" id="entry_250862909" aria-label="Please select industry" aria-required="true" required="">
+                                        <option value=""></option>
+                                        <option value="Public Service and Education (e.g. public administration, education, other public activities)">Public Service and Education (e.g. public administration, education, other public activities)</option>
+                                        <option value="Trade &amp; Service Enterprises (e.g. transportation, retail, other service companies)">Trade &amp; Service Enterprises (e.g. transportation, retail, other service companies)</option>
+                                        <option value="Hotel, Catering and Tourism (e.g. hotel &amp; lodgings, food service, recreation and events)">Hotel, Catering and Tourism (e.g. hotel &amp; lodgings, food service, recreation and events)</option>
+                                        <option value="Healthcare (e.g. hospital, long term, care provider, other healthcare)">Healthcare (e.g. hospital, long term, care provider, other healthcare)</option>
+                                        <option value="Industrial (e.g. food industry, manufacturing)">Industrial (e.g. food industry, manufacturing)</option>
+                                    </select>
+                                    <div class="errorMessage">Please make a selection above.</div>
+                                </div>
+                            </div>
+                            <div id="detailedIndustry" class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                    <div class="ss-form-entry">
+                                        <label class="ss-q-item-label" for="entry_686877910">
+                                            <div class="ss-q-title">Please select your industry segment</div>
+                                            <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                        </label>
+                                        <select data-dimension="7" name="entry.686877910" id="entry_686877910" aria-label="Please select your industry segment" aria-required="true" required="">
+                                        </select>
+                                        <div class="errorMessage">Please make a selection above.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                    <div class="ss-form-entry">
+                                        <label class="ss-q-item-label" for="entry_1750378592">
+                                            <div class="ss-q-title">Are you?
+                                            </div>
+                                            <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                        </label>
+
+                                        <ul class="ss-choices" role="radiogroup" aria-label="Are you?  ">
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="8" name="entry.2030244213" value="A purchaser" id="group_2030244213_1" role="radio" class="ss-q-radio" aria-label="A purchaser" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">A purchaser</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="8" name="entry.2030244213" value="A decision-maker" id="group_2030244213_2" role="radio" class="ss-q-radio" aria-label="A decision-maker" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">A decision-maker</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="8" name="entry.2030244213" value="An influencer" id="group_2030244213_3" role="radio" class="ss-q-radio" aria-label="An influencer" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">An influencer</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="8" name="entry.2030244213" value="__other_option__" id="group_2030244213_4" role="radio" class="ss-q-radio ss-q-other-toggle" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Other</span>
+                                                </label>
+                                                <span class="ss-q-other-container goog-inline-block"><input type="text" data-dimension="8" name="entry.2030244213.other_option_response" value="" class="ss-q-other" id="entry_2030244213_other_option_response" dir="auto" aria-label="Other"></span>
+                                            </li>
+                                        </ul>
+                                        <div class="errorMessage">Please make a selection above.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                    <div class="ss-form-entry">
+                                        <label class="ss-q-item-label" for="entry_1219118303">
+                                            <div class="ss-q-title">How many employees does your company have?
+                                            </div>
+                                            <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                        </label>
+                                        <select data-dimension="9" name="entry.1219118303" id="entry_1219118303" aria-label="How many employees does your company have?  " aria-required="true" required="">
+                                            <option value=""></option>
+                                            <option value="&lt; 10">&lt; 10</option>
+                                            <option value="10 - 50">10 - 50</option>
+                                            <option value="50 - 100">50 - 100</option>
+                                            <option value="100 - 500">100 - 500</option>
+                                            <option value="500 - 1000">500 - 1000</option>
+                                            <option value="1000+&nbsp;">1000+</option>
+                                        </select>
+                                        <div class="errorMessage">Please make a selection above.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                    <div class="ss-form-entry">
+                                        <label class="ss-q-item-label" for="entry_312726498">
+                                            <div class="ss-q-title">Are you?
+                                            </div>
+                                            <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                        </label>
+
+                                        <ul class="ss-choices" role="radiogroup" aria-label="Are you?  ">
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="10" name="entry.1876691480" value="Male" id="group_1876691480_1" role="radio" class="ss-q-radio" aria-label="Male" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Male</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" data-dimension="10" name="entry.1876691480" value="Female" id="group_1876691480_2" role="radio" class="ss-q-radio" aria-label="Female" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Female</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <div class="errorMessage">Please make a selection above.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                    <div class="ss-form-entry">
+                                        <label class="ss-q-item-label" for="entry_782187924">
+                                            <div class="ss-q-title">What is your age?
+                                            </div>
+                                            <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                        </label>
+                                        <select data-dimension="11" name="entry.782187924" id="entry_782187924" aria-label="What is your age?  " aria-required="true" required="">
+                                            <option value=""></option>
+                                            <option value="&lt; 30">&lt; 30</option>
+                                            <option value="30 - 50">30 - 50</option>
+                                            <option value="50+">50+</option>
+                                        </select>
+                                        <div class="errorMessage">Please make a selection above.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="draftResponse" value="[,,&quot;-3701498256300395463&quot;]
+                                                                             ">
+                            <input type="hidden" name="pageHistory" value="0">
+                            <input type="hidden" name="fbzx" value="-3701498256300395463">
+
+                            <div class="buttons">
+                                <div class="prev">Previous</div>
+                                <div class="submit">Submit</div>
+                                <div id="progress-label" class="progress-label">100 % You're done</div>
+                            </div>
+                        </div>
+                    </div>
+                </ol>
+            </form>
+        </div>
+    </body>
+
+</html>

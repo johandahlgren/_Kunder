@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Working Papers</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+        <!--[if lte IE 7]>
+        <link href="css/ie7.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]-->        
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<script type="text/javascript" src="scripts/jquery-1.2.6.min.js"></script>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+
+        <div id="bodyContainer">
+            <div class="innerContainer">
+    
+    
+                <div id="headerContainer">
+                    <div class="innerContainer">
+            
+                        <div id="logoContainer">
+                            <div class="innerContainer">
+                                <!-- OBS: lagt till bild och accesskey på länk -->
+                                <a href="ISF_startsida.html" title="Gå till startsidan" accesskey="1"><img src="images/ISF_Logo.png" alt="Inspektionen för socialförsäkringen" /></a>
+                                <span id="skipLink"><!-- OBS: lagt till skip-länk -->
+                                    <a href="#content" accesskey="s">Gå direkt till huvudinnehåll</a> 
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div id="toolMenuContainer">
+                            <div class="innerContainer">
+                                <ul>
+                                    <li class="first"><a href="ISF_kontaktlista.html"><span>Kontakt</span></a></li> <!-- OBS: lagt på klass -->
+                                    <li><a href="ISF_press.html"><span>Press</span></a></li>
+                                    <li><a href="ISF_arbeta_hos_oss.html"><span>Arbeta hos oss</span></a></li>
+                                    <li><a href="ISF_anpassa.html"><span>Anpassa</span></a></li>
+                                    <li><a href="ISF_webbkarta.html"><span>Webbkarta</span></a></li>
+                                    <li class="rss"><a href="ISF_rss.html"><span>RSS</span></a></li>
+                                    <li class="last"><a href="ISF_reports.html"><span>In English</span></a></li> <!-- OBS: lagt på klass -->
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div id="searchContainer">
+                            <div class="innerContainer">
+                                <fieldset>
+                                	<legend>Sök på webbplatsen</legend>
+                                    <label for="searchField">Sökord</label>
+                                    <input id="searchField" type="text" accesskey="4" /> 
+                                    <input type="submit" class="searchButton" value="Sök" />
+                                </fieldset>
+                            </div>
+                        </div>
+        
+                        <div id="topMenuContainer">
+                            <div class="innerContainer">       
+                                <ul id="topMenuFirst">
+                                    <li class="first"><a href="ISF_amnesstartsida.html"><span>Socialförsäkring</span></a></li>
+                                    <li><a href="ISF_amnesstartsida2.html"><span>Barn &amp; familj</span></a></li>
+                                    <li><a href="#"><span>Funktionsnedsättning</span></a></li>
+                                    <li><a href="#"><span>Sjukförmåner</span></a></li>
+                                    <li class="last"><a href="#"><span>Pension</span></a></li>
+                                </ul>
+                                <ul id="topMenuSecond">
+                                    <li class="first"><a href="ISF_projektstartsida.html"><span>Pågående projekt</span></a></li>
+                                    <li><a href="ISF_publiceratstartsida.html"><span>Publicerat</span></a></li>
+                                    <li class="last"><a href="ISF_remissvar.html"><span>Remissvar</span></a></li>
+                                </ul>
+                                <ul id="topMenuThird">
+                                    <li class="first last selected"><a href="ISF_om_isf.html"><span>Om ISF</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div><!-- slut headerContainer -->
+                
+                <!-- finns flera olika sidlayoutsklasser som måste sättas på mainContentContainer för sidlayouterna startsida, understartsida, bred sida (utan högerkolumn), fullbreddsida (utan högerkolumn och vänstermeny) -->
+                <!-- vanliga 3-kolumnssidor med vanlig text har ingen klass alls här -->
+				<!--
+                <div id="mainContentContainer" class="startPage subStartPage widePage fullPage">
+         		-->
+                <div id="mainContentContainer" class="widePage">
+                    <div class="innerContainer">
+            
+		                <!-- denna renderas inte alls för en sida som inte ska ha vänstermeny -->
+                        <div id="navColContainer">
+                            <div class="innerContainer">
+                		
+                                <div id="navMenuContainer">
+                                    <div class="innerContainer">
+                                        <!-- samma som intranätet till att börja med, vi får ändra sen om det behövs -->
+                                        <ul class="bigmenu">
+                                        	<li class="has-children"><span><a href="ISF_vanlig_sida.html">Vårt uppdrag</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_vanlig_sida.html">Organisation</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_arbeta_hos_oss.html">Arbeta hos oss</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_press.html">Pressrum</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_konferenser.html">Konferenser</a></span></li>
+                                        	<li class=""><span><a href="ISF_vanlig_sida.html">Kontakta oss</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_vanlig_sida.html">Hitta rätt</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_anpassa.html">Om webbplatsen</a></span></li>
+                                        	<li class="has-children expanded"><span><a href="ISF_reports.html">In English</a></span>
+                                            	<ul class="submenu">
+                                                    <li class=""><a href="#">About ISF</a></li>
+                                                    <li class=""><a href="ISF_reports.html">Report Summaries</a></li>
+                                                    <li class="selected"><a href="ISF_wps.html">Working Papers</a></li>
+                                                    <li class=""><a href="#">Contact us</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- slut navColContainer -->
+        
+                        <div id="mainColContainer">
+                            <div class="innerContainer">
+								<a id="content"></a><!-- OBS: lagt till anchor för skip-länk, ska alltid ligga här oavsett sidtyp -->    
+                                 
+                                <div id="breadcrumbs">
+                                    <strong>Här är du: </strong>
+                                    <a href="ISF_startsida.html">Startsida</a> <span class="separator">/</span> <a href="#">Om ISF</a> <span class="separator">/</span> <a href="#">In English</a> <span class="separator">/</span> Working Papers 
+                                </div>   
+                                   				
+                                <div id="pageIntro"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                        <h1>Working Papers</h1>
+                                        <p>Our working papers are written in English. Information about the papers (and in turn, the working papers) can be accessed using the links in the lists below.</p>
+                                    </div>
+                                </div>
+
+                                <div id="pageMainContent"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                                                    
+                                    </div>
+                                </div><!-- slut pageMainContent -->
+                                
+                                <div class="publicationList">
+                                	<div class="innerContainer">
+                                                        
+                                        <h2>Social Insurance</h2>               	
+                                        <table>
+                                        	<tr>
+                                            	<th scope="col">Title</th>
+                                            	<th scope="col">Published</th>  
+                                            </tr>
+                                        	<tr>
+                                            	<td><a href="#" class="wp-english">Do Time Limits in the Sickness Insurance System Increase Return to Work?</a></td><!--obs-bara class för demoscript, implementeras ej!!!-->
+                                            	<td>2011-06</td>  
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div><!-- slut publicationList -->
+
+                                <div class="publicationList">
+                                	<div class="innerContainer">
+                                                        
+                                        <h2>Children &amp; Family</h2>               	
+                                        <table>
+                                        	<tr>
+                                            	<th scope="col">Title</th>
+                                            	<th scope="col">Published</th>  
+                                            </tr>
+                                        	<tr>
+                                            	<td><a href="#" class="wp-english">What are the effects of reforms promoting fathers’ parental leave use?</a></td><!--obs-bara class för demoscript, implementeras ej!!!-->
+                                            	<td>2011-06</td>  
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div><!-- slut publicationList -->
+                                
+                                <div class="publicationList">
+                                	<div class="innerContainer">
+                                                        
+                                        <h2>Health Benefits</h2>               	
+                                        <table>
+                                        	<tr>
+                                            	<th scope="col">Title</th>
+                                            	<th scope="col">Published</th>  
+                                            </tr>
+                                        	<tr>
+                                            	<td><a href="#" class="wp-english">Do Time Limits in the Sickness Insurance System Increase Return to Work?</a></td><!--obs-bara class för demoscript, implementeras ej!!!-->
+                                            	<td>2011-06</td>  
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div><!-- slut publicationList -->
+
+                                <div class="publicationList">
+                                	<div class="innerContainer">
+                                                        
+                                        <h2>Pensions</h2>               	
+                                        <table>
+                                        	<tr>
+                                            	<th scope="col">Title</th>
+                                            	<th scope="col">Published</th>  
+                                            </tr>
+                                        	<tr>
+                                            	<td><a href="#" class="wp-english">Is Early Retirement Encouraged by the Employer? Labor-Demand Effects of Age-Related Collective Fees</a></td><!--obs-bara class för demoscript, implementeras ej!!!-->
+                                            	<td>2011-06</td>  
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div><!-- slut publicationList -->
+
+                            </div>
+                        </div><!-- slut mainColContainer -->        
+        
+                    </div>
+                </div><!-- slut mainContentContainer -->
+
+
+                <div id="footerContainer">
+                    <div class="innerContainer"><!-- OBS: nytt innehåll -->
+                    	<h2>Kontaktuppgifter</h2>
+                        <p>Postadress: Box 202, 101 24 Stockholm</p>
+                        <p>Besöksadress: Fleminggatan 7</p>
+                        <p>Telefon: 08-58 00 15 00</p>
+                        <p>Fax: 08-58 00 15 90</p>
+                        <p>E-post: <a href="mailto:registrator@inspsf.se">registrator@inspsf.se</a></p>
+                        <p class="contactLink"><a href="#">Kontakta oss</a></p>
+                    </div>
+                </div><!-- slut footerContainer -->
+                
+            
+            </div>
+        </div><!-- slut bodyContainer -->
+	
+		<script type="text/javascript" src="scripts/include.js"></script><!-- OBS: referens till egen scriptfil -->
+
+	</body>
+
+</html>

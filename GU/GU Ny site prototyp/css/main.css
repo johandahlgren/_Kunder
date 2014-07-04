@@ -1,0 +1,43 @@
+* {font-family: arial; box-sizing: border-box;}
+body {margin: 20px;}
+
+#content {clear: both; padding: 20px;}
+#header {width: 100%; height: 150px; padding: 20px;}
+#logo {clear: both; width: 50px; height: 50px; background-color: blue;}
+#menuButton {display: none; width: 45px; height: 45px; background-color: rgb(220, 220, 220); float: right;}
+#menuDiv {width: 100%; position: relative; margin-bottom: 20px; display: block;}
+#pageContainer {width: 90%; max-width: 960px; min-width: 320px; margin: 0 auto; border: 1px solid rgb(240, 240, 240);}
+#pageMenu {float: right; width: 300px; margin: 0 0 20px 20px; border: 1px solid rgb(200, 200, 200); display: block;}
+#pageMenu a {width: 100%;}
+nav {background-color: rgb(240, 240, 240); width: 100%; float: left;}
+nav a {float: left; height: 30px; line-height: 30px; color: black; text-decoration: none; border-right: 1px solid white; padding: 0 20px; background-color: rgb(255, 255, 255);}
+nav > div > div {display: none;}
+nav .selected > a {background-color: rgb(47, 98, 175);}
+nav .selected .selected > a {background-color: rgb(113, 150, 206);}
+nav .selected .selected .selected > a {background-color: rgb(169, 195, 235);}
+nav .selected .selected .selected .selected > a {background-color: rgb(218, 227, 240);}
+nav .selected > div {display: block; position: absolute; margin-top: 30px; width: 100%; height: 30px;}
+
+.clearFix {clear: both;}
+.contentBlock {margin-bottom: 20px;}
+#topMenu .superSelected div {display: block;}
+#search {width: 80%; height: 45px; border-radius: 5px; box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.5); border: 1px solid rgb(200, 200, 200); font-size: 18px; text-indent: 10px;}
+
+@media screen and (min-width: 961px)
+{
+    #topMenu {height: 60px;}
+}
+
+@media screen and (max-width: 960px)
+{
+    body {margin: 0;}
+    #header {height: 80px;}
+    #menuButton {display: block;}
+    #pageContainer {width: 100%; border: none;}
+    #pageMenu {width: 100%; clear: both; margin-bottom: 0;}
+    #topMenu {display: none;}
+    nav a {clear: both; border-right: none; border-bottom: 1px solid rgb(180, 180, 180); width: 100%; line-height: 45px; height: 45px;}
+    nav div {display: none;}
+    nav div.selected {display: block;}
+    nav .selected > div {position: relative; margin-top: 0;}
+}

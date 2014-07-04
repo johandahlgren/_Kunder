@@ -1,0 +1,142 @@
+Generellt
+
+Inloggning
+Portalen kommer att vara en CAS-klient. Eftersom alla användare som skall till Portlen loggar in på samma CAS behöver Portalen veta om användaren är en student eller anställd (gus- eller x-id) för att kunna dirgera användaren till rätt portal/repository.
+Portalen behöver validera inloggning och ta ut userid från CAS.Adressen "https://portalen.gu.se" kommer att gälla för bägge portalerna.
+- Vi löser detta genom att sätta upp ett repository som svarar på adressen portalen.gu.se. Där ligger en Omdirigeringskomponent (se nedan) som efter inloggning mot CAS känner av användarens id och redirectar honom till rätt site (typ portalen.gu.se/student eller portalen.gu.se/medarbetare)
+- De två repositoryna får varsin extra CSS där man kan lägga in specifik design för respektive site.
+- Vi sätter upp två grupper "Student" och "Medarbetare" som får access till respektive repository.
+
+Språkhantering
+- Vi bygger EN struktur i trädet.
+- Varje content läggs in med text på både svenska och engelska.
+- Vi kan läsa in locale från CAS-URL:en.
+
+Omdirigeringskomponent
+- För att avgöra vilket repo man ska skickas till kollar vi på grupptillhörigheten. Tillhör man gruppen "Student" skickas man till Studentportalen, "Medarbetare" skickas till Medarbetarportalen.
+- Om man tillhör båda grupperna skickas man till medarbetarportalen.
+- Redirectkomponenten har två properties:
+  - Startsida för Studentportalen
+  - Startsida för Medarbetarportalen
+
+Baskomponent
+- Vi bygger en ny komponent för att kunna hantera framtida specialanpassningar.
+- Hämtar sparat språk från användarens userProperties.
+- Om aktuellt språk inte är det samma som det sparade språket redirectar vi till samma sida med det sparade språket istället.
+- Om parametern changeLanguage=true skickas in till baskomponenten sparar vi det inskickade språket i användarens userProperties.
+- Ansvarsförbindelsen
+  - Varje gång sidan laddas görs ett uppslag mot Oracle för att se om användaren har godkänt ansvarsförbindelsen.
+  - Om han inte har gjort det visas en artikel med info om ansvarsförbindelsen, en kryssruta "Jag godkänner" och två knappar "Jag godkänner" och "Avbryt".
+  - När man klickar på "Jag godkänner" laddas sidan om, det läggs i en post i databasen, och ovanstående logik triggas igen, men denna gång kommer man till den önskade sidan.
+  - Om man klickar på "Avbryt" laddas sidan om, och en text visas "Du måste godkänna ansvarsförbindelsen för att kunna använda portalen."
+  
+Sidhuvudkomponent
+- Vi bygger en ny komponent för att kunna hantera framtida specialanpassningar.
+- Ska visa för- och efternamn på den personen som är inloggad.- Runt texten lägger vi en <span> eller <div> (Joakim får bestämma) med en klass på så den går att styla.
+- För att kunna ha olika utseenden behöver vi skapa en student-CSS och en anställd-CSS som läggs in på respektive site som styr det utseende som ska vara unikt för de olika siterna.
+- Visa en "Logga ut"-länk när man är inloggad. När man klickar på den ska man skickas till CAS:ens logout-URL.
+- På varje sida ska finnas en knapp "Lägg till i mina genvägar" som sparar länken till sidan i personens content.
+  - När man klickar på länken laddas sidan om med en parameter "saveBookmark=true" och sidans ID.
+    - Logiken kollar om sidan redan finns i den kommaseparerade listan.
+      - Finns den inte läggs den till.
+      - Finns den tas den bort.
+  - När sidan är inlagd i bokmärkena visas en ikon i sidhuvudet (t.ex. en gul stjärna) så det framgår att sidan är inlagd.
+  - Om man klickar på den gula stjärnan tas sidan bort ur bokmärkena.
+    - Sidan laddas om med parametern "saveBookmarks=true" och den aktuella sidans ID. Eftersom sidan finns i listan betyder det att den tas bort.
+
+Vänstermenykomponent
+Menyn skall kunna visa länkar baserade på behörighet. Det vill säga att man skall kunna sätta gruppbehörighet på nivåer i menyn. Användare skall endast se länkar i menyn som de har behörighet till.Exempel:Länkar i menyn som går till Agresso (Ekonomisystemet) skall bara visas för exempelvis gruppen "Agresso". Det vill säga att endast medlemmar i gruppen (Ekonomiadministratörer) ser länken i menyn och underliggande sitenoder/sidor.Önskemål:Menylänkens visningsläge skall återspegla behörighet satt på sitenoden.
+
+- Enbart visa länkar man har behörighet till
+- Samma upplägg som på gu.se, d.v.s. att man byter meny varje gång man klickar och använder brödsmulorna för att ta sig tillbaka.
+- Vi använder en redirectkomponent för att lösa genvägar i menyn.
+  
+Administrera ansvarsförbindelsekomponent
+Ansvarsförbindelsen är Göteborgs universitets policys och regler som gäller för att kunna få access till portalen. Ansvarsförbindelsen måste godkännas av användaren, studenter och medarbetare, för att över huvud taget kunna komma in i portalen. Ansvarsförbindelsen skall godkännas av användaren två gånger på år.Skall kunna veta om en användare har godkänt Ansvarsförbindelsen eller inte. Om den inte är godkänd skall användaren inte kunna gå vidare till portalen. Det vill säga att Ansvarsförbindelsen alltid visas så länge man inte godkänner.Godkännande av Ansvarsförbindelsen skall kunna godkännas genom en checkbox som tickas av användaren samt en knapp - "Gå vidare" och en knapp "Avbryt". Ett klick på "Avbryt" skall leda till samma sida (Ansvarsförbindelsen) med information som visas väl synligt för användaren. Ex, text i rött - "Ansvarsförbindelsen måste godkännas för att använda portalen". När användaren godkänt skall information om godkännandet lagras med, userid, datumstämpel, portal (Med - eller Studentportal).Administratör eller användare med rätt behörighet skall kunna se hur många som godkänt Ansvarsförbindelsen. Komponenten skall ha ett enkelt räkneverk som en administratör eller användare med behörighet skall kunna se. Räkneverket skall kunna visa information per portal.En administratör eller person med rätt behörighet skall kunna nollställa Ansvarsförbindelsen. Nollställning skall radera samtliga godkända användare per portal. Det vill säga att man skall kunna nollställa Student och Medarbetarportal var för sig.Text och innehåll i komponenten skall kunna administreras av administratör eller användare med rätt behörighet.Ansvarsförbindelsen skall kunna visas på engelska och svenska. Komponenten skall kunna ta en lang-parameter satt av CAS eller annan tjänst och visa språk där efter.Komponenten skall kunna veta vem användaren är (userid) genom validering med CAS.
+
+- Vi bygger en ny komponent för att visa information om hur många som godkänt ansvarsförbindelsen.
+- Visar antalet personer som har godkänt ansvarsförbindelsen. Samma godkännande gäller för både Medarbetar- och Studentportalen.
+- Knapp för att nollställa räknaren med en extra säkerhetsfråga ("Är du säker på att du vill nollställa räknaren?").
+  - När man klickar på knappen och svarar "Ok" på säkerhetsfrågan laddas sidan om, alla poster i tabellen i databasen raderas.
+
+Visa bokmärken-komponent
+- Möjlighet för varje användare att spara en egen länklista till externa eller interna länkar.
+- Förslag: Sparas som ett etxtfält på användarens userProperties.
+- Redigeras med WYSIWYG.
+- "Redigera"-länk som öppnar en WYSIWYG-area där man kan redigera sin text. När man klickar på "Spara" sparas innehållet på användarens userProperties.
+
+Lista genvägar-komponent
+- Om man saknar genvägar visas en informationstext om att man kan lägga till genv'gar via knappen i sidhuvudet.
+- Listar alla genvägar man har sparat på sitt personcontent.
+- Möjlighet att redigera sina genvägar behövs:
+  - Knapp för att ta bort bokmärke laddar om sidan och skickar in den aktuella sidans ID och parametern "saveBookmark", vilket triggar funktionen i sidhuvudkomponenten som kollar om sidan redan finns i listan och då tar bort den istället.
+
+Layoutkomponenter
+- Vi bygger nya layoutkomponenter för att ha möjlighet att specialanpassa dem.
+- Vi behöver två varianter:
+  - 2-kolumnslayout
+  - 3-kolumnslayout
+
+Nyhetsrullar
+- De befintliga nyhetsflödena ska användas för att skapa nyheter.
+
+Driftinfo
+- Den vanliga RSS-readerkomponenten används som läser in en RSS från driftinfo.gu.se/rss-articles.
+- Akuta driftinfo-meddelanden läggs in manuellt som miniartiklar.
+
+Länk till "min site"
+- Förslagsvis får man lägga till länken bland sina bokmärken, så behöver vi inte bygga någon avancerad logik. 
+
+Redigering av egen presentation från GU Research
+- Vi lägger in en "GU Detaljvy person"-komponent på en sida på Medarbetarportalen. 
+- Vi konfigurerar komponenten till att visa den inloggade användarens information med redigeringslänk. 
+
+------------------
+iFrame
+------------------
+
+Meddelandehantering
+- GU vill använda befintlig portlet. Om den använder Oracle-specifik kod behöver den anpassas.
+- Pablo undersöker om vi kan iFrame:a in den.
+
+
+Koppling till UB
+-Det finns idag två befintliga portletar man vill integrera:
+1. En portlet som pratar med UB's system föra att ta reda på användarens lånekortsstatus.
+Funktionen är enkel.
+ - Portleten tar reda på vem det är som besöker den, plockar alltså ut userid (gusid) ur sin context.
+ - Med hjälp av det id'et söker portleten i LDAP (OID) efter personnumret för det id'et.
+ - Med hjälp av id'et och personnummret gör portleten en request på ett CGI-script på UB's system och lägger på tre parametrar som konsumeras av CGI'n.
+https://sunda.ub.gu.se/cgi-bin/studentportal.cgi?gusid=[userid]&pnr=[personnummer från OID]&lang=[sv||en]
+ -  CGI'n returnerar ett XML. I XML'et finns det svar som skall presenteras för användaren på skärmen. 
+Kan vara tre olika saker: "Användare och lånekort okej", "Användare och lånekort inte okej" eller "Allt har gått åt pipsvängen".
+Ihop med svaren finns också en länkar till UB's system. Kan vara exemplevis till lånekortsförnyelse, skaffa nytt kort, etc.
+Enkelt.
+2. En portlet (HTML-portlet) som är till för att skjuta in sökord i UB's bibliotekssystem.
+Portleten innehåller ett standard HTML-formulär. Det formuläret har ett textfält för sökord och diverse hidden fält som attribut till söktjänsten. Sökresultat öppnas i nytt fönster hos UB. Kod till formuläret finns bifogat.  
+- Vi iFrame:ar in den befintliga funktionen.
+
+--------------------
+Version 2              
+--------------------
+
+Siteseeker
+- Sätta upp separat indexering av portalen
+- Fixa så man kan söka enbart i portalen
+- Diskuterar mer på mötet.
+
+Egna noteringar
+- NY KOMPONENT
+  - En enkel anteckningskomponent.
+  - Sparar contents med rubrik, datum, text och prio.
+  - När man klickar på en anteckning visas den i sin helhet och går att redigera.
+
+RSS-flöden
+- Komponent där användaren själv väljer vilka RSS-flöden han vill prenumerera på
+- Slå ihop max 10 RSS:er till en, sorterad i datumordning.
+- Visa de tio senaste nyheterna.
+
+Snygga till "Inte behörig"-rutan.
+
+Anpassa
+- Använda anpassa-funktionen från gu.se och spara inställningarna på användarens userProperties så de ligger kvar till nästa besök.

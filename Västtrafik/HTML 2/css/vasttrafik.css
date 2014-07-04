@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'VastTrafikIconsRegular';
+    src: url('vasttrafik.eot');
+    src: url('vasttrafik.eot') format('embedded-opentype'),
+         url('vasttrafik.woff') format('woff'),
+         url('vasttrafik.ttf') format('truetype'),
+         url('vasttrafik.svg#VastTrafikIconsRegular') format('svg');
+}

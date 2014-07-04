@@ -1,0 +1,139 @@
+========================================
+GU Play
+========================================
+
+------------------------
+Enkel variant
+------------------------
+
+Vidareutveckling av GU Videogalleri + ett sidhuvud och sidfot.
+Vi använder GU Slider för att visa utvalda filmer i en karusell.
+
+Att bygga:
+En sökruta ska finnas i sidhuvudet.
+Avancerad sök
+- Visar alla kategorier som går att välja på.
+- Man ska kunna välja flera kategorier.
+Ny layoutkomponent
+- Sidhuvud
+  - Länkar för att visa
+    - Nyaste
+    - Mest visade
+    - Fritextsök
+- Videogallerikomponenten
+- Sidfot
+Anpassning av videogalleriet
+- Länk för att sortera på nyaste/mest sedda
+- Göra skapare klickbar så man kan filtrera på skapare
+- Göra kategorierna klickbara så man kan filtrera på kategori
+- Kunna hämta ut filmer baserade på en fritextsökning som skickas in som requestparameter
+(- Puffade filmer?)
+- Puffmode (selectbox)
+  - Döljer filmrutan och filmbeskrivningen. Den visar alltså bara "galleridelen".
+- Om innehållet man pekat ut är ett GU PortfolioPuff-content blir bilden en länk till detaljsidan med sökkriterierna som satts på puffen.
+- Nytt fält
+  - Puffdetaljsida
+
+Ny innehålsstyp
+- GU PortfolioPuff
+  - Titel (fritext)
+  - Kategorier (select, hämtar sina värden från S&S, multiselect)
+  - Skapare (fritext)
+
+Joakim behöver ta fram design.
+
+------------------------
+Avancerad variant
+------------------------
+
+Allt i den enkla varianten plus nedanstående:
+
+Välja filmer på typ i sidhuvudet (t.ex. Öppna föreläsningar, Disputationer, Videokurser o.s.v.)
+Möjlighet att använda videogalleriet enbart som länkar till detaljsida.
+Betygsättning
+Kommentarsfunktion
+Visa alla tillgängliga kategorier
+Lista alla filmserier (A-Ö, Nyaste/äldsta o.s.v.)
+Visa filmserier i gallerivy (en thumbnail för varje serie)
+
+========================================
+GU Portfolio
+========================================
+
+------------------------
+Enkel variant
+------------------------
+
+Baseras på videogalleriet.
+Filmerna läggs upp manuellt på Show and Share alt. Flashservern och länkas in via contents som skapas i Infoglue.
+Alla listor är manuellt inlänkade.
+
+Att bygga:
+Funktion för att skapa nya Infoglue contents för filmer, bilder och PDF:er.
+Navigeringskomponent för att klicka runt bland utbildningar och årskurser.
+- Peka ut detaljsida
+- Skicka med content-ID
+Komponent för att lista studenter på en utbildning.
+- Visa bild + namn
+- Länka till detaljsida
+- 1: Peka ut en mapp/läs in mapp från parameter
+- 2: Peka ut de studenter som ska visas (används för alumner och andra listningar där man vill puffa för vissa studenter)
+Komponent för att presentera student
+- Visar alla upgifter om studenten + foto
+Anpassa videogalleriet
+- Läsa in contents från en viss mapp för att kunan visa alla innehåll för en student (id sätts via property eller parameter)
+
+Visa PDF
+- Ikon i listan
+- Visa PDF:en i nytt fönster
+
+- Ny contenttyp: PortfolioPerson.
+  - Namn
+  - Beskrivning
+  - Foto
+  - Skostorlek
+  - ...
+
+- Lägg PortfolioPerson-contentarna i mappar för respektive utbildning.
+  - Fotohögskolan
+    - Årskurs 1
+      - Kalle Karlsson
+        * Beskrivningscontent
+        * Mediacontent
+        * Mediacontent
+        * ...
+      ...
+    - Årskurs 2
+      - Lasse Larsson
+        * Beskrivningscontent
+        * Mediacontent
+        * Mediacontent
+        * ...
+      ...
+    ...
+  ...
+
+Admin skapar alla studentcontents och sätter rättigheter på dem.
+Studenter flyttas manuellt mellan årskurser av en redaktör.
+Vi använder lättredaktörsläget så studenten kan skapa/redigera sitt innehåll.
+Vi använder funktionen "Min hemsida" så studenten enkelt kan komma till sin portfoliosida.
+Sök blir endast den vanliga Siteseeker-söken.
+Det går inte att blanda innehåll från S&S med innehåll uppladdat I IG.
+
+------------------------
+Mellanvariant
+------------------------
+
+Ladda upp video från webbsidan
+- Koppling mot S&S
+
+Ladda upp bild/PDF från webbsidan
+- Skapa mediacontent
+
+------------------------
+Avancerad variant
+------------------------
+
+Integration mot Ladok.
+Utökad Siteseeker-sök med filmikon mm.
+Möjlighet att blanda innehåll från S&S med innehåll uppladdat i IG.

@@ -1,0 +1,734 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SCA Survey</title>
+
+    <style type="text/css">
+        body {
+            background: #efefef;
+            font-family: Helvetica;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+        }
+        li {
+            margin: 7px 0;
+        }
+        select {
+            margin-top: 10px;
+            background: #fff;
+        }
+        textarea {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        #detailedIndustry {
+            display: none;
+        }
+        #privateButtons {
+            display: none;
+        }
+        #professionalButtons {
+            display: block;
+        }
+        #ss-submit {
+            float: left;
+            background: #666;
+            border-radius: 20px;
+            color: #fff;
+            padding: 5px 15px 8px 15px;
+            border: none;
+            font-size: 15px;
+            margin: 10px 0 0 0;
+        }
+        .active {
+            display: block !important;
+        }
+        .buttons {
+            clear: both;
+            height: 50px;
+        }
+        .errorMessage {
+            color: rgb(255, 0, 0);
+            display: none;
+        }
+        .input-text {
+            font-size: 14px;
+            border: 1px solid #ddd;
+            width: 180px;
+            padding: 4px 3px;
+        }
+        .next,
+        .submit,
+        .close {
+            float: left;
+            background: #666;
+            border-radius: 20px;
+            color: #fff;
+            padding: 5px 15px 8px 15px;
+            border: none;
+            font-size: 15px;
+            margin: 10px 0 0 0;
+        }
+        .next:hover,
+        .submit:hover,
+        .close:hover {
+            background: #333;
+            cursor: pointer;
+        }
+        .prev {
+            float: left;
+            background: #ccc;
+            border-radius: 20px;
+            color: rgb(150, 150, 150);
+            padding: 5px 15px 8px 15px;
+            border: none;
+            font-size: 15px;
+            margin: 10px 20px 0 0;
+        }
+        .prev:hover {
+            background: #ddd;
+            cursor: pointer;
+        }
+        .progress-label {
+            float: right;
+            background: #fff;
+            display: block;
+            margin: 10px 0 0 20px;
+            padding: 3px 5px;
+        }
+        .question {
+            display: none;
+        }
+        .required-message {
+            margin-top: 20px;
+        }
+        .required-message:before {
+            content: "*";
+            color: red;
+            font-size: 20px;
+            line-height: 12px;
+            padding-right: 10px;
+        }
+        div.ss-form-question:first-child .ss-q-title,
+        .ss-q-title-thank-you {
+            font-size: 22px;
+            font-weight: normal;
+            background: #003366;
+            color: #fff;
+            padding: 15px 10px;
+            margin-top: 0;
+        }
+        .ss-q-other {
+            display: none;
+        }
+        .ss-q-title {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .ss-question-list {
+            margin: 0;
+        }
+        .ss-required-asterisk {
+            font-size: 20px;
+            color: rgb(255, 0, 0);
+            line-height: 12px;
+        }
+    </style>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-34871083-3', 'tork.fr');
+        ga('send', 'pageview', '/virtual/JADSurvey2.0');
+    </script>
+
+    <script type="text/javascript">
+        var animationSpeed = 200;
+        var previousQuestionArray = [];
+
+        $(document).ready(function () {
+            $(".next").click(function () {
+                if (validateFields($(this))) {
+                    var next = $(this).closest("[data-next]").attr("data-next");
+
+                    if ($(this).closest("[data-next-conditional]").attr("data-next-conditional")) {
+                        var conditions = $(this).closest("[data-next-conditional]").attr("data-next-conditional").split(",");
+
+                        $.each(conditions, function (index, condition) {
+                            var conditionQuery = condition.substring(0, condition.indexOf("-"));
+                            var conditionValue = condition.substring(condition.indexOf("-") + 1, condition.lastIndexOf("-"));
+                            var conditionNext = condition.substring(condition.lastIndexOf("-") + 1);
+                            var selection = getValue(conditionQuery);
+
+                            if (selection == conditionValue) {
+                                next = conditionNext;
+                            }
+                        });
+                    }
+                    $(".active").removeClass("active");
+                    $("#question" + next).addClass("active");
+
+                    var currentQuestionId = $(this).closest("[id^='question']").attr("id");
+                    previousQuestionArray.push(currentQuestionId.substring(8));
+                }
+            });
+
+            $(".prev").click(function () {
+                $(".active").removeClass("active");
+                $("#question" + previousQuestionArray.pop()).addClass("active");
+            });
+
+            $(".submit").click(function () {
+                if (validateFields($(this))) {
+                    sendToAnalytics();
+                    $("#ss-form").submit();
+                }
+            });
+
+            $(".ss-q-radio").click(function () {
+                if ($(this).hasClass("ss-q-other-toggle")) {
+                    var otherTextField = $(this).closest("li").find(".ss-q-other");
+                    otherTextField.fadeIn(animationSpeed);
+                    otherTextField.focus();
+                } else {
+                    $(this).closest("ul").find(".ss-q-other").fadeOut(animationSpeed)
+                }
+            });
+
+            $(".ss-q-checkbox").click(function () {
+                if ($(this).hasClass("ss-q-other-toggle")) {
+                    var otherTextField = $(this).closest("li").find(".ss-q-other");
+                    otherTextField.fadeToggle(animationSpeed);
+                    otherTextField.focus();
+                }
+            });
+
+            $("#entry_250862909").change(function () {
+                populateDetailedIndustry();
+            });
+
+            $(".close").click(function () {
+                parent.closeSurvey();
+            });
+
+            $("[name='entry.709213519']").click(function () {
+                var selectedId = $(this).attr("id");
+
+                if (selectedId == "group_709213519_1") {
+                    $("#professionalButtons").show();
+                    $("#privateButtons").hide();
+                } else {
+                    $("#professionalButtons").hide();
+                    $("#privateButtons").show();
+                }
+            });
+        });
+
+        function myTrim(x) {
+            x = x.replace(/^\s+|\s+$/gm, '');
+            x = x.replace(/(\r\n|\n|\r)/gm, "");
+            return x;
+        }
+
+        function sendToAnalytics() {
+            var questions = $("[type='radio'], [type='text'], textarea, select");
+
+            var processedAnswers = [];
+
+            $.each(questions, function (index, element) {
+                var elementName = $(element).attr("name");
+                var question = myTrim($(this).closest(".ss-form-entry").find(".ss-q-title").html());
+                question = question.substring(0, question.indexOf("<"));
+                var answer = getValue(elementName);
+                var questionIndex = $(element).attr("data-dimension");
+
+                if (answer) {
+                    if ($.inArray(questionIndex, processedAnswers) == -1) {
+                        var params = {};
+                        params["dimension" + questionIndex] = answer;
+
+                        ga('send', 'event', 'JAD Survey 2.0', question, answer, params);
+
+                        processedAnswers.push(questionIndex);
+                    }
+                }
+            });
+        }
+
+        function getValue(name) {
+            var value = $("[name='" + name + "']");
+            var type = value.attr("type");
+
+            if (type && (type.toLowerCase() == "radio" || type.toLowerCase() == "checkbox"))
+                value = value.filter(":checked").val();
+            else
+                value = value.val();
+            return value;
+        }
+
+        function validateFields(nextButton) {
+            $(".errorMessage").hide();
+            var returnValue = true;
+            var page = nextButton.closest("[data-next-conditional]");
+
+            if (page.size() == 0) {
+                page = nextButton.closest("[data-next]")[0];
+            }
+
+            var fields = $(page).find("input, select, textarea");
+
+            $.each(fields, function (index, element) {
+                var elementName = $(element).attr("name");
+                var value = getValue(elementName);
+                var fieldIsVisible = $(element).is(":visible");
+
+                if (fieldIsVisible && !value) {
+                    var errorMessageDiv = $(element).closest(".ss-form-entry").find(".errorMessage");
+                    errorMessageDiv.fadeIn(animationSpeed);
+                    returnValue = false;
+                }
+            });
+
+            return returnValue;
+        }
+
+        function populateDetailedIndustry() {
+
+            var subIndustries = [];
+
+            subIndustries[1] = '<option value=""></option>' +
+                '<option value="Ecoles secondaires&nbsp;">Ecoles secondaires</option>' +
+                '<option value="Ecoles primaires&nbsp;">Ecoles primaires</option>' +
+                '<option value="Etablissements pr&eacute;scolaires (ex. jardin d&#39;enfants)">Etablissements préscolaires (ex. jardin d&#39;enfants)</option>' +
+                '<option value="D&eacute;fense&nbsp;">Défense</option>' +
+                '<option value="Administration &eacute;tatique et judiciaire&nbsp;">Administration étatique et judiciaire</option>' +
+                '<option value="S&eacute;curit&eacute; et application de la loi (ex. agent de police, pompier)">Sécurité et application de la loi (ex. agent de police, pompier)</option>' +
+                '<option value="Prisons">Prisons</option>' +
+                '<option value="Autre administration publique&nbsp;">Autre administration publique</option>' +
+                '<option value="Organisations non-gouvernementales (ex. organisation caritative)">Organisations non-gouvernementales (ex. organisation caritative)</option>' +
+                '<option value="Institutions religieuses&nbsp;">Institutions religieuses</option>' +
+                '<option value="Autre&nbsp;">Autre</option>';
+            subIndustries[2] = '<option value=""></option>' +
+                '<option value="Stations-Services">Stations-Services</option>' +
+                '<option value="D&eacute;taillants">Détaillants</option>' +
+                '<option value="Grossistes&nbsp;">Grossistes</option>' +
+                '<option value="Institutions financi&egrave;res&nbsp;">Institutions financières</option>' +
+                '<option value="M&eacute;dias &amp; divertissement&nbsp;">Médias &amp; divertissement</option>' +
+                '<option value="Petits prestataires de services (ex. coiffeur, &nbsp;salon de beaut&eacute;, teinturier)">Petits prestataires de services (ex. coiffeur, salon de beauté, teinturier)</option>' +
+                '<option value="Administration">Administration</option>' +
+                '<option value="Aviation">Aviation</option>' +
+                '<option value="Chemins de Fer">Chemins de Fer</option>' +
+                '<option value="Transport par camion, approvisionement">Transport par camion, approvisionement</option>' +
+                '<option value="Transport par bateau">Transport par bateau</option>' +
+                '<option value="Autre&nbsp;">Autre</option>';
+            subIndustries[3] = '<option value=""></option>' +
+                '<option value="H&ocirc;tels ou stations de luxe&nbsp;">Hôtels ou stations de luxe</option>' +
+                '<option value="H&ocirc;tels 3 &eacute;toiles&nbsp;">Hôtels 3 étoiles</option>' +
+                '<option value="H&ocirc;tels 1 ou 2 &eacute;toiles&nbsp;">Hôtels 1 ou 2 étoiles</option>' +
+                '<option value="H&eacute;bergement &eacute;conomique (ex. camping, motel)">Hébergement économique (ex. camping, motel)</option>' +
+                '<option value="Croisi&egrave;res&nbsp;">Croisières</option>' +
+                '<option value="Services de restauration&nbsp;">Services de restauration</option>' +
+                '<option value="Caf&eacute;s, bars, pubs">Cafés, bars, pubs</option>' +
+                '<option value="Services de restauration rapide&nbsp;">Services de restauration rapide</option>' +
+                '<option value="Restauration&nbsp;">Restauration</option>' +
+                '<option value="Restauration en libre-service&nbsp;">Restauration en libre-service</option>' +
+                '<option value="Casino, jeux d&#39;argent&nbsp;">Casino, jeux d&#39;argent</option>' +
+                '<option value="Parc de loisirs, zoo&nbsp;">Parc de loisirs, zoo</option>' +
+                '<option value="Cin&eacute;ma, mus&eacute;e, th&eacute;&acirc;tre&nbsp;">Cinéma, musée, théâtre</option>' +
+                '<option value="Restauration &eacute;v&eacute;nementielle (ex. conf&eacute;rences, expositions)">Restauration événementielle (ex. conférences, expositions)</option>' +
+                '<option value="Sports, sant&eacute; et clubs de loisirs&nbsp;">Sports, santé et clubs de loisirs</option>' +
+                '<option value="Stade">Stade</option>' +
+                '<option value="Autre&nbsp;">Autre</option>';
+            subIndustries[4] = '<option value=""></option>' +
+                '<option value="Maison de retraite&nbsp;">Maison de retraite</option>' +
+                '<option value="Autres soins de longue dur&eacute;e&nbsp;">Autres soins de longue durée</option>' +
+                '<option value="Cliniques &amp; h&ocirc;pitaux publics&nbsp;">Cliniques &amp; hôpitaux publics</option>' +
+                '<option value="Cliniques &amp; h&ocirc;pitaux priv&eacute;s">Cliniques &amp; hôpitaux privés</option>' +
+                '<option value="M&eacute;decins g&eacute;n&eacute;ralistes&nbsp;">Médecins généralistes</option>' +
+                '<option value="Autres praticiens de sant&eacute; (ex. dentistes, v&eacute;t&eacute;rinaires)">Autres praticiens de santé (ex. dentistes, vétérinaires)</option>' +
+                '<option value="Centres m&eacute;dicaux, laboratoires &amp; recherche&nbsp;">Centres médicaux, laboratoires &amp; recherche</option>' +
+                '<option value="Autre">Autre</option>';
+            subIndustries[5] = '<option value=""></option>' +
+                '<option value="Agriculture">Agriculture</option>' +
+                '<option value="P&ecirc;che&nbsp;">Pêche</option>' +
+                '<option value="Production d&#39;aliments et boissons&nbsp;">Production d&#39;aliments et boissons</option>' +
+                '<option value="Industrie technologique de pointe&nbsp;">Industrie technologique de pointe</option>' +
+                '<option value="Industrie chimique&nbsp;">Industrie chimique</option>' +
+                '<option value="Industrie des ressources naturelles&nbsp;">Industrie des ressources naturelles</option>' +
+                '<option value="Imprimerie&nbsp;">Imprimerie</option>' +
+                '<option value="Services publics (ex. &eacute;lectricit&eacute;, traitement de l&#39;eau)">Services publics (ex. électricité, traitement de l&#39;eau)</option>' +
+                '<option value="Construction">Construction</option>' +
+                '<option value="Fabrication de biens&nbsp;">Fabrication de biens</option>' +
+                '<option value="Artisans (peintres/ma&ccedil;ons/charpentiers/&eacute;lectriciens etc.)">Artisans (peintres/maçons/charpentiers/électriciens etc.)</option>' +
+                '<option value="Ateliers (ex. maintenance, r&eacute;paration)">Ateliers (ex. maintenance, réparation)</option>' +
+                '<option value="Autre&nbsp;">Autre</option>';
+
+            var selectedIndustry = $("#entry_250862909")[0].selectedIndex;
+
+            $("#entry_686877910").empty();
+            $("#detailedIndustry").hide();
+
+            if (selectedIndustry != 6) {
+                $("#entry_686877910").append(subIndustries[selectedIndustry]);
+                $("#detailedIndustry").show();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <iframe name="iframe_txlbrchf" id="iframe_txlbrchf" style="display:none;" onload="if(typeof sent_txlbrchf!='undefined') {window.location='thankyou_fr.html';}"></iframe>
+        <form action="https://docs.google.com/forms/d/1PoWrYyN3mUmuMQSnQFrwy-y2llCFBQS6uuujhNsr1OE/formResponse" method="POST" id="ss-form" target="iframe_txlbrchf" onsubmit="sent_txlbrchf=true">
+            <ol role="list" class="ss-question-list" style="padding-left: 0">
+                <div id="question1" class="question active" data-next="2">
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_1023764457">
+                                    <div class="ss-q-title">Quelle est la raison principale qui vous a amené à visiter notre site?</div>
+                                </label>
+
+                                <ul class="ss-choices" role="radiogroup" aria-label="Quelle est la raison principale qui vous a amené à visiter notre site?   ">
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Recherche pour &eacute;quiper/r&eacute;nover des sanitaires&nbsp;" id="group_25969295_1" role="radio" class="ss-q-radio" aria-label="Recherche pour &eacute;quiper/r&eacute;nover des sanitaires&nbsp;" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Recherche pour équiper/rénover des sanitaires </span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Recherche d&rsquo;un nouveau syst&egrave;me de s&egrave;che-mains" id="group_25969295_2" role="radio" class="ss-q-radio" aria-label="Recherche d&rsquo;un nouveau syst&egrave;me de s&egrave;che-mains" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Recherche d’un nouveau système de sèche-mains</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Recherche d&rsquo;informations sur les s&egrave;che-mains" id="group_25969295_3" role="radio" class="ss-q-radio" aria-label="Recherche d&rsquo;informations sur les s&egrave;che-mains" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Recherche d’informations sur les sèche-mains</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Recherche d&rsquo;informations sur les essuie-mains papier" id="group_25969295_4" role="radio" class="ss-q-radio" aria-label="Recherche d&rsquo;informations sur les essuie-mains papier" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Recherche d’informations sur les essuie-mains papier</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="__other_option__" id="group_25969295_5" role="radio" class="ss-q-radio ss-q-other-toggle" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Autre:</span>
+                                        </label>
+                                        <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.25969295.other_option_response" value="" class="ss-q-other" id="entry_25969295_other_option_response" dir="auto" aria-label="Other"></span>
+                                    </li>
+                                </ul>
+                                <div class="errorMessage">Merci de choisir un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="next">Suivant </div>
+                        <div id="progress-label" class="progress-label">16 % terminé</div>
+                    </div>
+                </div>
+                <div id="question2" class="question" data-next-conditional="entry.303289529-Oui-3,entry.303289529-Non-4">
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_1575765675">
+                                    <div class="ss-q-title">Avez-vous trouvé les informations dont vous aviez besoin?</div>
+                                </label>
+
+                                <ul class="ss-choices" role="radiogroup" aria-label="Avez-vous trouvé les informations dont vous aviez besoin?  ">
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.303289529" value="Oui" id="group_303289529_1" role="radio" class="ss-q-radio" aria-label="Oui&nbsp;" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Oui</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.303289529" value="Non" id="group_303289529_2" role="radio" class="ss-q-radio" aria-label="Non" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Non</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="prev">Précédent</div>
+                        <div class="next">Suivant</div>
+                        <div id="progress-label" class="progress-label">33 % terminé</div>
+                    </div>
+                </div>
+                
+                <div id="question3" class="question" data-next="5">
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-checkbox">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_568758779">
+                                    <div class="ss-q-title">Merci de sélectionner les informations qui vous ont été utiles?</div>
+                                </label>
+
+                                <ul class="ss-choices" role="group" aria-label="Merci de sélectionner les informations qui vous ont été utiles?   ">
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="Vid&eacute;o" id="group_1329879838_1" role="checkbox" class="ss-q-checkbox"></span>
+                                            <span class="ss-choice-label">Vidéo</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="Brochure" id="group_1329879838_2" role="checkbox" class="ss-q-checkbox"></span>
+                                            <span class="ss-choice-label">Brochure</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="Information g&eacute;n&eacute;rale du site" id="group_1329879838_3" role="checkbox" class="ss-q-checkbox"></span>
+                                            <span class="ss-choice-label">Information générale du site</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="Liste des facteurs cl&eacute;s de d&eacute;cision&nbsp;" id="group_1329879838_4" role="checkbox" class="ss-q-checkbox"></span>
+                                            <span class="ss-choice-label">Liste des facteurs clés de décision </span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="checkbox" name="entry.1329879838" value="__other_option__" id="group_1329879838_5" role="checkbox" class="ss-q-checkbox ss-q-other-toggle"></span>
+                                            <span class="ss-choice-label">Autre :</span>
+                                        </label>
+                                        <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.1329879838.other_option_response" value="" class="ss-q-other" id="entry_1329879838_other_option_response" dir="auto" aria-label="Other"></span>
+                                    </li>
+                                </ul>
+                                <div class="errorMessage">Merci de choisir au moins un des choix ci-dessus. </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="buttons">
+                        <div class="prev">Précédent</div>
+                        <div class="next">Suivant</div>
+                        <div id="progress-label" class="progress-label">50 % terminé </div>
+                    </div>
+                </div>
+                
+                <div id="question4" class="question" data-next="5">
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-text">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_2038864358">
+                                    <div class="ss-q-title">Précisez s’il vous plait:</div>
+                                </label>
+                                <textarea data-dimension="4" name="entry.2038864358" class="ss-q-short" id="entry_2038864358" dir="auto" aria-label="Précisez s’il vous plait:" aria-required="true" required="" title=""></textarea>
+                                <div class="errorMessage">Merci de votre aide en choisissant une raison.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div class="prev">Précédent</div>
+                        <div class="next">Suivant</div>
+                        <div id="progress-label" class="progress-label">66 % terminé </div>
+                    </div>
+                </div>
+                <div id="question5" class="question" data-next-conditional="entry.709213519-Raisons professionnelles-6,entry.709213519-Raisons personnelles-7">
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_118870593">
+                                    <div class="ss-q-title">Dans quel cadre avez-vous été amené à visiter ce site?</div>
+                                </label>
+
+                                <ul class="ss-choices" role="radiogroup" aria-label="Dans quel cadre avez-vous été amené à visiter ce site?   ">
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.709213519" value="Raisons professionnelles" id="group_709213519_1" role="radio" class="ss-q-radio" aria-label="Raisons professionnelles" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Raisons professionnelles</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.709213519" value="Raisons personnelles" id="group_709213519_2" role="radio" class="ss-q-radio" aria-label="Raisons personnelles" required="" aria-required="true"></span>
+                                            <span class="ss-choice-label">Raisons personnelles</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="errorMessage">Merci de choisir un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="professionalButtons" class="buttons">
+                        <div class="prev">Précédent</div>
+                        <div class="next">Suivant</div>
+                        <div id="progress-label" class="progress-label">83 % terminé </div>
+                    </div>
+                    <div id="privateButtons" class="buttons">
+                        <div class="prev">Précédent</div>
+                        <div class="submit">Soumettre </div>
+                        <div id="progress-label" class="progress-label">100 % Vous avez terminé</div>
+                    </div>
+                </div>
+
+                <div id="question6" class="question" data-next="999">
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item ss-item-required ss-select">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_250862909">
+                                    <div class="ss-q-title">Votre point de vue nous intéresse</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-select">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_250862909">
+                                    <div class="ss-q-title">Choisissez votre domaine d’activité:</div>
+                                </label>
+                                <select name="entry.250862909" id="entry_250862909" aria-label="Choisissez votre domaine d’activité:  ">
+                                    <option value=""></option>
+                                    <option value="SERVICE PUBLIC ET ENSEIGNEMENT (ex. Administration publique, Enseignement &eacute;ducation, Autre activit&eacute; du secteur public)">SERVICE PUBLIC ET ENSEIGNEMENT (ex. Administration publique, Enseignement éducation, Autre activité du secteur public)</option>
+                                    <option value="COMMERCE ET SERVICES (ex. Transports, Commerce de d&eacute;tail, Enterprise de services)">COMMERCE ET SERVICES (ex. Transports, Commerce de détail, Enterprise de services)</option>
+                                    <option value="HOTELLERIE/RESTAURATION/TOURISME (ex. Services de restauration, H&ocirc;tels &amp; h&eacute;bergement, Loisirs et manifestations)">HOTELLERIE/RESTAURATION/TOURISME (ex. Services de restauration, Hôtels &amp; hébergement, Loisirs et manifestations)</option>
+                                    <option value="SANTE (ex. Soins de courte dur&eacute;e, 2 Soins de longue dur&eacute;e, Autres soins)">SANTE (ex. Soins de courte durée, 2 Soins de longue durée, Autres soins)</option>
+                                    <option value="INDUSTRIE (ex. Industrie alimentaire, productions de biens, autre activit&eacute; industrielle)">INDUSTRIE (ex. Industrie alimentaire, productions de biens, autre activité industrielle)</option>
+                                </select>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-select">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_686877910">
+                                    <div class="ss-q-title">Préciser votre secteur d’activité:</div>
+                                </label>
+                                <select name="entry.686877910" id="entry_686877910" aria-label="Préciser votre secteur d’activité:  ">
+                                </select>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-radio">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_1750378592">
+                                    <div class="ss-q-title">Etes-vous?</div>
+                                </label>
+
+                                <ul class="ss-choices" role="radiogroup" aria-label="Etes-vous?  ">
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2030244213" value="Un acheteur" id="group_2030244213_1" role="radio" class="ss-q-radio" aria-label="Un acheteur"></span>
+                                            <span class="ss-choice-label">Un acheteur</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2030244213" value="Un d&eacute;cideur" id="group_2030244213_2" role="radio" class="ss-q-radio" aria-label="Un d&eacute;cideur"></span>
+                                            <span class="ss-choice-label">Un décideur</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2030244213" value="Un influenceur" id="group_2030244213_3" role="radio" class="ss-q-radio" aria-label="Un influenceur"></span>
+                                            <span class="ss-choice-label">Un influenceur</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2030244213" value="__other_option__" id="group_2030244213_4" role="radio" class="ss-q-radio ss-q-other-toggle"></span>
+                                            <span class="ss-choice-label">Autre:</span>
+                                        </label>
+                                        <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.2030244213.other_option_response" value="" class="ss-q-other" id="entry_2030244213_other_option_response" dir="auto" aria-label="Other"></span>
+                                    </li>
+                                </ul>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-select">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_1219118303">
+                                    <div class="ss-q-title">Combien d’employés compte votre entreprise?</div>
+                                </label>
+                                <select name="entry.1219118303" id="entry_1219118303" aria-label="Combien d’employés compte votre entreprise?   ">
+                                    <option value=""></option>
+                                    <option value="&lt; 10">&lt; 10</option>
+                                    <option value="10 - 50">10 - 50</option>
+                                    <option value="50 - 100">50 - 100</option>
+                                    <option value="100 - 500">100 - 500</option>
+                                    <option value="500 - 1000">500 - 1000</option>
+                                    <option value="1000+&nbsp;">1000+</option>
+                                </select>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-radio">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_312726498">
+                                    <div class="ss-q-title">Vous êtes:</div>
+                                </label>
+
+                                <ul class="ss-choices" role="radiogroup" aria-label="Vous êtes:   ">
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1876691480" value="Un homme" id="group_1876691480_1" role="radio" class="ss-q-radio" aria-label="Un homme"></span>
+                                            <span class="ss-choice-label">Un homme</span>
+                                        </label>
+                                    </li>
+                                    <li class="ss-choice-item">
+                                        <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1876691480" value="Une femme&nbsp;" id="group_1876691480_2" role="radio" class="ss-q-radio" aria-label="Une femme&nbsp;"></span>
+                                            <span class="ss-choice-label">Une femme </span>
+                                        </label>
+                                    </li>
+                                </ul>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ss-form-question errorbox-good" role="listitem">
+                        <div dir="ltr" class="ss-item  ss-select">
+                            <div class="ss-form-entry">
+                                <label class="ss-q-item-label" for="entry_782187924">
+                                    <div class="ss-q-title">Quelle est votre tranche d’âge?</div>
+                                </label>
+                                <select name="entry.782187924" id="entry_782187924" aria-label="Quelle est votre tranche d’âge?   ">
+                                    <option value=""></option>
+                                    <option value="&lt; 30">&lt; 30</option>
+                                    <option value="30 - 50">30 - 50</option>
+                                    <option value="50+">50+</option>
+                                </select>
+                                <div class="errorMessage">Merci de faire un des choix ci-dessus.</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <input type="hidden" name="draftResponse" value="[,,&quot;-1660099923117713564&quot;]
+                                                                     ">
+                    <input type="hidden" name="pageHistory" value="0">
+
+
+                    <input type="hidden" name="fbzx" value="-1660099923117713564">
+
+                    <div class="buttons">
+                        <div class="prev">Précédent </div>
+                        <div class="submit">Soumettre </div>
+                        <div id="progress-label" class="progress-label">100 % Vous avez terminé</div>
+                    </div>
+                </div>
+            </ol>
+        </form>
+    </div>
+</body>
+
+</html>

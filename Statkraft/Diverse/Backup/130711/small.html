@@ -1,0 +1,103 @@
+ <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta charset="utf-8">
+        
+        <script src="jquery-1.8.2.min.js"></script>
+        
+        <script type="text/javascript">
+            $(window).load(function (){
+                plantPresentationTemplate = Tempo.prepare("templates");
+                refreshSmall();
+            });
+        </script>
+        
+        <link href="style.css" rel="stylesheet" media="screen"></style>
+    </head>
+    <body class="small">
+        <div id="slides">
+        	<div id="totalProduction" class="slide span12">
+                <div class="page-header"><h1 class="label_totalProductionToday">Total production today</h1></div>
+                <div class="dataContent">
+                   	<div id="totalProductionValueMeter" class="progressBarContainer">
+                   		<div class="bar"></div>
+                   		<span class="value">0</span> <span class="unit">MW/h</span>
+                   	</div>
+                   	<div class="infoText">
+                   		<span class="label_maximumProduction">Maximum production</span>: <span id="maximumProductionValue">000</span> MW/h
+                   	</div>
+                   	<h2 id="thisWillPowerTitle" class="label_thisWillPower">This will power</h2>
+                   	<div id="thisWillPowerContainer">
+	                   	<div id="thisWillPowerIcons">
+	                   	</div>
+	                   	<div class="infoText">
+	                   		<span id="thisWillPowerNumber">999</span> 
+	                   		<span id="thisWillPowerWhat">plopp</span> 
+	                   		<span> (1 <span class="label_icon">icon</span> = <span id="scale">999</span> <span class="label_units">units</span>)</span>
+	                   	</div>
+                   	</div>
+                </div>
+            </div>
+            <div id="windspeed" class="slide">
+                <div class="page-header"><h1 class="label_windspeed">Windspeed - top 3</h1></div>
+                <div class="dataContent">
+                </div>
+            </div>
+            <div id="capacity" class="slide">
+                <div class="page-header"><h1 class="label_capacity">Capacity - top 3</h1></div>
+                <div class="dataContent">
+                </div>
+            </div>
+            <div id="availability" class="slide">
+                <div class="page-header"><h1 class="label_availability">Availability - top 3</h1></div>
+                <div class="dataContent">
+                </div>
+            </div>
+            <div id="marketValue" class="slide">
+                <div class="page-header"><h1 class="label_marketValue">Market value</h1></div>
+                <div class="dataContent">
+                    <div class="marketValueRow">
+                        <img class="stockLogo" src="http://www.enmin.lt/upload/iblock/c96/Nord%20Pool%20Spot%20logo.png" />
+                        <span id="nordpool" class="value"></span> <span class="unit"></span>
+                    </div>
+                    <div class="marketValueRow">
+                        <img class="stockLogo" src="http://upload.wikimedia.org/wikipedia/commons/8/87/NASDAQ_Logo.svg" />
+                        <span id="nasdaq" class="value"></span> <span class="unit"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-------------->
+        <!-- TEMPLATE -->
+        <!-------------->
+        
+        <div id="templates">
+            <div class="plantPresentation" data-value="{{value}}" data-template>
+                <h2>{{name}}</h3>
+                <div class="mapContainer">
+                    <div id="map_{{plantId}}" class="map" data-lat="__.lat" data-long="__.long"></div>
+                </div>
+                <div class="blockContainer">
+                    <div class="iconBlock">
+                        <canvas class="chart" width="100" height="100"></canvas>
+                        <div class="windicon"></div>
+                    </div>
+                    <div class="dataBlock">
+                        <div class="value">{{value}}</div>
+                        <div class="unit">{{unit}}</div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        
+        <!------------------>
+        <!-- END TEMPLATE -->
+        <!------------------>
+        
+        <script src="tempo.min.js"></script>
+        <script src="chart.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="javascript.js"></script>
+    </body>
+</html>

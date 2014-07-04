@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Effektivare förvaltning med givna resurser</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+        <!--[if lte IE 7]>
+        <link href="css/ie7.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]-->        
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<script type="text/javascript" src="scripts/jquery-1.2.6.min.js"></script>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+
+        <div id="bodyContainer">
+            <div class="innerContainer">
+    
+    
+                <div id="headerContainer">
+                    <div class="innerContainer">
+            
+                        <div id="logoContainer">
+                            <div class="innerContainer">
+                                <!-- OBS: lagt till bild och accesskey på länk -->
+                                <a href="ISF_startsida.html" title="Gå till startsidan" accesskey="1"><img src="images/ISF_Logo.png" alt="Inspektionen för socialförsäkringen" /></a>
+                                <span id="skipLink"><!-- OBS: lagt till skip-länk -->
+                                    <a href="#content" accesskey="s">Gå direkt till huvudinnehåll</a> 
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div id="toolMenuContainer">
+                            <div class="innerContainer">
+                                <ul>
+                                    <li class="first"><a href="ISF_kontaktlista.html"><span>Kontakt</span></a></li> <!-- OBS: lagt på klass -->
+                                    <li><a href="ISF_press.html"><span>Press</span></a></li>
+                                    <li><a href="ISF_arbeta_hos_oss.html"><span>Arbeta hos oss</span></a></li>
+                                    <li><a href="ISF_anpassa.html"><span>Anpassa</span></a></li>
+                                    <li><a href="ISF_webbkarta.html"><span>Webbkarta</span></a></li>
+                                    <li class="rss"><a href="ISF_rss.html"><span>RSS</span></a></li>
+                                    <li class="last"><a href="ISF_reports.html"><span>In English</span></a></li> <!-- OBS: lagt på klass -->
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div id="searchContainer">
+                            <div class="innerContainer">
+                                <fieldset>
+                                	<legend>Sök på webbplatsen</legend>
+                                    <label for="searchField">Sökord</label>
+                                    <input id="searchField" type="text" accesskey="4" /> 
+                                    <input type="submit" class="searchButton" value="Sök" />
+                                </fieldset>
+                            </div>
+                        </div>
+        
+                        <div id="topMenuContainer">
+                            <div class="innerContainer">       
+                                <ul id="topMenuFirst">
+                                    <li class="first"><a href="ISF_amnesstartsida.html"><span>Socialförsäkring</span></a></li>
+                                    <li><a href="ISF_amnesstartsida2.html"><span>Barn &amp; familj</span></a></li>
+                                    <li><a href="#"><span>Funktionsnedsättning</span></a></li>
+                                    <li><a href="#"><span>Sjukförmåner</span></a></li>
+                                    <li class="last"><a href="#"><span>Pension</span></a></li>
+                                </ul>
+                                <ul id="topMenuSecond">
+                                    <li class="first"><a href="ISF_projektstartsida.html"><span>Pågående projekt</span></a></li>
+                                    <li><a href="ISF_publiceratstartsida.html"><span>Publicerat</span></a></li>
+                                    <li class="last"><a href="ISF_remissvar.html"><span>Remissvar</span></a></li>
+                                </ul>
+                                <ul id="topMenuThird">
+                                    <li class="first last selected"><a href="ISF_om_isf.html"><span>Om ISF</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div><!-- slut headerContainer -->
+                
+                <!-- finns flera olika sidlayoutsklasser som måste sättas på mainContentContainer för sidlayouterna startsida, understartsida, bred sida (utan högerkolumn), fullbreddsida (utan högerkolumn och vänstermeny) -->
+                <!-- vanliga 3-kolumnssidor med vanlig text har ingen klass alls här -->
+				<!--
+                <div id="mainContentContainer" class="startPage subStartPage widePage fullPage">
+         		-->
+                <div id="mainContentContainer">
+                    <div class="innerContainer">
+            
+		                <!-- denna renderas inte alls för en sida som inte ska ha vänstermeny -->
+                        <div id="navColContainer">
+                            <div class="innerContainer">
+                		
+                                <div id="navMenuContainer">
+                                    <div class="innerContainer">
+                                        <!-- samma som intranätet till att börja med, vi får ändra sen om det behövs -->
+                                        <ul class="bigmenu">
+                                        	<li class="has-children"><span><a href="ISF_vanlig_sida.html">Vårt uppdrag</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_vanlig_sida.html">Organisation</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_arbeta_hos_oss.html">Arbeta hos oss</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_press.html">Pressrum</a></span></li>
+                                        	<li class="has-children selected"><span><a href="ISF_konferenser.html">Konferenser</a></span></li>
+                                        	<li class=""><span><a href="ISF_kontaktlista.html">Kontakta oss</a></span></li>
+                                        	<li class="has-children"><span><a href="ISF_vanlig_sida.html">Hitta rätt</a></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- slut navColContainer -->
+        
+                        <div id="mainColContainer">
+                            <div class="innerContainer">
+								<a id="content"></a><!-- OBS: lagt till anchor för skip-länk, ska alltid ligga här oavsett sidtyp -->    
+                                 
+                                <div id="breadcrumbs">
+                                    <strong>Här är du: </strong>
+                                    <a href="ISF_startsida.html">Startsida</a> <span class="separator">/</span> <a href="#">Om ISF</a> <span class="separator">/</span> <a href="#">Konferenser</a> <span class="separator">/</span> Effektivare förvaltning med givna resurser
+                                </div>   
+                                   				                                
+                                <div id="pageIntro"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                        <h1>Effektivare förvaltning med givna resurser</h1>
+                                        <p>Konferensen belyser användningen av operationsanalys inom den offentliga sektorn med exempel från flera områden – kollektiva transporter, hälso- och sjukvård, handläggning inom myndigheter och kriminalvård.</p>
+                                    </div>
+                                </div>
+
+                                <div id="pageMainContent"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+
+										<h2>Målgrupp</h2>
+                                        <p>Alla som arbetar med effektivisering inom statlig och kommunal förvaltning</p>
+										<h2>Bakgrund</h2>
+                                        <p>Kraven på effektivitet har skärpts inom både statlig och kommunal sektor under senare år. Bakom det ligger både budgetrestriktioner – att öka skatteuttaget har blivit svårare – och i vissa fall konkurrensutsättning från privata producenter.</p>
+										<p>Operationsanalys (OA, operations research) är ett analyshjälpmedel som utvecklades vid mitten av 1900-talet och som under de gångna decennierna har tillämpats inom många sektorer – logistik inom dagligvaruhandel och transporter, lotsning av patienter genom sjukvården, köhantering i butiker och mycket annat. Det gemensamma problem som man söker lösa är att med givna resurser öka effektiviteten i en verksamhet, mätt till exempel som kortare väntetider, högre leveranssäkerhet, eller höjd kvalitet.</p>
+
+                                        <div id="conferenceMaterial">
+                                        	<div class="innerContainer">             
+                                                <h2>Presentationer från konferensen</h2>
+                                                <ul>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Vem blir långtidsarbetslös? Anders Forslund, Inst. för arbetsmarknadspolitisk utvärdering (IFAU)</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Profilering vid Arbetsförmedlingen. Fredrik Jansson-Dahlén, Arbetsförmedlingen</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Insatser mot långtidssjukskrivning. Pathric Hägglund, ISF</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Profilering av sjukskrivna. Per Johansson, ISF, IFAU, Uppsala Universitet Nationalekonomi och UCLS</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Riskbedömningar i Kriminalvårdens arbete med att minska återfall i brott. Emma Ekstrand, Kriminalvården</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Skatteverkets kontrollverksamhet. Joacim Danielsson, Skatteverket</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Hur hittar man insiderhandel och kursmanipulation på finansmarknaden? Ulrika cederholm och Elin dahlbom Finansinspektionen</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Kontrollstrategier inom Försäkringskassan. Tomas Höglund, Försäkringskassan</a></li>
+                                                    <li><a href="#" class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster (PDF, 723 KB)">Vilka legala hinder finns för ett effektivt utnyttjande av bakgrundsinformation? Per Norberg, Juridiska inst. Lunds Universitet</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                            
+                                    </div>
+                                </div><!-- slut pageMainContent -->
+                                                               
+                            </div>
+                        </div><!-- slut mainColContainer -->
+
+		                <!-- denna renderas inte alls för en sida som inte ska ha högerkolumn -->
+                        <div id="sideColContainer">
+                            <div class="innerContainer">
+                										
+                                <div class="textBox"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                    
+                                    
+                                    	<div id="conferenceDetails"><!-- OBS: nytt innehåll -->
+                                        	<h2>Konferensfakta</h2>
+                                        	<h3>Datum och tid</h3>
+                                            <p>
+                                                <span>
+                                                    26 maj 2011
+                                                </span>
+                                                <span>
+                                                    09.00-16.30
+                                                </span>
+                                            </p>
+                                        	<h3>Plats</h3>
+                                            <p>
+                                            	<span>Kungsholmen Konferens och Matsal (TryggHansa-huset, nedre planet), Fleminggatan 18, Stockholm</span>
+                                                <span class="extraInfo">Gångavstånd från Centralstationen. Närmaste T-bana är Rådhuset (uppgång Kungsholmsgatan)</span>
+                                            </p>
+                                        	<h3>Avgift</h3>
+                                            <p>
+                                            	<span>450 kr exkl. moms</span>
+                                            	<span class="extraInfo">Lunch och kaffe ingår</span>
+                                            </p>
+                                        	<h3>Kontaktperson</h3>
+                                            <p>
+                                                <span>
+                                                    Jill Kungsman
+                                                </span>
+                                                <span>
+                                                    Telefon: 08-58 00 15 78
+                                                </span>
+                                            </p>                                            
+                                        	<h3>Konferensprogram</h3>
+                                            <ul>
+                                                <li><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Ladda ned som PDF (757 KB)</a></li>
+                                            </ul>
+                                        	<h3>Anmälan</h3>
+                                            <p>Anmälningstiden har passerats</p>
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+
+                                <div class="bannerBlock"><!-- OBS: nytt innehåll --><!-- OBS: klass istället för id eftersom man skulle kunna ha ett i mittenkolumnen och ett i högerkolumnen -->
+                                	<div class="innerContainer">
+
+										<!-- OBS: varannan ska ha oddRow, börja med första -->
+                                        <div class="bannerPair oddRow">
+                                            <div class="banner">
+                                                <div class="innerContainer">
+                                                    <h2>Konferenser RSS-flöde</h2>
+                                                    <p><a href="#">Vill du få reda på när vi planerar nya konferenser via RSS?</a></p>
+                                                </div>
+                                            </div>
+    
+                                            <div class="banner" style="display:none">
+                                                <div class="innerContainer">
+                                                    <h2>Är du journalist och letar information?</h2>
+                                                    <p><a href="#">Välkommen in i vårt pressrum där vi har samlat information som kan vara till nytta för media</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+										<!-- OBS: varannan ska ha evenRow, börja med andra -->
+                                        <div class="bannerPair evenRow" style="display:none">
+                                            <div class="banner">
+                                                <div class="innerContainer">
+                                                    <h2>Vill du arbeta hos oss?</h2>
+                                                    <p><a href="#">Läs mer om hur det är att arbeta på ISF och vilka tjänster vi rekryterar till just nu</a></p>
+                                                </div>
+                                            </div>
+    
+                                            <div class="banner">
+                                                <div class="innerContainer">
+                                                    <h2>Är du journalist och letar information?</h2>
+                                                    <p><a href="#">Välkommen in i vårt pressrum där vi har samlat information som kan vara till nytta för media</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- slut bannerBlock -->
+
+                            </div>
+                        </div><!-- slut sideColContainer -->
+        
+        
+                    </div>
+                </div><!-- slut mainContentContainer -->
+
+
+                <div id="footerContainer">
+                    <div class="innerContainer"><!-- OBS: nytt innehåll -->
+                    	<h2>Kontaktuppgifter</h2>
+                        <p>Postadress: Box 202, 101 24 Stockholm</p>
+                        <p>Besöksadress: Fleminggatan 7</p>
+                        <p>Telefon: 08-58 00 15 00</p>
+                        <p>Fax: 08-58 00 15 90</p>
+                        <p>E-post: <a href="mailto:registrator@inspsf.se">registrator@inspsf.se</a></p>
+                        <p class="contactLink"><a href="#">Kontakta oss</a></p>
+                    </div>
+                </div><!-- slut footerContainer -->
+                
+            
+            </div>
+        </div><!-- slut bodyContainer -->
+	
+		<script type="text/javascript" src="scripts/include.js"></script><!-- OBS: referens till egen scriptfil -->
+
+	</body>
+
+</html>

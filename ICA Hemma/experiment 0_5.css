@@ -1,0 +1,31 @@
+table.ProductListColumns div.ProductButtons a.ButtonBuyBlue img, table.ProductListColumns div.ProductButtons a.ButtonBuyGreen img, table.ProductListColumns div.ProductButtons a.ButtonInfoBlue img, table.ProductListColumns div.ProductButtons a.ButtonInfoGreen img, table.ProductListColumns div.ProductButtons a.ButtonBookGreen img, table.ProductListColumns div.ProductButtons a.ButtonBookBlue img {display: none !important;}
+a.ButtonBuyBlue, a.ButtonBuyGreen, , a.ButtonInfoGreen {width: 63px; height: 31px; display: block;}
+/*div.ProductButtons a {background-image: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png'); background-repeat: no-repeat; width: 63px; height: 31px !important;}*/
+div.ProductButtons a {background-image: url('http://www.dahlgren.tv/johan/jobb/ica/ica-cta-blue-green.png'); background-repeat: no-repeat; width: 63px; height: 31px !important;}
+
+table.ProductListColumns div.ProductButtons a.ButtonBuyBlue {background-position: 0 0 !important;}
+table.ProductListColumns div.ProductButtons a.ButtonBuyBlue:hover {background-position: 0 -40px !important;}
+table.ProductListColumns div.ProductButtons a.ButtonBuyBlue:active {background-position: 0 -80px !important;}
+
+table.ProductListColumns div.ProductButtons a.ButtonInfoBlue, table.ProductListColumns div.ProductButtons a.ButtonBookBlue {background-position: -153px 0 !important;}
+table.ProductListColumns div.ProductButtons a.ButtonInfoBlue:hover, table.ProductListColumns div.ProductButtons a.ButtonBookBlue:hover {background-position: -153px -40px !important;}
+table.ProductListColumns div.ProductButtons a.ButtonInfoBlue:active, table.ProductListColumns div.ProductButtons a.ButtonBookBlue:active {background-position: -153px -80px !important;}
+
+table.ProductListColumns div.ProductButtons a.ButtonBuyGreen {background-position: -77px 0 !important;}
+table.ProductListColumns div.ProductButtons a.ButtonBuyGreen:hover {background-position: -77px -40px !important;}
+table.ProductListColumns div.ProductButtons a.ButtonBuyGreen:active {background-position: -77px -80px !important;}
+
+table.ProductListColumns div.ProductButtons a.ButtonInfoGreen, table.ProductListColumns div.ProductButtons a.ButtonBookGreen {background-position: -230px 0 !important;}
+table.ProductListColumns div.ProductButtons a.ButtonInfoGreen:hover, table.ProductListColumns div.ProductButtons a.ButtonBookGreen:hover {background-position: -230px -40px !important;}
+table.ProductListColumns div.ProductButtons a.ButtonInfoGreen:active, table.ProductListColumns div.ProductButtons a.ButtonBookGreen:active {background-position: -230px -80px !important;}
+
+td.PurchaseBlockBuyBlue img#ctl00_main_showproduct1_atc_imgAdd, td.PurchaseBlockBuyGreen img#ctl00_main_showproduct1_atc_imgAdd {display: none !important;}
+.PurchaseBlockBuyBlue a, .PurchaseBlockBuyGreen a {background-image: url('http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png'); background-repeat: no-repeat; display: block; width: 95px; height: 37px !important;}
+
+.PurchaseBlockBuyBlue a {background-position: 0 0;}
+.PurchaseBlockBuyBlue a:hover {background-position: 0 -49px;}
+.PurchaseBlockBuyBlue a:active {background-position: 0 -98px}
+
+.PurchaseBlockBuyGreen a {background-position: -117px 0;}
+.PurchaseBlockBuyGreen a:hover {background-position: -117px -49px;}
+.PurchaseBlockBuyGreen a:active {background-position: -117 -98px;}

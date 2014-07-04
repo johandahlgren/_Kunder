@@ -1,0 +1,27 @@
+Statkraft
+
+---------------------------------------
+Logga in i Citrix
+---------------------------------------
+
+ID: u37272
+PWD: Vanliga gamla + 6
+
+---------------------------------------
+Checka in i TFS:
+---------------------------------------
+
+Kör TFS-klienten i Eclipse.
+Logga in med Knowit-ID + pwd
+
+---------------------------------------
+Hitta till koden
+---------------------------------------
+
+CSS: Statkraft.Intranet.Epi.Web/Content/css
+
+JAVASCRIPT: Statkraft.Intranet.Epi.Web/Content/js/statkraft.js
+
+BILDER: Statkraft.Intranet.Epi.Web/Content/img
+
+HTML: Statkraft.Intranet.Epi.Web/Views/...

@@ -1,0 +1,3 @@
+VPN användare:	vpn000624
+VPN lösenord (9 tecken):	sZEzepDEN
+Certifikatslösenord (7 tecken):	2sr3bAc

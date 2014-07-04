@@ -1,0 +1,154 @@
+
+------------------------------------
+Kontakter
+------------------------------------
+
+Annica Scott	annica.scott@umdac.umu.se	090-786 50 21	
+Erik Andersson	erik.andersson@umdac.umu.se	090-786 99 54	0702 69 91 93
+
+------------------------------------
+Lokal IG
+------------------------------------
+
+ID: joda0038
+PWD: stoXDucka//above341
+
+------------------------------------
+CAS
+------------------------------------
+
+ID:
+joda0038
+
+PWD:
+Gamla vanliga + 666
+
+
+------------------------------------
+SVN
+------------------------------------
+
+ID:
+joda0038
+
+PWD:
+Eecoo5Ai
+
+
+------------------------------------------------------------------------------------------------------------------------------
+DAILY BUILD SERVER
+------------------------------------------------------------------------------------------------------------------------------
+
+Host: https://server-u5.webbpublicering.umu.se/infoglueCMS
+ID/PWD: CAS
+
+
+------------------------------------
+Loggar
+------------------------------------
+
+tail -f ~cmsdeve/tomcat/logs/catalina.out
+
+
+------------------------------------
+Root login
+------------------------------------
+
+https://server-utv1.cms.info.umu.se/infoglueCMS/?j_username=root&j_password=habbaXkfkeo4ifi3i
+
+
+------------------------------------
+MYSQL
+------------------------------------
+
+Config för min UMU IG v3 databas:
+database.url=jdbc:mysql://server-vdb.webbpublicering.umu.se:3306/pers_v3_joda0038?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF-8
+database.user=joda0038
+database.password=/clZ73FB9te4T6nOtTpIxhgR1M8
+
+
+mysql -u server-utv1.cms -p infoglue
+PWD: kjfjfdj39dwqiodj390dj3kdk3DLdj3wiskwq---
+
+use XX		Byt till databas XX.
+show tables;	Lista tabeller.
+status		Kolla current database mm.
+
+mysql -u cms_dump_081217 -p cms_dump_081217
+cms_dump_081217
+pi3wuu5hiiQu2i
+
+
+------------------------------------------------------------------------------------------------------------------------------
+Starta OpenOffice som en service
+------------------------------------------------------------------------------------------------------------------------------
+
+På servern:
+-----------
+cd /opt/openoffice.org2.4/program
+
+unset DISPLAY
+soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard &
+
+På Windows:
+-----------
+c:
+cd Program Files\OpenOffice.org 2.4\program
+soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard &
+
+------------------------------
+Synka saker mellan SVN till GIT
+------------------------------
+
+cd /Applications/InfoGlue/eclipse/workspace/umuInfoglue3_2
+
+SYNKA NER SENASTE FRÅN MATTIAS IG
+----------------------------------
+
+1. Kolla vad som är ändrat
+git status
+
+2. Stagea lokala ändringar
+git add ***
+eller
+git stash
+
+Om det finns ändrade filer som inte ska commitas:
+git commit -a 
+
+3. Fetcha ändringar och kolla i Gitk vad som är ändrat:
+git fetch --all
+gitk --all
+
+4. Rebase:a till senaste IG
+git pull --rebase upstream master
+
+5. Merge (om något fick konflikter)
+git mergetool -t diffmerge
+
+6. Kör klart mergen (om du behövde merge:a)
+git rebase --continue
+eller
+git rebase --abort
+
+
+
+PLOCKA IN SENASTE FRÅN UMU:s SVN
+--------------------------------
+
+Eclipse: Synka mot SVN
+
+git status
+
+- PUSHA ÄNDRINGAR TILL MIN umuInfoglue -
+git add [de filer som ska skickas]
+git status
+git commit
+git push origin [BRANCH]
+
+ - PULL REQUEST TILL MATTIAS - 
+ Gå in på github.com
+ Gå in på "Commits"
+ Klicka på "Pull request"
+ 
+

@@ -1,0 +1,20 @@
+
+
+Här kommer några kommentarer från oss:
+
+- En del selektorer i CSS:en räknar inte med att man kan placera komponenter i olika slot:ar. Det innebär att de ibland hamnar i en container som redan har t.ex. en font-size på 0.75em, vilket gör att texten kan bli pytteliten. Det finns även andra nästlade strukturer, t.ex. listor, där stylingen buggar ur. Ett exempel på det är t.ex. megafootern på Portalen: http://cms.it.gu.se/infoglueDeliverWorking/ViewPage.action?languageId=100001&siteNodeId=595715.
+Ett sätt att lösa detta är ju att skriva specifika selektorer för alla enskilda fall, men de blir ofta väldigt detaljerade. Det finns idag selektorer i master-CSS:en med sex nivåer :-) Förutom att det gör CSS:en svårarbetad sänker det prestandan i sidvisningen med så komplicerade selektorer. För att lösa det på ett bra sätt skulle vi tillsammans med dig behöva strukturera om CSS:en, och det kan ju bli ett rätt stort jobb.
+
+- En del tredjepartsplugins vi använder, t.ex. slidern och karusellerna, kräver att containern man lägger dem i har en bredd satt i px för att de ska fungera. De använder Javascript för att utföra sina funktioner (t.ex. räkna ut hur långt de ska scrolla när man klickar på pilarna o.s.v.) och de funkar inte med relativa storlekar. Alternativet till att använda tredjepartsprodukter är ju att skriva egen kod, men det blir väldigt dyrt om vi vill uppnå samma funktionalitet som finns i de stora gratisprodukterna. Vi försöker ju givetvis väga in era riktlinjer när vi väljer plugins, men det är inte alltid det går.
+
+- Funktionen att förminska siten när man minskar fönsterstorleken känns som ett förlegat sätt att hantera små webbläsarfönster. I dag bygger man ju istället responsiva siter som på ett genomtänkt och strukturerat sätt ändrar sitens layout för att passa till den valda storleken. Staffanstorp.se som används som exempel på Webbriktlinjer.se har t.ex. bytt till en responsiv layout.
+
+- Moderna webbläsare zoomar hela siten istället för att ändra textstorleken, vilket gör em-lösningen något mindre användbar. 
+
+- Mobil- och surfplattebrowsers är mycket modernare än många av de gamla webbläsare folk sitter med på sina datorer (IE7 och IE8 t.ex.) vilket gör att de sällan har problem att visa siter, även utan em/procent-upplägget. Eftersom mobilsurfandet ökar kraftigt (13% av alla besök på gu.se idag) kommer problemet med föråldrade browsers snart att vara marginellt. För mobilsurf är ett responsivt upplägg trevligare.
+
+- Hur långt bort i tiden ligger den nya designen för gu.se? Om den kommer inom en inte allt för avlägsen framtid kanske det är bättre att invänta den och se till att bygga allt rätt från början istället.
+
+- Problemet att snabblänkarna åker in under slidern på startsidan beror på kombinationen av att divarna är floatade vänster och höger och att bredderna är satta i %.
+
+

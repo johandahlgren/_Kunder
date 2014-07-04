@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		676C4D7017E04A6B0041DC4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676C4D6F17E04A6B0041DC4B /* UIKit.framework */; };
+		676C4D7217E04A6B0041DC4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676C4D7117E04A6B0041DC4B /* Foundation.framework */; };
+		676C4D7417E04A6B0041DC4B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676C4D7317E04A6B0041DC4B /* CoreGraphics.framework */; };
+		676C4D7A17E04A6B0041DC4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 676C4D7817E04A6B0041DC4B /* InfoPlist.strings */; };
+		676C4D7C17E04A6B0041DC4B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 676C4D7B17E04A6B0041DC4B /* main.m */; };
+		676C4D8017E04A6B0041DC4B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 676C4D7F17E04A6B0041DC4B /* AppDelegate.m */; };
+		676C4D8317E04A6C0041DC4B /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676C4D8117E04A6C0041DC4B /* MainStoryboard_iPhone.storyboard */; };
+		676C4D8617E04A6C0041DC4B /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676C4D8417E04A6C0041DC4B /* MainStoryboard_iPad.storyboard */; };
+		676C4D8917E04A6C0041DC4B /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676C4D8817E04A6C0041DC4B /* MasterViewController.m */; };
+		676C4D8C17E04A6C0041DC4B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 676C4D8B17E04A6C0041DC4B /* DetailViewController.m */; };
+		676C4D9417E04A6C0041DC4B /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676C4D9317E04A6C0041DC4B /* SenTestingKit.framework */; };
+		676C4D9517E04A6C0041DC4B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676C4D6F17E04A6B0041DC4B /* UIKit.framework */; };
+		676C4D9617E04A6C0041DC4B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676C4D7117E04A6B0041DC4B /* Foundation.framework */; };
+		676C4D9E17E04A6C0041DC4B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 676C4D9C17E04A6C0041DC4B /* InfoPlist.strings */; };
+		676C4DA117E04A6C0041DC4B /* Va_sttrafikTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 676C4DA017E04A6C0041DC4B /* Va_sttrafikTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		676C4D9717E04A6C0041DC4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 676C4D6217E04A6B0041DC4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 676C4D6A17E04A6B0041DC4B;
+			remoteInfo = "Västtrafik";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		676C4D6B17E04A6B0041DC4B /* Västtrafik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Västtrafik.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		676C4D6F17E04A6B0041DC4B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		676C4D7117E04A6B0041DC4B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		676C4D7317E04A6B0041DC4B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		676C4D7717E04A6B0041DC4B /* Västtrafik-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Västtrafik-Info.plist"; sourceTree = "<group>"; };
+		676C4D7917E04A6B0041DC4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		676C4D7B17E04A6B0041DC4B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		676C4D7D17E04A6B0041DC4B /* Västtrafik-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Västtrafik-Prefix.pch"; sourceTree = "<group>"; };
+		676C4D7E17E04A6B0041DC4B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		676C4D7F17E04A6B0041DC4B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		676C4D8217E04A6C0041DC4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		676C4D8517E04A6C0041DC4B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		676C4D8717E04A6C0041DC4B /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		676C4D8817E04A6C0041DC4B /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		676C4D8A17E04A6C0041DC4B /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		676C4D8B17E04A6C0041DC4B /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		676C4D9217E04A6C0041DC4B /* VästtrafikTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VästtrafikTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		676C4D9317E04A6C0041DC4B /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		676C4D9B17E04A6C0041DC4B /* VästtrafikTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VästtrafikTests-Info.plist"; sourceTree = "<group>"; };
+		676C4D9D17E04A6C0041DC4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		676C4D9F17E04A6C0041DC4B /* Va_sttrafikTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Va_sttrafikTests.h; sourceTree = "<group>"; };
+		676C4DA017E04A6C0041DC4B /* Va_sttrafikTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Va_sttrafikTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		676C4D6817E04A6B0041DC4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676C4D7017E04A6B0041DC4B /* UIKit.framework in Frameworks */,
+				676C4D7217E04A6B0041DC4B /* Foundation.framework in Frameworks */,
+				676C4D7417E04A6B0041DC4B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		676C4D8E17E04A6C0041DC4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676C4D9417E04A6C0041DC4B /* SenTestingKit.framework in Frameworks */,
+				676C4D9517E04A6C0041DC4B /* UIKit.framework in Frameworks */,
+				676C4D9617E04A6C0041DC4B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		676C4D6017E04A6B0041DC4B = {
+			isa = PBXGroup;
+			children = (
+				676C4D7517E04A6B0041DC4B /* Västtrafik */,
+				676C4D9917E04A6C0041DC4B /* VästtrafikTests */,
+				676C4D6E17E04A6B0041DC4B /* Frameworks */,
+				676C4D6C17E04A6B0041DC4B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		676C4D6C17E04A6B0041DC4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				676C4D6B17E04A6B0041DC4B /* Västtrafik.app */,
+				676C4D9217E04A6C0041DC4B /* VästtrafikTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		676C4D6E17E04A6B0041DC4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				676C4D6F17E04A6B0041DC4B /* UIKit.framework */,
+				676C4D7117E04A6B0041DC4B /* Foundation.framework */,
+				676C4D7317E04A6B0041DC4B /* CoreGraphics.framework */,
+				676C4D9317E04A6C0041DC4B /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		676C4D7517E04A6B0041DC4B /* Västtrafik */ = {
+			isa = PBXGroup;
+			children = (
+				676C4D7E17E04A6B0041DC4B /* AppDelegate.h */,
+				676C4D7F17E04A6B0041DC4B /* AppDelegate.m */,
+				676C4D8117E04A6C0041DC4B /* MainStoryboard_iPhone.storyboard */,
+				676C4D8417E04A6C0041DC4B /* MainStoryboard_iPad.storyboard */,
+				676C4D8717E04A6C0041DC4B /* MasterViewController.h */,
+				676C4D8817E04A6C0041DC4B /* MasterViewController.m */,
+				676C4D8A17E04A6C0041DC4B /* DetailViewController.h */,
+				676C4D8B17E04A6C0041DC4B /* DetailViewController.m */,
+				676C4D7617E04A6B0041DC4B /* Supporting Files */,
+			);
+			path = "Västtrafik";
+			sourceTree = "<group>";
+		};
+		676C4D7617E04A6B0041DC4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				676C4D7717E04A6B0041DC4B /* Västtrafik-Info.plist */,
+				676C4D7817E04A6B0041DC4B /* InfoPlist.strings */,
+				676C4D7B17E04A6B0041DC4B /* main.m */,
+				676C4D7D17E04A6B0041DC4B /* Västtrafik-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		676C4D9917E04A6C0041DC4B /* VästtrafikTests */ = {
+			isa = PBXGroup;
+			children = (
+				676C4D9F17E04A6C0041DC4B /* Va_sttrafikTests.h */,
+				676C4DA017E04A6C0041DC4B /* Va_sttrafikTests.m */,
+				676C4D9A17E04A6C0041DC4B /* Supporting Files */,
+			);
+			path = "VästtrafikTests";
+			sourceTree = "<group>";
+		};
+		676C4D9A17E04A6C0041DC4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				676C4D9B17E04A6C0041DC4B /* VästtrafikTests-Info.plist */,
+				676C4D9C17E04A6C0041DC4B /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		676C4D6A17E04A6B0041DC4B /* Västtrafik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 676C4DA417E04A6C0041DC4B /* Build configuration list for PBXNativeTarget "Västtrafik" */;
+			buildPhases = (
+				676C4D6717E04A6B0041DC4B /* Sources */,
+				676C4D6817E04A6B0041DC4B /* Frameworks */,
+				676C4D6917E04A6B0041DC4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Västtrafik";
+			productName = "Västtrafik";
+			productReference = 676C4D6B17E04A6B0041DC4B /* Västtrafik.app */;
+			productType = "com.apple.product-type.application";
+		};
+		676C4D9117E04A6C0041DC4B /* VästtrafikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 676C4DA717E04A6C0041DC4B /* Build configuration list for PBXNativeTarget "VästtrafikTests" */;
+			buildPhases = (
+				676C4D8D17E04A6C0041DC4B /* Sources */,
+				676C4D8E17E04A6C0041DC4B /* Frameworks */,
+				676C4D8F17E04A6C0041DC4B /* Resources */,
+				676C4D9017E04A6C0041DC4B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				676C4D9817E04A6C0041DC4B /* PBXTargetDependency */,
+			);
+			name = "VästtrafikTests";
+			productName = "VästtrafikTests";
+			productReference = 676C4D9217E04A6C0041DC4B /* VästtrafikTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		676C4D6217E04A6B0041DC4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = KnowIT;
+			};
+			buildConfigurationList = 676C4D6517E04A6B0041DC4B /* Build configuration list for PBXProject "Västtrafik" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 676C4D6017E04A6B0041DC4B;
+			productRefGroup = 676C4D6C17E04A6B0041DC4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				676C4D6A17E04A6B0041DC4B /* Västtrafik */,
+				676C4D9117E04A6C0041DC4B /* VästtrafikTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		676C4D6917E04A6B0041DC4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676C4D7A17E04A6B0041DC4B /* InfoPlist.strings in Resources */,
+				676C4D8317E04A6C0041DC4B /* MainStoryboard_iPhone.storyboard in Resources */,
+				676C4D8617E04A6C0041DC4B /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		676C4D8F17E04A6C0041DC4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676C4D9E17E04A6C0041DC4B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		676C4D9017E04A6C0041DC4B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		676C4D6717E04A6B0041DC4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676C4D7C17E04A6B0041DC4B /* main.m in Sources */,
+				676C4D8017E04A6B0041DC4B /* AppDelegate.m in Sources */,
+				676C4D8917E04A6C0041DC4B /* MasterViewController.m in Sources */,
+				676C4D8C17E04A6C0041DC4B /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		676C4D8D17E04A6C0041DC4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				676C4DA117E04A6C0041DC4B /* Va_sttrafikTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		676C4D9817E04A6C0041DC4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 676C4D6A17E04A6B0041DC4B /* Västtrafik */;
+			targetProxy = 676C4D9717E04A6C0041DC4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		676C4D7817E04A6B0041DC4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				676C4D7917E04A6B0041DC4B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		676C4D8117E04A6C0041DC4B /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				676C4D8217E04A6C0041DC4B /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		676C4D8417E04A6C0041DC4B /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				676C4D8517E04A6C0041DC4B /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		676C4D9C17E04A6C0041DC4B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				676C4D9D17E04A6C0041DC4B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		676C4DA217E04A6C0041DC4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		676C4DA317E04A6C0041DC4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		676C4DA517E04A6C0041DC4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Västtrafik/Västtrafik-Prefix.pch";
+				INFOPLIST_FILE = "Västtrafik/Västtrafik-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		676C4DA617E04A6C0041DC4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Västtrafik/Västtrafik-Prefix.pch";
+				INFOPLIST_FILE = "Västtrafik/Västtrafik-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		676C4DA817E04A6C0041DC4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Västtrafik.app/Västtrafik";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Västtrafik/Västtrafik-Prefix.pch";
+				INFOPLIST_FILE = "VästtrafikTests/VästtrafikTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		676C4DA917E04A6C0041DC4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Västtrafik.app/Västtrafik";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Västtrafik/Västtrafik-Prefix.pch";
+				INFOPLIST_FILE = "VästtrafikTests/VästtrafikTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		676C4D6517E04A6B0041DC4B /* Build configuration list for PBXProject "Västtrafik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				676C4DA217E04A6C0041DC4B /* Debug */,
+				676C4DA317E04A6C0041DC4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		676C4DA417E04A6C0041DC4B /* Build configuration list for PBXNativeTarget "Västtrafik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				676C4DA517E04A6C0041DC4B /* Debug */,
+				676C4DA617E04A6C0041DC4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		676C4DA717E04A6C0041DC4B /* Build configuration list for PBXNativeTarget "VästtrafikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				676C4DA817E04A6C0041DC4B /* Debug */,
+				676C4DA917E04A6C0041DC4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 676C4D6217E04A6B0041DC4B /* Project object */;
+}

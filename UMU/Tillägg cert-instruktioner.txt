@@ -1,0 +1,15 @@
+Steg 1: 
+Sätt -file till det cert som heter umu.se...
+När den frågar om du vill lita på certet: Skriv "yes" och tryck enter.
+
+Steg 2:
+Hoppa över detta steg.
+
+Steg 3:
+Om Tomcat klagar på att certet inte är ett x.509-cert så redigerar du certeet i en texteditor och tar bort allting innan raden "-----BEGIN CERTIFICATE-----".
+Det är ändå bara en kommentar om vad certet innehåller.
+Kör sedan enligt instruktionen igen.
+
+Steg 4:
+Keystoren ska bara innehålla 2 nya cert eftersom vi hoppade över steg 2.
+

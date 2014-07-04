@@ -1,0 +1,30 @@
+{
+	"windparks": [
+		{
+			"name": "Vindpark Super",
+			"location": "-25.363882,131.044922",
+			"windspeed": "24",
+			"capacity": "76",
+			"availability": "54",
+		},
+		{
+			"name": "Instapower 56",
+			"location": "-23, 181",
+			"windspeed": "14",
+			"capacity": "24",
+			"availability": "89",
+		},
+		{
+			"name": "Kjempegreit",
+			"location": "13, 11",
+			"windspeed": "82",
+			"capacity": "19",
+			"availability": "73",
+		}
+	],
+	"marketValue" [
+		"nordpool": "12",
+		"nasdaq": "34"
+	],
+	"totalProdToday", "856723"
+}

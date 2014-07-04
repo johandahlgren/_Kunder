@@ -1,0 +1,72 @@
+* {font-family: arial;}
+body {margin: 0; padding: 0; background-attachment: fixed; background-image: url("http://upload.wikimedia.org/wikipedia/commons/e/ed/Wind_turbines_in_Austria_-_June_2006.jpg"); background-size: cover;}
+h1 {font-size: 100px; line-height: 100px; color: rgb(255, 255, 255); text-align: center; text-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5);}
+h2 {font-size: 50px; line-height: 50px; text-align: center;}
+#slides {overflow: hidden;}
+#admin {position: fixed; bottom: 20px; left: 20px; z-index: 10;}
+#countdown {position: fixed; bottom: 20px; right: 20px; z-index: 10; width: 20px; height: 60px; border: 1px solid rgba(2550, 2550, 2550, 0.85); border-radius: 5px;}
+#countdownSlider {position: absolute; bottom: 0; width: 18px; height: 58px; border-radius: 3px; background-color: rgba(2550, 2550, 2550, 0.85); margin: 1px;}
+#latestUpdateContainer {position: fixed; bottom: 20px; right: 60px;}
+#updated {font-size: 40px; color: white; text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.55); line-height: 35px;}
+#latestUpdate {font-size: 80px; color: white; text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.55); line-height: 35px;}
+#windspeed .windicon {display: block;}
+#windspeed .chart {display: none;}
+.adminButton {float: left; background-color: rgba(255, 255, 255, 0.75); padding: 10px 20px; border-radius: 5px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85); min-width: 30px; text-align: center;}
+.adminButton:hover {cursor: pointer; background-color: white;}
+.slide {float: left;}
+.introContainer {}
+.introImage {}
+.introText {background-color: white; padding: 60px 50px; font-size: 80px; line-height: 80px; border-radius: 50px; box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.75);}
+.dataContent {display: table; margin: 0 auto;}
+.plantPresentation {background-color: white; border-radius: 10px; box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.75);}
+.mapContainer {height: 200px;}
+.map {width: 100%; height: 100%; border-top: 1px solid rgb(200, 200, 200); border-bottom: 1px solid rgb(200, 200, 200);}
+.blockContainer {min-width: 200px;}
+.iconBlock {float: left;}
+.chart {float: left; margin: 0 20px 0 0; padding: 20px 0 20px 10px}
+.iconBlock {float: left; width: 140px; margin-left: 5px;}
+.dataBlock {float: left; margin-top: 15px; }
+.value { float: left; ;text-align: center; font-size: 100px; line-height: 100px; float: left; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);}
+.unit { float: left; text-align: center; font-size: 50px; line-height: 50px; float: left; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);}
+.windicon {margin: 0 0 0 20px; padding: 25px; height: 130px; display: none; background-image: url("images/windiee.png"); background-size: contain; background-repeat: no-repeat; background-position: center; -webkit-animation: rotate-360 linear infinite;}
+.infobox {background-color: white; border-radius: 10px; box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.75); font-size: 100px; text-align: center; line-height: 210px;}
+.stockTable {margin: 0 auto; padding: 80px 0;}
+.stockTable td {padding: 20px 40px;}
+.clearFix {clear: both;}
+
+@-moz-keyframes rotate-360 {
+    from { -moz-transform: rotate(0deg); }
+to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes rotate-360 {
+    from { -webkit-transform: rotate(0deg); }
+to { -webkit-transform: rotate(360deg); }
+}
+@keyframes rotate-360 {
+    from {transform:rotate(0deg);}
+to {transform:rotate(360deg);}
+}
+
+.small {margin: 20px 0; background-image: none; background-color: #e9eae5;}
+.small h1 {background-color: #e9eae5; color: rgb(100, 100, 100); text-shadow: none; text-align: left; font-size: 40px; font-weight: normal; line-height: 60px; margin: 0; padding: 0 20px;}
+.small h2 {font-size: 20px; line-height: 30px; color: white; background-color: #00a6d3; font-weight: normal; margin: 0 0 20px 0; padding: 10px 20px; border-top: 1px solid rgb(230, 230, 230); border-bottom: 1px solid rgb(230, 230, 230);}
+.small #slides {width: 480px; margin: 0 auto; overflow: visible;}
+.small .slide {width: 100%; background-color: white; margin-bottom: 60px;border: 1px solid rgb(220, 220, 220);  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); border-radius: 5px;}
+.small .dataContent {width: 100%;}
+.small .plantPresentation {width: 100%; clear: both; display: table; margin-bottom: 20px; box-shadow: none; border-radius: 0;}
+.small .mapContainer {height: 150px; width: 200px; float: left; margin-left: 20px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);}
+.small .map {width: 100%; height: 100%; border-right: 1px solid rgb(200, 200, 200);}
+.small .blockContainer {float: left;}
+.small .iconBlock {float: left; width: 120px; height: 150px;}
+.small .windicon {padding: 10px; margin: 0 0 0 25px;}
+.small .chart {margin: 25px 0 0 20px; padding: 0;}
+.small .dataBlock {margin-top: 45px; margin-left: 20px;}
+.small .value {font-size: 50px; line-height: 50px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);}
+.small .unit{font-size: 20px; line-height: 20px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);}
+.small .stockLogo {width: 200px; margin-left: 60px; float: left;}
+.small .marketValueRow {margin: 20px 0; float: left;}
+.small #nordpool, .small #nasdaq {float: left; margin-left: 20px;}
+.small #totalProductionValue {margin: 40px auto 60px auto; display: table;}
+.small #marketValue .dataContent, .small #totalProductionValue .dataContent {padding-bottom: 40px;}
+
+.page-header {border-bottom: none;}

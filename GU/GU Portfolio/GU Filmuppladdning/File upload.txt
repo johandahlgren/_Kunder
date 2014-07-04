@@ -1,0 +1,5 @@
+http://blueimp.github.com/jQuery-File-Upload/
+
+http://fineuploader.com/
+
+http://jquery.malsup.com/form/#file-upload

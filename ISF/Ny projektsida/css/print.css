@@ -1,0 +1,89 @@
+/* Used for print */
+* 
+{
+	background: #fff !important;
+	color: #000 !important;
+	padding-left: 0 !important;
+}
+a, a span
+{
+	color: #295690 !important;
+	text-decoration: underline !important;
+}
+a.pdfLink
+{
+	margin: 0;
+	padding: 0;	
+}
+#mainColContainer ul, .textBox ul, .itemList ul, .eventList ul, .mixedList ul
+{
+	margin-left: 20px !important;
+}
+.itemList, .eventList, .mixedList, 
+.itemList h2, .eventList h2, .mixedList h2, 
+.itemList ul, .eventList ul, .mixedList ul, 
+.itemList li, .eventList li, .mixedList li, 
+.itemList .moreItems, .eventList .moreItems, .mixedList .moreItems 
+{
+	border: none;
+}
+.itemList h2, .eventList h2, .mixedList h2 
+{
+	font-weight: bold;
+}
+#mainColContainer ul li, #mainColContainer ul li a, .textBox ul li,
+.itemList li, .eventList li, .mixedList li
+{
+	list-style-type: disc;
+}
+#headerContainer, #footerContainer, #navColContainer, #publicationSearch
+{
+	display: none;
+}
+#mainColContainer
+{
+	width: 65% !important;
+}
+.fullPage #mainColContainer
+{
+	width: 100% !important;
+}
+#sideColContainer
+{
+	width: 30%;
+}
+h1, #sideColContainer h2
+{
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+#pageIntro, #pageIntro .innerContainer
+{
+	height: auto !important;
+	min-height: 0 !important;
+	padding: 0 !important;
+}
+.eventFacts strong, .eventFacts span, 
+.newsFacts strong, .newsFacts span
+{
+	display: inline !important;
+	position: relative !important;
+	top: 0 !important;
+	left: 0 !important;
+}
+.eventFacts .day, .eventFacts .month, .eventFacts .year, 
+.newsFacts .day, .newsFacts .month, .newsFacts .year 
+{
+	font-size: 0.8em !important;
+}
+.eventFacts .year, 
+.newsFacts .year 
+{
+	margin-right: 0.8em;
+}
+#mainColContainer .bannerBlock .bannerPair .banner:first-child {
+	margin-right: 5%;
+}
+#mainColContainer .bannerBlock .banner, #mainColContainer .bannerBlock .banner {
+	width: 47% !important;
+}

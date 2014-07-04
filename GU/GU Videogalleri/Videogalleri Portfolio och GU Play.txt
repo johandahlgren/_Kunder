@@ -1,0 +1,18 @@
+Videogalleri
+Videogalleriet är i stort sett klart för lansering. Det ligger upplagt på produktionsmaskinen men är inte publicerat ännu. Det inväntar egentligen bara klartecken från GU så kan vi trycka på knappen och publicera det.
+Det finns två saker som skulle kunna fixas för att göra det ännu bättre, men jag tycker inte de är livsnödvändiga för att släppa en första version av galleriet.
+Punkterna det gäller är:
+
+1. Visa För- och efternamn på den användare som skapat filmen.
+Nu visar den enbart x-kontot, eftersom vi inte får tillbaka namnet i klartext från Show and Share. Det kan vi lösa relativt enkelt genom att slå upp namnet på användaren i Infoglue. De allra flesta anställda och studenter finns ju numera i IG och där kan vi slå upp dem på xkonto. 
+Tidsuppskattning: 3-4h
+
+2. Ge redaktören möjlighet att välja kategorier att hämta filmer från.
+Nu måste man skriva in kategorifrågorna på ungefär samma sätt som man skriver in kategorier vid uthämtning av nyhetslistor. För att kunna bygga dessa listor behöver vi konstruera några data-providers som hämtar ut kategorierna från SnS och fipplar om dem till ett format som IG kan förstå. 
+Tidsuppskattning: 20h
+
+Portfolio
+Portfolioprojektet kommer att använda sig av videogallerikomponenten för att visa upp stundenternas portfolios. Därför är Portfolioprojektet beroende av att videogalleriet är på plats. Det som behöver utvecklas specifikt för portfolioprojektet är en uppladdningsfunktion där studenter och andra kan ladda upp film till SnS, samt komponenter för att presentera student- och enhetsinformation.
+
+GU Play
+Även GU Play kommer att använda sig av videogalleriet för att visa filmer. Det som behöver byggas för GU Play är i grund och botten funktioner för att hitta  filmer liknande den man precis tittat på, och låta besökaren klicka runt och upptäcka saker han inte visste att han var intresserad av.

@@ -1,0 +1,362 @@
+<%@page import="java.util.Calendar"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="infoglue-content" prefix="content" %>
+<%@ taglib uri="infoglue-page" prefix="page" %>
+<%@ taglib uri="infoglue-common" prefix="common" %>
+
+<page:pageContext id="pc"/>
+<content:content id="imageContent" contentId="${pc.componentLogic.infoGlueComponent.contentId}"/>
+
+<page:httpHeader name="Cache-Control" value="no-cache"/>
+<page:httpHeader name="Pragma" value="no-cache"/>
+<page:httpHeader name="Expires" value="0"/>
+
+<common:getCookie id="isfSelectedContrast" name="isfSelectedContrast"/>
+
+/* The high contrast CSS is only shown when the cookie is set */
+
+<c:if test="${isfSelectedContrast eq 'high'}">
+	/* Used in high-contrast mode */
+	
+	body
+	{
+		color: #eee;
+		background: #000;
+	}
+	a, a span
+	{
+		color: #fff !important;
+		text-decoration: underline !important;
+	}
+	h3
+	{
+		color: #eee !important;
+	}
+	select, input, textarea
+	{
+		color: #eee;
+		background: #000;
+	}
+	input.button {
+		background: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_button_highcontrast"/>) left top no-repeat;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	input.button:hover, input.button:focus {
+		background: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_buttonhover_highcontrast"/>) left top no-repeat;
+	}
+	#logoContainer
+	{
+		background: transparent url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="isf_logo_highcontrast"/>) 2px 0 no-repeat;
+	}
+	#logoContainer img
+	{
+		filter: alpha(opacity=0);
+		opacity: 0;
+	}
+	span#skipLink a {
+		color: #000;
+		background: #333;
+	}
+	#toolMenuContainer {
+		background: #333;
+		border: 1px solid #555;
+		border-radius: 5px;
+	}
+	#toolMenuContainer .innerContainer, #toolMenuContainer ul {
+		background: #333;
+		border-radius: 5px;
+	}
+	#searchContainer {
+		background: #333;
+		border: 1px solid #999;
+		border-radius: 5px;
+	}
+	#searchContainer .searchButton 
+	{
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_searchbutton_highcontrast"/>);
+	}
+	#topMenuContainer
+	{
+		margin-left: 0;
+		margin-right: 0;
+		width: 970px;
+	}
+	#topMenuContainer ul
+	{
+		border: 1px solid #999;
+		border-radius: 5px;
+		background: #333;
+		height: 42px;
+		overflow: hidden;
+	}
+	#topMenuContainer ul li
+	{
+		height: 42px;
+		overflow: hidden;
+	}
+	#topMenuContainer ul li.first
+	{
+		background: none;
+		padding-left: 5px;
+	}
+	#topMenuContainer ul li.selected
+	{
+		background: #872434;
+		border-left: 1px solid #999;
+		border-right: 1px solid #999;
+	}
+	#topMenuContainer ul li a
+	{
+		background: none;
+	}
+	#topMenuContainer ul li.last a
+	{
+		background: none;
+		padding-right: 5px;
+	}
+	#topMenuContainer ul li.selected a
+	{
+		background: none;
+		color: #fff;
+	}
+	#topMenuContainer ul li.first.selected a
+	{
+		background: none;
+		padding-left: 0;
+		margin-left: 0;
+	}
+	#topMenuContainer ul li.last a span
+	{
+		background: none;
+	}
+	#topMenuContainer ul li.selected a span
+	{
+		background: none;
+	}
+	#topMenuContainer ul li.last.selected a span
+	{
+		background: none;
+		margin-right: 0;
+		padding-right: 10px;
+	}
+	#topMenuContainer ul li.selected.first
+	{
+		border-left: none;
+		border-radius: 5px 0 0 5px;
+	}
+	#topMenuContainer ul li.selected.last
+	{
+		border-right: none;
+		border-radius: 0 5px 5px 0;
+	}
+	#topMenuContainer ul li.selected.first.last
+	{
+		border: none;
+		border-radius: 5px;
+	}
+	#navMenuContainer ul.bigmenu
+	{
+		border-color: #999;
+	}
+	#navMenuContainer ul.bigmenu>li
+	{
+		border-color: #555;
+	}
+	#navMenuContainer ul li.selected>a
+	{
+		background-color: #555;
+	}
+	#navMenuContainer ul.bigmenu>li.selected>span>a
+	{
+		background-color: #555;
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_leftmenu"/>);
+	}
+	#navMenuContainer ul.bigmenu>li.expanded
+	{
+		background-color: #333;
+	}
+	#navMenuContainer ul.bigmenu>li.selected.expanded>span>a
+	{
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_leftmenuexpanded"/>);
+	}
+	#navMenuContainer ul.bigmenu>li.expanded span a
+	{
+		border-color: #555;
+	}
+	#breadcrumbs a 
+	{
+		border-color: #999;
+	}
+	.startPage #pageIntro .innerContainer
+	{
+		background: #333;
+	}
+	.subStartPage #pageIntro {
+		background: none;
+	}
+	.subStartPage #pageIntro .innerContainer {
+		background: #333;
+		border-radius: 5px;
+	}
+	.banner, 
+	.textBox,
+	#publicationSearch,
+	#writerInfo,
+	#relatedInfo,
+	#publicationTypeInfo .innerContainer,
+	#newsTypeInfo .innerContainer, 
+	#conferenceMaterial, 
+	#conferenceConditions,
+	#confirmationMessage,
+	#shoppingBasketContainer
+	{
+		background: #333 !important;
+	}
+	#searchContainer #searchField, #searchContainer #searchField.searchHint,
+	#publicationSearch input#textField, #publicationSearch input#textField.searchHint,
+	#newsBlock strong.newsLabel, #eventBlock strong.eventLabel
+	{
+		color: #eee;
+	}
+	#newsBlock .newsItem, #eventBlock .eventItem,
+	#newsBlock h2, #eventBlock h2
+	{
+		border-color: #555;
+	}
+	#newsBlock .newsItem strong.newsDate, #eventBlock .eventItem strong.eventDate {
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_calendar_highcontrast"/>);
+	}
+	.itemList h2, .eventList h2, .mixedList h2,
+	.itemList .moreItems, .eventList .moreItems, .mixedList .moreItems
+	{
+		background: #333;
+	}
+	.itemList, .eventList, .mixedList,
+	.itemList h2, .eventList h2, .mixedList h2,
+	.itemList li, .eventList li, .mixedList li
+	.itemList .moreItems, .eventList .moreItems, .mixedList .moreItems
+	{
+		border-color: #555;
+	}
+	.itemList li a:hover, .itemList li a:focus,
+	#newsBlock .newsItem.newsListHover, #eventBlock .eventItem.eventListHover
+	{
+		background-color: #222;
+	}
+	#toolMenuContainer, #footerContainer {
+		background: #333;
+		border: 1px solid #555;
+		border-radius: 5px;
+		height: auto;
+	}
+	table th
+	{
+		background-color: #333 !important;
+	}
+	.publicationList table th, .publicationList table td, .contactDetailsList table th, .contactDetailsList table td 
+	{
+		border-color: #555;
+	}
+	#publicationSearch .searchButton, 
+	#searchFilter .searchButton
+	{
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_publicationsearchbutton_highcontrast"/>);
+	}
+	
+	#publicationSearch .searchButton:hover, #publicationSearch .searchButton:focus,
+	#searchFilter .searchButton:hover, #searchFilter .searchButton:focus 
+	{
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_publicationsearchbuttonhover_highcontrast"/>);
+	}
+	#contrastSwitch
+	{
+		background: #333;
+	}
+	#mainColContainer ul li, #mainColContainer .sitemap ul li ul li
+	{
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_listbullet_highcontrast"/>);
+	}
+	#relatedInfo ul li, #conferenceMaterial ul li {
+		background: none;
+	}
+	#shoppingBasketContainer
+	{
+		border: 1px solid #555;
+		margin-top: 2px;
+	}
+	#shoppingLightbox .container {
+		background: #aaa;
+	}
+	#shoppingLightbox .innerContainer {
+		background: #000;
+	}
+	#shoppingLightbox ul li a {
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_buttonbig_highcontrast"/>);
+		text-decoration: none !important;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	#shoppingLightbox ul li a:hover, #shoppingLightbox ul li a:focus {
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_buttonbighover_highcontrast"/>);
+	}
+	#orderList table td.remove a
+	{
+		text-decoration: none !important;
+		background: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_button_highcontrast"/>) left top no-repeat;
+		box-shadow: none;
+	}
+	#orderList table td.remove a:hover, #orderList table td.remove a:focus
+	{
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_buttonhover_highcontrast"/>);
+	}
+	.errorMessage 
+	{
+		background: #333;
+	}
+	.errorField label
+	{
+		color: #fff;
+	}
+	.errorField input
+	{
+		background: #333;
+	}
+	#searchHitsTypes ul
+	{
+		border-color: #999;
+	}
+	#searchHitsTypes ul li
+	{
+		background: #333;
+		border-color: #999;
+	}
+	#searchHitsTypes ul li.selected {
+		background: #872434;
+		border-color: #999;
+	}
+	#searchResults ul li, #searchFilters ul li
+	{
+		background: none;
+	}
+	#searchFilters ul li.selected a {
+		background-image: url(<content:assetUrl contentId="${imageContent.contentId}" assetKey="bg_leftmenu"/>);
+	}
+	#searchResultsPaging a {
+		background: #333;
+		border-color: #999;
+	}
+	#searchResultsPaging em {
+		background: #872434;
+		border-color: #999;
+	}
+	
+	/* SiteSeeker */
+	.ui-autocomplete {
+		border-color: #999;
+		background: #000;
+	}
+	.ui-autocomplete .ui-menu-item a.ui-state-hover {
+		color: #fff;
+	}
+</c:if>

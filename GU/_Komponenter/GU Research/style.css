@@ -1,0 +1,19 @@
+* {font-family: arial; font-size: 14px;}
+body {background-color: rgb(220, 220, 220)}
+h1 {position: absolute; margin-left: -60px; margin-top: 350px; color: rgb(255, 255, 255); font-size: 64px; -webkit-transform-origin: left center; -webkit-transform:rotate(270deg); text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);}
+.inputField {width: 760px; border-radius: 5px; border: 1px solid rgb(160, 160, 160); padding: 10px; margin-bottom: 20px; box-shadow: inset 1px 1px 10px 0px rgba(0, 0, 0, 0.10); background-color: rgb(245, 245, 245);}
+textarea.inputField {height: 250px;}
+label {display: block; color: rgb(180, 180, 180); font-size: 24px; margin-left: 10px;}
+input[type="submit"], input[type="button"] {font-size: 24px; text-shadow: 2px 2px 3px rgba(100, 150, 100, 0.75); border: 1px solid rgb(0, 150, 0); padding: 20px 50px; margin: 40px auto 0px auto; cursor: pointer; display: block; width: 200px; height: 80px;
+	border-radius: 10px; border: 1px outset rgb(70, 120, 70); padding: 5px 10px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	background: rgb(157,213,58); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(157,213,58,1) 0%, rgba(161,213,79,1) 50%, rgba(128,194,23,1) 51%, rgba(124,188,10,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(157,213,58,1)), color-stop(50%,rgba(161,213,79,1)), color-stop(51%,rgba(128,194,23,1)), color-stop(100%,rgba(124,188,10,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(157,213,58,1) 0%,rgba(161,213,79,1) 50%,rgba(128,194,23,1) 51%,rgba(124,188,10,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 ); /* IE6-9 */
+}
+input[type="submit"]:active {box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.5);}
+.container {width: 760px; background-color: rgb(255, 255, 255); padding: 30px; margin: 20px auto; border-radius: 10px; border: 1px solid rgb(120, 120, 120); box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.25);}

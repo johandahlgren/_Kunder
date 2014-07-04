@@ -1,0 +1,469 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1256" measuredH="1275" mockupW="1247" mockupH="1198">
+  <controls>
+    <control controlID="640" controlTypeID="com.balsamiq.mockups::Canvas" x="279" y="77" w="668" h="1162" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="641" controlTypeID="com.balsamiq.mockups::MenuBar" x="279" y="148" w="668" h="40" measuredW="523" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Aktuellt%2CUtbildning%2C%20Forskning%2C%20Student%2C%20I%20fokus%2C%20Om%20akademin%2C%20Kontakt</text>
+      </controlProperties>
+    </control>
+    <control controlID="642" controlTypeID="com.balsamiq.mockups::Canvas" x="279" y="77" w="668" h="70" measuredW="100" measuredH="70" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>545684</color>
+      </controlProperties>
+    </control>
+    <control controlID="643" controlTypeID="com.balsamiq.mockups::Label" x="335" y="92" w="339" h="-1" measuredW="251" measuredH="40" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <size>32</size>
+        <text>Akademin%20Valand</text>
+      </controlProperties>
+    </control>
+    <control controlID="644" controlTypeID="com.balsamiq.mockups::Icon" x="294" y="96" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <icon>CircleIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="645" controlTypeID="com.balsamiq.mockups::BreadCrumbs" x="294" y="188" w="-1" h="-1" measuredW="374" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>G%F6teborgs%20universitet%2CAkademin%20Valand%2C%20Student%2C%20Portfolio</text>
+      </controlProperties>
+    </control>
+    <control controlID="646" controlTypeID="com.balsamiq.mockups::SearchBox" x="812" y="156" w="-1" h="-1" measuredW="120" measuredH="25" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>search</text>
+      </controlProperties>
+    </control>
+    <control controlID="647" controlTypeID="com.balsamiq.mockups::Label" x="294" y="1254" w="528" h="-1" measuredW="509" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%A9%20G%F6teborgs%20universitet%2C%20Box%20100%20%2C%20405%2030%20G%F6teborg%20Tel.%20031-786%200000%2C%20Kontakta%20oss</text>
+      </controlProperties>
+    </control>
+    <control controlID="648" controlTypeID="com.balsamiq.mockups::ButtonBar" x="346" y="260" w="535" h="27" measuredW="339" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Film%2CFotografi%2CFri%20konst%2CLitter%E4r%20gestaltning</text>
+      </controlProperties>
+    </control>
+    <control controlID="649" controlTypeID="com.balsamiq.mockups::ButtonBar" x="346" y="281" w="535" h="27" measuredW="513" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>%C5rskurs%201%2C%C5rskurs%202%2C%C5rskurs%203%2C%C5rskurs%204%2CMasterutbildning%2CAlumn</text>
+      </controlProperties>
+    </control>
+    <control controlID="650" controlTypeID="__group__" x="352" y="337" w="89" h="110" measuredW="89" measuredH="110" zOrder="10" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="650"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="650">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="651" controlTypeID="__group__" x="462" y="337" w="89" h="110" measuredW="89" measuredH="110" zOrder="11" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="651"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="651">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="652" controlTypeID="__group__" x="572" y="337" w="89" h="110" measuredW="89" measuredH="110" zOrder="12" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="652"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="652">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="653" controlTypeID="__group__" x="682" y="337" w="89" h="110" measuredW="89" measuredH="110" zOrder="13" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="653"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="653">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="654" controlTypeID="__group__" x="792" y="337" w="89" h="110" measuredW="89" measuredH="110" zOrder="14" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="654"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="654">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="655" controlTypeID="__group__" x="352" y="468" w="89" h="110" measuredW="89" measuredH="110" zOrder="15" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="655"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="655">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="656" controlTypeID="__group__" x="462" y="468" w="89" h="110" measuredW="89" measuredH="110" zOrder="16" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="656"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="656">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="657" controlTypeID="__group__" x="572" y="468" w="89" h="110" measuredW="89" measuredH="110" zOrder="17" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="657"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="657">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="658" controlTypeID="__group__" x="682" y="468" w="89" h="110" measuredW="89" measuredH="110" zOrder="18" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="658"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="658">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="659" controlTypeID="__group__" x="792" y="468" w="89" h="110" measuredW="89" measuredH="110" zOrder="19" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="659"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="659">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="660" controlTypeID="com.balsamiq.mockups::Label" x="350" y="224" w="-1" h="-1" measuredW="187" measuredH="32" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Studentportfolios</text>
+      </controlProperties>
+    </control>
+    <control controlID="661" controlTypeID="com.balsamiq.mockups::StickyNote" x="48" y="487" w="260" h="73" measuredW="109" measuredH="123" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nu%20har%20man%20valt%20en%20student%20i%20klassen.</text>
+      </controlProperties>
+    </control>
+    <control controlID="662" controlTypeID="__group__" x="352" y="960" w="89" h="110" measuredW="89" measuredH="110" zOrder="22" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="662"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="662">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="663" controlTypeID="__group__" x="462" y="960" w="89" h="110" measuredW="89" measuredH="110" zOrder="23" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="663"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="663">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="664" controlTypeID="__group__" x="572" y="960" w="89" h="110" measuredW="89" measuredH="110" zOrder="24" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="664"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="664">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="665" controlTypeID="__group__" x="682" y="960" w="89" h="110" measuredW="89" measuredH="110" zOrder="25" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="665"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="665">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="666" controlTypeID="__group__" x="792" y="960" w="89" h="110" measuredW="89" measuredH="110" zOrder="26" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="666"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="666">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="667" controlTypeID="__group__" x="352" y="1099" w="89" h="110" measuredW="89" measuredH="110" zOrder="27" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="667"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="667">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="668" controlTypeID="__group__" x="462" y="1099" w="89" h="110" measuredW="89" measuredH="110" zOrder="28" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="668"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="668">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="669" controlTypeID="__group__" x="572" y="1099" w="89" h="110" measuredW="89" measuredH="110" zOrder="29" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="669"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="669">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="670" controlTypeID="__group__" x="682" y="1099" w="89" h="110" measuredW="89" measuredH="110" zOrder="30" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Webcam" x="0" y="0" w="88" h="85" measuredW="177" measuredH="146" zOrder="0" locked="false" isInGroup="670"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="4" y="89" w="-1" h="-1" measuredW="85" measuredH="21" zOrder="1" locked="false" isInGroup="670">
+          <controlProperties>
+            <text>Kalle%20Karlsson</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="671" controlTypeID="com.balsamiq.mockups::Canvas" x="279" y="590" w="668" h="355" measuredW="100" measuredH="70" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+      </controlProperties>
+    </control>
+    <control controlID="672" controlTypeID="com.balsamiq.mockups::RoundButton" x="488" y="578" w="32" h="15" measuredW="32" measuredH="32" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <shape>triangle</shape>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="673" controlTypeID="__group__" x="332" y="615" w="130" h="141" measuredW="130" measuredH="141" zOrder="33" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="673">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="673">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="674" controlTypeID="__group__" x="473" y="615" w="130" h="141" measuredW="130" measuredH="141" zOrder="34" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="674">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="674">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="675" controlTypeID="__group__" x="614" y="615" w="130" h="141" measuredW="130" measuredH="141" zOrder="35" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="675">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="675">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="676" controlTypeID="__group__" x="755" y="615" w="130" h="141" measuredW="130" measuredH="141" zOrder="36" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="676">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="676">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="677" controlTypeID="__group__" x="333" y="771" w="130" h="141" measuredW="130" measuredH="141" zOrder="37" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="677">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="677">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="678" controlTypeID="__group__" x="473" y="771" w="130" h="141" measuredW="130" measuredH="141" zOrder="38" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="678">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="678">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="679" controlTypeID="__group__" x="613" y="771" w="130" h="141" measuredW="130" measuredH="141" zOrder="39" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="679">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="679">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="680" controlTypeID="__group__" x="753" y="771" w="130" h="141" measuredW="130" measuredH="141" zOrder="40" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="127" h="114" measuredW="77" measuredH="79" zOrder="0" locked="false" isInGroup="680">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="5" y="120" w="125" h="-1" measuredW="76" measuredH="21" zOrder="1" locked="false" isInGroup="680">
+          <controlProperties>
+            <text>Lorem%20ipsum</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="681" controlTypeID="com.balsamiq.mockups::StickyNote" x="9" y="636" w="260" h="159" measuredW="109" measuredH="123" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>D%E5%20f%E4lls%20en%20ruta%20med%20alla%20studentens%20verk%20ut%20under%20studenten.%20I%20listan%20visas%20tumnagel%20och%20titel%20f%F6r%20varje%20verk.%0A%20%0AOvanp%E5%20verket%20visas%20en%20liten%20ikon%20som%20talar%20om%20vilken%20typ%20av%20media%20det%20%E4r%3A%20Bild%2C%20film%2C%20PDF%20eller%20ljud.</text>
+      </controlProperties>
+    </control>
+    <control controlID="682" controlTypeID="com.balsamiq.mockups::Arrow" x="259" y="719" w="49" h="23" measuredW="150" measuredH="100" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <curvature>0</curvature>
+        <direction>top</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="683" controlTypeID="com.balsamiq.mockups::Button" x="902" y="602" w="-1" h="-1" measuredW="31" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>X</text>
+      </controlProperties>
+    </control>
+    <control controlID="684" controlTypeID="com.balsamiq.mockups::Arrow" x="308" y="538" w="189" h="52" measuredW="150" measuredH="100" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <curvature>0</curvature>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="685" controlTypeID="com.balsamiq.mockups::IconLabel" x="849" y="696" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="686" controlTypeID="com.balsamiq.mockups::IconLabel" x="846" y="853" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="687" controlTypeID="com.balsamiq.mockups::IconLabel" x="706" y="853" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="688" controlTypeID="com.balsamiq.mockups::IconLabel" x="566" y="853" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="689" controlTypeID="com.balsamiq.mockups::IconLabel" x="426" y="853" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="690" controlTypeID="com.balsamiq.mockups::IconLabel" x="426" y="696" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="691" controlTypeID="com.balsamiq.mockups::IconLabel" x="566" y="696" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="692" controlTypeID="com.balsamiq.mockups::IconLabel" x="706" y="696" w="-1" h="-1" measuredW="24" measuredH="39" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CameraIcon%7Csmall</icon>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="693" controlTypeID="com.balsamiq.mockups::StickyNote" x="996" y="535" w="260" h="101" measuredW="109" measuredH="123" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Klickar%20man%20p%E5%20den%20h%E4r%20knappen%20st%E4ngs%20rutan.</text>
+      </controlProperties>
+    </control>
+    <control controlID="694" controlTypeID="com.balsamiq.mockups::Arrow" x="920" y="590" w="76" h="20" measuredW="150" measuredH="100" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <curvature>0</curvature>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="695" controlTypeID="com.balsamiq.mockups::SubTitle" x="40" y="77" w="-1" h="-1" measuredW="72" measuredH="27" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Niv%E5%204</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

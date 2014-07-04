@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SCA Survey main page</title>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    
+    <script type="text/javascript">    
+        var animationSpeed = 200;
+        
+        function closeSurvey() {
+            $("#surveyIframe").fadeOut(animationSpeed);
+            $("#surveyOverlay").fadeOut(surveyOverlay);
+        }
+    </script>
+    <style type="text/css">
+        body, html {width: 100%; height: 100%;}
+        #surveyIframe {clear: both; width: 560px; height: 670px; border: none; box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); margin: 0 auto; position: relative; display: block; z-index: 1000;}
+        #surveyOverlay {background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 900;}
+        #spacer {float: left; height: 50%; margin-bottom: -310px;}
+    </style>
+</head>
+<body>
+    <div id="surveyOverlay"></div>
+    <div id="spacer"></div>
+    <iframe id="surveyIframe" src="survey_en.html"></iframe>
+</body>
+</html>

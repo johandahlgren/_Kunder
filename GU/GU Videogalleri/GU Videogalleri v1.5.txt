@@ -1,0 +1,37 @@
+Lösningsförslag integration GU Videogalleri - GU Play
+
+Efterfrågad funktionalitet:
+GU vill att komponenten GU Videogalleri även ska kunna presentera filmer från videoportalen Show & Share. Filmerna ska kunna väljas beroende på Tag, Kategori och Avsändare. Vidare ska man kunna välja hur många filmer som ska visas.
+Redaktören ska även kunna välja att lägga in en länk från videogalleriet till S&S-portalen så besökaren kan klicka sig dit för att hitta fler liknande filmer.
+
+Lösningsförslag:
+Vi modifierar komponenten GU Videogalleri så den kan läsa in RSS-flöden från Show & Share och genom dessa presentera listor med filmer som sedan visas i Flowplayer. Redaktören går in på S&S-servern och selekterar ut de filmer som ska visas. Sedan kopierar redaktören den RSS-länk som automatgenererats och klistrar in den i videogalleriet.
+För att skapa direktlänken från videogalleriet till S&S väljer redaktören på komponentegenskapen "S&S direktlänk typ" något av alternativen Tag, Kategori eller Avsändare i en rullgardinsmeny och fyller i komponentegenskapen "S&S direktlänk värde" i det önskade värdet. 
+
+EX: För att direktlänka till S&S och visa en lista över filmer taggade med "Molekylärbiologi" väljer alltså redaktören "Tag" i rullgardinsmenyn och skriver in "Molekylärbiologi" i fritextfältet.
+
+Avgränsningar:
+Komponenten ska antingen visa manuellt utpekade filmer ELLER filmer från S&S, men inte kunna blanda. Om man angivit både RSS och pekat ut egna filmer kommer RSS:en få företräde.
+
+Tekniska detaljer
+1. Ny komponentegenskap "S&S RSS".
+2. Ny komponentegenskap "S&S direktlänk typ".
+3. Ny komponentegenskap "S&S direktlänk värde".
+4. Modifiera komponenten så den hämtar in den utpekade RSS:en och parsar listan med filmer.
+Komponenten ska kunna göra ett anrop på S&S-portalen och hämta den utpekade RSS-texten. Denna ska sedan parsas och följande information plockas ut för varje film:
+- Titel
+- Länk
+- Beskrivning
+- Skapare
+- Publiceringsdatum
+- Eventuellt en tumnagelbild om det går att få ut från S&S
+Filmerna visas sedan i Flowplayer på precis samma sätt som GU-filmer visas i galleriet idag.
+
+5. Modifiera komponenten så den kan generera en direktlänk till S&S-servern.
+Den läser in vilket attribut man ska länka från egenskapen "S&S direktlänk typ" och vilket värde det ska ha från egenskapen "S&S direktlänk värde", och sedan bygger den upp en länk till den önskade S&S-sidan och presenterar den för besökarna.
+
+Oklarheter:
+- Kan vi få URL:erna till filmerna på det format vi vill (url + netConnection) eller blir det något annat format? Kan i så fall Flowplayer hantera det andra formatet? Om vi inte får länkarna på rätt format kan vi behöva modifiera Flowplayer-komponenten så den även kan hantera det länkformat som S&S jobbar med. I så fall tillkommer timmar. Dessa timmar tidsuppskattas om behov uppstår.
+- Kan vi få ut tumnaglar från S&S i RSS:erna?
+
+Tidsuppskattning: 40h

@@ -1,0 +1,12 @@
+Förutsättningar
+- Var/hur ska vi göra mappningen mellan LDAP/GUP-ID:n?
+
+Lista publikationer
+- Om personen inte vill att alla hans eller hennes publikationer ska visas, hur gör vi då? Ska man t.ex. ange en lista i komponenten på dokument-ID:n som ska filtreras bort? Kan GUP ta emot en sådan lista eller ska jag i så fall göra filtreringen på min sida?
+
+Detaljvy publikation
+- Vilka fält finns i GUP?
+- Vilka fält vill vi presentera?
+
+Sök publikation
+- Finns det fritextsökmöjligheter mot GUP?

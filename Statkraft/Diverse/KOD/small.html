@@ -1,0 +1,205 @@
+
+ <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <meta charset="utf-8">
+        
+        <script src="jquery-1.8.2.min.js"></script>
+        
+        <script type="text/javascript">
+            $(window).load(function (){
+                plantPresentationTemplate = Tempo.prepare("templates");
+                refreshSmall();
+            });
+        </script>
+        
+        <link href="style.css" rel="stylesheet" media="screen"></style>
+    </head>
+    <body class="small">
+        <div id="slides">
+        	<div id="totalProduction" class="slide">
+              	<div id="totalProductionBox" class="dataContent infobox">
+               		<div class="contentBlock">
+               			<table>
+               				<tr>
+               					<td rowspan="2">
+               						<h3 data-label="label_totalProductionToday">TOT_PROD</h3>
+			                		<div class="whiteBox whiteBoxBig">
+			                			<span id="totalProductionToday" class="value">XX</span>
+			                			<span class="unit"><span data-label="label_mwh"></span></span>
+			                		</div>
+			                	</td>
+			                	<td>
+			                		<h3 data-label="label_totalProductionYesterday">TOT_PROD_YESTERDAY</h3>
+			                		<div class="whiteBox">
+			                			<span id="totalProductionYesterday" class="value">XX</span>
+			                			<span class="unit"><span data-label="label_mwh"></span></span>
+			                		</div>
+			                	</td>
+			                </tr>
+			                <tr>
+			                	<td>
+			                		<h3 data-label="label_totalProductionPreviousYear">TOT_PROD_LAST_YEAR</h3>
+			                		<div class="whiteBox">
+			                			<span id="totalProductionPreviousYear" class="value">XX</span>
+			                			<span class="unit"><span data-label="label_mwh"></span></span>
+			                		</div>
+			                	</td>
+			                </tr>
+	                	</table>
+               		</div>
+               	</div>
+            </div>
+            <div id="totalPower" class="slide">
+                     <div id="totalProductionValue" class="dataContent infobox">
+                    		<h1 data-label="label_totalPowerRightNow">TOT_POWER_NOW</h1>
+                         <div class="contentBlock">
+                          <div id="totalProductionValueMeter" class="progressBarContainer">
+                   		<div class="bar"></div>
+                   		<span class="value">0</span> <span class="unit" data-label="label_mwh">XX</span>
+                   	</div>
+                   	<div class="infoText">
+                   		<span data-label="label_maximumProduction">MAX_PROD</span>: <span id="maxPossibleProduction">XX</span> <span data-label="label_mwh">XX</span>
+                   	</div>
+                   	<hr />
+                   	<h3 data-label="label_thisWillPower">CAN_SUPPLY</h3>
+                   	<table class="spread">
+                   		<tbody>
+	                   		<tr>
+	                   			<td class="supplyIllustration">
+	                   				<div class="supplyIllustration">
+				                   		<div class="house"></div>
+				                   		<div class="bubble">
+				                   			<div class="countryId" data-label="label_no">XX</div>
+				                   			<div id="supplyValueNo" class="value">XX</div>
+				                   			<div class="supplyUnit"><span data-label="label_units">XX</span></div>
+				                   		</div>
+				                   	</div>
+				              	</td>
+				              	<td class="supplyIllustration">
+				              		<div class="supplyIllustration">
+				                   		<div class="house"></div>
+				                   		<div class="bubble">
+				                   			<div class="countryId" data-label="label_se">XX</div>
+				                   			<div id="supplyValueSe" class="value">XX</div>
+				                   			<div class="supplyUnit"><span data-label="label_units">XX</span></div>
+				                   		</div>
+				                   	</div>
+				               </td>
+				               <td class="supplyIllustration">
+				               		<div class="supplyIllustration">
+				                   		<div class="house"></div>
+				                   		<div class="bubble">
+				                   			<div class="countryId" data-label="label_uk">XX</div>
+				                   			<div id="supplyValueUk" class="value">XX</div>
+				                   			<div class="supplyUnit"><span data-label="label_units">XX</span></div>
+				                   		</div>
+				                   	</div>
+				               </td>
+				           </tr>
+				    	</tbody>
+                   	</table>
+            	</div>
+               </div>
+               <div id="windspeed" class="slide">
+              		<div id="windspeedBox" class="dataContent infobox">
+			            <h1 data-label="label_windspeed">WS_TOP_3</h1>
+			            <div class="contentBlock"></div>
+	                </div>
+	            </div>
+              	<div id="active" class="slide">
+	              	 	<div id="activeBox" class="dataContent infobox">
+		                <h1 data-label="label_active">ACTIVE_TOP_3</h1>
+		                <div class="contentBlock"></div>
+				    </div>
+	            </div>
+              	<div id="availability" class="slide">
+	              		<div id="availabilityBox" class="dataContent infobox">
+	                <h1 data-label="label_availability">AVAIL_TOP_3</h1>
+	                <div class="contentBlock"></div>
+	                </div>
+	            </div>
+              	<div id="marketValue" class="slide">
+                <div id="marketValueBox" class="dataContent infobox">
+                	<h1 data-label="label_marketValue">MARKET_VALUE</h1>
+                    <div class="contentBlock">
+	                    <table class="marketValueContainer">
+	                    	<tr>
+	                    		<td>
+				                    <div class="marketValueItem">
+				                        <h3 data-label="label_norway">COUNTRY_NO</h3>
+				                        <div class="whiteBox">
+				                        	<span id="valueNo" class="value">XX</span><span class="unit" data-label="label_currencyEur">XX</span>
+				                        </div>
+				                        <div class="clearFix"></div>
+				                    </div>
+				                    <hr />
+				                    <div class="marketValueItem">
+				                        <h3 data-label="label_ukOnshore">COUNTRY_UK_ONSHORE</h3>
+				                        <div class="whiteBox">
+				                        	<span id="valueUkOnshore" class="value">XX</span><span class="unit" data-label="label_currencyEur">XX</span>
+				                        </div>
+				                        <div class="clearFix"></div>
+				                    </div>
+				            	</td>
+				            	<td>
+			               			<div class="verticalDivider"></div>
+			               		</td>
+			               		<td>
+				                    <div class="marketValueItem">
+				                        <h3 data-label="label_sweden">COUNTRY_SE</h3>
+				                        <div class="whiteBox">
+				                        	<span id="valueSe" class="value">XX</span><span class="unit" data-label="label_currencyEur">XX</span>
+				                        </div>
+				                        <div class="clearFix"></div>
+				                    </div>
+				                    <hr />
+				                    <div class="marketValueItem">
+				                        <h3 data-label="label_ukOffshore">COUNTRY_UK_OFFSHORE</h3>
+				                        <div class="whiteBox">
+				                        	<span id="valueUkOffshore" class="value">XX</span><span class="unit" data-label="label_currencyEur">XX</span>
+				                        </div>
+				                        <div class="clearFix"></div>
+				                    </div>
+				                 </td>
+				             </tr>
+		                </table>
+		        	</div>
+                </div>
+                <div class="clearFix"></div>
+                </div>
+           </div>
+        </div>
+        
+        <div id="refreshButton" onclick="refreshSmall();">Refresh</div>
+        
+        <!-------------->
+        <!-- TEMPLATE -->
+        <!-------------->
+        
+        <div id="templates">
+            <div class="plantPresentation" data-value="{{value}}" data-template>
+                <h2>{{name}}</h3>
+                <div class="blockContainer">
+                    <div class="iconBlock">
+                        <canvas class="chart" width="100" height="100"></canvas>
+                        <div class="windicon"></div>
+                    </div>
+                    <div class="dataBlock">
+                        <div class="value">{{value}}</div>
+                        <div class="unit">{{unit}}</div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        
+        <!------------------>
+        <!-- END TEMPLATE -->
+        <!------------------>
+        
+        <script src="tempo.min.js"></script>
+        <script src="chart.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="javascript.js"></script>
+    </body>
+</html>

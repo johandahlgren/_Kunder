@@ -1,0 +1,6 @@
+Länkar om cross domain
+
+https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS?redirectlocale=en-US&redirectslug=HTTP_access_control
+
+Sätta subdomän i httpd.conf:
+http://stackoverflow.com/questions/1653308/access-control-allow-origin-multiple-origin-domains

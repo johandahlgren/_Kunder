@@ -1,0 +1,464 @@
+<article xmlns="x-schema:ArticleSchema.xml"><attributes><Name><![CDATA[GU Flowplayer]]></Name><GroupName><![CDATA[Single Content]]></GroupName><Template><![CDATA[<%@ taglib uri="infoglue-page" prefix="page" %>
+<%@ taglib uri="infoglue-structure" prefix="structure" %>
+<%@ taglib uri="infoglue-content" prefix="content" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="infoglue-common" prefix="common" %>
+
+<page:pageContext id="pc"/>
+
+<structure:componentPropertyValue id="title" propertyName="Title" useInheritance="false"/>
+<structure:componentPropertyValue id="sourceType" propertyName="SourceType" useInheritance="false"/>
+<structure:componentPropertyValue id="netConnectionUrl" propertyName="NetConnectionUrl" useInheritance="false"/>
+<structure:componentPropertyValue id="mediaClip" propertyName="MediaClip" useInheritance="false"/>
+<structure:componentPropertyValue id="aspectRatio" propertyName="AspectRatio" useInheritance="false"/>
+<structure:componentPropertyValue id="autoPlay" propertyName="AutoPlay" useInheritance="false"/>
+<structure:componentPropertyValue id="autoRepeat" propertyName="AutoRepeat" useInheritance="false"/>
+<structure:componentPropertyValue id="hideLinkText" propertyName="HideLinkText" useInheritance="false"/>
+<structure:componentPropertyValue id="controls" propertyName="Controls" useInheritance="false"/>
+<structure:componentPropertyValue id="linkText" propertyName="LinkText" useInheritance="false"/>
+<structure:componentPropertyValue id="startFrame" propertyName="StartFrame" useInheritance="false"/>
+<structure:componentPropertyValue id="splashScreenType" propertyName="SplashScreenType" useInheritance="false"/>
+<structure:componentPropertyValue id="googleKey" propertyName="GoogleKey" useInheritance="true"/>
+<structure:componentPropertyValue id="liveStream" propertyName="LiveStream" useInheritance="false"/>
+<structure:componentPropertyValue id="informationTitle" propertyName="InformationTitle" useInheritance="false"/>
+<structure:componentPropertyValue id="informationText" propertyName="InformationText" useInheritance="false"/>
+<structure:componentPropertyValue id="fallbackurl" propertyName="FallbackUrl" useInheritance="false"/>
+
+<content:assetUrl id="userSelectedSplashImageUrl" propertyName="SplashImage" useInheritance="false"/>
+
+<structure:pageUrl id="linkUrl" propertyName="LinkUrl" useInheritance="false"/>
+
+<content:content id="componentContent" contentId="${pc.componentLogic.infoGlueComponent.contentId}"/>
+<content:relatedContents id="configurationContent" contentId="${componentContent.contentId}" attributeName="RelatedComponents" onlyFirst="true"/>
+
+<c:if test="${empty configurationContent}">
+	Inget FlowplayerSettings-innehåll utpekat i related contents. Kan inte fortsätta.<br/>
+</c:if>
+
+<c:set var="settingsContentId" value="${configurationContent.contentId}"/>
+
+<content:assetUrl id="flowplayerSwfLocation" contentId="${settingsContentId}" assetKey="FlowplayerSwf"/>
+<content:assetUrl id="flowplayerControlsSwfLocation" contentId="${settingsContentId}" assetKey="FlowplayerControlsSwf"/>
+<content:assetUrl id="flowplayerJavascriptLocation" contentId="${settingsContentId}" assetKey="FlowplayerJavascript"/>
+<content:assetUrl id="flowplayerControlsJavaScriptLocation" contentId="${settingsContentId}" assetKey="FlowplayerControlsJavaScript"/>
+<content:assetUrl id="flowplayerRtmpPluginLocation" contentId="${settingsContentId}" assetKey="FlowplayerRtmpPlugin"/>
+<content:assetUrl id="flowplayerViralPlugin" contentId="${settingsContentId}" assetKey="FlowplayerViralPlugin"/>
+<content:assetUrl id="flowplayerAnalyticsPlugin" contentId="${settingsContentId}" assetKey="FlowplayerAnalyticsPlugin"/>
+<content:assetUrl id="flowplayerContentPlugin" contentId="${settingsContentId}" assetKey="FlowplayerContentPlugin"/>
+<content:assetUrl id="flowplayerAudioPluginLocation" contentId="${settingsContentId}" assetKey="FlowplayerAudioPlugin"/>
+<content:assetUrl id="flowplayerIpadJavascriptLocation" contentId="${settingsContentId}" assetKey="FlowplayerIpadJavascript"/>
+<content:assetUrl id="flowplayerPseudoStreamingPluginLocation" contentId="${settingsContentId}" assetKey="FlowplayerPseudoStreamingPlugin"/>
+
+<content:assetUrl id="transparentGifUrl" contentId="${settingsContentId}" assetKey="transparent"/>
+<content:assetUrl id="defaultCssUrl" contentId="${settingsContentId}" assetKey="DefaultCss"/>
+<content:assetUrl id="splashWideLarge" contentId="${settingsContentId}" assetKey="SplashWideLarge"/>
+<content:assetUrl id="splashWideSmall" contentId="${settingsContentId}" assetKey="SplashWideSmall"/>
+<content:assetUrl id="splashNormalLarge" contentId="${settingsContentId}" assetKey="SplashNormalLarge"/>
+<content:assetUrl id="splashNormalSmall" contentId="${settingsContentId}" assetKey="SplashNormalSmall"/>
+<content:assetUrl id="playImageUrl" contentId="${settingsContentId}" assetKey="PlayImage"/>
+<content:assetUrl id="playImageSmallUrl" contentId="${settingsContentId}" assetKey="PlayImageSmall"/>
+
+<%--
+ Special fix for flv files that won't play streaming if the file name is appended to the end.
+ If there is a flv file name on the end and this clip is set to streaming, we remove the .flv ending
+ --%>
+  
+<%
+	String mediaClip = (String)pageContext.getAttribute("mediaClip");
+	String iPadMediaClip = (String)pageContext.getAttribute("mediaClip");
+	String iPadStreamUrl = (String)pageContext.getAttribute("netConnectionUrl");
+	String sourceType = (String)pageContext.getAttribute("sourceType");
+	String fallback = (String)pageContext.getAttribute("fallbackurl");
+	
+	if(sourceType.equals("streaming")){
+		if (mediaClip.endsWith(".flv"))
+		{
+			mediaClip = mediaClip.substring(0, mediaClip.lastIndexOf("."));
+		} else if (mediaClip.endsWith(".mp3"))
+		{
+			iPadMediaClip = iPadMediaClip.substring(iPadMediaClip.indexOf(":")+1);
+			mediaClip = mediaClip.substring(0, mediaClip.lastIndexOf("."));
+		}
+		else{
+			iPadMediaClip = iPadMediaClip.substring(iPadMediaClip.indexOf(":/")+1);
+		}
+	}
+	
+	pageContext.setAttribute("mediaClip", mediaClip);
+	
+	//Ipad fallbackUrl
+	String ipadUrl = "";
+	if (fallback == null || fallback.isEmpty()){
+		iPadStreamUrl = iPadStreamUrl.replace("rtmp","http");
+		ipadUrl = iPadStreamUrl + iPadMediaClip;	
+	}
+	else {
+		ipadUrl = fallback;
+	}
+	pageContext.setAttribute("ipadUrl", ipadUrl);
+	
+	
+%>
+<c:choose>
+	<c:when test="${not empty userSelectedSplashImageUrl}">
+		<c:set var="splashImageUrl" value="${userSelectedSplashImageUrl}"/>
+	</c:when>
+	<c:otherwise>
+		<c:choose>
+			<c:when test="${aspectRatio eq 'widescreen'}">
+				<c:set var="splashImageUrl" value="${splashWideLarge}"/>
+			</c:when>
+			<c:otherwise>
+				<c:set var="splashImageUrl" value="${splashNormalLarge}"/>
+			</c:otherwise>
+		</c:choose>
+	</c:otherwise>
+</c:choose>
+
+splashScreenType: <c:out value="${splashScreenType}"/><br/>
+splashImageUrl: <c:out value="${splashImageUrl}"/><br/>
+
+<c:set var="slotName" value="${pc.componentLogic.infoGlueComponent.slotName}"/>
+
+<common:transformText id="cleanedSlotName" text="${slotName}" replaceString="-" replaceWithString="_"/>
+
+<c:set var="uniqueId" value="${cleanedSlotName}_${pc.componentLogic.infoGlueComponent.positionInSlot}"/>
+
+<%
+	String aspectRatio 	= (String)pageContext.getAttribute("aspectRatio");
+	String controls 	= (String)pageContext.getAttribute("controls");
+	float width			= 460;
+	double height		= 0;
+	double aspect		= 0;
+	
+	if (aspectRatio.equals("widescreen"))
+	{
+		aspect 	= (double)9/(double)16;
+	}
+	else
+	{
+		aspect 	= (double)3/(double)4;
+	}
+
+	if (!controls.equals("audio"))
+	{
+		height 	= aspect * width;
+	}
+	else
+	{
+		height = 30;
+	}
+	pageContext.setAttribute("width", Math.round(width));
+	pageContext.setAttribute("height", Math.round(height));
+%>
+
+<link rel="stylesheet" type="text/css" href="<c:out value="${defaultCssUrl}" escapeXml="false"/>"/>
+
+<script type="text/javascript" src="<c:out value="${flowplayerJavascriptLocation}" escapeXml="false"/>"></script>
+<script type="text/javascript" src="<c:out value="${flowplayerControlsJavaScriptLocation}" escapeXml="false"/>"></script> 
+<script type="text/javascript" src="<c:out value="${flowplayerIpadJavascriptLocation}" escapeXml="false"/>"></script>
+
+<c:if test="${not empty title}">
+	<h1><c:out value="${title}" escapeXml="false"/></h1> 
+</c:if>
+
+<c:if test="${empty autoPlay}">
+	<c:set var="autoPlay" value="${false}"/>
+</c:if>
+
+<c:if test="${empty startFrame}">
+	<c:set var="startFrame" value="0"/>
+</c:if>
+
+
+<c:set var="pluginsString">
+	<c:choose>
+		<c:when test="${empty controls || controls eq 'none'}">
+				controls: null,
+		</c:when>
+		<c:when test="${controls eq 'audio'}">
+				controls: 
+				{
+					url: "<c:out value="${flowplayerControlsSwfLocation}" escapeXml="false"/>",
+					
+					// display properties such as size, location and opacity
+					left: 0,
+					bottom: 0,
+					opacity: 1,
+					
+					// styling properties (will be applied to all plugins)
+					background: "#000000",
+					backgroundGradient: "none",
+					
+					fullscreen: false,
+					height: 30,
+					autoHide: false
+				},
+				audio: 
+				{
+					url: '<c:out value="${flowplayerAudioPluginLocation}" escapeXml="false"/>'
+				},
+		</c:when>
+		<c:otherwise>
+				controls: 
+				{
+					// location of the controlbar plugin
+					url: "<c:out value="${flowplayerControlsSwfLocation}" escapeXml="false"/>",
+			
+					// display properties such as size, location and opacity
+					left: 0,
+					bottom: 0,
+					opacity: 0.7,
+			
+					// styling properties (will be applied to all plugins)
+					background: "#000000",
+					backgroundGradient: "none",
+			
+					// controlbar specific settings
+					timeColor: "#bbbbbb",
+					durationColor: "#ffffff",
+					all: false,
+					play: true,
+					scrubber: true,
+					time: true,
+					mute: true,
+					volume: true,
+					fullscreen: true,
+					
+					autoHide: true,
+										
+					// tooltips (since 3.1)
+					tooltips: 
+					{
+						buttons: true,
+						play: "<structure:componentLabel mapKeyName="play" />",
+						pause: "<structure:componentLabel mapKeyName="pause" />",
+						stop: "<structure:componentLabel mapKeyName="stop" />",
+						fullscreen: "<structure:componentLabel mapKeyName="fullscreen" />",
+						fullscreenExit: "<structure:componentLabel mapKeyName="exitFullscreen" />",
+						mute: "<structure:componentLabel mapKeyName="mute" />",
+						unmute :"<structure:componentLabel mapKeyName="unmute" />"
+					}
+				},
+		</c:otherwise>
+	</c:choose>
+	<c:if test="${controls ne 'audio'}">
+				viral: 
+				{
+					url: "<c:out value="${flowplayerViralPlugin}" escapeXml="false"/>",
+					/*icons: 
+					{
+						color: "rgba(100, 100, 100, 0.5)",
+					    overColor: "rgba(200, 200, 200, 0.5)"
+					},*/
+					email: false,
+					embed: true,				
+					share: 
+					{
+						title: "<structure:componentLabel mapKeyName="shareText" />"
+					}
+				},
+	</c:if>
+				gatracker: 
+				{
+					url: "<c:out value="${flowplayerAnalyticsPlugin}" escapeXml="false"/>",
+					/*
+					labels: {
+						start: "Start",	
+						play: "Play",	
+						pause: "Pause",	
+						resume: "Resume",	
+						seek: "Seek",	
+						stop: "Stop",	
+						finish: "Finish",	
+						mute: "Mute",	
+						unmute: "Unmute",	
+						fullscreen: "Full Screen",	
+						fullscreenexit: "Full Screen Exit"	
+					},
+					debug: true,
+					trackingMode: "AS3",
+					googleId: "<c:out value="${googleKey}" escapeXml="false"/>"
+					*/
+					
+					debug: false,
+					trackingMode: "Bridge",
+					bridgeObject: "pageTracker"
+				},
+				rtmp: 
+				{
+					url: "<c:out value="${flowplayerRtmpPluginLocation}" escapeXml="false"/>",
+					netConnectionUrl: "<c:out value="${netConnectionUrl}" escapeXml="false"/>",
+					durationFunc: 'getStreamLength'
+				},
+				pseudoStreaming: 
+				{
+					url: "<c:out value="${flowplayerPseudoStreamingPluginLocation}" escapeXml="false"/>"
+				}
+</c:set>
+
+<script type="text/javascript">
+	function playMovie(aPlayerId)
+	{
+		$f(aPlayerId).play(); 
+	}
+
+	function pauseMovie(aPlayerId)
+	{
+		$f(aPlayerId).pause(); 
+	}
+
+	function showShare(playerId)
+	{
+		eval(playerId).getPlugin("viral").fadeIn();
+		eval(playerId).getPlugin("viral").show();
+	}
+</script>
+
+<div class="playerdiv_large">
+	<a id="player_<c:out value="${uniqueId}" escapeXml="false"/>" class="player" style="display: block; width: <c:out value="${width}" escapeXml="false"/>px; height: <c:out value="${height}" escapeXml="false"/>px;">
+	</a>
+	
+	<c:if test="${controlType eq 'html' && hideControls ne 'yes'}">
+		<div id="controlbar_<c:out value="${uniqueId}" escapeXml="false"/>" class="controls"></div>
+	</c:if>
+</div>
+
+<c:if test="${not empty informationTitle || not empty informationText}">
+	<div id="contentInfo_<c:out value="${uniqueId}" escapeXml="false"/>" class="infobox" style="display: none; width: <c:out value="${width - 40}" escapeXml="false"/>px;">
+		<span class="infotitle">
+			<c:out value="${informationTitle}" escapeXml="false"/>
+		</span>
+		<br/>
+		<span class="infotext">
+			<%
+				String informationText = (String)pageContext.getAttribute("informationText");
+				if (informationText != null)
+				{
+					informationText = informationText.replaceAll("[\r\n]", "<br/>");
+				}
+				pageContext.setAttribute("informationText", informationText);
+			%>
+			<c:out value="${informationText}" escapeXml="false"/>
+		</span>
+	</div>
+</c:if>
+ 
+<script type="text/javascript">
+var player<c:out value="${uniqueId}" escapeXml="false"/> = null;
+
+$(window).load(function ()
+{ 
+	$f("player_<c:out value="${uniqueId}" escapeXml="false"/>", 
+	{ 
+		src: "<c:out value="${flowplayerSwfLocation}" escapeXml="false"/>",
+		wmode: "opaque"
+	},
+	{
+		key: '#@e507600331d78c0a6d7',  
+		logo:null,
+		<c:if test="${not empty playImageUrl && not empty playImageSmallUrl}">
+		play: 
+		{
+			url: "<c:out value="${playImageUrl}" escapeXml="false"/>",
+			width: 78,
+			height: 78,
+			opacity: 1,
+			label: null,
+			replayLabel: null,
+			fadeSpeed: 500,
+			rotateSpeed: 50
+		},
+		</c:if>
+		onMouseOver: function() 
+		{
+			$("#contentInfo_<c:out value="${uniqueId}" />").css('display', 'block');
+		},
+		onMouseOut: function() 
+		{
+			$("#contentInfo_<c:out value="${uniqueId}" />").css('display', 'none');
+		},
+		playlist: 
+		[
+			<c:if test="${splashScreenType eq 'selectImage' && autoPlay eq 'false'}">
+			{
+				url: '<c:out value="${splashImageUrl}" escapeXml="false"/>', 
+				scaling: 'fit'
+			},
+			</c:if>
+			{ 
+				url: "<c:out value="${mediaClip}" escapeXml="false"/>",
+				scaling: "fit",
+				onBeforeFinish: function()
+				{ 
+					<c:choose>
+						<c:when test="${autoRepeat ne 'no'}">
+		                	return false;
+		                </c:when>
+		                <c:otherwise>
+		                	return true;
+		                </c:otherwise>
+	                </c:choose>
+	            },
+				autoPlay: <c:out value="${autoPlay}" escapeXml="false"/>
+	
+				<c:if test="${liveStream eq 'yes'}">
+				,live: true
+				</c:if>
+				
+				<c:choose>
+				<c:when test="${sourceType eq 'streaming'}">
+				,provider: "rtmp"
+				,ipadUrl: "<c:out value="${ipadUrl}" escapeXml="false"/>"
+				</c:when>
+				<c:when test="${sourceType eq 'pseudoStreaming'}">
+				,provider: "pseudoStreaming"
+				,ipadUrl: "<c:out value="${ipadUrl}" escapeXml="false"/>"
+				</c:when>
+				<c:otherwise>
+				,start: <c:out value="${startFrame}" escapeXml="false"/>
+				,autoBuffering: true
+				</c:otherwise>
+				</c:choose>
+		    }
+		],
+		canvas:  
+		{
+			backgroundColor: '#000000',
+			backgroundGradient: 'none'
+		},
+		plugins: 
+		{
+			<c:out value="${pluginsString}" escapeXml="false"/>
+		}
+	}).ipad({simulateiDevice: false, controls: true});
+});
+</script>
+
+<c:if test="${not empty linkUrl && hideLinkText ne 'yes'}">
+	<div style="clear: both;">
+		<p>
+			<a href="<c:out value="${linkUrl}" escapeXml="false"/>"><c:out value="${linkText}" escapeXml="false"/></a>		
+		</p>
+	</div>
+</c:if>
+]]></Template><ComponentProperties><![CDATA[<?xml version='1.0' encoding='UTF-8'?><properties><property name='Title' displayName='Rubrik' type='textfield' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Ange eventuellt en rubrik som ska visas ovanför filmen.' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/><property name='SourceType' displayName='Källtyp' type='select' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' description='Ange om klippet du vill spela kommer från en statisk källa, en strömmande källa (RTMP) eller en pseudoströmmande källa.' defaultValue='' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Statisk' value='static'/><option name='Strömmande' value='streaming'/><option name='Pseudoströmmande' value='pseudoStreaming'/></property><property name='LiveStream' displayName='Livesändning' type='select' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' description='Ange om filmen sänds live.' defaultValue='' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Nej' value='no'/><option name='Ja' value='yes'/></property><property name='NetConnectionUrl' displayName='Mediaserver-URL' type='textfield' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Anges ENDAST om du vill visa strömmande media. Då anger du här adressen till servern där filmen finns. EX: rtmp://flash.gu.se/gutv. Sedan anger du filnamnet i fältet Media-clip.' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/><property name='MediaClip' displayName='Media-clip' type='textfield' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Här anger du antingen URL:en till filmen som ska spelas (om det är en statisk video) EX: http://www.minsida.com/video/minVideo.flv, eller filmspecifikationen (om det är en strömmande film): EX: mp4:/arkiv/minFilm.f4v' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/><property name='FallbackUrl' displayName='FallbackUrl' type='textfield' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Ange en fallbackUrl för filmen att använda för enheter som inte klarar att spela flashvideo, t.ex. iPhone och iPad. Filmen du pekar ut här måste vara på ett format som iDevices klarar av att spela. Om denna url inte anges försöker komponenten automatiskt skapa en url baserat på Mediaserver-Url och Media-clip. Den kommer att se ut ungefär såhär och funkar i de flesta fall: http://flash.gu.se/applikation/sökväg/fil.filformat' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/><property name='AspectRatio' displayName='Bildformat' type='select' multiple='' assetBinding='' assetMask='' isPuffContentForPage='' description='Ange om filmen är gjord för bredbild (16:9) eller standardformat (4:3). Standardformat: Bredbild (16:9)' defaultValue='widescreen' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Bredbild (16:9)' value='widescreen'/><option name='Standard (4:3)' value='standard'/></property><property name='AutoPlay' displayName='Starta automatiskt' type='select' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' description='Ange om filmen ska börja spela automatiskt när sidan laddat. Standardvärde: Nej.' defaultValue='false' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Nej' value='false'/><option name='Ja' value='true'/></property><property name='AutoRepeat' displayName='Repetera automatiskt' type='select' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' description='Ange om filmen ska repeteras för evigt. Standardvärde: Nej' defaultValue='no' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Nej' value='no'/><option name='Ja' value='yes'/></property><property name='Controls' displayName='Typ av spelare' type='select' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' description='Välj vilken typ av spelare som ska visas: Videospelare (för att spela film) eller Enbart ljud (när man bara vill spela ljud). Standardvärde: Videospelare.' defaultValue='video' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Videospelare' value='video'/><option name='Enbart ljud' value='audio'/></property><property name='StartFrame' displayName='Startruta' type='textfield' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Ange vilken bildruta som ska användas som startruta. Standardvärde: 0, d.v.s. starta från början.' defaultValue='0' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/><property name='SplashScreenType' displayName='Startbildstyp' type='select' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' description='Ange om en bildruta från filmen ska visas som startbild, eller om du vill peka ut en egen startbild. Standardvärde: Bildruta från filmen' defaultValue='movieFrame' allowLanguageVariations='false' dataProvider='' dataProviderParameters='false' allowMultipleSelections='false'><option name='Bildruta från filmen' value='movieFrame'/><option name='Peka ut en egen startbild från Infoglue' value='selectImage'/></property><property name='SplashImage' displayName='Startbild' type='binding' entity='Content' multiple='false' assetBinding='true' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Om du har valt att använda en egen startbild under Startbildstyp pekar du här ut den bild som ska visas. Om ingen bild väljs kommer en standardbild att visas.' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='siteStructure' autoCreateContentPath='' customMarkup='false'/><property name='InformationTitle' displayName='Informationstitel' type='textfield' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Ange eventuellt den titel som ska visas i informationsrutan som dyker upp när man för musen över filmen. Om ingen Informationstitel eller Informationstext angivits visas inte inforutan.' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/><property name='InformationText' displayName='Informationstext' type='textarea' entity='' multiple='false' assetBinding='false' assetMask='' isPuffContentForPage='false' allowedContentTypeDefinitionNames='' description='Ange eventuellt den text som ska visas i informationsrutan som dyker upp när man för musen över filmen. Om ingen Informationstitel eller Informationstext angivits visas inte inforutan.' defaultValue='' allowLanguageVariations='false' WYSIWYGEnabled='false' WYSIWYGToolbar='' dataProvider='' dataProviderParameters='false' autoCreateContent='false' autoCreateContentMethod='' autoCreateContentPath='' customMarkup='<!--igescaped-->'/></properties>]]></ComponentProperties><ComponentLabels><![CDATA[play_sv=Spela
+play_en=Play
+playAgain_sv=Spela igen
+playAgain_en=Play again
+pause_sv=Pausa
+pause_en=Pause
+stop_sv=Stopp
+stop_en=Stop
+fullscreen_sv=Maximera
+fullscreen_en=Fullscreen
+fullscreenExit_sv=Normal storlek
+fullscreenExit_en=Exit fullscreen
+mute_sv=Utan ljud
+mute_en=Mute
+unmute_sv=Spela ljud
+unmute_en=Unmute
+shareText_sv=Dela filmen genom att klicka nedan
+shareText_en=Share the video by klicking below
+shareLink_sv=Klicka här för att dela filmen
+shareLink_en=Click here to share this video]]></ComponentLabels><RelatedComponents><![CDATA[<?xml version='1.0' encoding='UTF-8'?><qualifyer entity='Content'><id>161209</id></qualifyer>]]></RelatedComponents><PreTemplate></PreTemplate><IGAuthorFullName><![CDATA[System Admin]]></IGAuthorFullName><IGAuthorEmail><![CDATA[mattias.bogeblad@modul1.se]]></IGAuthorEmail></attributes></article>

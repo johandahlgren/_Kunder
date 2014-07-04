@@ -1,0 +1,50 @@
+---------------
+Videogalleri
+---------------
+
+Mattias Jacobsson 12-11-06: Möjlighet att lägga komponenten i en tvåkolumnssida. 
+SVT Play finns ju bara på en fullbreddssida så vi hade inte tagit höjd för att stödja flera layouter.
+Tidsuppskattat till 4h och inlagt i komponenten.
+
+Mattias Jacobsson 12-11-19: Bara ladda om filmen när man klickar.
+Tidsuppskattat till 2-3h och inlagt i komponenten.
+
+Mattias Jacobsson 12-11-13: Inte visa popup-texter på mobila devices
+Tog 7h att fixa i alla browsers och devices.
+
+Diverse layoutändringar:
+- Pil på dividern
+- Ram vid hover (lite pyssel med margins och grejer för att få till det)
+- "Responsiv" design så den följer med col75
+
+----------------
+Minislidern
+----------------
+
+Mattias Jacobsson 12-11-27:
+Menar du hover-effekt på pager-plupparna eller på bilderna för att visa att vilka som är klickbara?
+Hover på plupparna är rätt snabbt gjort, för det är bara att fixa lite CSS och peka ut bilderna vi använder i den stora slidern (jag antar att vi vill återanvända samma pluppar?).
+-> Jag menar hover på plupparna (återanvänd samma)!
+En hovereffekt för att visa vilka slides som är klickbara funkar ju fint på desktopen, men på mobila devices kommer man ju inte att få någon indikation på att en slide är länkad förrän man trycker på den. Men det kanske är gott nog?
+-> Ja, kör så tillsvidare!
+Ska vi visa filmer i minislidern kommer vi att behöva göra samma avancerade dynamiska inladdning av filmer när man klickar på dem som vi gör i den stora slidern. Detta eftersom man inte kan slide:a på videoelement eftersom de fångar upp alla events. Det skulle ju gå att lösa, men det är nog en förmiddags arbete att fixa så det funkar på alla olika devices och browsers.
+Filmer skulle ju även se lite konstiga ut i det höga formatet som minislidern har, så jag undrar om det är något man kommer använda?
+-> Avvakta med filmer! Vi får se vad som efterfrågas!
+Paus och hastighet som properties är inga problem. Vill du att jag lägger till det?
+-> Ja, lägg gärna till det!
+
+-------------------
+S&S-integrationen
+-------------------
+
+Hämta ut added date istället för created date. 2h
+
+Plocka ut olika storlekar på filmerna och bilderna beroende på vad som finns tillgängligt. 3h
+
+Mattias Jacobsson: Noscript fallback som öppnar filmen i nytt fönster. Tidsuppskattat till 4-5h
+
+Jacobsson/Lundberg 13-02-13: Visa speltid. Uppskattat till 2-3h
+
+Joakim: Ändra layouten igen (ingen border)
+
+Jacobsson/Lundberg: Sorteringen ska vara rad för rad och inte sicksack. 3-4h

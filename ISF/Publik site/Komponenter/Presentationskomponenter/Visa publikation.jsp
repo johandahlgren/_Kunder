@@ -1,0 +1,224 @@
+<%@page import="java.util.Locale"%>
+<%@ taglib uri="infoglue-structure" prefix="structure" %>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="infoglue-page" prefix="page" %>
+<%@ taglib uri="infoglue-common" prefix="common" %>
+<%@ taglib uri="infoglue-content" prefix="content" %>
+<%@ taglib uri="infoglue-management" prefix="management" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+
+<%@page import="org.infoglue.cms.entities.content.DigitalAssetVO"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.util.Collections"%>
+<%@page import="java.util.List"%>
+<%@page import="org.infoglue.cms.controllers.kernel.impl.simple.RegistryController"%>
+<%@page import="org.infoglue.cms.applications.databeans.ReferenceBean"%>
+<%@page import="org.infoglue.cms.entities.structure.SiteNodeVO"%>
+<%@page import="org.infoglue.deliver.controllers.kernel.impl.simple.TemplateController"%>
+<%@page import="org.infoglue.cms.entities.management.LanguageVO"%>
+<%@page import="org.infoglue.cms.entities.management.CategoryVO"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.util.StringTokenizer"%>
+
+<structure:componentPropertyValue id="encodeEmailLabel" propertyName="EmailProtectionLabel" useInheritance="true"/>
+
+<page:pageContext id="pc"/>
+
+<content:content id="publication" propertyName="Publication"/>
+
+<c:if test="${not empty param.contentId}">
+	<content:content id="publication" contentId="${param.contentId}" />
+</c:if>
+
+<c:if test="${empty publication and pc.isDecorated}">
+	<div class="adminMessage"><structure:componentLabel mapKeyName="NoPublicationProvided"/></div>
+</c:if>
+
+<c:if test="${not empty publication}">
+	<content:contentAttribute id="title" attributeName="Title" contentId="${publication.id}"/>
+	<content:contentAttribute id="subTitle" attributeName="SubTitle" contentId="${publication.id}"/>
+	<content:contentAttribute id="publicationId" attributeName="ReportNumber" contentId="${publication.id}"/>
+	<content:contentAttribute id="authors" attributeName="Authors" contentId="${publication.id}"/>
+	<content:contentAttribute id="authorsForMeta" attributeName="Authors" contentId="${publication.id}" disableEditOnSight="true"/>
+	<content:contentAttribute id="ingress" attributeName="Ingress" contentId="${publication.id}"/>
+	<content:contentAttribute id="description" attributeName="Description" contentId="${publication.id}"/>
+	<content:contentAttribute id="publishingDate" attributeName="PublishingDate" contentId="${publication.id}" disableEditOnSight="true"/>
+	<content:relatedContents id="relatedPublications" attributeName="RelatedPublications" contentId="${publication.id}"/>
+	<content:relatedContents id="relatedProjects" attributeName="RelatedProjects" contentId="${publication.id}"/>
+	<content:contentTypeDefinition id="contentTypeDef" contentId="${publication.id}" />
+	
+	<c:choose>
+		<c:when test="${contentTypeDef.name eq 'ISF Rapport'}">
+			<structure:componentLabel id="publicationTypeName" mapKeyName="Rapport"/>
+			<c:set var="publicationType" value="Rapporter" />
+		</c:when>
+		<c:when test="${contentTypeDef.name eq 'ISF Arbetsrapport'}">
+			<structure:componentLabel id="publicationTypeName" mapKeyName="Arbetsrapport"/>
+			<c:set var="publicationType" value="Arbetsrapporter" />
+		</c:when>
+		<c:when test="${contentTypeDef.name eq 'ISF Working Paper'}">
+			<structure:componentLabel id="publicationTypeName" mapKeyName="Workingpaper"/>
+			<c:set var="publicationType" value="Working Papers" />
+		</c:when>
+		<c:when test="${pc.isDecorated}">
+			<div class="adminMessage"><structure:componentLabel mapKeyName="UnknownPublicationType"/></div>
+		</c:when>
+	</c:choose>
+	
+	<%---------------------------------------------------%>
+	<%-- Print the header meta info used by Siteseeker --%>
+	<%---------------------------------------------------%>
+	
+	<content:assignedCategories id="categories" contentId="${publication.id}" categoryKey="Category" />
+	
+	<c:forEach var="category" items="${categories}">
+		<management:categoryDisplayName id="categoryString" categoryVO="${category}" />
+		<%
+			String categoryString 			= (String)pageContext.getAttribute("categoryString");
+			int start 						= categoryString.indexOf("(") + 1;
+			int end 						= categoryString.indexOf(")");
+			String areaName					= categoryString.substring(start, end);
+			String categoryName				= categoryString.substring(0, start -2);
+			pageContext.setAttribute("areaName", areaName);
+			pageContext.setAttribute("categoryName", categoryName);
+		%>
+		<page:htmlHeadItem value="<meta name='eri-cat' content='${areaName};${categoryName}' />" />
+	</c:forEach>
+	
+	<content:assignedCategories id="areas" contentId="${publication.id}" categoryKey="Area" />
+	
+	<c:forEach var="area" items="${areas}">
+		<management:categoryDisplayName id="areaName" categoryVO="${area}" />
+		<page:htmlHeadItem value="<meta name='eri-cat' content='Ämnesområden;${areaName}' />" />
+	</c:forEach>
+	
+	<c:choose>
+		<c:when test="${not empty authorsForMeta}">
+			<%
+				String authors		= (String)pageContext.getAttribute("authorsForMeta");
+				StringTokenizer st2 = new StringTokenizer(authors, ",");
+				String authorName	= "";
+				
+				while(st2.hasMoreTokens()) 
+				{ 
+					authorName 		= st2.nextToken().trim();
+					pageContext.setAttribute("authorName", authorName);
+					%>
+						<page:htmlHeadItem value="<meta name='eri-cat' content='Författare;${authorName}' />" />
+					<%
+				}
+			%>
+		</c:when>
+		<c:otherwise>
+			<management:principal id="articleModifier" contentVersion="${contentVersion}"/>
+			<page:htmlHeadItem value="<meta name='eri-cat' content='Författare;${articleModifier.firstName} ${articleModifier.lastName}' />" />
+		</c:otherwise>
+	</c:choose>
+	
+	<%------------------------------%>
+	<%-- Metadata for page header --%>
+	<%------------------------------%>
+		
+	<content:contentVersion id="contentVersion" content="${publication}"/>
+	
+	<page:htmlHeadItem value="<meta name='eri-cat' content='Sidtyp;publicerat' />" />
+	<page:htmlHeadItem value="<meta name='eri-cat' content='Publikationstyper;${publicationType}' />" />
+	<page:htmlHeadItem value="<meta name='last-modified' content='${contentVersion.modifiedDateTime}' />"/>
+	
+	<%---------------------------------------------------%>
+	<%--                  END Siteseeker               --%>
+	<%---------------------------------------------------%>
+	
+	
+
+	<%-------------------------------------%>
+	<%--         Edit content links      --%>
+	<%-------------------------------------%>
+
+	<c:if test="${pc.isDecorated and not empty publication}">
+		<structure:componentLabel id="editContent" mapKeyName="EditContent"/>
+		<content:editOnSight id="editOnSightHTML" contentId="${publication.id}" attributeName="FullText" languageId="${pc.languageId}" html="${editContent}"/>
+		<div class="igEditButton">
+			<c:out value="${editOnSightHTML}" escapeXml="false"/>
+		</div>
+	</c:if>
+
+	<%-------------------------------------%>
+	<%--         Render text content     --%>
+	<%-------------------------------------%>
+
+	<div id="pageIntro">
+		<div class="innerContainer">
+			
+			<h1><c:out value="${title}" escapeXml="false" /></h1>
+			
+			<c:if test="${not empty subTitle}">
+				<h2 class="publicationSubTitle"><c:out value="${subTitle}" escapeXml="false"/></h2>
+			</c:if>
+			
+			<div id="publicationTypeInfo">
+				<div class="innerContainer">
+					<%--<management:categoryDisplayName id="categoryName" categoryVO="${category}" /> --%>
+					<strong><c:out value="${publicationTypeName}" escapeXml="false" />&nbsp;<c:out value="${publicationId}" escapeXml="false" /></strong>
+				</div>
+			</div>
+
+			<p>
+				<common:protectEmail prefix="${encodeEmailLabel}" value="${ingress}" />
+			</p>
+		</div>
+	</div>
+	<div id="pageMainContent">
+		<div class="innnerContainer">
+			<common:protectEmail prefix="${encodeEmailLabel}" value="${description}" />
+			
+			<div id="writerInfo">
+				<div class="innerContainer">             
+					<h2><structure:componentLabel mapKeyName="AuthorLabel"/></h2>
+					<p><c:out value="${authors}" escapeXml="false" /></p>
+					<%
+						try
+						{
+							SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+					        Date myDate = formatter.parse((String)pageContext.getAttribute("publishingDate"));
+					        pageContext.setAttribute("publishingDate", myDate);
+						}
+						catch (Exception e)
+						{
+							//Do nothing. Use the original value.
+						}
+					%>
+					<p><structure:componentLabel mapKeyName="Published"/>: <common:formatter value="${publication.publishDateTime}" pattern="MMMM yyyy"/></p>
+				</div>
+			</div>
+			
+			<c:if test="${not empty relatedPublications or not empty relatedProjects}">
+				<div id="relatedInfo">
+					<div class="innerContainer">
+						<c:if test="${not empty relatedPublications}">
+							<h2><structure:componentLabel mapKeyName="RelatedPublications"/></h2>
+							<ul>
+								<c:forEach var="relatedPublication" items="${relatedPublications}">
+									<content:contentAttribute id="title" attributeName="Title" contentId="${relatedPublication.id}" disableEditOnSight="true"/>
+									<structure:pageUrl id="publicationUrl" propertyName="PublicationDetailPage" contentId="${relatedPublication.id}" />
+									<li><a href="<c:out value="${publicationUrl}" escapeXml="false" />"><c:out value="${title}" escapeXml="false" /></a></li>
+								</c:forEach>
+							</ul>
+						</c:if><%-- END: relatedPublications --%>
+						<c:if test="${not empty relatedProjects}">
+							<h2><structure:componentLabel mapKeyName="RelatedProjects"/></h2>
+							<ul>
+								<c:forEach var="relatedProject" items="${relatedProjects}">
+									<content:contentAttribute id="title" attributeName="Title" contentId="${relatedProject.id}" disableEditOnSight="true"/>
+									<structure:pageUrl id="publicationUrl" propertyName="PublicationDetailPage" contentId="${relatedProject.id}" />
+									<li><a href="<c:out value="${publicationUrl}" escapeXml="false" />"><c:out value="${title}" escapeXml="false" /></a></li>
+								</c:forEach>
+							</ul>
+						</c:if><%-- END: relatedProjects --%>
+					</div>
+				</div>
+			</c:if>
+		</div><%-- slut pageMainContent --%>
+	</div>
+</c:if>

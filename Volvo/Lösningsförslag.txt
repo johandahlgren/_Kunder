@@ -1,0 +1,11 @@
+Lösningsförslag
+
+Vi tänker bygger appen med hjälp av Adobes öppna ramverk PhoneGap.
+Det går i korthet ut på att användargränssnittet byggs med valig webbteknik (HTML, CSS och Javascript) som kompileras tillsammans med hjälpklasser till en proprietär app för iOS. Fördelarna med denna lösning jämfört med traditionell app-utveckling är bl.a.: 
+- Samma kod kan återanvändas för att i framtiden leverera appar för andra plattformar, t.ex. Android och Windows Phone.
+- Utvecklingstiden blir kortare eftersom gränssnittet bygger på vanlig webbteknik.
+- Det krävs inga specialkunskaper i iOS-utveckling för att vidareutveckla appen.
+
+Appen kommer i första versionen att vara helt fristående och inte ha några kopplingar till andra system. Det innebär att eventuella uppdateringar av formler, priser och liknande kommer att lösas genom att ladda ner en ny version av appen till sin iPad.
+Användarbehörighet kommer att lösas genom lokala konton i appen som skyddas med en enkel PIN-kod. Flera användare kan ha konton på samma iPad och identiferar sig genom sin PIN-kod.
+På användarkontot kommer man att kunna spara personliga favoriter för olika typer av fordon. Eftersom appen inte kommer ha några kopplingar till andra system kommer dessa favoriter vara begränsade till just den fysiska iPad:en och inte vara åtkomliga från någon annans iPad.

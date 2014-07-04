@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sök på webbplatsen</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+        <!--[if lte IE 7]>
+        <link href="css/ie7.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]-->        
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<script type="text/javascript" src="scripts/jquery-1.2.6.min.js"></script>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+
+        <div id="bodyContainer">
+            <div class="innerContainer">
+    
+    
+                <div id="headerContainer">
+                    <div class="innerContainer">
+            
+                        <div id="logoContainer">
+                            <div class="innerContainer">
+                                <!-- OBS: lagt till bild och accesskey på länk -->
+                                <a href="ISF_startsida.html" title="Gå till startsidan" accesskey="1"><img src="images/ISF_Logo.png" alt="Inspektionen för socialförsäkringen" /></a>
+                                <span id="skipLink"><!-- OBS: lagt till skip-länk -->
+                                    <a href="#content" accesskey="s">Gå direkt till huvudinnehåll</a> 
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div id="toolMenuContainer">
+                            <div class="innerContainer">
+                                <ul>
+                                    <li class="first"><a href="ISF_kontaktlista.html"><span>Kontakt</span></a></li> <!-- OBS: lagt på klass -->
+                                    <li><a href="ISF_press.html"><span>Press</span></a></li>
+                                    <li><a href="ISF_arbeta_hos_oss.html"><span>Arbeta hos oss</span></a></li>
+                                    <li><a href="ISF_anpassa.html"><span>Anpassa</span></a></li>
+                                    <li><a href="ISF_webbkarta.html"><span>Webbkarta</span></a></li>
+                                    <li class="rss"><a href="ISF_rss.html"><span>RSS</span></a></li>
+                                    <li class="last"><a href="ISF_reports.html"><span>In English</span></a></li> <!-- OBS: lagt på klass -->
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div id="searchContainer">
+                            <div class="innerContainer">
+                                <fieldset>
+                                	<legend>Sök på webbplatsen</legend>
+                                    <label for="searchField">Sökord</label>
+                                    <input id="searchField" type="text" accesskey="4" /> 
+                                    <input type="submit" class="searchButton" value="Sök" />
+                                </fieldset>
+                            </div>
+                        </div>
+        
+                        <div id="topMenuContainer">
+                            <div class="innerContainer">       
+                                <ul id="topMenuFirst">
+                                    <li class="first"><a href="ISF_amnesstartsida.html"><span>Socialförsäkring</span></a></li>
+                                    <li><a href="ISF_amnesstartsida2.html"><span>Barn &amp; familj</span></a></li>
+                                    <li><a href="#"><span>Funktionsnedsättning</span></a></li>
+                                    <li><a href="#"><span>Sjukförmåner</span></a></li>
+                                    <li class="last"><a href="#"><span>Pension</span></a></li>
+                                </ul>
+                                <ul id="topMenuSecond">
+                                    <li class="first"><a href="ISF_projektstartsida.html"><span>Pågående projekt</span></a></li>
+                                    <li><a href="ISF_publiceratstartsida.html"><span>Publicerat</span></a></li>
+                                    <li class="last"><a href="ISF_remissvar.html"><span>Remissvar</span></a></li>
+                                </ul>
+                                <ul id="topMenuThird">
+                                    <li class="first last"><a href="ISF_om_isf.html"><span>Om ISF</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div><!-- slut headerContainer -->
+                
+                <!-- finns flera olika sidlayoutsklasser som måste sättas på mainContentContainer för sidlayouterna startsida, understartsida, bred sida (utan högerkolumn), fullbreddsida (utan högerkolumn och vänstermeny) -->
+                <!-- vanliga 3-kolumnssidor med vanlig text har ingen klass alls här -->
+				<!--
+                <div id="mainContentContainer" class="startPage subStartPage widePage fullPage">
+         		-->
+                <div id="mainContentContainer" class="fullPage">
+                    <div class="innerContainer">
+                    
+                        <div id="mainColContainer">
+                            <div class="innerContainer">
+								<a id="content"></a><!-- OBS: lagt till anchor för skip-länk, ska alltid ligga här oavsett sidtyp -->    
+                                 
+                                <div id="breadcrumbs">
+                                    <strong>Här är du: </strong>
+                                    <a href="ISF_startsida.html">Startsida</a> <span class="separator">/</span> Sök på webbplatsen 
+                                </div>   
+                                   				
+                                <div id="pageIntro"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                        <h1>Sök på webbplatsen</h1>
+                                    </div>
+                                </div>
+                                   				
+								<div id="searchFilter">
+                                	<div class="innerContainer">
+                                        <fieldset>
+                                            <legend>Sök igen</legend>
+                                            <div class="filterCol">
+                                                <label for="searchTextField">Sökord</label>
+                                                <input id="searchTextField" type="text" value="bidrag" /> 
+                                            </div>
+                                            <input type="submit" class="searchButton" value="Sök" />
+                                        </fieldset>
+                                    </div>
+                                </div>
+                                
+  								<div id="searchHitsTypes">
+                                	<div class="innerContainer">
+                                    	<ul>
+                                        	<li class="selected"><a><span>Hela webbplatsen (215 träffar)</span></a></li>
+                                        	<li><a href="ISF_sok_publikation.html"><span>Publikationer (53 träffar)</span></a></li>
+                                        	<li><a href="#"><span>Pågående projekt (6 träffar)</span></a></li>
+                                        </ul>                                    
+                                    </div>
+                                </div>
+
+                                <div id="searchMainColumn">
+
+                                    <div id="searchHitsInfo">
+                                        <div class="innerContainer">
+                                            <!-- Flera träffar -->
+                                            <p>Din sökning på <strong>bidrag</strong> fick <strong>215</strong> träffar inom <strong>Hela webbplatsen</strong></p>
+                                            <!-- Bara 1 träff -->
+                                            <!--
+                                            <p>Din sökning på <strong>bidrag</strong> fick <strong>1</strong> träff inom <strong>Hela webbplatsen</strong></p>
+                                            -->
+                                            <!-- Inga träffar -->
+                                            <!--
+                                            <p>Din sökning på <strong>bidrag</strong> fick <strong>inga</strong> träffar inom <strong>Hela webbplatsen</strong></p>
+                                            -->
+                                            <!-- Stavningsförslag -->
+                                            <!--
+                                            <p>Menade du <a href="#">bidrag</a>?</p>
+                                            -->
+                                        </div>
+                                    </div>
+                                
+                                    <div id="searchResults">
+                                        <div class="innerContainer">
+                                                                  
+                                            <ul>
+                                            
+                                                <!-- Vanlig sidträff -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                                <!-- Pdf-träff (länk med class, target och title) -->
+                                                <li>
+                                                    <h3><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat quis tortor eu massa auctor hendrerit</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                                <!-- Sidträff med bilagor -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                    <ul>
+                                                        <!-- Pdf-länk (länk med class, target och title) -->
+                                                        <li><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Ladda ned som PDF</a></li>
+                                                        <!-- Sidlänk -->
+
+                                                        <li><a href="#">Pressmeddelande</a></li>
+                                                    </ul>
+                                                </li>
+    
+                                                <!-- Vanlig sidträff -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                                <!-- Pdf-träff (länk med class, target och title) -->
+                                                <li>
+                                                    <h3><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                                <!-- Sidträff med bilagor -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                    <ul>
+                                                        <!-- Pdf-länk (länk med class, target och title) -->
+                                                        <li><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Ladda ned som PDF</a></li>
+                                                        <!-- Sidlänk -->
+                                                        <li><a href="#">Pressmeddelande</a></li>
+                                                    </ul>
+                                                </li>
+    
+                                                <!-- Vanlig sidträff -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                                <!-- Pdf-träff (länk med class, target och title) -->
+                                                <li>
+                                                    <h3><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                                <!-- Sidträff med bilagor -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                    <ul>
+                                                        <!-- Pdf-länk (länk med class, target och title) -->
+                                                        <li><a class="pdfLink" href="#" target="_blank" title="Öppnas i nytt fönster">Ladda ned som PDF</a></li>
+                                                        <!-- Sidlänk -->
+                                                        <li><a href="#">Pressmeddelande</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <!-- Vanlig sidträff -->
+                                                <li>
+                                                    <h3><a href="#">Lorem ipsum dolor sit amet consectetuer adipiscing  elit ut <strong>bidrag</strong> laoreet dolore magna aliquam erat volutpat</a></h3>                                                
+                                                    <p>Sed congue vulputate mauris <strong>bidrag</strong> viverra blandit. Nullam non risus magna, vel fermentum justo. Aliquam quis tortor eu massa auctor hendrerit.</p>
+                                                </li>
+                                                
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                  <!-- slut publicationSearchResults -->
+                              
+                                  <div id="searchResultsPaging">
+                                        <h2>Fler resultatsidor</h2>
+                                        <!-- Visas om det finns föregående (alla utom första sidan) -->
+                                        <!--
+                                        <a href="#">Föregående</a>
+                                        -->
+                                        <!-- Nuvarande resultatsida -->
+                                        <em>1</em>
+                                        <a href="#">2</a>
+                                        <a href="#">3</a>
+                                        <a href="#">4</a>
+                                        <a href="#">5</a>
+                                        <a href="#">6</a>
+                                        <a href="#">7</a>
+                                        <a href="#">8</a>
+                                        <a href="#">9</a>
+                                        <a href="#">10</a>
+                                        <!-- Visas om det finns nästa (alla utom sista sidan) -->
+                                        <a href="#">Nästa</a>
+                                  </div>
+
+								</div>
+                                
+                                <div id="searchSideColumn">
+                                
+                                	<div id="searchFilters">
+                                    	<h2>Begränsa sökresultatet</h2>
+                                        <h3>Ämnesområden</h3>
+                                        <ul>
+                                        	<li class="selected"><a href="#">Alla ämnesområden (53)</a></li>
+                                        	<li><a href="#">Socialförsäkring (20)</a></li>
+                                        	<li><a href="#">Barn &amp; familj (8)</a></li>
+                                        	<li><a href="#">Funktionsnedsättning (3)</a></li>
+                                        	<li><a href="#">Sjukförmåner (7)</a></li>
+                                        	<li><a href="#">Pension (6)</a></li>
+                                        </ul>
+                                    </div>
+                                
+                                </div>
+                                
+                            </div>
+                        </div><!-- slut mainColContainer -->        
+        
+                    </div>
+                </div><!-- slut mainContentContainer -->
+
+
+                <div id="footerContainer">
+                    <div class="innerContainer"><!-- OBS: nytt innehåll -->
+                    	<h2>Kontaktuppgifter</h2>
+                        <p>Postadress: Box 202, 101 24 Stockholm</p>
+                        <p>Besöksadress: Fleminggatan 7</p>
+                        <p>Telefon: 08-58 00 15 00</p>
+                        <p>Fax: 08-58 00 15 90</p>
+                        <p>E-post: <a href="mailto:registrator@inspsf.se">registrator@inspsf.se</a></p>
+                        <p class="contactLink"><a href="#">Kontakta oss</a></p>
+                    </div>
+                </div><!-- slut footerContainer -->
+                
+            
+            </div>
+        </div><!-- slut bodyContainer -->
+	
+		<script type="text/javascript" src="scripts/include.js"></script><!-- OBS: referens till egen scriptfil -->
+
+	</body>
+
+</html>

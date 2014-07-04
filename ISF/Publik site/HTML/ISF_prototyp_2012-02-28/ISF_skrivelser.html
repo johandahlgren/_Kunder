@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Skrivelser</title>
+        <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+        <!--[if lte IE 7]>
+        <link href="css/ie7.css" rel="stylesheet" type="text/css" media="all" />
+        <![endif]-->        
+        <link href="css/print.css" rel="stylesheet" type="text/css" media="print" />
+		<script type="text/javascript" src="scripts/jquery-1.2.6.min.js"></script>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+
+        <div id="bodyContainer">
+            <div class="innerContainer">
+    
+    
+                <div id="headerContainer">
+                    <div class="innerContainer">
+            
+                        <div id="logoContainer">
+                            <div class="innerContainer">
+                                <!-- OBS: lagt till bild och accesskey på länk -->
+                                <a href="ISF_startsida.html" title="Gå till startsidan" accesskey="1"><img src="images/ISF_Logo.png" alt="Inspektionen för socialförsäkringen" /></a>
+                                <span id="skipLink"><!-- OBS: lagt till skip-länk -->
+                                    <a href="#content" accesskey="s">Gå direkt till huvudinnehåll</a> 
+                                </span>
+                            </div>
+                        </div>
+        
+                        <div id="toolMenuContainer">
+                            <div class="innerContainer">
+                                <ul>
+                                    <li class="first"><a href="ISF_kontaktlista.html"><span>Kontakt</span></a></li> <!-- OBS: lagt på klass -->
+                                    <li><a href="ISF_press.html"><span>Press</span></a></li>
+                                    <li><a href="ISF_arbeta_hos_oss.html"><span>Arbeta hos oss</span></a></li>
+                                    <li><a href="ISF_anpassa.html"><span>Anpassa</span></a></li>
+                                    <li><a href="ISF_webbkarta.html"><span>Webbkarta</span></a></li>
+                                    <li class="rss"><a href="ISF_rss.html"><span>RSS</span></a></li>
+                                    <li class="last"><a href="ISF_reports.html"><span>In English</span></a></li> <!-- OBS: lagt på klass -->
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div id="searchContainer">
+                            <div class="innerContainer">
+                                <fieldset>
+                                	<legend>Sök på webbplatsen</legend>
+                                    <label for="searchField">Sökord</label>
+                                    <input id="searchField" type="text" accesskey="4" /> 
+                                    <input type="submit" class="searchButton" value="Sök" />
+                                </fieldset>
+                            </div>
+                        </div>
+        
+                        <div id="topMenuContainer">
+                            <div class="innerContainer">       
+                                <ul id="topMenuFirst">
+                                    <li class="first"><a href="ISF_amnesstartsida.html"><span>Socialförsäkring</span></a></li>
+                                    <li><a href="ISF_amnesstartsida2.html"><span>Barn &amp; familj</span></a></li>
+                                    <li><a href="#"><span>Funktionsnedsättning</span></a></li>
+                                    <li><a href="#"><span>Sjukförmåner</span></a></li>
+                                    <li class="last"><a href="#"><span>Pension</span></a></li>
+                                </ul>
+                                <ul id="topMenuSecond">
+                                    <li class="first"><a href="ISF_projektstartsida.html"><span>Pågående projekt</span></a></li>
+                                    <li class="selected"><a href="ISF_publiceratstartsida.html"><span>Publicerat</span></a></li>
+                                    <li class="last"><a href="ISF_remissvar.html"><span>Remissvar</span></a></li>
+                                </ul>
+                                <ul id="topMenuThird">
+                                    <li class="first last"><a href="ISF_om_isf.html"><span>Om ISF</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+                </div><!-- slut headerContainer -->
+                
+                <!-- finns flera olika sidlayoutsklasser som måste sättas på mainContentContainer för sidlayouterna startsida, understartsida, bred sida (utan högerkolumn), fullbreddsida (utan högerkolumn och vänstermeny) -->
+                <!-- vanliga 3-kolumnssidor med vanlig text har ingen klass alls här -->
+				<!--
+                <div id="mainContentContainer" class="startPage subStartPage widePage fullPage">
+         		-->
+                <div id="mainContentContainer">
+                    <div class="innerContainer">
+            
+		                <!-- denna renderas inte alls för en sida som inte ska ha vänstermeny -->
+                        <div id="navColContainer">
+                            <div class="innerContainer">
+                		
+                                <div id="navMenuContainer">
+                                    <div class="innerContainer">
+                                        <!-- samma som intranätet till att börja med, vi får ändra sen om det behövs -->
+                                        <ul class="bigmenu">
+                                        	<li class=""><span><a href="#">Om publikationstyper</a></span></li>
+                                        	<li class=""><span><a href="ISF_rapportsida.html">Rapporter</a></span></li>
+                                        	<li class=""><span><a href="ISF_arbetsrapportsida.html">Arbetsrapporter</a></span></li>
+                                        	<li class=""><span><a href="ISF_wpsida.html">Working Papers</a></span></li>
+                                        	<li class=""><span><a href="ISF_remissvar.html">Remissvar</a></span></li>
+                                        	<li class="selected"><span><a href="#">Skrivelser</a></span></li>
+                                        	<li class=""><span><a href="#">Årsredovisningar</a></span></li>
+                                        	<li class=""><span><a href="#">Granskningsplaner</a></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div><!-- slut navColContainer -->
+        
+                        <div id="mainColContainer">
+                            <div class="innerContainer">
+								<a id="content"></a><!-- OBS: lagt till anchor för skip-länk, ska alltid ligga här oavsett sidtyp -->    
+                                 
+                                <div id="breadcrumbs">
+                                    <strong>Här är du: </strong>
+                                    <a href="ISF_startsida.html">Startsida</a> <span class="separator">/</span> <a href="ISF_publiceratstartsida.html">Publicerat</a> <span class="separator">/</span> Skrivelser 
+                                </div>   
+                                   				
+                                <div id="pageIntro"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                        <h1>Skrivelser</h1>
+                                        <p>Här hittar du de skrivelser som ISF har publicerat med länk till skrivelsen i PDF-format.</p>
+                                    </div>
+                                </div>
+
+                                <div id="pageMainContent"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                
+                                    </div>
+                                </div><!-- slut pageMainContent -->
+
+                                <div class="publicationList">
+                                	<div class="innerContainer">
+                                                        
+                                        <table summary="Tabellen presenterar ISF:s remissvar">
+                                        	<tr>
+                                            	<th scope="col" class="pdfCol">Titel</th>
+                                            	<th scope="col">Publicerad</th>  
+                                            </tr>
+                                           	<tr>
+                                            	<td class="pdfCol"><a class="pdfLink" title="Öppnas i nytt fönster (PDF, 723 KB)" href="#">Vilka mekanismer har styrt sjukskrivningsmiljarden?</a></td>
+                                            	<td>2011-06</td> 
+                                            </tr>
+                                        	<tr>
+                                            	<td class="pdfCol"><a class="pdfLink" title="Öppnas i nytt fönster (PDF, 53 KB)" href="#">Försäkringskassans handlingsplan</a></td>
+                                            	<td>2008-08</td>  
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div><!-- slut publicationList -->
+
+                                <div class="bannerBlock"><!-- OBS: nytt innehåll --><!-- OBS: klass istället för id eftersom man skulle kunna ha ett i mittenkolumnen och ett i högerkolumnen -->
+                                	<div class="innerContainer">
+
+										<!-- OBS: varannan ska ha oddRow, börja med första -->
+                                        <div class="bannerPair oddRow">
+                                            <div class="banner">
+                                                <div class="innerContainer">
+                                                    <h2>Prenumerera</h2>
+                                                    <p><a href="#">Prenumerera på våra nyheter och publikationer</a></p>
+                                                </div>
+                                            </div>
+    
+                                            <div class="banner">
+                                                <div class="innerContainer">
+                                                    <h2>Är du journalist?</h2>
+                                                    <p><a href="#">Välkommen in i vårt pressrum där vi har samlat information som kan vara till nytta för media</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div><!-- slut bannerBlock -->
+
+                            </div>
+                        </div><!-- slut mainColContainer -->
+
+		                <!-- denna renderas inte alls för en sida som inte ska ha högerkolumn -->
+                        <div id="sideColContainer">
+                            <div class="innerContainer">
+                		
+                                <div id="publicationSearch"><!-- OBS: nytt innehåll -->
+                                	<div class="innerContainer">
+                                        <h2>Sök publikation</h2>
+                                        <fieldset>
+                                            <legend>Sök bland våra publikationer</legend>
+                                            <label for="textField">Sökord</label>
+                                            <input id="textField" type="text" /> 
+                                            <label for="section">Ämnesområde</label>
+                                            <select id="section">
+                                            	<option>Ämnesområde</option>
+                                            	<option>Socialförsäkring</option>
+                                            	<option>Barn &amp; familj</option>
+                                            	<option>Funktionsnedsättning</option>
+                                            	<option>Sjukförmån</option>
+                                            	<option>Pension</option>
+                                            </select>
+                                            <label for="author">Författare</label>
+                                            <select id="author">
+                                            	<option>Författare</option>
+                                            	<option>Klas Andersson</option>
+                                            	<option>Britta Lawson</option>
+                                            	<option>Einar Karlsson</option>
+                                            	<option>Ana María López</option>
+                                            	<option>Bertil Grip</option>
+                                            	<option>Sven Karlstedt</option>
+                                            	<option>Emelie Wargh</option>
+                                            	<option>Carl Lewis</option>
+                                            </select>
+                                            <input type="submit" class="searchButton" value="Sök" />
+                                        </fieldset>
+                                    </div>
+                                </div>
+								
+                            </div>
+                        </div><!-- slut sideColContainer -->        
+        
+                    </div>
+                </div><!-- slut mainContentContainer -->
+
+
+                <div id="footerContainer">
+                    <div class="innerContainer"><!-- OBS: nytt innehåll -->
+                    	<h2>Kontaktuppgifter</h2>
+                        <p>Postadress: Box 202, 101 24 Stockholm</p>
+                        <p>Besöksadress: Fleminggatan 7</p>
+                        <p>Telefon: 08-58 00 15 00</p>
+                        <p>Fax: 08-58 00 15 90</p>
+                        <p>E-post: <a href="mailto:registrator@inspsf.se">registrator@inspsf.se</a></p>
+                        <p class="contactLink"><a href="#">Kontakta oss</a></p>
+                    </div>
+                </div><!-- slut footerContainer -->
+                
+            
+            </div>
+        </div><!-- slut bodyContainer -->
+	
+		<script type="text/javascript" src="scripts/include.js"></script><!-- OBS: referens till egen scriptfil -->
+
+	</body>
+
+</html>

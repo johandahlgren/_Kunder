@@ -1,0 +1,58 @@
+DESKTOP
+
+Plug n' play-funktionalitet 20-40h
+Visa senaste nyheten från websiten (hur hämtas vi den? Finns det något API?) 1-2h
+Favoritfunktion
+- Bygga ihop en egen SU genom att klicka för funktioner från olika SU. 10-40h
+Stängknapp avslutar appen men ska även kunna ligga igång i bakgrunden. (Blir svårt med en webapp-eftersom den stängs ner lite när OS:et känner för det för att spara minne) 2h
+Uppdatering av offlineappar 5h (sedan tillkommer tid för att implementera det i varje app)
+- Visa tid för senaste uppdatering
+- Knapp för att uppdatera data
+Settings 10-20h
+Ideas ska skicka SMS när mailet kommit fram. 10h IDIOTFUNKTION!
+
+FORMULAS
+Göra beräkning i X antal formler 5-25h per formel beroende på komplexitet. 11 x 5-25h
+Skicka mail med resultatet till valfri adress, hämtas från kontakter. 2-4h
+Resultatet ska skickas som PDF (går antagligen inte att generera PDF på mobila enheter) 10-30h
+Om nät saknas ska mailet sparas i en utkorg och skickas senare (anväda OS:ets egen hantering?) 0-20h
+Hämta vald enhet/enheter från inställningarna för SA 2-4h
+Uppdatera databasen 5-20h
+Bygga GUI: 5-20h
+
+AHU Quick Choice
+Skicka mail med resultatet till valfri adress, hämtas från kontakter. 2-4h
+Resultatet ska skickas som PDF (går antagligen inte att generera PDF på mobila enheter) 10-30h
+Om nät saknas ska mailet sparas i en utkorg och skickas senare (anväda OS:ets egen hantering?) 0-20h
+Hämta vald enhet/enheter från inställningarna för SA 2-4h
+Använda Swegons beräkningsprogram ProUnit för beräkningarna. (Hur har de tänkt sig att det ska funka?) TID: 20-50h
+Möjlighet att spara beräkningar TID: 2-10h
+Uppdatera databasen 5-20h
+Bygga GUI: 5-20h
+
+K-FAKTOR
+Skicka mail med resultatet till valfri adress, hämtas från kontakter. 2-4h
+Resultatet ska skickas som PDF (går antagligen inte att generera PDF på mobila enheter) 10-30h
+Om nät saknas ska mailet sparas i en utkorg och skickas senare (anväda OS:ets egen hantering?) 0-20h
+Hämta vald enhet/enheter från inställningarna för SA 2-4h
+Databas för aktuella produkter: Q-base ska användas. Måste tankas ner till appen. 20-100h
+Databas för utgångna produkter: Access-databas. Måste konverteras till lämpligt format vid nedladdning. 40-100h
+Söka k-faktor: hitta rätt produkt genom att svara på några frågor och välja bland bilder: 20-80h
+Injusteringsprotokoll redigerbara i Excel. Kräver extern programvara. Finns det ens excel för alla smartphones? 2-10h
+Fotosök för historiska don. Ta en bild på luftdonet och bilden ska sedan ge träff på alternativa luftdon. Cool funktion. 500-5000h
+Beräkningar: 10-20h
+Varning vid lågt tryck m.fl. funktioner 20-40h
+Bygga GUI: 5-20h
+
+Språkhantering på alla funktioner: 10-20h 
+Grafisk design 20-40h
+Pixelpush 30-40h
+
+Totalt: Asmånga timmar.
+
+Övergripande:
+- Varje funktion i SU måste byggas som en fristående widget för att kunna kombineras till favoritlistan. 
+- Varje SU måste ha en funktion för att uppdatera sin data
+- Alla SU ska läsa inställningar från SA
+- Allting ska ha språkstöd
+- Varje SU ska funka utan nät

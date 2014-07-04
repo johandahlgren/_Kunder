@@ -1,0 +1,68 @@
+Dokumentation GU Research Plus
+
+---
+
+Enhetsdetalj
+Denna sida presenterar information om en enskild enhet. När man kommer in på sidan visas följande översiktsinformation om enheten:
+- Enhetens överliggande enhet om en sådan finns. Denna är klickbar och leder till den enhetens detaljsida. Om man står på sidan för en avdelning visas både dess institution och institutionens fakultet som klickbara länkar.
+- Kontaktinformation för enheten. Om enheten har en adress till sin webbplats inlagd i Katagu visas denna som en klickbar länk. Samma sak för enhetens epostadress.
+- Vem som är ansvarig för enheten visas. Klickar man på länken tas man till den ansvariges personkort.
+- En kort beskrivning av enheten (om en sådan har lagts in). Om man är inloggad som en användare som har rätt behörighet visas en redigeringsknapp som öppnar ett redigeringsverktyg där man direkt kan redigera texten på sidan.
+- Enhetens underenheter visas som klickbara länkar vilka leder till respektive underenhets enhetskort.
+
+Om enheten man tittar på är en institution eller avdelning visas på översiktssidan även en lista med de senaste publikationer som gjorts vid enheten samt en lista över de forskningsområden som enheten ägnar sig åt. Forskningsområdena som visas är de ämnen man publicerat mest inom, så enheten kan ägna sig åt forskning inom ämnen som inte visas i listan om man ännu inte publicerat tillräckligt många publikationer inom ämnet.
+
+Personallista
+Det visas även en flik som presenterar enhetens personal. Listan sorteras initialt i bokstavordning på personernas efternamn, men besökaren kan själv välja en annan sortering genom att klicka på rubriken i respektive kolumn. Besökaren kan även via en rullgardinsmeny välja hur måmga personer som ska presenteras på varje sida.
+Om antalet personer i listan överstiger antalet personer man vill visa på per sida visas en sidväljare längst ner på sidan där man kan stega igenom personalen sida för sida.
+När man klickar på personens namn tas man till den sida som pekats som som personens hemsida i Katagu, eller till personens personkort om ingen hemsida pekats ut.
+
+Publikationslista
+En flik visas även för enhetens samtliga publikationer, sorterade i publiceringsdatumordning med den senaste publikationen längst upp.
+Klickar man på publiaktionens namn tas man till dess publikationskort.
+Varje författare som är anställd vid GU blir länkad till personens personkort.
+Om publikationen finns i elektronisk form på en webbsida eller som elektroniskt dokument visas en länk till denna. Dessa är oftast externa länkar som tar användaren till en annan webbsajt.
+
+Persondetalj
+Denna sida presenterar information om en enkild person. När man kommer in på sidan visas en översiktlig beskrivning av personen innehållande följande fält:
+- Kontaktinformation för personen och den enhet han eller hon arbetar vid. Om personen har en epostadress inlagd i Katagu visas denna som en klickbar länk. Om enheten personen jobbar vi har en hemsidalänk registrerad i Katagu visas denna. Samma sak för enhetens epostadress. Genom att klicka på texten "Mer information" kan man ta sig till enhetens enhetskort.
+- En kort presentation av personen. Om man är inloggad som administratör eller tittar på sitt eget personkort får man upp en redigeraknapp som öppnar en editor där man direkt på sidan kan redigera och spara sin presentation.
+- En bild på personen. Om man är inloggad som administratör eller tittar på sitt eget personkort kan man direkt på sidan kan ladda upp en ny bild.
+Om personen har publicerat akademiska papper visas en lista över de forskningsområden han eller hon har publicerat samt en lista över personens senaste publikationer.
+
+Om personen har publikationer visas en flik där personens samtliga publikationer visas i en publikationslista. För en beskrivning av denna se Enhetsdetalj ovan.
+
+---
+
+Enhetslista
+Denna sida presenterar en lista med enheter på Göteborgs universitet. I listans egenskaper kan man välja vilken enhets underorganisationer man vill se, om man t.ex. vill skapa en lista över institutioner på en fakultet. Enhets-ID:t som anges är enhetens ID i Katagu. 
+För att skapa en lista över toppnivåenheter anger man id 9000, vilket skapar en lista över enheter på den översta nivån i enhetshierarkin, t.ex. fakulteter, nämnder och akademier.
+Det går att ställa in vilken rubrik som ska visas över listan och man kan även välja om rubriken ska visas eller inte.
+
+Ämneslista
+Denna sida presenterar en lista äver alla ämnen som finns under ett annat ämne. 
+Om man inte anger något ämne att utgå ifrån visas samtliga ämnen inom vilka något har publicerats på GU.
+Man kan ange en rubrik som ska visas över listan.
+När man klickar på "+"-tecknet expanderas ämnet och dess underämnen visas som klickbara länkar.
+Klickar man på ämnesnamnet tas men till ämneskortet för det klickade ämnet.
+
+---
+
+Publikationsdetalj
+Presenterar detaljerad information om en enskild publikation. De författare som är anställda vid GU blir länkade till respektive persons personkort.
+Den enhet publikationen är gjord vid visas som en klickbar länk som tar besökaren till enhetskortet för enheten.
+De länkar som finns till eventuella externa resurser för publikationen visas.
+De ämneskategorier publikationen taggats upp med visas som klickbara länkar till respektive ämnes ämneskort.
+Om publikationen finns i elektronisk form, antingen som webbsida eller som PDF, visas en länk till publikationen med en ikon som talar om vilken typ av dokument den länkar till.
+
+
+Ämnesdetalj
+Visar detaljerad information om ett enkilt ämne. Initialt visas en översiktsvy över ämnet med följande information:
+- Ämnets namn och ämnets överliggande ämne. Det överliggande ämnet är klickbart och leder till det överliggande ämnets ämneskort.
+- En kort presentation om ämnet. Om man är inloggad som en användare som har rollen SubjectAdmin eller Administrator får man upp en redigeringsknapp som öpnnar ett redigeringsfält där man direkt på sidan kar redigera och spara beskrivningen.
+- De forskare som publicerat mest inom ämnet visas. Klickar man på forskarens namn tas man till hans eller hennes personkort. Klickar man på forskarens enhet tas man till dess enhetskort.
+- De sneaste publikationerna inom ämnet presenteras. För en mer detaljerad beskrivning av denna lista, se Enhetsdetalj ovan.
+
+En flik som listar alla forskare som publicerat inom ämnet visas. För en mer detaljerad beskrivning av denna lista, se Enhetsdetalj ovan.
+
+En flik som presenterar alla publikationer inom ämnet visas. För en mer detaljerad beskrivning av denna lista, se Enhetsdetalj ovan.

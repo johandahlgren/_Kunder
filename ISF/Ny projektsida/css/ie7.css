@@ -1,0 +1,28 @@
+/* IE7 fixes */
+.bannerBlock .banner a, #newsBlock h3 a, #eventBlock h3 a
+{
+	text-decoration: underline;
+	background: none;
+	padding: 0;
+}
+#shoppingBasketContainer
+{
+	top: -43px;
+}
+#searchContainer #searchField
+{
+	padding-top: 5px;
+	height: 18px;
+}
+.publicationList table td a,
+.projectList table td a,
+.conferenceList table td a,
+#orderList table td a
+{
+	zoom: 1;
+}
+#shoppingLightbox ul li
+{
+	display: inline;
+	zoom: 1;
+}

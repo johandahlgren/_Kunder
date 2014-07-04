@@ -1,0 +1,12 @@
+﻿@font-face {
+  font-family: "ITCFranklinGothicW01-Bk 812647";
+  src: url("/Content/Fonts/03dda592-ab39-4f26-9535-fdea194854cf.eot?#iefix");
+  src: url("/Content/Fonts/03dda592-ab39-4f26-9535-fdea194854cf.eot?#iefix") format("eot"), url("/Content/Fonts/41c174b1-68c1-41b7-a19f-5ec80929b115.woff") format("woff"), url("/Content/Fonts/06d99598-12aa-461b-b57e-81a137da1b9f.ttf") format("truetype"), url("/Content/Fonts/427cca04-e0ee-4395-a5d3-b7d45feeff62.svg#427cca04-e0ee-4395-a5d3-b7d45feeff62") format("svg");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "ITCFranklinGothicW01-Md 812695";
+  src: url("/Content/Fonts/905c1a7c-f018-4815-b4a9-6bd6f4c7e768.eot?#iefix");
+  src: url("/Content/Fonts/905c1a7c-f018-4815-b4a9-6bd6f4c7e768.eot?#iefix") format("eot"), url("/Content/Fonts/10ab5970-5726-4843-82b1-912faa9307ff.woff") format("woff"), url("/Content/Fonts/70a26d03-0393-410a-a98c-e35dc876c3cb.ttf") format("truetype"), url("/Content/Fonts/edb011f7-44ad-4c0d-b81a-c97c3ad6be6f.svg#edb011f7-44ad-4c0d-b81a-c97c3ad6be6f") format("svg");
+  font-weight: 700;
+}

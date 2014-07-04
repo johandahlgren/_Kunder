@@ -1,0 +1,1466 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+* {
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+	font: normal 1em/1.4 arial,helvetica,sans-serif;
+	color:#424242;
+	background-color: rgb(0, 82, 107);
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+a {
+    color: #0097cd;
+    text-decoration: none;
+    outline: none;
+}
+
+a:visited,
+a:active {
+     color: #0097CD; /* Inherit funkar inte */
+}
+
+a:hover {
+    color: #06e;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Knowit custom styles
+   ========================================================================== */
+
+
+
+@font-face {
+font-family: 'VastTrafikIconsRegular';
+	src:url('fonts/vasttrafik.eot');
+	src:url('fonts/vasttrafik.eot?#iefix') format('embedded-opentype'),
+		url('fonts/vasttrafik.woff') format('woff'),
+		url('fonts/vasttrafik.ttf') format('truetype'),
+		url('fonts/vasttrafik.svg#VastTrafikIconsRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Typography */
+h1,h2,h3,h4,h5,h6,h3.smallHeading {
+	margin-top:.5em;
+	margin-bottom:.33em;
+	line-height:normal;
+	font-weight:700;
+}
+
+h1 {
+	font-size:2em;
+	font-weight:400;
+	word-break: break-all; /* WARNING WARNING */
+}
+
+h2 {
+	font-size:1.5em;
+	font-weight:400;
+/*	margin-top:1.2em; */
+/*	margin-bottom:-.33em; not for mobile */
+}
+
+h3 {
+	font-size:1.3333em;
+}
+
+h4 {
+	font-size:1.1667em;
+}
+
+h5 {
+	font-size:1em;
+}
+
+h1,h2,h3,h4,h5 {
+	color:#424242;
+}
+
+h3.smallHeading {
+	font-size:1em;
+	font-weight:700;
+	margin-top:0;
+}
+p { padding-top:0;margin-top:0;}
+p img {
+	margin-top:0.4em; /* lineheight - font-size */
+}
+/* main general stuff */
+hr {
+	background-color: rgba(0, 0, 0, 0.1);
+    border: 0 none;
+    height: 1px;
+    margin: 1em 0;
+    padding: 0;
+    clear: both;
+}
+header {
+	background-color: #0097cd;
+	display: block;
+	height: 2.812545em; /*45px;*/
+	width: 100%;
+	overflow: hidden;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 9999;
+}
+.openMenu header {
+	background-color: rgb(12, 91, 119);
+}
+.vtLogo {
+	background: url("../img/vastrafik_logo.svg") no-repeat scroll;
+	background-position: center center;
+	display: block; 
+	width: 120px;
+	height: 2.812545em;
+	margin: 0 auto;
+}
+footer {
+	clear: both;
+	background-color: rgb(0, 151, 205);
+	color: white;
+	margin-top:1em;
+}
+footer a.customerService {
+	border-bottom:0;
+	padding: 1em 0 0 0;
+	margin: 0 auto;
+	display: table;
+	white-space: nowrap;
+	text-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+}
+footer a.customerService:before {
+	content: "\2706";
+	display: block;
+    float: left;
+    font-size: 3.1em;
+    height: 1em;
+    line-height: 1;
+    margin: -0.05em 0 0;
+    padding: 0;
+    text-align: center;
+    width: 1em;
+}
+a.toTop {
+	display: block;
+	background-color:#00526B;
+	padding:0.5em 1em;
+	margin-bottom:0.5em;
+	cursor: pointer;
+}
+footer p {
+	margin: 0 auto;
+	font-size: 1em;
+	line-height: 1;
+	width: 100%;
+	text-align: left;
+	padding:1em 0;
+}
+footer a,
+footer a:hover,
+footer a:visited,
+footer a:active,
+footer a.toDesktop {
+	color:white;
+}
+footer p > a {
+	display: block;
+	border-bottom: 1px dotted rgba(255,255,255,0.1);
+	padding:0.5em 1em;
+	text-shadow: 0 0 2px rgba(0,0,0,0.2);	
+}
+footer p > a:last-child {
+	border:0;
+}
+footer span {
+	width: 90%;
+	margin:0 auto;
+	padding:0 0 1em 0;
+	display: block;
+	text-align: center;
+}
+footer span a {
+	display: inline;
+	padding:0 1em;
+	font-size: 0.8em;
+	text-shadow: 0 0 1px rgba(0,0,0,0.2);	
+}
+footer a.toDesktop {
+	display: block;
+	background-color: #00526B;
+	color:white;
+	width: 100%;
+	text-align: center;
+	padding:0.5em 0;
+	text-shadow: 0 0 2px rgba(255,255,255,0.2);	
+}
+#mainContent {
+	width: 100%;
+	/* 90% viewport 
+	width: 90%;
+	margin:45px auto 0 auto;
+*/
+}
+#contentWrapper{
+	width: 100%;
+	margin: 45px 0 0 0;
+}
+.topAlert {
+    background-color: #DC6C36;
+    color: #FFFFFF;
+    margin-top:45px;
+    margin-bottom:-45px;
+    width: 100%;
+}
+#topAlertTable {
+	border-collapse: separate;
+	border-spacing: 0 10px;
+}
+.alertText {
+	border-right: 1px solid rgb(200, 88, 34);
+	padding: 0 10px;
+	font-size:0.9em;
+    line-height: 1.2;
+}
+.alertClose {
+	border-left: 1px solid rgb(240, 128, 74);
+	vertical-align: text-top;
+}
+.topAlert.perm {
+	background-color: red;
+}
+.topAlert.perm .topAlertClose {
+	display: none;
+}
+.topAlert a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+a.topAlertClose {
+    font: normal 1.2499875em/1 'VastTrafikIconsRegular';
+	display: block;
+	color: white;
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+    display: block;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+#mainContent section {
+	width: 100%;
+	margin: 25px 0 25px 0;
+	padding: 0 10px;
+	position: relative;
+	display: table;
+}
+#mainContent section.half {
+	width: 50%;
+	background-color: deeppink;
+}
+/* This is to be deleted */ 
+#mainContent section.half > div {	
+	margin: auto;
+	width: 90%;
+	height: 90%;
+	display: block;
+	background-color: fuchsia; /* KICK IT */
+	margin: 5% auto auto auto;
+}
+
+/* icons and buttons */
+.magglas {
+	float:right;
+}
+a.icon.magglas:before {
+	position: relative;
+	display: block;
+	float:right;
+	font:normal 1.2499875em/1 'VastTrafikIconsRegular';
+	content:"a";
+	color:white;
+	margin-top: 12px; /*12px*/
+	margin-right: 23px; /*23px*/
+}
+a.button {
+	text-decoration: none;
+	font: bold 1em/1.1 arial,helvetica, sans-serif;
+	color:white;
+	float:left;
+	position:relative;
+	padding: 5px;
+	margin:0;
+	border:1px solid #007ea9;
+	border-radius: 3px;
+	background: #129ed0; /* Old browsers */
+	background: -moz-linear-gradient(top,  #129ed0 0%, #008bbd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#129ed0), color-stop(100%,#008bbd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #129ed0 0%,#008bbd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #129ed0 0%,#008bbd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #129ed0 0%,#008bbd 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #129ed0 0%,#008bbd 100%); /* W3C */
+	outline:none;
+}
+.halfWidth {
+	width: 50%;
+}
+.halfWidthPL {
+	width: 50%;
+	padding-left: 0.5em;
+}
+.halfWidthPR {
+	width: 50%;
+	padding-right: 0.5em;
+}
+.halfWidthCenter {
+	width: 50%;
+	margin: 0 auto;
+}
+.center {
+	margin:0 auto;
+	text-align: center;
+}
+img.center {
+	display: block;
+}
+/* DELETE THIS? */
+.center a.button {
+	margin:0 auto;
+	float:none;
+	display: inline-block;
+}
+a.menu-button {
+	padding: 5px 5px 5px 30px;
+	margin-top:8px;
+	margin-left:10px;
+	cursor: pointer;
+}
+.openMenu a.menu-button {
+	padding: 5px 0 5px 30px;
+	margin-top:8px;
+	margin-left:10px;
+	cursor: pointer;
+	width: 0;
+	overflow: hidden;
+}
+a.logout-button {
+	font: normal 0.6875em/1 arial,helvetica, sans-serif;
+	padding:9px 13px;
+	border-color: #023c50;
+	margin: 3px 40px 0 0;
+}
+a.menu-button:active,
+a.menu-button:visited {
+	color:white;
+}
+a.menu-button:hover {
+	color:rgba(255,255,255,0.9);
+}
+a.menu-button:before {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 0 3px transparent, 0 6px #FFFFFF, 0 9px transparent, 0 12px #FFFFFF;
+    content: "";
+    height: 3px;
+    left: 5px;
+    position: absolute;
+    top: 6px;
+    width: 19px;
+}
+/* misc general */
+
+.arrow_box {
+	position: relative;
+	background: #E5F7FB;
+	padding:1em;
+	margin-bottom:0.5em;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #E5F7FB;
+	border-width: 1em;
+	left: 50%;
+	margin-left: -1em;
+}
+
+
+/*==================
+        MENU
+  ==================*/
+
+#menuContainer {height: 100%; overflow: auto;}
+#menuTree {margin-top: 45px;}
+.openMenu #vt-pusher {transform: translate3d(280px, 0, 0); -webkit-transform: translate3d(280px, 0, 0); position: fixed !important;}
+.closeMenu #vt-pusher {transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0);  position: absolute;}
+#vt-overlay {background-color: rgba(0, 0, 0, 0.65); width: 100%; height: 100%; display: block; position: fixed; z-index: 1000;}
+.openMenu #vt-overlay {display: block;}
+.closeMenu #vt-overlay {display: none;}
+.openMenuLeft {position: static; display: block;}
+.closeMenuLeft {position: fixed; display: none;}
+
+#vt-container {width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+}
+#vt-menu {
+	width: 280px;
+	display: none;
+}
+#vt-menu h2 {font-size: 1.25em; color: rgb(0, 163, 207);}
+#vt-pusher {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
+	z-index: 1000;
+	display: table;
+	transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	transition: all 200ms linear; 
+	-webkit-transition: all 200ms linear;
+}
+ul#menuTree {background-color: #15a2d3; padding: 0;	list-style: none;}
+ul#menuTree li {
+	border-top: 1px solid #1087be;
+}
+ul#menuTree li a {
+	line-height: 60px;
+	display: block;
+	color: white;
+	font-weight: bold;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 280px;
+	text-indent: 20px;
+}
+ul#menuTree ul {
+	background-color: #1294ca; 
+	display: none; 
+	list-style: none; 
+	margin: 0; 
+	padding: 0;
+}
+ul#menuTree ul li a {
+	font-weight: normal;
+	width: 270px;
+	text-indent: 30px;
+}
+.active > a {
+	font-weight: bold;
+	background: #1294ca;
+	background: -moz-linear-gradient(top,  rgba(16,135,190,1) 0%, rgba(18,148,202,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(16,135,190,1)), color-stop(100%,rgba(18,148,202,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(16,135,190,1) 0%,rgba(18,148,202,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(16,135,190,1) 0%,rgba(18,148,202,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(16,135,190,1) 0%,rgba(18,148,202,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(16,135,190,1) 0%,rgba(18,148,202,1) 100%); /* W3C */ }
+.expand {
+	font-family: 'VastTrafikIconsRegular'; 
+	float: right; 
+	display: block; 
+	width: 60px; 
+	text-align: center; 
+	text-indent: 0;
+	position: relative;
+	z-index: 500;
+	/*transition:all 200ms linear;*/
+}
+.active .expand {
+	transform: rotate(180deg); -ms-transform: rotate(180deg); -webkit-transform: rotate(180deg); /*transform-origin: 20% 40%; -ms-transform-origin:20% 40%; -webkit-transform-origin:20% 40%;*/
+}
+.divider {
+	float: right; 
+	display: block; 
+	border-left: 1px solid rgb(20, 125, 160);
+	border-right: 1px solid rgb(60, 185, 235); 
+	margin: 15px 0; 
+	height: 30px;
+}
+.active .divider {
+	border-left: 1px solid rgb(0, 120, 160);
+	border-right: 1px solid rgb(20, 165, 215); 
+}
+.linkText {}
+#menuHeader {
+	overflow: hidden;
+	padding: 4px 0 3px;
+	height: 45px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgb(2, 81, 109);
+	width: 280px;
+	z-index: 600;
+}
+#loggedOutHeader {
+	width: 100%;
+	position: absolute;
+	background-color: rgb(2, 81, 109);
+	display: none;
+}
+.logIn {
+	padding-top: 10px;
+	color: #15a2d3;
+	font: normal 0.6875em/1.9 arial,helvetica,sans-serif;
+}
+.userIcon {
+	font-family: 'VastTrafikIconsRegular';
+	color: #15a2d3;
+	font-size: 27px; 
+	margin: 0 10px 0 20px;
+}
+.loggedInAs {
+	color: #15a2d3;
+	display: block;
+	clear: both;
+	text-transform: uppercase;
+	font: normal 0.6875em/1.9 arial,helvetica,sans-serif;
+}
+.userName {
+	display: block;
+	clear: both;
+	color: #fff; 
+	font:normal 0.6875em/1 arial,helvetica,sans-serif;
+}
+.left {float: left;}
+.right {float: right;}
+nav a {text-decoration: none;}
+.homeLink {
+}
+.homeLink span:before {
+	position: relative;
+	display: block;
+	float: left;
+	font: normal 1.5em 'VastTrafikIconsRegular';
+	content: "e";
+	margin-top: 16px;
+}
+
+/*==================
+        SEARCH
+  ==================*/
+
+#searchForm {
+	background-color: rgb(247, 247, 247);
+	width: 100%;
+	padding: 20px 0;
+	position: fixed;
+	top: -200px;
+	left: 0;
+	z-index: 1010;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+	transition: all 200ms linear;
+}
+
+.expanded {
+	top: 45px !important;
+}
+
+#searchForm form {
+	margin-bottom: 20px;
+}
+
+#searchForm fieldset {
+	padding: 0 10px;
+}
+
+.searchBox {
+	padding: 10px 0;
+	border: 1px solid rgb(218, 218, 218);
+	width: calc(100% - 100px); /* WARNING WARNING */
+	color: rgb(66, 66, 66);
+	outline: none;
+	text-indent: 10px;
+	float: left;
+}
+
+#searchButton {
+	width: 100px;
+	height: 40px;
+	float: right;
+	padding: 10px 20px;
+	background: rgb(240,148,81); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(240,148,81,1) 0%, rgba(229,105,42,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,148,81,1)), color-stop(100%,rgba(229,105,42,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(240,148,81,1) 0%,rgba(229,105,42,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(240,148,81,1) 0%,rgba(229,105,42,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(240,148,81,1) 0%,rgba(229,105,42,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(240,148,81,1) 0%,rgba(229,105,42,1) 100%); /* W3C */
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	color: white;
+	cursor: pointer;
+}
+#searchButton span {
+	float: left;
+}
+#searchButton span:before {
+	position: relative;
+	display: block;
+	float: left;
+	font: normal 1.2499875em/1 'VastTrafikIconsRegular';
+	content: "a";
+	margin-right: 10px;
+}
+
+#clearButton {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-top: 8px;
+	position: absolute;
+	right: 130px;
+	display: none;
+}
+
+#clearButton span:before {
+	font: normal 1.2499875em/1 'VastTrafikIconsRegular';
+	content: "g";
+	margin-top: 5px;
+	display: block;
+	color: rgb(200, 200, 200);
+}
+
+.searchInfo {
+	padding: 0px 10px;
+}
+
+.searchInfo p,
+.card p {
+	padding: 0;
+	margin: 0;
+}
+
+/*====================
+      START PAGE
+  ====================*/
+
+.startPageTripFinder {
+	color: white;
+	display: table;
+	width: 100%;
+	margin: 15px 0 0px 0;
+}
+
+.tripFinderTop {
+	width: 100%;
+	height: 40px;
+	background: rgb(251,126,63); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(251,126,63,1) 0%, rgba(231,110,47,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(251,126,63,1)), color-stop(100%,rgba(231,110,47,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(251,126,63,1) 0%,rgba(231,110,47,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(251,126,63,1) 0%,rgba(231,110,47,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(251,126,63,1) 0%,rgba(231,110,47,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(251,126,63,1) 0%,rgba(231,110,47,1) 100%); /* W3C */
+	padding: 10px;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-top-right-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 2px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+}
+.findTrip {
+	width: 50%;
+	height: 60px;
+	background-color: #00b6de;
+	float: left;
+	padding: 20px 10px 10px 10px;
+	text-align: center;
+	border-right: 1px solid #2f9ec6;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-bottom-left-radius: 2px;
+}
+.nextTrip {
+	width: 50%;
+	height: 60px;
+	background-color: #00b6de;
+	float: left;
+	padding: 20px 10px 10px 10px;
+	text-align: center;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-radius-bottomright: 2px;
+	border-bottom-right-radius: 2px;
+}
+  
+.startPageSectionHeader {
+	border-bottom: 2px solid #30abd7;
+	color: #008ac1;
+	float: left;
+	width: 100%;
+	padding: 0 0 8px 0;
+	font-family: Arial,Verdana,Helvetica,Tahoma;
+}
+
+.startPageSectionHeader .icon {
+	font-family: 'VastTrafikIconsRegular';
+	font-size: 1.1em;
+	float: left;
+	color: rgb(200, 200, 200);
+	line-height: 1.6em;
+}
+
+.startPageSectionHeader .title {
+	float: left;
+	font-size: 1.25em;
+	padding-left: 10px;
+	background-repeat: no-repeat;
+	background-position: 0px 5px;
+	background-size: 17px;
+}
+.startPageSectionHeader a:visited {
+	color: #008ac1;
+}
+
+#banner img {
+	width: 100%;
+}
+/*====================
+      CARD ROLLERS
+  ====================*/
+  
+.cardRoller {
+	list-style-type: none;
+	margin-bottom: 10px;
+}
+
+.card {
+	float: left;
+	overflow: hidden;
+	height: 105px;
+	padding: 0.4em 0 10px 0;
+	border-bottom: 1px solid rgb(230, 230, 230);
+	cursor: pointer;
+	display: block;
+}
+.cardPadding {
+	padding: 10px;
+}
+.cardImage {
+	width: 100px;
+	height: 83px;
+	background-size: cover;
+	float: left; 
+	margin: 0.2em 10px 10px 0;
+}
+.cardTitle {
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-top: -4px;
+}
+
+.cardText {
+}
+
+.cardLink {
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: rgb(0, 140, 187);
+	min-height: 30px;
+}
+
+.warning {
+	padding-left: 40px;
+	background-image: url("../img/sprite.png");
+	background-position: 5px 5px;
+}
+
+.severe {
+	padding-left: 40px;
+	background-image: url("../img/sprite.png");
+	background-position: 0 -55px;
+}
+
+#trafficSituations .card {
+	height: 95px;
+	background-color: #f7f7f7;
+}
+
+.cardSwiperPagination {
+	float: right;
+	margin: 7px 0 0 0;
+}
+
+.cardSwiperPagination a {
+	background-color: #d8f0fe;
+	text-indent: -10000px;
+	border-radius: 10px;
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin-left: 12px;
+	float: left;
+	outline: none;
+}
+
+.cardSwiperPagination a.selected {
+	background-color: #30abd7;
+}
+
+a.showAll {
+	float: right;
+	margin-bottom: 20px;
+}
+a:visited.showAll {
+	color: #008ac1;
+}
+
+/*===================
+  NEWS LIST
+  ===================*/
+  
+.newsItem {
+	padding: 5px 10px;
+	border-bottom:1px solid rgba(0, 0, 0, 0.1);
+	overflow:hidden;
+	clear:both;
+}
+/** DELETE THIS? **/
+section .newsItem:nth-last-child(3){ 
+	border-bottom: 0;
+	padding: 0 10px;
+}
+.newsItem img {
+	width: 30%;
+	margin:0.4em 0.8em 0.4em 0;
+	float:left;
+}
+.newsItem p {
+	padding:0;margin:0 0 0.5em 0;
+	color:#424242;
+}
+/*===================
+Nyhetsdetalj
+=====================*/
+p.ingress {
+	font-weight: bold;
+}
+.newsDetail img {
+	width: 100%;
+}
+/*===================
+	Icons for bus/tram etc
+  ===================*/
+.lineIcon,
+div.lines a,
+div.lines span {
+    border: 1px solid #DADADA;
+    border-radius: 3px 3px 3px 3px;
+    display: inline-block;
+    float: left;
+    font-family: Arial,Verdana,Helvetica,Tahoma;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: bold;
+    height: 23px;
+    line-height: 0.8;
+    margin-bottom: 4px;
+    margin-right: 6px;
+    min-width: 16px;
+    overflow: hidden;
+    padding: 6px;
+    text-align: center;
+    vertical-align: middle;
+    color:#ffffff; /* default color */
+}
+/*FÄRJA*/
+.FERRY {
+	background-color: #003273;
+}
+/* BUSS Generellt */
+.BUS {
+	background-color:#003273;
+}
+/* 
+	Tåg generellt
+	Nsb regiontåg,
+	Pendeltåg,
+	SJ Regional
+	Tågab regiontåg
+*/
+.TRAIN,
+.TRAINNSB,
+.TRAINPENDEL,
+.TRAINSJREG,
+.TRAINTAGAB{
+	background-color:#003273;
+}
+/* Västtågen */
+.TRAINWEST {
+	background-color:#5C5C5C;
+}
+/* Blå express */
+.BEXBLA {
+	background-color:#336699;
+}
+/* Gul express*/
+.BEXGUL {
+	background-color:#FFDD00;
+	color:#00ABE5!important;
+}
+/* Lila Express */
+.BEXLILA {
+	background-color:#692869;
+	color:#FFFFFF;
+}
+/* orange express*/
+.BEXORANGE {
+	background-color:#F58123;
+}
+/* rosa express */
+.BEXROSA {
+	background-color:#E89DC0;
+}
+/* röd express */ 
+.BEXROD {
+	background-color:#CD1432;
+}
+/* Grön Express */
+.BEXGRON {
+	background-color: #008228;
+}
+/* 
+	Lerum-snabben,
+	Marstrand express,
+	Onsala-snabben,
+	Ersätter tåg
+*/
+.BEXLS,
+.BEXMARS,
+.BEXONSALA,
+.BEXERSTAG,
+.BEXORUST{
+	background-color:#003273;
+}
+/* Svart Express */
+.BEXSVART,
+.TRAM11 {
+	background-color: black;
+}
+/* Spårvagn linje 1- xxx */
+.TRAM1 {
+	background-color:#FFFFFF;
+	color:#00ABE5!important;
+}
+.TRAM2 {
+	background-color:#FFF014;
+	color:#00ABE5!important;
+}
+.TRAM3 {
+	background-color:#004B85;
+}
+.TRAM4 {
+	background-color:#14823C;
+}
+.TRAM5 {
+	background-color:#EB1923;
+}
+.TRAM6 {
+	background-color:#FA8719;
+	color:#00ABE5!important;	
+}
+.TRAM7 {
+	background-color:#7D4313;
+}
+.TRAM8 {
+	background-color:#872387;
+}
+.TRAM9 {
+	background-color:#B9E2F8;
+	color:#00ABE5!important;
+}
+.TRAM10 {
+	background-color:#B4E16E;
+	color:#0E629B!important;
+}
+.TRAM11 {
+	background-color:#000000;
+}
+.TRAM13 {
+	background-color:#FEE6C2;
+	color:#00ABE5!important;
+}
+.TRAM17 {
+	background-color:#00B6F1;
+	color:#C0DC39!important;
+}
+/*====================
+      Trafikstörningar
+  ====================*/
+/*borderedBox */
+.box-container {
+	width: 100%;
+	position: relative;
+	background: #f7f7f7;
+	border: 1px solid #eeeeee;
+	margin-bottom:20px;
+}
+/* form in arrowbox */
+.box-container form {
+	margin:15px auto 0 auto;
+	width: 100%;
+}
+.box-container form select{
+	width: auto;
+	margin: 0 auto;
+	font-size: 0.9em;
+	display: block;
+}
+#togglebtn {
+	width: 90%;
+	margin: 20px auto 15px;
+	background-color: #ffffff;
+	border-radius: 2px;
+	box-shadow: inset 0px 2px 4px rgba(0,0,0,0.2);
+	padding:2px;
+	overflow: hidden;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+#togglebtn span {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	width: 50%;
+	display: block;
+	text-align: center;
+	float:left;
+	font-weight: bold;
+	line-height: 1.8;
+	z-index:2;
+	position: relative;
+	padding: 0.6em 0 0.4em;
+	font-size: 0.8em;
+}
+#togglebtn span:first-child,
+#togglebtn.kommande span:nth-child(2) {
+	color:#0096cc;
+}
+#togglebtn span:nth-child(2),
+#togglebtn.kommande span:first-child {
+	color:#424242;
+}
+#btnMarker {
+	position: relative;
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	font-size: 0.8em;
+	line-height: 2.8em;
+	margin-top: -2.8em;
+	float:left;
+	width: 50%;
+	color:#0097cd;
+	background: #fefefe; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fefefe 0%, #e8e8e8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#e8e8e8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fefefe 0%,#e8e8e8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fefefe 0%,#e8e8e8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fefefe 0%,#e8e8e8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fefefe 0%,#e8e8e8 100%); /* W3C */
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+	z-index:1;
+}
+#switch {
+	display: block;
+	outline: none;
+	overflow: hidden;
+}
+/*
+	störningslistan
+*/
+/*plain stuff*/
+ul {list-style: none;padding:0;margin:0;}
+ul.trafficSituation {
+	width: 100%;
+	margin:0;
+	padding:0;
+}
+ul.trafficSituation li {
+	margin: 1px 0 0;
+	padding:0;
+	min-height: 60px;
+	width: 100%;
+	background-color:#fdfdfd;
+	border-top: 1px solid #dadada;
+	overflow:hidden;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+	padding:15px 7px;
+}
+ul.trafficSituation li:first-child {
+	border-top: none;
+}
+ul.trafficSituation li:nth-child(odd) {
+	background-color: #f7f7f7;
+	min-height: 60px;
+}
+ul.trafficSituation li:last-child {
+	border-top: 1px solid #dadada;
+}
+ul.trafficSituation li p {
+	padding:0 10px 10px 10px;
+}
+.lines {
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	margin-bottom: 5px;
+}
+ul.trafficSituation li .tsHeadline,
+.tsClass {
+	color:#008cbb;
+	padding-left:36px;
+	display: block;
+	width: 100%;			
+}
+ul.trafficSituation li .tsHeadline:before,
+.tsClass:before {
+	content:"";
+	display: block;
+	position:absolute;
+	width: 25px;
+	height: 25px;
+	float:left;
+	margin-left:-34px;
+	margin: 0.3em 0 0 -34px;
+}
+/* lite mindre ikon */
+.tsClass.threeFourts:before {
+	width: 1.171875em;
+	height: 1.171875em;
+	margin-top:2px;
+}
+#contentWrapper #tsDetail {border-bottom:0;}
+#tsDetail .tsDetail {
+	width: 100%;
+	margin:10px auto;
+}
+#tsList .box-container {
+	margin: 20px 0 30px 0;
+}
+.tsDetail h2 {
+	line-height: 1.3;
+}
+.tsDetail .lines a {
+    font-size: 0.9em;
+    height: 2.5em;
+    line-height: 1.5em;
+    padding: 0.4em 0.8em;
+}
+.tsDetail p {
+	margin:0 0 0.5em;
+}
+.tsDetail ul {
+	padding:0;margin:0;
+}
+.tsDetail .tsClass{
+	color:#424242;
+}
+/* Plain / normal */
+@media 
+	only screen and (-webkit-max-device-pixel-ratio: 1.5),
+	only screen and (   max--moz-device-pixel-ratio: 1.5),
+	only screen and (     -o-max-device-pixel-ratio: 1.5/1),
+	only screen and (        max-device-pixel-ratio: 1.5),
+	only screen and (                max-resolution: 128dpi),
+	only screen and (                max-resolution: 1.5dppx) {
+		.sIcons,
+		ul.trafficSituation li .tsHeadline:before,
+		.tsClass:before {
+		/* note: change backgroundsize when sprite is extendent */
+			 background: url("../img/sprite.png") no-repeat scroll 0 0 transparent;
+			 background-size: 240px 800px;
+		}
+		.tsClass.threeFourts:before {
+			background-size: 180px 600px;
+		}
+		ul.trafficSituation li .tsHeadline.sNormal:before,
+		.tsClass.sNormal:before {
+			    background-position: 0 0;
+		}
+		ul.trafficSituation li .tsHeadline.sSevere:before,
+		.tsClass.sSevere:before {
+			    background-position: 0 -60px;
+		}
+}
+
+/* Retina / hi-res */
+@media 
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) {
+		.sIcons,
+		ul.trafficSituation li .tsHeadline:before,
+		.tsClass:before {
+			/* note: change backgroundsize when sprite is extendent */
+			 background: transparent url("../img/sprite-x2.png") no-repeat scroll 0 0;
+			 background-size:  120px 400px;
+		}
+		.tsClass.threeFourts:before {
+			background-size: 90px 300px;
+		}
+		ul.trafficSituation li .tsHeadline.sNormal:before,
+		tsClass.sNormal:before {
+			background-position: 0 0;
+		}
+		ul.trafficSituation li .tsHeadline.sSevere:before,
+		.tsClass.sSevere:before {
+			    background-position: 0 -30px;
+		}
+}
+
+/*============
+Mina sidor
+=============*/
+input.nButton { /* normal Button */
+		color:#0097CD;
+		font-family: arial,helvetica, sans-serif;
+		font-weight: bold;
+		border:1px solid #cccccc;
+		border-radius: 3px;
+		background: #fefefe; /* Old browsers */
+		background: -moz-linear-gradient(top,  #fefefe 0%, #e8e8e8 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#e8e8e8)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #fefefe 0%,#e8e8e8 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #fefefe 0%,#e8e8e8 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #fefefe 0%,#e8e8e8 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #fefefe 0%,#e8e8e8 100%); /* W3C */
+	}
+form.fullWidth input[type="text"],
+form.fullWidth input[type="email"],
+form.fullWidth input[type="password"] {
+	width: 100%;
+	margin-top:0.2em;
+	margin-bottom:1em;
+	font-size: 1.1em;
+	padding:0.6em;
+}
+form.fullWidth label {
+	font-weight: bold;
+}
+form.fullWidth input[type="submit"]{
+	width: 50%;
+	padding:0.5em;
+	margin: 1em auto;
+}
+#myCards table th {
+	text-align: left;
+	font-weight: bold;
+}
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/* Prevent callout */
+
+.nocallout {
+    -webkit-touch-callout: none;
+}
+
+.pressed {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* A hack for HTML5 contenteditable attribute on mobile */
+
+textarea[contenteditable] {
+    -webkit-appearance: none;
+}
+
+/* A workaround for S60 3.x and 5.0 devices which do not animated gif images if
+   they have been set as display: none */
+
+.gifhidden {
+    position: absolute;
+    left: -100%;
+}
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    direction: ltr;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-indent: -999em;
+}
+
+.ir br {
+    display: none;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.waiHide {
+	display: none;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: h5bp.com/q
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 800px) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for viewports that meet the condition */
+}

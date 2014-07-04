@@ -1,0 +1,166 @@
+-------------------
+ CMS
+-------------------
+
+DEV:
+id: xdajoh
+pwd: vanliga + 666
+
+alt
+id: administrator
+pwd: !4getme
+
+------
+
+PROD och VPN:
+id: xdajoh
+pwd: fyn3-REN
+
+-------------------
+ SSH
+-------------------
+
+DEV:
+ssh dev.cms.it.gu.se -l m1dahjo
+
+PROD: 
+ssh cms.it.gu.se -l m1dahjo
+
+Virtuell burk
+ssh cmspres-vir-1.it.gu.se -l m1dahjo
+
+CAS-testburken
+ssh cmstestpres-vas-1.test.it.gu.se -l m1dahjo
+
+ID: m1dahjo
+PWD: eecooW7e
+
+-------------------
+ GIT
+-------------------
+
+cd /Applications/InfoGlue/eclipse/workspace/guCMS
+
+Kolla vad som ändrats:
+git status
+
+Lägg till filer att committa:
+git add <FILE PATH>
+
+Kolla att filerna ligger klara för commit:
+git status
+
+Committa till den egna branchen:
+git commit
+
+Pusha till master:
+git push
+
+-------------------
+ DEPLOY GIT
+-------------------
+
+sudo -H -u cms /bin/bash --login
+cd
+cd Buildproject
+./pull_gucms.sh
+Kolla att rätt filer har checkats ut.
+exit
+sudo /etc/init.d/tomcat5 stop
+ps -ef | grep java
+sudo -H -u cms /bin/bash --login
+cd
+cd Buildproject
+./deploy_gucms.sh | grep BUILD
+exit
+sudo /etc/init.d/tomcat5 start
+tail -f /appl/cms/logs/catalina.out
+
+-------------------
+ DEPLOY CVS
+-------------------
+
+1. Logga på
+2. Kör sudo -H -u cms /bin/bash --login
+3. Kör cd
+4. Kör cd BuildProject
+5. Kör ./backupExisting.sh
+6. Redigera [checkout-script]
+   ändra till aktuellt versionsnummer (på InfoglueFinal) Just nu: 2994
+7. Kör ./[checkout-script]
+8. Kolla att [redeploy-script] stämmer överens med [redeploy-script] på cmspres-vir-1
+   Endast deploy ska vara aktiva
+   Ev kommentera bort kalenderdeployen om inte den behöver uppdateras
+9. GU stoppar Apache och Tomcat (och tar bort servern ur lastdelaren)
+   Kör exit
+   Kör sudo /etc/init.d/tomcat5 stop
+10. Kolla att Tomcat är stoppad
+    ps -ef | grep java
+11. Kör sudo -H -u cms /bin/bash --login
+    Kör cd
+    Kör cd BuildProject
+    Kör ./[redeploy-script] | grep BUILD
+12. Kolla att alla blev BUILD SUCCESSFUL
+13. GU startar Tomcat
+    Kör exit
+    Kör sudo /etc/init.d/tomcat5 start
+14. Kolla loggarna
+    tail -f /appl/cms/logs/catalina.out
+15. Surfa till maskinen och klicka runt i siten så den cachear upp lite sidor.
+    Startsidan, Forskning, Samverkan, Om universitetet (de andra har egna siter)
+16. GU startar Apache
+17. Kolla ViewApplicationState på respektive server så det ser ok ut
+    - Rätt version
+    - Minnet ser ok ut (Maximum < 2000)
+	- Used memory håller sig lgt (< 800mB)
+	- Average processing time per request ska gå ner under 500ms
+
+	
+
+Special för minnesuppgradering:
+Peter Hall eller Magnus Norling ndrar dessa:
+/usr/java/jdk1.5.0_14/jre/lib/i386/jvm.cfg
+#-client IF_SERVER_CLASS -server
+-server
+/etc/init.d/cms (eller /etc/init.d/tomcat5 p vissa maskiner).
+CATALINA_OPTS="-Dfile.encoding=UTF-8 -Xmx2048m -Xms2048m -XX:MaxPermSize=256m -XX:PermSize=128m -Xss128k -XX:ParallelGCThreads=10 -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-CMSIncrementalPacing -XX:CMSIncrementalDutyCycle=100 -XX:+UseParNewGC -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -XX:MaxTenuringThreshold=31 -XX:+AggressiveOpts"
+
+	
+
+Om det skiter sig:
+- Kopiera tillbaka filerna från backupdirectoryt
+- ändra tillbaka minneskonfig:en
+
+-------------------------
+ CAS-test
+-------------------------
+
+URL: http://cmstestpres-vas-1.test.it.gu.se:8080/infoglueCMS
+
+ssh cmstestpres-vas-1.test.it.gu.se -l m1dahjo
+
+ID: Root
+PWD: habba
+
+CAS-testanvndare:
+ID: xteste
+PWD: ser3!HEL
+
+-------------------------
+ Eventum
+-------------------------
+
+INLOGGNING:
+id: johan.dahlgren@modul1.se
+pwd: [vanliga nya]
+
+-----------------------
+ Siteseeker
+-----------------------
+
+URL: https://goteborgsuniversitet.appliance.siteseeker.se/
+
+id: knowit
+pw: Dgr759*
+
+

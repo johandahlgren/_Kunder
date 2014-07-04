@@ -1,0 +1,15 @@
+<div id="mainContentContainer" class="startPage">
+    <div class="innerContainer">
+		 <div id="mainColContainer">
+         	<div class="innerContainer">
+         		<a id="content"></a>
+				<ig:slot id="startPageMain" inherit="false" allowedComponentGroupNames="MainColumn"></ig:slot>
+			</div>
+		</div>
+		<div id="sideColContainer">
+			<div class="innerContainer">
+				<ig:slot id="right" inherit="false" allowedComponentGroupNames="RightColumn"></ig:slot>
+			</div>
+		</div>
+	</div>
+</div>

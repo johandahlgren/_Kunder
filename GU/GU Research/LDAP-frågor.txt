@@ -1,0 +1,52 @@
+LDAP
+
+Prestandan?
+Räknas forskare som anställda enligt katalogen?
+
+
+Hämta person: ldapsearch -H ldaps://oid.it.gu.se:6361 -v   -x -b cn=users,dc=gukonto,dc=gu,dc=se "cn=xmunad"
+Hämta enhet: ldapsearch -H ldaps://oid.it.gu.se:6361 -v   -x -b cn=staff,cn=Groups,dc=gukonto,dc=gu,dc=se "o=1000" displayname
+
+Exempel på fungerande hierarkier:
+
+Sahlgrenska akademin (ou=5000, o=9000)
+- Institutionen för medicin (ou=5500, o=5000)
+  - Avdelningen för molekylär och klinisk medicin (ou=5530, o=5500)
+  - Avdelningen för invärtesmedicin (ou=5550, o=5500)
+- Institutionen för biomedicin (ou=5300, o=5000)
+  - Avdelningen för patologi (ou=5330, o=5300)
+  - Avdelningen för medicinsk kemi och cellbiologi (ou=5360, o=5300)
+- Institutionen för kliniska vetenskaper (ou=5600, o=5000)
+  - Avdelningen för plastikkirurgi (ou=5626, o=5600)
+  - Avdelningen för radiofysik (ou=5617, o=5600)
+
+Handelshögskolans fakultetsnämnd (ou=2200, o=k900)
+- Avdelningen för ekonomprogrammet (ou=2207, o=2200)
+- Ekonomisk-historiska institutionen (ou=2210, o=2200)
+
+IT-fakultetsnämnden (ou=7800, o=k900)
+- Institutionen för data- och informationsteknik (ou=7820, o=7800)
+- Institutionen för tillämpad informationsteknologi (ou=7810, o=7800)
+
+Humanistiska fakultetsnämnden (ou=1000, o=k900)
+- Institutionen för svenska språket (ou=1170, o=1000)
+- Institutionen för historiska studier (ou=1100, o=1000)
+
+DUBLETTER?
+- Inst F medicin (ou=5500, -) (har members)
+- Inst F kliniska vetens (ou=5600, -) (har members)
+
+Det finns flera...
+
+Felaktiga?
+- Institutionen för arkeologi (-, -) (har members)
+- Institutionen för arkeologi och antikens kultur (ou=1090, -) (har members)
+- Institutionen för genusvetenskap (ou=1800, -) (saknar members)
+- Institutionen för kulturvård i Mariestad (ou=3017) (har members)
+- Institutionen för lingvistik (ou=1420, -) (har members)
+- Inst för medicinsk och fysiologisk kemi (-, -) (har members)
+- Inst för omvårdnad (-, -) (har members)
+- Institutionen för religionsvetenskap (-, -) (saknar members)
+- Inst för religionsvetenskap och teologi (ou=1130, -) (har members)
+- Socialantropologiska inst (ou=2450, -) (har members)
+- Tjärnö marinbiologiska laboratorium (ou=3710, -) (har members)

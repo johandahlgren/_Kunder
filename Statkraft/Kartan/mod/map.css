@@ -1,0 +1,107 @@
+h1 {line-height: 1em;}
+
+input::-webkit-input-placeholder {color: rgb(155, 155, 155); font-family: "FranklinGothicWebBook"; font-weight: normal;}
+input:-moz-placeholder {color: rgb(155, 155, 155); opacity: 1; font-family: "FranklinGothicWebBook"; font-weight: normal;}
+input::-moz-placeholder {color: rgb(155, 155, 155); opacity: 1; font-family: "FranklinGothicWebBook"; font-weight: normal;}
+input:-ms-input-placeholder {color: rgb(155, 155, 155);font-family: "FranklinGothicWebBook"; font-weight: normal;}
+
+#map-energy-source-select a.type-checkbox {text-indent: 24px;}
+
+.checkbox-item a {width: 100%; border-width: 0 0 1px 0; font-size: 1em; font-family: "FranklinGothicWebBook"; line-height: 42px;}
+.checkbox-item a:after {display: none;}
+.checkbox-item a.unchecked .wind-power-marker, .checkbox-item a.unchecked .hydropower-marker, .checkbox-item a.unchecked .gas-power-marker, .checkbox-item a.unchecked .district-heating-marker {background-position: -602px -230px; width: 13px; height: 9px; top: -4px; right: 10px;}
+.checkbox-item a.unchecked {border-width: 0 0 1px 0; background-color: white; padding-bottom: 0;}
+.checkbox-item:last-child a {border-width: 0;}
+.selected .checkbox-marker {background-position: -582px -230px;}
+.checkbox-marker {position: absolute; right: 7px; top: -3px; background: url("sprite.png") -604px -230px; width: 22px; height: 20px;}
+.checkbox-item a.checked .checkbox-marker {background-position: -582px -230px;}
+.checkbox-windpower .energy-source-icon {background-position: -235px -108px; top: -2px;}
+.checkbox-hydropower .energy-source-icon {background-position: -211px -108px; top: -4px;}
+.checkbox-gaspower .energy-source-icon {background-position: -258px -108px; top: -4px;}
+.checkbox-district-heating .energy-source-icon {background-position: -241px -134px; top: -4px;}
+.dropdown-header:hover {cursor: pointer;}
+.dropdown-header.expanded .expand-dropdown {background: url("sprite.png") -671px -235px no-repeat;}
+.dropdown-text {box-sizing: border-box; border: 1px solid white; height: 42px;}
+.energy-source-icon {background: url("sprite.png") -187px -157px no-repeat; width: 24px; height: 24px; display: inline-block; position: absolute; top: 0; left: 10px;}
+.expand-dropdown {float: right; width: 42px; height: 42px; display: block; background: url("sprite.png") -627px -235px no-repeat;}
+.listview a {border-bottom-left-radius: 3px; border-top-left-radius: 3px;}
+.listview-icon {background: url("sprite.png") -508px -235px no-repeat; margin-left: 11px;}
+.map-dropdown {width: 240px; position: absolute; z-index: 1000; top: 41px; border: 1px solid rgb(221, 217, 215); padding: 0; display: none; box-sizing: border-box;}
+.map-dropdown li {width: 100%;}
+.map-search {border: none; height: 42px; width: 270px; padding: 5px 20px 5px 20px; box-sizing: border-box; float: left; font-size: 14px; font-family: "FranklinGothicWebBook";}
+.map-search:focus {outline: none; border: 1px solid rgb(221, 217, 215);}
+.map-search-button {background: url("sprite.png") -187px -157px no-repeat; background-color: rgb(255, 255, 255); width: 30px; height: 30px; position: absolute; top: 5px; right: 8px;}
+.map-search-button:hover {cursor: pointer; opacity: 1;}
+.map-search-container {position: relative; display: inline-block; width: 270px; height: 42px; font-family: serif /*"FranklinGothicWebBook"*/; font-size: 14px; font-weight: normal; }
+.mapview a, .listview a {line-height: 42px; font-weight: normal; padding-left: 44px; width: inherit; border: none; font-size: 14px; font-family: "FranklinGothicWebBook";}
+.mapview a {padding-left: 45px; border-bottom-right-radius: 3px; border-top-right-radius: 3px;}
+.mapview-icon {margin-left: 10px; background: url("sprite.png") -547px -27px no-repeat;}
+.mapview-links li {display: block; float: left; list-style-type: none; width: 115px;}
+.mapview a, .listview a {color: rgb(0, 176, 220);}
+.mapview.active a, .listview.active a {background-color: rgb(0, 176, 220); border: 0;}
+.mapview.active .listview-icon, .listview.active .listview-icon {background: url("sprite.png") -488px -235px no-repeat;}
+.mapview.active .mapview-icon, .listview.active .mapview-icon {background: url("sprite.png") -547px 1px no-repeat;}
+.project-country {color: rgb(87, 87, 86); font-family: "FranklinGothicWebBook"; font-size: 14px; margin: 5px 0 0 20px; padding: 0; display: block;}
+.project-item {display: table; width: 100%; position: relative; background-color: rgb(255, 255, 255); margin-bottom: 40px;}
+.project-item-button-cell {background-color: rgb(200, 200, 200); width: 50px;}
+.project-item-cell {display: table-cell;}
+.project-item-image-cell {width: 40%; background-color: rgb(220, 220, 220);}
+.project-item-image-cell img {width: 100%;}
+.project-item-row {display: table-row;}
+.project-item-title-cell {padding: 10px; vertical-align: top;}
+.project-item-title-cell h3 {color: rgb(0, 80, 136); font-size: 23px; font-family: "FranklinGothicWebBook";}
+.project-list.big-grid li .project-item h3 {margin-top: 20px;}
+.project-list.big-grid li .project-item a {height: 470px;}
+.project-list li .project-item {margin-bottom: 20px;}
+.project-list li .project-item .header .cell {font-family: "FranklinGothicWebBook"; font-size: 14px;}
+.select-map-options-box .dropdown-header {display: block; background-color: rgb(255, 255, 255); height: 42px; line-height: 42px; text-indent: 18px;}
+.select-map-options-box .dropdown-header.expanded .dropdown-text {border: 1px solid rgb(221, 217, 215); background-color: rgb(240, 240, 240);}
+.select-map-options-box {width: 240px; position: relative; float: left; margin: 0 20px 10px 0; font-size: 14px;}
+.tt-dropdown-menu {background-color: rgb(255, 255, 255); border: 1px solid rgb(221, 217, 215); box-sizing: border-box; width: 100%; margin-top: 0;}
+.tt-hint {color: #999;}
+.tt-query {box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);}
+.tt-suggestion {border-width: 1px; border-style: solid; border-color: rgb(221, 217, 215); border-width: 0 0 1px 0; box-sizing: border-box; line-height: 42px; text-indent: 20px; font-family: "FranklinGothicWebBook";}
+.tt-suggestion.tt-cursor {background-color: rgb(245, 245, 245);}
+.tt-suggestion p {margin: 0; color: rgb(87, 87, 86); cursor: pointer;}
+.twitter-typeahead {position: absolute !important;}
+.type-checkbox:hover {background-color: rgb(245, 245, 245);}
+.wind-power-marker, .hydropower-marker, .gas-power-marker, .district-heating-marker {background: url("sprite.png") -580px -230px no-repeat; width: 13px; height: 9px; top: -4px; right: 10px;}
+
+@media (max-width: 1065px)
+{
+    .project-list li .project-item .header .marker {right: 10px;}
+}
+
+@media screen and (max-width: 767px)
+{
+    .project-list li .project-item h3 {font-size: 24px; font-family: FranklinGothicWebLight;}
+    .project-country {margin: 5px 0 0 0;}
+    .project-list.big-grid li .project-item a, .project-list li .project-item a {width: 100%; height: initial;}
+    .select-map-options-box {width: 220px;}
+    .map-dropdown {width: 220px;}
+    .map-search-container {width: 247px;}
+    .map-search {width: 247px;}
+    .project-list li .project-item .header .marker {right: 10px;}
+    .project-list li .project-item .project-image-wrapper img {max-height: none;}
+    .project-list.big-grid li .project-item, .project-list li .project-item {border-right: none; border-bottom: none; border-left: none;}
+    .project-list.big-grid li .project-item .header .marker, .project-list li .project-item .header .marker {display: block; background: url("sprite.png") -627px -235px no-repeat; top: 0; right: 0; width: 42px; height: 42px; padding: 0; border: none;}
+    .project-list.big-grid li .project-item .header .marker:after, .project-list li .project-item .header .marker:after {content: none;}
+    .project-list.big-grid li .project-item .project-list-exerpt, .project-list li .project-item .project-list-exerpt {font-family: FranklinGothicWebBook; padding: 10px 10px 10px 20px;}
+    .project-list.big-grid li .project-item.open .header .marker, .project-list li .project-item.open .header .marker {background: url("sprite.png") -671px -235px no-repeat;}
+    .project-list.big-grid li .project-item.open .header .marker:after, .project-list li .project-item.open .header .marker:after {content: ""; background: none;}
+}
+
+@media screen and (max-width: 430px)
+{
+    .project-list li .project-item h3 {font-size: 16px; font-family: "FranklinGothicWebMedium";}
+    .map-dropdown {width: 100%;}
+    .map-search {width: 100%;}
+    .map-search-container {width: 100%;}
+    .project-list li .project-item h3 {font-size: 16px;}
+    .select-map-options-box {width: 100%;}
+    .twitter-typeahead {position: absolute !important; width: 100%;}
+    .project-list.big-grid li .project-item h3, .project-list li .project-item h3 {padding: 10px 10px 20px 10px;;}
+    .project-list.big-grid li .project-item .project-image-wrapper, .project-list li .project-item .project-image-wrapper {width: 100%; float: none;}
+    .project-list.big-grid li .project-item .header, .project-list li .project-item .header {width: 100%; float: none; height: 42px;}
+    .marker {display: none !important;}
+}

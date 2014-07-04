@@ -1,0 +1,29 @@
+Ämnesdetaljsida
+- Var skulle denna sida placeras fysiskt i CMS:et? Under respektive fakultet/institution? I ett separat ämnes-repository? Någon annan stans?
+
+Lista personer
+- Ska besökaren på sidan själv kunna ändra sorteringsordningen, t.ex. genom att klicka på de olika kolumnrubrikerna?
+
+Detaljvy person
+- Hur hanterar vi personer med skyddade uppgifter? Sköts det automatiskt av katalogen så uppgifterna inte returneras?- Om personen tillhör flera organisatoriska enheter, ska alla i så fall visas på personen?- Hur får vi tag i länken till personens bild? Ligger alla bilderna på något gemensamt ställe och heter typ “xkonto.jpg”? Finns det något annat sätt att leta upp bilden?- Vilken information ska visas? Allt som finns i katalogen? En delmängd?
+
+Lista publikationer
+- Ska man kunna välja vilka typer av publikationer som ska visas? T.ex. bara artiklar/avhandlingar.- Om personen inte vill att alla hans eller hennes publikationer ska visas, hur gör vi då? Ska man t.ex. ange en lista i komponenten på dokument-ID:n som ska filtreras bort?- Ska besökaren kunna ändra sorteringsordning genom att t.ex. klicka på kolumnrubrikerna i listan?
+
+Detaljvy publikation
+- Vilka fält vill vi presentera?
+
+Lista underenheter
+- Finns det uppgifter i LDAP om URL:er till respektive enhets hemsida?
+
+Detaljvy ämne
+- Behövs det en speciell komponent för detta? Om det inte finns någon text att hämta om ämnet finns det ju inget för komponenten att visa. 
+
+Sök publikation
+- Behövs denna komponent eller räcker det med den "vanliga" söken? Denna komponent skulle kunna ge en mycket mer detaljerad sökning just när det gäller publikationer. - Om man lägger in komponenten på en enhetssida kanske den automatiskt bara ska söka publikaitoner för just den enheten? I så fall kan man behöva ange enhetens id som en egenskap.
+
+Modifiering av befintliga komponenter
+- Finn det fler komponenter än den jag kommit på som behöver uppdateras?
+
+GU Siteseeker category result component
+- Behövs några andra förändringar i komponenten?- Finns önskemål om att visa ytterligare information i sökresultatet för personer utöver det som visas idag (namn, roll, enhet, telefon och epost)?

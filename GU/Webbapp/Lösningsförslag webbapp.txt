@@ -1,0 +1,62 @@
+GU-appen som web-app
+
+Efterfrågad funktionalitet
+GU har efterfrågat möjligheten att bygga en webbaserad version av den befintliga mobilappen.
+
+Knowits kommentar
+
+En webapp har ett antal fördelar och nackdelar jämfört med en traditionell mobil-app.
+
+Fördelar:
+- Billigare att utveckla och underhålla eftersom samma kod kan köras på både Android och iOS-mobiler.
+- Lätt att lägga till ny information från befintliga webbtjänster.
+- Appens information kan även användas på den vanliga webben.
+
+Nackdelar:
+- Något långsammare användargränssnitt.
+- Kräver ständig uppkoppling.
+- Inte säkert att den blir godkänd i Appstore.
+
+Ramverk för mobila webappar
+
+När man bygger web-appar finns det ett flertal ramverk man kan använda sig av. Exempel på ramverk är Phonegap, Appspresso, AppFurnace och iUI.
+Dessa ramverk kommer med färdigbyggda funktioner för att bygga webbaserade mobilapplikationer som ändå får en look and feel liknande den man får i "riktiga" mobilapplikationer. Här finns en sammanställning av de största ramverken och deras funktioner: http://en.wikipedia.org/wiki/Multiple_phone_web-based_application_framework
+Vilket ramverk man ska välja beror på vilka behov man har, och det ingår i detta uppdrag att jämföra och utvärdera de olika ramverken för att avgöra vilket som passar bäst i detta specifika fall.
+Det går även att bygga en webapp utan att använda ett ramverk, men då behöver man lägga mycket tid på att bygga egna implementationer av saker som redan finns i ramverket. Som alltid med ramverk så får man många färdiga funktioner, men man är låst till ramverkets sätt att arbeta och dess möjligheter till layout och design. Kan man nöja sig med det ramverket erbjuder finns det mycket att tjäna på att använda ett. Har man väldigt specifika krav som inte stöds av något enskilt ramverk kan det vara bättre att bygga appen från grunden, eftersom man då får absolut frihet att göra precis som man vill. Att försöka anåassa ett ramverk till att göra något det inte är designat för att göra kan bli mycket kostsamt och det är inte säkert att det blir särskilt bra.
+
+Lösningsförslag
+
+Vi bygger ett antal nya komponenter i Infoglue. Dessa hämtar i de flesta fall sin data från samma tjänster som används av den befintliga webappen. Kommunikationen sker via json-formatterad data över http.
+
+Avgränsningar
+
+Denna tidsuppskattning är baserad på att ett mobilapp-ramverk används, samt att inga större anpassningar behöver göras av det som ramverket genererar.
+
+Teknisk lösning
+
+Följande komponenter tas fram.
+
+Aktuellt
+
+Öppna föreläsningar
+Denna komponent kommer att baseras på den befintliga eventlistan, men anpassas för att grafiskt passa in på en mobilskärm.
+Listan kommer även att innehålla all data för de enskilda evenevangen, för att vi på så sätt ska slippa göra ett nytt anrop till servern för att hämta detaljer om ett enskilt evenemang. Listkomponenten innehåller även logik för att presentera ett enskilt evenemang via Javascript. Det ger en kraftigt förbättrad användarupplevelse och ett rappare gränssnitt.
+
+Nyhetslista
+Även denna komponent kommer att baseras på den befintliga nyhetslistan, men anpassas till en liten skärm och även här hämtar vi all information i ett svep och visar detaljer via Javascript för att förbättra användarupplevelsen.
+
+Hitta rätt
+
+Lista typer av platser
+Denna komponent består av en hårdkodad lista av platstyper. När man klickar på en typ skickas man vidare till en annan sida där alla platser av den valda typen visas.
+
+Lista platser av viss typ
+Hämtar en lista över alla platser av den valda typen. Vi hämtar även här all information i ett svep och presenterar detaljer om en plats via Javascript för att förbättra användarupplevelsen.
+
+Sök
+
+Hämtar en lista med sökresultat. Varje sökresultat innehåller även de detaljer som ska visas när man klickar på det valda resultatet.
+
+Infokomponent
+
+En enkel komponent som visar en informationstext om appen och GU.

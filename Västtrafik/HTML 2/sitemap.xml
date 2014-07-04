@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://webjohan.nu/vtmob/</loc>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/index.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/vanilla.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/trafikstorningar.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/trafikstorning.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/news.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/test.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/infoTravleGuide.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/infoCardReader.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/minaSidor.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/minaSidor-loggain.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/minaSidor-minkort.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/minaSidor-glomtpw.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/minaSidor-glomtanvid.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/minaSidor-PUL.php</loc>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://webjohan.nu/vtmob/newsDetail.php</loc>
+  <priority>0.64</priority>
+</url>
+</urlset>

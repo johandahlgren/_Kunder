@@ -1,0 +1,2 @@
+Kolla "Not instance of node..."-felet i loggen.
+Kolla UMU:s IG-GUI-header i IG3. Verkar inte funka.

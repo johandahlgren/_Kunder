@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Västtrafik</title>
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<style type="text/css">
+			body {margin: 0; padding: 0;}
+			ul li ul {display: none;}
+			ul {background-color: rgb(100, 100, 255);}
+			ul li ul {background-color: rgb(80, 80, 235);}
+			ul li ul li ul {background-color: rgb(60, 60, 215);}
+			ul li ul li ul li ul {background-color: rgb(40, 40, 195);}
+			#menu {z-index: 10000000; position: relative; cursor: pointer;}
+			#centerContent {height: 100px; width: 200px; border: 1px solid red; margin: 100px auto; text-align: center; line-height: 100px;}
+			#top {height: 40px; padding: 10px; background-color: rgb(150, 150, 150);}
+			.st-menu ul li a {padding: 0 0 0 20px; line-height: 60px; text-indent: 20px;}
+			.linkText {}
+			.expand {float: right; display: inline-block; width: 60px; background-color: rgba(255, 255, 255, 0.5); text-align: center;}
+			.active {transform: rotate(30deg); -ms-transform: rotate(30deg); -webkit-transform: rotate(30deg);}
+		</style>
+	</head>
+	<body>
+		<div id="st-container" class="st-container">
+			<nav class="st-menu st-effect-2" id="menu-1">
+				<h2 class="icon icon-lab">Sidebar</h2>
+				<ul>
+					<li>
+						<a class="icon icon-data" href="http://www.gp.se"><span class="linkText">Level 1</span> <span class="expand">A</span></a>
+						<ul>
+							<li><a class="icon icon-data" href="#"><span class="linkText">Level 2</span></a></li>
+							<li><a class="icon icon-data" href="#"><span class="linkText">Level 3</span></a></li>
+							<li>
+								<a class="icon icon-data" href="#"><span class="linkText">Level 3</span> <span class="expand">A</span></a>
+								<ul>
+									<li><a class="icon icon-data" href="#"><span class="linkText">Level 4</span></span></a></li>
+									<li>
+										<a class="icon icon-data" href="#"><span class="linkText">Level 4</span> <span class="expand">A</span></a>
+										<ul>
+											<li><a class="icon icon-data" href="#"><span class="linkText">Level 5</span></a></li>
+											<li><a class="icon icon-data" href="#"><span class="linkText">Level 5</span></a></li>
+											<li><a class="icon icon-data" href="#"><span class="linkText">Level 5</span></a></li>
+											<li><a class="icon icon-data" href="#"><span class="linkText">Level 5</span></a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><a class="icon icon-data" href="#"><span class="linkText">Level 1</span></a></li>
+					<li><a class="icon icon-data" href="#"><span class="linkText">Level 1</span></a></li>
+					<li><a class="icon icon-data" href="#"><span class="linkText">Level 1</span></a></a></li>
+					<li><a class="icon icon-data" href="#"><span class="linkText">Level 1</span></a></li>
+				</ul>
+			</nav>
+			<!-- content push wrapper -->
+			<div class="st-pusher">
+				<div class="st-content"><!-- this is the wrapper for the content -->
+					<div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+						<div id="top">
+							<div id="menu">Menu</div>
+						</div>
+						<div id="centerContent">Lite innehåll...</div>
+					</div><!-- /st-content-inner -->
+				</div><!-- /st-content -->
+			</div><!-- /st-pusher -->
+		</div><!-- /st-container -->
+		<script src="js/classie.js"></script>
+		<script src="js/sidebarEffects.js"></script>
+		<script type="text/javascript">
+			var menuIsVisible = false;
+			$(window).load(function (){
+				$(".expand").click(function(event) {
+					event.preventDefault();
+					$(event.target).closest("li").children("ul").slideToggle(200);
+					$(event.target).toggleClass("active");
+				});
+				
+				$("#menu").click(function() {
+					var container 			= document.getElementById("st-container");
+					if (!menuIsVisible)
+					{
+						
+						var effect 			= "st-effect-2"; 
+						container.className = "st-container";
+						classie.add(container, effect);
+						setTimeout(function(){
+							classie.add(container, "st-menu-open");
+						}, 25);
+						menuIsVisible 		= true;
+					}
+					else
+					{
+						classie.remove(container, "st-menu-open");
+						menuIsVisible 		= false;
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

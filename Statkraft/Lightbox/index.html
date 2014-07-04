@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Statkraft Lightbox</title>
+
+        <link rel="stylesheet" type="text/css" href="slimbox2.css" media="screen" />
+
+        <style type="text/css">
+            h2 {font-family: arial; color: rgb(220, 220, 220); margin: 50px 0 5px 0; -webkit-font-smoothing: antialiased;}
+            
+            #lbCenter, #lbBottomContainer {box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);}
+            #lbCloseLink {background: url("images/close-cross.png") center no-repeat; background-size: 15px; position: absolute; top: 10px; right: 10px; width: 20px; height: 20px; margin: 0; background-color: rgb(50, 50, 50); padding: 5px;}
+            #lbNextLink, #lbNextLink:hover {background: url("images/arrow-right.png") right center no-repeat; background-size: 50px;margin-right: -11px;}
+            #lbNumber {position: absolute; right: 10px; top: 0; margin: 0;}
+            #lbPrevLink, #lbPrevLink:hover {background: url("images/arrow-left.png") left center no-repeat; background-size: 50px; margin-left: -11px;}
+            .center {display: table; margin: 100px auto;}
+            .images img {height: 160px; margin: 0 20px 0 0; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);}
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="slimbox2.min.js"></script>
+    </head>
+    <body>
+        <div class="center">
+            <div class="images">
+                <h2>Ett album</h2>
+                <a href="http://lorempixel.com/700/600/abstract/1" rel="lightbox-apa" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mummel mummel nu ska vi se hur det ser ut när det blir väldigt mycket text. Kommer den t.ex. att bryta över flera rader, eller kommer den att klippa någonstans?"><img src="http://lorempixel.com/180/160/abstract/1"/></a>
+                <a href="http://lorempixel.com/600/600/business/1" rel="lightbox-apa" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit."><img src="http://lorempixel.com/160/160/business/1"/></a>
+                <a href="http://lorempixel.com/400/600/transport/1" rel="lightbox-apa" title="Lorem ipsum dolor sit amet"><img src="http://lorempixel.com/120/160/transport/1"/></a>
+                <a href="http://lorempixel.com/800/600/city/1" rel="lightbox-apa" title="Lorem ipsum dolor sit amet"><img src="http://lorempixel.com/240/160/city/1"/></a>
+            </div>
+            <div class="images">
+                <h2>Ett annat album</h2>
+                <a href="http://lorempixel.com/700/600/nightlife/1" rel="lightbox-bepa" title="Lorem ipsum dolor sit amet"><img src="http://lorempixel.com/180/160/nightlife/1"/></a>
+                <a href="http://lorempixel.com/400/600/food/1" rel="lightbox-bepa" title="Lorem ipsum dolor sit amet"><img src="http://lorempixel.com/120/160/food/1"/></a>
+                <a href="http://lorempixel.com/800/600/nature/1" rel="lightbox-bepa" title="Lorem ipsum dolor sit amet"><img src="http://lorempixel.com/240/160/nature/1"/></a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var animationDuration = 100;
+            jQuery(function($) {
+                $("a[rel^='lightbox']").slimbox({
+                    loop: true,
+                    overlayOpacity: 0.35,
+                    overlayFadeDuration: animationDuration,
+                    resizeDuration: animationDuration,
+                    imageFadeDuration: animationDuration,
+                    captionAnimationDuration: 1,
+                    counterText : "Image {x} of {y}",
+                }, null, function(el) {
+                    $("#lbCloseLink").appendTo("#lbCenter");
+                    return (this == el) || ((this.rel.length > 8) && (this.rel == el.rel));
+                });
+            });
+        </script>
+    </body>
+</html>

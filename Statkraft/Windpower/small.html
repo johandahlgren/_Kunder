@@ -1,0 +1,208 @@
+﻿<!--[if lt IE 11]><html class="oldIE"><![endif]-->
+<!--[if (gt IE 10)|!(IE)><!--> <html class=""> <!--<![endif]-->
+	<head>
+  		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta charset="utf-8">
+		
+		<script src="js/jquery-1.8.2.min.js"></script>
+		
+		<script type="text/javascript">
+			$(window).load(function() {
+				plantPresentationTemplate = Tempo.prepare("templates")
+					.when(TempoEvent.Types.ITEM_RENDER_STARTING
+						, function(e) {
+							var item = e.item;
+							if (item && item.unit && item.unit === "%")
+							{
+								item.value *= 100;
+								item.value = item.value.toFixed(0);
+							}
+						}
+					);
+				setupLabels();
+				refreshSmall();
+			});
+		</script>
+		
+		<link href="style/style.css" rel="stylesheet" media="screen" />
+	</head>
+	<body class="small">
+		<div id="loading">Loading live windpower data, please wait</div>
+		<div class="container">
+			<div id="totalProduction">
+				<div id="totalProductionBox" class="dataContent infobox">
+					<h2 data-label="label_totalProductionToday">TOT_PROD</h4>
+					<div class="whiteBox center">
+						<span id="totalProductionToday" class="value">XX</span>
+						<span class="unit"><span data-label="label_mwh"></span></span>
+					</div>
+				
+					<h3 data-label="label_totalProductionYesterday">TOT_PROD_YESTERDAY</h3>
+					<div class="whiteBox whiteBoxSmall center">
+						<span id="totalProductionYesterday" class="value">XX</span>
+						<span class="unit"><span data-label="label_mwh"></span></span>
+					</div>
+					<div class="clearFix"></div>
+				</div>
+			</div>
+			<div id="totalPower">
+				<div id="totalProductionValue" class="dataContent infobox">
+					<h2 data-label="label_totalPowerRightNow">TOT_POWER_NOW</h2>
+					<div id="totalProductionValueMeter" class="progressBarContainer">
+					<div class="bar"></div>
+						<span class="value">0</span> <span class="unit" data-label="label_mw">XX</span>
+					</div>
+					<div class="infoText">
+						<span data-label="label_maximumProduction">MAX_PROD</span>:
+						<span id="maxPossibleProduction">XX</span> <span data-label="label_mw">XX</span>
+					</div>
+					<h3 data-label="label_thisWillPower">CAN_SUPPLY</h3>
+					<table class="spread">
+						<tbody>
+							<tr>
+								<td>
+								<div class="supplyIllustration">
+								<div class="house"></div>
+								<div class="bubble">
+								<div class="countryId" data-label="label_no">XX</div>
+								<div id="supplyValueNo" class="value">XX</div>
+								<div class="supplyUnit"><span data-label="label_units">XX</span></div>
+								</div>
+								</div>
+								</td>
+								<td>
+								<div class="supplyIllustration">
+								<div class="house"></div>
+								<div class="bubble">
+								<div class="countryId" data-label="label_se">XX</div>
+								<div id="supplyValueSe" class="value">XX</div>
+								<div class="supplyUnit"><span data-label="label_units">XX</span></div>
+								</div>
+								</div>
+								</td>
+								<td>
+								<div class="supplyIllustration">
+								<div class="house"></div>
+								<div class="bubble">
+								<div class="countryId" data-label="label_uk">XX</div>
+								<div id="supplyValueUk" class="value">XX</div>
+								<div class="supplyUnit"><span data-label="label_units">XX</span></div>
+								</div>
+								</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="clearFix"></div>
+				</div>
+			</div>
+			<div id="windspeed" class="greyBox">
+				<div id="windspeedBox" class="dataContent infobox">
+					<h2 data-label="label_windspeedSmall">WS_TOP_3</h2>
+					<h4 data-label="label_topThree">TOP_3</h4>
+					<div class="bigIcon bigIconWindspeed"></div>
+					<div class="contentBlock"></div>
+					<div class="clearFix"></div>
+				</div>
+			</div>
+			<div id="capacity" class="greyBox">
+				<div id="activeBox" class="dataContent infobox">
+					<h2 data-label="label_activeSmall">ACTIVE_TOP_3</h2>
+					<h4 data-label="label_topThree">TOP_3</h4>
+					<div class="bigIcon bigIconCapacity"></div>
+					<div class="contentBlock"></div>
+					<div class="clearFix"></div>
+				</div>
+			</div>
+			<div id="availability" class="greyBox">
+				<div id="availabilityBox" class="dataContent infobox">
+					<h2 data-label="label_availabilitySmall">AVAIL_TOP_3</h2>
+					<h4 data-label="label_topThree">TOP_3</h4>
+					<div class="bigIcon bigIconAvailability"></div>
+					<div class="contentBlock"></div>
+					<div class="clearFix"></div>
+				</div>
+			</div>
+			<div id="marketValue">
+				<div id="marketValueBox" class="dataContent infobox">
+                    <h2 data-label="label_marketValue" class="normalCase">MARKET_VALUE</h2>
+				<table class="marketValueContainer">
+					<tr>
+						<td>
+							<div class="marketValueItem">
+								<h3 data-label="label_norway">COUNTRY_NO</h3>
+								<div class="whiteBox">
+									<span id="valueNo" class="value">XX</span>
+									<span class="unit" data-label="label_currencyEur">XX</span>
+								</div>
+								<div class="clearFix"></div>
+							</div>
+						</td>
+						<td>
+							<div class="marketValueItem">
+								<h3 data-label="label_ukOnshore">COUNTRY_UK_ONSHORE</h3>
+								<div class="whiteBox">
+									<span id="valueUkOnshore" class="value">XX</span>
+									<span class="unit" data-label="label_currencyEur">XX</span>
+								</div>
+								<div class="clearFix"></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="marketValueItem">
+								<h3 data-label="label_sweden">COUNTRY_SE</h3>
+								<div class="whiteBox">
+									<span id="valueSe" class="value">XX</span>
+									<span class="unit" data-label="label_currencyEur">XX</span>
+								</div>
+								<div class="clearFix"></div>
+							</div>
+						</td>
+						<td>
+							<div class="marketValueItem">
+								<h3 data-label="label_ukOffshore">COUNTRY_UK_OFFSHORE</h3>
+								<div class="whiteBox">
+									<span id="valueUkOffshore" class="value">XX</span>
+									<span class="unit" data-label="label_currencyEur">XX</span>
+								</div>
+								<div class="clearFix"></div>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<div class="clearFix"></div>
+			</div>
+		</div>
+		
+		<!-- ---------- -->
+		<!--  TEMPLATE  -->
+		<!-- ---------- -->
+		
+		<div id="templates">
+			<div class="plantPresentation" data-value="{{value}}" data-template>
+				<div class="blockContainer">
+					<div class="parkName">{{name}}</div>
+					<div class="dataBlock">
+						<span class="value">{{value}}</span>
+						<span class="unit">{{unit}}</span>
+					</div>
+					<div class="iconBlock">
+						<canvas class="chart" width="35" height="35"></canvas>
+						<div class="windicon"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- -------------- -->
+		<!--  END TEMPLATE  -->
+		<!-- -------------- -->
+		
+		<script src="js/tempo.min.js"></script>
+		<script src="js/chart.min.js"></script>
+		<script	src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		<script src="js/javascript.js"></script>
+	</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        
+        <meta http-equiv="cleartype" content="on">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <!--
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        -->
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- needs fix for http/https -->
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		
+        <!--script>
+		// Safari reports success of list attribute, so doing ghetto detection instead
+		yepnope({
+		  test : (!Modernizr.input.list || (parseInt($.browser.version) > 400)),
+		  yep : [
+		      'js/jquery.relevant-dropdown.js',
+					'js/load-fallbacks.js'
+		  ]
+		});
+		</script-->
+<!--style type="text/css">
+			* {font-family: Arial,Helvetica,sans-serif;}
+			body {margin: 0; padding: 0;}
+			
+			
+
+					</style-->
+
+</head> 
+	<body>
+		<div id="loadingLayer" style="width: 100%; height: 100%; position: absolute; background-color: white; z-index: 10000; background-image: url('img/loader.gif'); background-repeat: no-repeat;	background-position: center;"></div>
+		<div id="vt-container" class="closeMenu">
+			<div id="menuContainer">
+				<div class="menuHeader">
+					<div class="left userIcon">b</div>
+					<div class="left">
+						<span class="loggedInAs">Inloggad som:</span>
+						<span class="userName">Kalle Karlsson</span>
+					</div>
+					<div class="right">
+						<a href="#" class="button logout-button">Logga ut</a>
+					</div>
+				</div>
+				<nav id="vt-menu">
+					<ul id="menuTree">
+						<li><a href="#"><span>Företag</span></a></li>
+						<li>
+							<a href="http://www.gp.se"><span>Reseinformation</span><span class="expand">d</span><span class="divider"></span></a>
+							<ul>
+								<li><a href="#"><span>Level 2</span></a></li>
+								<li><a href="#"><span>Level 2</span></a></li>
+								<li><a href="#"><span>Level 2</span></a></li>
+								<li><a href="#"><span>Level 2</span></a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span>Trafikstörningar</span></a></li>
+						<li>
+							<a href="http://www.gp.se"><span>Biljetter och priser</span><span class="expand">d</span><span class="divider"></span></a>
+							<ul>
+								<li><a href="#"><span>Level 2</span></a></li>
+								<li><a href="#"><span>Level 2</span></a></li>
+								<li><a href="#"><span>Level 2</span></a></li>
+								<li><a href="#"><span>Level 2</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><span>Om Västtrafik</span><span class="expand">d</span><span class="divider"></span></a></a>
+							<ul>
+								<li><a href="#"><span>Kontakt</span></a></li>
+								<li><a href="#"><span>Nyheter</span></a></li>
+								<li><a href="#"><span>Det här är västtrafik</span></a></li>
+								<li><a href="#"><span>Miljö</span></a></li>
+								<li><a href="#"><span>Trygghetspolicy</span></a></li>
+							</ul>
+						</li>
+						<li><a href="#"><span>Mina sidor</span></a></li>
+						<li><a href="#"><span>Företag</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			<header id="mainMenu">
+				<a href="javascript:void(0);" class="button menu-button" id="menu">Meny</a>
+				<a href="javascript:void(0);" class="icon magglas"></a>
+			</header>
+			<div id="vt-pusher">
+				<div id="vt-overlay"></div>
+				<div class="vt-content" id="mainContent"><!-- this is the wrapper for the content -->
+					
+					<div id="contentWrapper">					
+						<section id="expressAlert">
+							<!--a href="#" class="button logout-button">Logga ut</a-->
+							<a href="vanilla.html">&raquo;Vanillasidan&laquo;</a><br/>
+							<a href="trafikstorningar.html">Trafikstörningar</a><br/>
+							
+						</section>
+						<section id="reseplaneraren">
+							
+						</section>
+						<section id="newsfeed">
+						
+						</section>
+						<section id="trafikstorningar">
+							
+						</section>
+						<section id="biljetterpriser">
+							
+						</section>
+						<section id="appPush" class="half">
+							<div>
+								dummie content
+							</div>
+						</section>
+						<section id="salesplaces" class="half">
+							<div>
+								dummie content
+							</div>
+						</section>
+						<section id="kontakt">
+							
+						</section>
+					</div>
+					<footer>
+						<p>&copy; - footer</p>
+					</footer>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/sidebarEffects.js"></script>
+		<script type="text/javascript">
+		</script>
+        <!--script src="js/helper.js"></script-->
+		<script src="js/main.js"></script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!-- script>
+            var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g,s)}(document,"script"));
+        </script -->
+    </body>
+</html>

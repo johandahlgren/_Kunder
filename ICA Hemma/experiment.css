@@ -1,0 +1,64 @@
+.blue table.ProductListColumns div.ProductButtons img, .green table.ProductListColumns div.ProductButtons img {display: none !important;}
+.blue a.ButtonBuy, .green a.ButtonBuy, .blue a.ButtonInfo, .green a.ButtonInfo {width: 63px; height: 31px; display: block;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonBuy,
+.blue table.ProductListColumns div.ProductButtons a.ButtonInfo,
+.blue table.ProductListColumns div.ProductButtons a.ButtonBook,
+.green table.ProductListColumns div.ProductButtons a.ButtonBuy,
+.green table.ProductListColumns div.ProductButtons a.ButtonInfo,
+.green table.ProductListColumns div.ProductButtons a.ButtonBook
+{background-image: url("http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green.png"); background-repeat: no-repeat; width: 63px; height: 31px !important;}
+
+.blue table.ProductListColumns div.ProductButtons a.ButtonBuy {background-position: 0 0 !important;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonBuy:hover {background-position: 0 -40px !important;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonBuy:active {background-position: 0 -80px !important;}
+
+.blue table.ProductListColumns div.ProductButtons a.ButtonInfo {background-position: -153px 0 !important;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonInfo:hover {background-position: -153px -40px !important;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonInfo:active {background-position: -153px -80px !important;}
+
+.blue table.ProductListColumns div.ProductButtons a.ButtonBook {background-position: -307px 0 !important;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonBook:hover {background-position: -307px -40px !important;}
+.blue table.ProductListColumns div.ProductButtons a.ButtonBook:active {background-position: -307px -80px !important;}
+
+.green table.ProductListColumns div.ProductButtons a.ButtonBuy {background-position: -77px 0 !important;}
+.green table.ProductListColumns div.ProductButtons a.ButtonBuy:hover {background-position: -77px -40px !important;}
+.green table.ProductListColumns div.ProductButtons a.ButtonBuy:active {background-position: -77px -80px !important;}
+
+.green table.ProductListColumns div.ProductButtons a.ButtonInfo {background-position: -230px 0 !important;}
+.green table.ProductListColumns div.ProductButtons a.ButtonInfo:hover {background-position: -230px -40px !important;}
+.green table.ProductListColumns div.ProductButtons a.ButtonInfo:active {background-position: -230px -80px !important;}
+
+.green table.ProductListColumns div.ProductButtons a.ButtonBook {background-position: -384px 0 !important;}
+.green table.ProductListColumns div.ProductButtons a.ButtonBook:hover {background-position: -384px -40px !important;}
+.green table.ProductListColumns div.ProductButtons a.ButtonBook:active {background-position: -384px -80px !important;}
+
+.blue td.PurchaseBlockBuy img#ctl00_main_showproduct1_atc_imgAdd,
+.blue td.PurchaseBlockBook img#ctl00_main_showproduct1_atc_imgAdd,
+.green td.PurchaseBlockBuy img#ctl00_main_showproduct1_atc_imgAdd,
+.green td.PurchaseBlockBook img#ctl00_main_showproduct1_atc_imgAdd
+{display: none !important;}
+
+.blue .PurchaseBlockBuy a,
+.blue .PurchaseBlockBook a,
+.green .PurchaseBlockBuy a,
+.green .PurchaseBlockBook a
+{background-image: url("http://www.icahemma.se/pub_docs/files/abtests/ica-cta-blue-green-big.png") !important; background-repeat: no-repeat; display: block; width: 93px; height: 37px !important;}
+
+.blue td.PurchaseBlockBook img, .green td.PurchaseBlockBook img {display: none !important;}
+
+.blue td.PurchaseBlockBuy a {background-position: 0 0 !important;}
+.blue td.PurchaseBlockBuy a:hover {background-position: 0 -49px !important;}
+.blue td.PurchaseBlockBuy a:active {background-position: 0 -98px !important;}
+
+.blue td.PurchaseBlockBook a {background-position: -234px 0 !important;}
+.blue td.PurchaseBlockBook a:hover {background-position: -234px -49px !important;}
+.blue td.PurchaseBlockBook a:active {background-position: -234px -98px !important;}
+
+.green td.PurchaseBlockBuy a {background-position: -117px 0 !important;}
+.green td.PurchaseBlockBuy a:hover {background-position: -117px -49px !important;}
+.green td.PurchaseBlockBuy a:active {background-position: -117 -98px !important;}
+
+.green td.PurchaseBlockBook a {background-position: -351px 0 !important;}
+.green td.PurchaseBlockBook a:hover {background-position: -351px -49px !important;}
+.green td.PurchaseBlockBook a:active {background-position: -351px -98px !important;}
+

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Santa Maria - Sommarbio</title>
+    <link rel="stylesheet" href="sommarbio_2014/kampanj.css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        function pushToAnalytics() {
+            _gaq.push(["_trackEvent", "Sommarbio", "Ladda ner kodkuvert"]);
+        }
+        
+        $(document).ready(function () {
+            $(".kampanj_movie img").click(function() {
+                var selectedId = $(this).parent().attr("data-infoid");
+                $(".kampanj_movieInfo").hide();
+                $("#kampanj_movieInfo_" + selectedId).show();
+            });
+        });
+        //]]>
+    </script>
+</head>
+
+<body class="sommarbio">
+    <div id="outerContainer">
+        <div id="kampanj_container">
+            <div id="kampanj_headerImage">
+                <div id="kampanj_headerBanner"></div>
+            </div>
+            <div id="kampanj_redBlock">
+                <div id="kampanj_redBlockTitle">
+                    <div class="kampanj_redBlockTextRow">
+                        <span class="kampanj_grungeSmall">Samla</span>  <span class="kampanj_grunge">koder</span>
+                    </div>
+                    <div class="kampanj_redBlockTextRow">
+                        <span class="kampanj_grungeSmall">få en</span>  <span class="kampanj_grunge">biobiljett</span>
+                    </div>
+                </div>
+                <div id="kampanj_redBlockText">
+                    Säsongens tacomys ger sommarens biorys! Passa på att laga och bjud på god Tex Mex så kan det bli ett biobesök på köpet. Genom att samla EAN-koder från vårt Tex Mex-sortiment och skicka in så belönas du med biobiljetter. Laga den goda pizzan i receptet så har du 4 koder direkt, bra va!
+                </div>
+            </div>
+            <div id="kampanj_greyBlock">
+                <div class="kampanj_left">
+                    <h2>Gör så här:</h2>
+                    <p>
+                        Räkna ihop hur många <span class="kampanj_bold">EAN-koder</span> du har.
+                    </p>
+                    <p class="kampanj_largeText">
+                        Exempel: 15 koder = 1 biobiljett. 30 koder = 2 biobiljetter.
+                    </p>
+                    <p>
+                        <a href="sommarbio_2014/sommarbio_kuvert_kopochfa.pdf" onclick='pushToAnalytics();'>Ladda hem kodkuvertet</a>. Skriv ut och vik. Lägg koderna i kuvertet, skriv ditt namn, adress och mobilnummer tydligt, tejpa ihop sidorna så att inget ramlar ur, frankera och posta brevet - inom 2-3 veckor får du ett SMS med biobiljett till valfri film på <span class="kampanj_bold">SF Bio</span> och <span class="kampanj_bold">Svenska Bio</span>!
+                    </p>
+                    <p class="kampanj_finePrint">
+                        Erbjudandet gäller endast EAN-koder från Santa Marias Tex Mex-produkter och endast en gång per person och mobilnummer. Max 30 EAN-koder. Erbjudandet gäller till och med 24/8 2014. Värde: 105 kr - 210 kr.
+                    </p>
+                </div>
+                <div class="kampanj_right">
+                    <a href="sommarbio_2014/sommarbio_kuvert_kopochfa.pdf" onclick='pushToAnalytics();'>
+                        <img src="sommarbio_2014/images/laddaNer.png" />
+                    </a>
+                </div>
+            </div>
+            <div id="kampanj_movies">
+                <h2>Några av sommarens premiärer</h2>
+                <div id="kampanj_movieCovers">
+                    <div class="kampanj_movie" data-infoid="xmen">
+                        <img src="sommarbio_2014/images/xmen.jpg" />
+                        23 Maj
+                    </div>
+                    <div class="kampanj_movie" data-infoid="forrEllerSenare">
+                        <img src="sommarbio_2014/images/forrEllerSenare.jpg" />
+                        22 Juni
+                    </div>
+                    <div class="kampanj_movie" data-infoid="howTo">
+                        <img src="sommarbio_2014/images/howTo.jpg" />
+                        4 Juli
+                    </div>
+                    <div class="kampanj_movie" data-infoid="planetOfTheApes">
+                        <img src="sommarbio_2014/images/planetOfTheApes.jpg" />
+                        18 Juli
+                    </div>
+                </div>
+                <div id="kampanj_movieInfoContainer">
+                    <div id="kampanj_movieInfo_xmen" class="kampanj_movieInfo">
+                        <h2>X MEN: <span class="kampanj_whiteText">Days of futurepast</span></h2>
+                        <p>
+                            Den ultimata X-Men-ensemblen slåss för sin överlevnad över två tidsepoker i X-MEN: Days Of Future Past. Alla de älskade karaktärerna från originaltrilogin går samman med sina yngre jag från ”X-Men: First Class” i en kamp där de måste ändra det förflutna för att rädda vår framtid.
+                        </p>
+                    </div>
+                    <div id="kampanj_movieInfo_forrEllerSenare" class="kampanj_movieInfo">
+                        <h2>Förr eller senare exploderar jag</h2>
+                        <p>
+                            Den ultimata X-Men-ensemblen slåss för sin överlevnad över två tidsepoker i X-MEN: Days Of Future Past. Alla de älskade karaktärerna från originaltrilogin går samman med sina yngre jag från ”X-Men: First Class” i en kamp där de måste ändra det förflutna för att rädda vår framtid.
+                        </p>
+                    </div>
+                    <div id="kampanj_movieInfo_howTo" class="kampanj_movieInfo">
+                        <h2>Draktämjaren 2</h2>
+                        <p>
+                            DRAKTÄMJAREN 2Hicke och Tandlöse är tillbaka i den andra spännande delen i trilogin om Draktränaren. De två är nu oskiljaktiga, och medan de andrai gänget utmanar varandra i den nya sporten draklopp, ger de sig ut på flygturer för att upptäckanya världar istället. Under ett av sina äventyr hittar de en hemlig isgrotta där det bor hundratals vilda drakar och en mystisk drakryttare. De två vännerna befinner sig plötsligt mitt i en strid för att bevara freden. De inser att bara tillsammans är de starka nog att förändra framtiden för både människor och drakar…
+                        </p>
+                    </div>
+                    <div id="kampanj_movieInfo_planetOfTheApes" class="kampanj_movieInfo">
+                        <h2>Apornas planet: <span class="kampanj_whiteText">Uppgörelsen</span></h2>
+                        <p>
+                            I nya storfilmen Apornas planet: Uppgörelsen leder nu Caesar en växande grupp genetiskt utvecklade apor som hotas av de få människor som överlevt ett dödligt virusutbrott. Trots deras försök att leva sida vid sida så bryter ett krig ut som ska komma att avgöra vilken ras som regerar på Jorden…
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="kampanj_recipe">
+                <div id="kampanj_recipeImage">
+                    <div id="kampanj_recipeRibbon"></div>
+                </div>
+                <div id="kampanj_recipeText">
+                    <h2>Kyckling-kebab pizza</h2>
+                    <div id="kampanj_twentyMinutes">20 minuter</div>
+                    <div class="kampanj_left">
+                        PIZZA 4 PORTIONER
+                        <ul id="kampanj_pizzaUl">
+                            <li>Olja 1 msk</li>
+                            <li>Kycklingfilé, strimlad 300 g</li>
+                            <li><a href="http://www.santamariaworld.com/produkter/Kryddor/#!/kebabkrydda/">Kebabkrydda</a> 1 msk</li>
+                            <li>Romansalladsblad, strimlade 5 st</li>
+                            <li><a href="http://www.santamariaworld.com/produkter/texmex/#!/red-jalapeno/">Red Jalapeño</a> 16 st skivor</li>
+                            <li>Lök, skivad 0,5 st</li>
+                            <li>Salt efter smak</li>
+                            <li><a href="http://www.santamariaworld.com/produkter/texmex/#!/pizza-tortilla-/">Pizza Tortilla</a> 4 st</li>
+                            <li><a href="http://www.santamariaworld.com/produkter/texmex/#!/pizza-sauce/">Pizza Sauce</a> 1 st</li>
+                            <li>Riven ost 3,5 dl</li>
+                        </ul>
+                        TOPPING
+                        <ul id="kampanj_toppingUl">
+                            <li><a href="http://www.santamariaworld.com/produkter/texmex/#!/pizza-topping/">Pizza Topping</a></li>
+                        </ul>
+                    </div>
+                    <div class="kampanj_right">
+                        <table>
+                            <tr>
+                                <td class="kampanj_recipeNumber">1.</td>
+                                <td>Värm ugnen till 250 grader. Hetta upp oljan i en stekpanna och bryn den strimlade kycklingen. Tillsätt kebabkrydda  och låt det steka i ett par minuter. Smaka av med salt.</td>
+                            </tr>
+                            <tr>
+                                <td class="kampanj_recipeNumber">2.</td>
+                                <td>Kläm ut pizza sauce, ca 2 msk per bröd och lägg på  osten. Fördela den stekta kycklingen, lök och jalapeño skivor över pizzorna. Lägg pizzan på en plåt och ställ lågt i ugnen. Tillaga i ca 5-8 minuter eller tills osten är smält och fått färg.</td>
+                            </tr>
+                            <tr>
+                                <td class="kampanj_recipeNumber">3.</td>
+                                <td>Toppa pizzorna med romansallad och pizza-topping.</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div id="kampanj_recipeFooter"></div>
+            </div>
+            <div id="kampanj_footer"></div>
+        </div>
+    </div>
+</body>
+
+</html>

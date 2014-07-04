@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        
+        <script src="jquery-1.8.2.min.js"></script>
+        
+        <script type="text/javascript">
+            $(window).load(function (){
+                plantPresentationTemplate = Tempo.prepare("templates");
+                countdownSliderStartHeight = $("#countdown").height() - 2;
+                //setInterval(checkTimeout, 500);
+                refresh(true);
+            });
+        </script>
+
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="style.css" rel="stylesheet" media="screen"></style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="slides" class="span12">
+                	<div id="totalProduction" class="slide span12">
+                        <div class="page-header"><h1>Total production today</h1></div>
+                        <div id="totalProductionValue" class="dataContent offset1 span10 infobox">
+                             <span class="value"></span> <span class="unit">MW/h</span>
+                        </div>
+                    </div>
+                    <div id="windspeed" class="slide span12">
+                        <div class="page-header"><h1>Windspeed</h1></div>
+                        <div class="dataContent offset1 span10">
+                        </div>
+                    </div>
+                    <div id="capacity" class="slide span12">
+                        <div class="page-header"><h1>Capacity</h1></div>
+                        <div class="dataContent offset1 span10">
+                        </div>
+                    </div>
+                    <div id="availability" class="slide span12">
+                        <div class="page-header"><h1>Availability</h1></div>
+                        <div class="dataContent offset1 span10">
+                        </div>
+                    </div>
+                    <div id="marketValue" class="slide span12">
+                        <div class="page-header"><h1>Market value</h1></div>
+                        <div class="dataContent offset1 span10 infobox">
+                            <div class="span6">
+                                <img class="stockLogo" src="http://www.enmin.lt/upload/iblock/c96/Nord%20Pool%20Spot%20logo.png" />
+                            </div>
+                            <div class="span3">
+                                <span id="nordpool" class="value"></span> <span class="unit">NOK</span>
+                            </div>
+                            <div class="span6">
+                                <img class="stockLogo" src="http://upload.wikimedia.org/wikipedia/commons/8/87/NASDAQ_Logo.svg" />
+                            </div>
+                            <div class="span3">
+                                <span id="nasdaq" class="value"></span> <span class="unit">NOK</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="welcome" class="slide span12">
+                        <div class="page-header"><h1>Welcome to this stuff!</h1></div>
+                        <img class="span4 introImage" src="http://www.clker.com/cliparts/5/D/d/r/S/L/bearded-man-cartoon.svg" />
+                        <div class="span6 introText">
+                            Lorem ipsum dolor sit amet! Consectetur adipiscing elit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div id="latestUpdateContainer">
+            <span id="updated">Updated </span>
+            <span id="latestUpdate"></span>
+        </div>
+        
+        <div id="countdown" onclick="refresh();">
+            <div id="countdownSlider"></div>
+        </div>
+        
+        <div id="admin">
+            <div id="prev" class="adminButton"><<</div>
+            <div id="pause" class="adminButton" onclick="$('#slides').trigger('pause'); $('#pause').hide(); $('#play').show();">||</div>
+            <div id="play" class="adminButton" style="display: none;" onclick="$('#slides').trigger('play'); $('#play').hide(); $('#pause').show();">></div>
+            <div id="next" class="adminButton">>></div>
+        </div>
+        
+        <!-------------->
+        <!-- TEMPLATE -->
+        <!-------------->
+        
+        <div id="templates">
+            <div class="plantPresentation span4" data-value="{{value}}" data-template>
+                <h2>{{name}}</h3>
+                <div class="mapContainer">
+                    <div id="map_{{plantId}}" class="map" data-lat="__.lat" data-long="__.long"></div>
+                </div>
+                <div class="blockContainer">
+                    <div class="iconBlock">
+                        <canvas class="chart" width="120" height="120"></canvas>
+                        <div class="windicon"></div>
+                    </div>
+                    <div class="dataBlock">
+                        <div class="value">{{value}}</div>
+                        <div class="unit">{{unit}}</div>
+                    </div>
+               </div>
+            </div>
+        </div>
+        
+        <!------------------>
+        <!-- END TEMPLATE -->
+        <!------------------>
+        
+        <script src="jquery.carouFredSel-6.2.1-packed.js"></script>
+        <script src="tempo.min.js"></script>
+        <script src="chart.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="javascript.js"></script>
+    </body>
+</html>

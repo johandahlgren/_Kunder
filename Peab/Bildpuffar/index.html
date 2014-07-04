@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+
+<html lang="sv">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="canonical" href='http://www.peabnew.se/produkter-tjanster/' />
+    <title>Produkter - Peab</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="http://code.angularjs.org/1.2.2/angular.min.js" type="text/javascript"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false" type="text/javascript"></script>
+    <script src="http://www.peabnew.se/Assets/Javascripts/vendor/underscore-min.js" type="text/javascript"></script>
+    <script src="http://www.peabnew.se/Assets/Javascripts/vendor/jquery.flexslider-min.js" type="text/javascript"></script>
+    <script src="http://www.peabnew.se/Assets/Javascripts/jwplayer/jwplayer.js" type="text/javascript"></script>
+
+    <link href="http://www.peabnew.se/Assets/Stylesheets/vendor/lightbox.css" rel="stylesheet" />
+    <link href="http://www.peabnew.se/Assets/Stylesheets/vendor/flexslider.css" rel="stylesheet" />
+    <link href="http://www.peabnew.se/Assets/Stylesheets/vendor/pure-min.css" rel="stylesheet" />
+    <link href="http://www.peabnew.se/Assets/Stylesheets/vendor/placeholder_polyfill.css" rel="stylesheet" />
+    <link href="http://www.peabnew.se/Assets/Stylesheets/css/main.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-11082450-1', 'peabnew.se');
+        ga('send', 'pageview');
+    </script>
+    
+    <style type="text/css">
+        .linkBlockImage {height: 195px;}
+        .linkBlockItem {position: relative;}
+        .linkBlockItem .linkBlockItemLink {position: absolute; bottom: 0; background-color: rgba(0, 0, 0, 0.5); color: white; font-weight: normal; background-image: url("icon_right_arrow_white.png"); background-size: 25px;}
+        .linkBlockItem:hover .linkBlockItemLink {background-color: rgba(0, 0, 0, 0.65);}
+    </style>
+</head>
+
+<body ng-app="peabApp">
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-MXQZSK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MXQZSK');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <div id="container">
+        <div class="pure-g header-top-row">
+            <div class="pure-u-2-3">
+                <div class="header-list">
+                    <ul>
+                        <li class="header-icon">
+
+                            <a href="http://www.peabbostad.se/" target="_blank">
+                                <img src="/Global/PEAB-SE/Images/TopLinkImages/peabbostad_icon.png" data-inactive-src="/Global/PEAB-SE/Images/TopLinkImages/peabbostad_icon.png" data-active-src="/Global/PEAB-SE/Images/TopLinkImages/peabbostad_icon_active.png" alt="peabbostad.se" />peabbostad.se
+                            </a>
+                        </li>
+                        <li class="header-icon">
+
+                            <a href="/om-peab/press-och-media/" target="_self">
+                                <img src="/Global/PEAB-SE/Images/TopLinkImages/press_icon.png" data-inactive-src="/Global/PEAB-SE/Images/TopLinkImages/press_icon.png" data-active-src="/Global/PEAB-SE/Images/TopLinkImages/press_icon_active.png" alt="Press" />Press
+                            </a>
+                        </li>
+                        <li class="header-icon">
+
+                            <a href="/om-peab/for-leverantorer/" target="_self">
+                                <img src="/Global/PEAB-SE/Images/TopLinkImages/suppliers_icon.png" data-inactive-src="/Global/PEAB-SE/Images/TopLinkImages/suppliers_icon.png" data-active-src="/Global/PEAB-SE/Images/TopLinkImages/suppliers_icon_active.png" alt="F&#246;r leverant&#246;rer" />F&#246;r leverant&#246;rer
+                            </a>
+                        </li>
+                        <li class="header-icon">
+
+                            <a href="/om-peab/kontakta-oss/" target="_self">
+                                <img src="/Global/PEAB-SE/Images/TopLinkImages/contact_us_icon.png" data-inactive-src="/Global/PEAB-SE/Images/TopLinkImages/contact_us_icon.png" data-active-src="/Global/PEAB-SE/Images/TopLinkImages/contact_us_icon_active.png" alt="Kontakta oss" />Kontakta oss
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="pure-u-1-3 header-search-container">
+
+
+                <div class="header-search">
+                    <form action="/sok/" method="get">
+                        <label class="visuallyhiden" for="search-site-input"></label>
+                        <input type="text" name="search" placeholder="S&#246;k p&#229; peab.se" id="search-site-input" />
+                        <input type="image" class="header-search-button" src="/Static/Images/Icons/search_button.png" data-active-src="/Static/Images/Icons/search_button_active.png" data-inactive-src="/Static/Images/Icons/search_button.png" alt="S&#246;k p&#229; peab.se" />
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pure-g header-menu-row">
+            <div class="pure-u-1 menu-container">
+                <div class="main-menu">
+                    <span class="logo">
+                        <a href="/"><img src="/Global/PEAB-SE/Images/Logos/logo_peab_header.png" alt="logo" title="logo" /></a>
+                    </span>
+                    <ul class="top-menu-items">
+                        <li class="" style="display: none">
+                            <a href="/">
+                                <span class="menu-text">START</span>
+                            </a>
+                        </li>
+                        <li class="menu-item-2">
+                            <a href="/produkter-tjanster/">
+                                <span class="menu-text">Produkter</span>
+                            </a>
+                            <img class="main-menu-hover-icon" src="/Static/Images/Icons/icon_white_arrow_down.png" alt="down-arrow" />
+                        </li>
+                        <li class="menu-item-3">
+                            <a href="/ny-bostad/">
+                                <span class="menu-text">Ny bostad</span>
+                            </a>
+                            <img class="main-menu-hover-icon" src="/Static/Images/Icons/icon_white_arrow_down.png" alt="down-arrow" />
+                        </li>
+                        <li class="menu-item-4">
+                            <a href="/kommersiella-fastigheter/">
+                                <span class="menu-text">Ny lokal</span>
+                            </a>
+                            <img class="main-menu-hover-icon" src="/Static/Images/Icons/icon_white_arrow_down.png" alt="down-arrow" />
+                        </li>
+                        <li class="menu-item-5">
+                            <a href="/hallbarhet/">
+                                <span class="menu-text">H&#229;llbarhet</span>
+                            </a>
+                            <img class="main-menu-hover-icon" src="/Static/Images/Icons/icon_white_arrow_down.png" alt="down-arrow" />
+                        </li>
+                        <li class="menu-item-6">
+                            <a href="/jobba-utvecklas/">
+                                <span class="menu-text">Jobba &amp; utvecklas</span>
+                            </a>
+                            <img class="main-menu-hover-icon" src="/Static/Images/Icons/icon_white_arrow_down.png" alt="down-arrow" />
+                        </li>
+                        <li class="menu-item-7">
+                            <a href="/om-peab/">
+                                <span class="menu-text">Om Peab</span>
+                            </a>
+                            <img class="main-menu-hover-icon" src="/Static/Images/Icons/icon_white_arrow_down.png" alt="down-arrow" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="pure-g expanded-menu-row" style="display:none">
+            <div class="pure-u-1 expanded-menu-container">
+                <div class="pure-g menu-item-2 sub-menu">
+                    <div class="pure-u-1-4 menu-col-1">
+                        <div class="menu-item">
+                            <div class="white-line-seperator left"></div>
+                            <ul class="sub-menu-list">
+
+                            </ul>
+                            <div class="white-line-seperator right"></div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-4 menu-col-2">
+                        <div class="menu-item">
+                            <ul class="sub-menu-list">
+
+                            </ul>
+                            <div class="white-line-seperator right"></div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-4 menu-col-3">
+                        <div class="menu-item">
+                            <ul class="sub-menu-list">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-4 menu-col-4">
+                        <div class="menu-item">
+                            <div class="menu-carousell">
+                                <div class="flexslider">
+                                    <div class="flex-container">
+                                        <ul class="slides">
+                                            <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" class="flex-active-slide">
+                                                <a href="">
+                                                    <img class="" src="/Static/Images/FallbackImages/DefaultFallbackForLists.jpg?mode=crop&amp;width=240" draggable="false" alt="Bild f&#246;r sidan">
+                                                    <h3></h3>
+                                                    <p>
+
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
+                                                <a href="">
+                                                    <img class="" src="/Static/Images/FallbackImages/DefaultFallbackForLists.jpg?mode=crop&amp;width=240" draggable="false" alt="Bild f&#246;r sidan">
+                                                    <h3></h3>
+                                                    <p>
+
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li style="width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
+                                                <a href="">
+                                                    <img class="" src="/Static/Images/FallbackImages/DefaultFallbackForLists.jpg?mode=crop&amp;width=240" draggable="false" alt="Bild f&#246;r sidan">
+                                                    <h3></h3>
+                                                    <p>
+
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu-container">
+
+
+            <!-- Menu state container must exist -->
+            <div class="menu-state pure-g">
+                <div class="target pure-u-1-2">
+                    <img src="/Static/Images/menu/menu_open.png" class="open" />
+                    <p>Meny</p>
+                </div>
+
+                <div class="search-target pure-u-1-2">
+
+
+                    <div class="header-search">
+                        <form action="/sok/" method="get">
+                            <label class="visuallyhiden" for="search-site-input"></label>
+                            <input type="text" name="search" placeholder="S&#246;k p&#229; peab.se" id="search-site-input" />
+                            <input type="image" class="header-search-button" src="/Static/Images/Icons/search_button.png" data-active-src="/Static/Images/Icons/search_button_active.png" data-inactive-src="/Static/Images/Icons/search_button.png" alt="S&#246;k p&#229; peab.se" />
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Breadcrumb container -->
+            <div class="pure-u-1 breadcrumb-container">
+                <a class="home-link pure-button pure-button-breadcrumb">
+                    <span class="home-icon">
+				    <img src="/Static/Images/menu/icon_house.png" alt="Start" />
+			    </span>
+                </a>
+
+                <span class="breadcrumb-items">
+                
+            </span>
+
+                <span class="responsive-breadcrumb">
+
+<a class="pure-button pure-button-breadcrumb breadcrumb-item pure-button-last-bread" href="#">Produkter</a> 
+		    </span>
+            </div>
+
+            <!-- Main menu target -->
+            <div class="main-menu-mobile pure-g closed">
+
+                <!-- Menu items will be filled here -->
+                <div class="menu-items">
+                </div>
+
+
+
+            </div>
+            <div class="slider-mobile-wrapper">
+
+
+                <div class="carousell">
+                    <div class="flexslider" id="flex-mobile">
+                        <div class="slider-controls">
+                            <div class="control-status">
+                                <p></p>
+                            </div>
+                            <div class="control-prev"></div>
+                            <div class="control-pause play-pause"></div>
+                            <div class="control-next"></div>
+                        </div>
+                        <ul class="slides">
+                            <li class="">
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/veronica-lantto/' target='_self'>
+                                    <img src="/Global/PEAB-SE/Images/Bildspel-startsida/veronica.jpg" alt="Hur &#228;r jobbet som truckf&#246;rare? H&#246;r Veronica Lantto i Svapavaara." />
+                                </a>
+                                <div class="slide-box" style="">
+                                    <div class="slide-box-content">
+                                        <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/veronica-lantto/' target='_self' >
+                                Hur &#228;r jobbet som truckf&#246;rare? H&#246;r Veronica Lantto i Svapavaara.
+                                </a>
+                            </h2> 
+                                    </div>
+                                    <div class="slide-box-footer"></div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/varldens-storsta-flytt-saknar-motstycke/' target='_self'>
+                                    <img src="/Global/PEAB-SE/Images/Bildspel-startsida/Kiruna.jpg" alt="Kiruna - v&#228;rldens st&#246;rsta flyttlass?" />
+                                </a>
+                                <div class="slide-box" style="">
+                                    <div class="slide-box-content">
+                                        <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/varldens-storsta-flytt-saknar-motstycke/' target='_self' >
+                                Kiruna - v&#228;rldens st&#246;rsta flyttlass?
+                                </a>
+                            </h2> 
+                                    </div>
+                                    <div class="slide-box-footer"></div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/varldsunik-testbana-for-fordonstrafik/' target='_self'>
+                                    <img src="/Global/PEAB-SE/Images/Bildspel-startsida/Asta-Zero.jpg" alt="Hela 430.000 kvadratmeter asfalt ska bidra till att g&#246;ra framtidens trafik s&#228;krare!" />
+                                </a>
+                                <div class="slide-box" style="">
+                                    <div class="slide-box-content">
+                                        <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/varldsunik-testbana-for-fordonstrafik/' target='_self' >
+                                Hela 430.000 kvadratmeter asfalt ska bidra till att g&#246;ra framtidens trafik s&#228;krare!
+                                </a>
+                            </h2> 
+                                    </div>
+                                    <div class="slide-box-footer"></div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/nu-tar-motorvagen-steget-ut-till-havs/' target='_self'>
+                                    <img src="/Global/PEAB-SE/Images/Bildspel-startsida/HMS-Neptun.jpg" alt="M&#229;let &#228;r mindre godstrafik p&#229; v&#228;garna och mer p&#229; j&#228;rnv&#228;g och b&#229;t." />
+                                </a>
+                                <div class="slide-box" style="">
+                                    <div class="slide-box-content">
+                                        <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/nu-tar-motorvagen-steget-ut-till-havs/' target='_self' >
+                                M&#229;let &#228;r mindre godstrafik p&#229; v&#228;garna och mer p&#229; j&#228;rnv&#228;g och b&#229;t.
+                                </a>
+                            </h2> 
+                                    </div>
+                                    <div class="slide-box-footer"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end of mobile/tablet menu container -->
+
+        <div class="pure-g breadcrumb-row" ng-controller="googleMapsController">
+            <div class="pure2-u-1 breadcrumb-container">
+                <div class="page-breadcrumb pure-u-2-3">
+                    <p>Du &#228;r h&#228;r:</p>
+                    <a href="/">Nordens Samhällsbyggare</a><span class="breadcrumb-seperator">> </span>
+                    <a>Produkter</a>
+
+                </div>
+
+
+                <div class="explore-peab pure-u-1-3">
+                    <div id="show-hide-navigation">
+
+                        <div class="actions">
+                            <a style="display:none" href="#" class="set-carousell">
+                                <img src="/Static/Images/buttons/show_carousell.gif" />
+                            </a>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="show-hide-row" class="pure-g">
+            <div class="pure-u-1">
+                <div id="show-hide-container" class="closed">
+                    <div class="map">
+                        <div id="map-wrapper">
+                            <div id="map-canvas"></div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="carousell">
+                        <div class="flexslider" id="flex">
+                            <div class="slider-controls">
+                                <div class="control-status">
+                                    <p></p>
+                                </div>
+                                <div class="control-prev"></div>
+                                <div class="control-pause play-pause"></div>
+                                <div class="control-next"></div>
+                            </div>
+                            <ul class="slides">
+                                <li class="">
+                                    <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/veronica-lantto/' target='_self'>
+                                        <img src="/Global/PEAB-SE/Images/Bildspel-startsida/veronica.jpg" alt="Hur &#228;r jobbet som truckf&#246;rare? H&#246;r Veronica Lantto i Svapavaara." />
+                                    </a>
+                                    <div class="slide-box" style="">
+                                        <div class="slide-box-content">
+                                            <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/veronica-lantto/' target='_self' >
+                                Hur &#228;r jobbet som truckf&#246;rare? H&#246;r Veronica Lantto i Svapavaara.
+                                </a>
+                            </h2> 
+                                        </div>
+                                        <div class="slide-box-footer"></div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/varldens-storsta-flytt-saknar-motstycke/' target='_self'>
+                                        <img src="/Global/PEAB-SE/Images/Bildspel-startsida/Kiruna.jpg" alt="Kiruna - v&#228;rldens st&#246;rsta flyttlass?" />
+                                    </a>
+                                    <div class="slide-box" style="">
+                                        <div class="slide-box-content">
+                                            <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-2-2014/varldens-storsta-flytt-saknar-motstycke/' target='_self' >
+                                Kiruna - v&#228;rldens st&#246;rsta flyttlass?
+                                </a>
+                            </h2> 
+                                        </div>
+                                        <div class="slide-box-footer"></div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/varldsunik-testbana-for-fordonstrafik/' target='_self'>
+                                        <img src="/Global/PEAB-SE/Images/Bildspel-startsida/Asta-Zero.jpg" alt="Hela 430.000 kvadratmeter asfalt ska bidra till att g&#246;ra framtidens trafik s&#228;krare!" />
+                                    </a>
+                                    <div class="slide-box" style="">
+                                        <div class="slide-box-content">
+                                            <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/varldsunik-testbana-for-fordonstrafik/' target='_self' >
+                                Hela 430.000 kvadratmeter asfalt ska bidra till att g&#246;ra framtidens trafik s&#228;krare!
+                                </a>
+                            </h2> 
+                                        </div>
+                                        <div class="slide-box-footer"></div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/nu-tar-motorvagen-steget-ut-till-havs/' target='_self'>
+                                        <img src="/Global/PEAB-SE/Images/Bildspel-startsida/HMS-Neptun.jpg" alt="M&#229;let &#228;r mindre godstrafik p&#229; v&#228;garna och mer p&#229; j&#228;rnv&#228;g och b&#229;t." />
+                                    </a>
+                                    <div class="slide-box" style="">
+                                        <div class="slide-box-content">
+                                            <h2>
+                                <a href='/om-peab/press-och-media/aktuellt-fran-peab/aktuellt-nr-1-2014/nu-tar-motorvagen-steget-ut-till-havs/' target='_self' >
+                                M&#229;let &#228;r mindre godstrafik p&#229; v&#228;garna och mer p&#229; j&#228;rnv&#228;g och b&#229;t.
+                                </a>
+                            </h2> 
+                                        </div>
+                                        <div class="slide-box-footer"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-container container">
+            <div class="pure-g-r">
+                <div class="pure-u-1">
+                </div>
+            </div>
+
+            <div class="pure-g-r main-row">
+                <div class="pure-u-2-3">
+                    <div class="left-column">
+                        <div id="content-wrapper">
+                            <div class="medium-box medium-box-container">
+                                <div class="box-header">
+                                    <h1>Detta är Peab</h1>
+                                </div>
+                                <div class="linkBlockItem">
+                                    <a href="#">
+                                        <div class="linkBlockImage" style="background-image: url('http://lorempixel.com/300/150/abstract/1');"></div>
+                                        <div class="linkBlockItemLink">Anläggning</div>
+                                    </a>
+                                </div>
+                                <div class="linkBlockItem">
+                                    <a href="#">
+                                        <div class="linkBlockImage" style="background-image: url('http://lorempixel.com/300/150/abstract/2');"></div>
+                                        <div class="linkBlockItemLink">Bygg</div>
+                                    </a>
+                                </div>
+                                <div class="linkBlockItem">
+                                    <a href="#">
+                                        <div class="linkBlockImage" style="background-image: url('http://lorempixel.com/300/150/abstract/3');"></div>
+                                        <div class="linkBlockItemLink">Industri</div>
+                                    </a>
+                                </div>
+                                <div class="linkBlockItem">
+                                    <a href="#">
+                                        <div class="linkBlockImage" style="background-image: url('http://lorempixel.com/300/150/abstract/4');"></div>
+                                        <div class="linkBlockItemLink">Projektutveckling</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="medium-box box-border share-box">
+                        <div class="box-footer">
+                            <div class="box-footer-header">Dela p&#229;:</div>
+                            <div class="share-list">
+                                <ul>
+                                    <li>
+                                        <a href="http://twitter.com/home?status=http://www.peabnew.se/produkter-tjanster/" title="Dela p&#229; Twitter" target="_blank">
+                                            <img src="/Static/Images/icons/twitter_icon.jpg" alt="Dela p&#229; Twitter" title="Dela p&#229; Twitter" />Twitter</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.facebook.com/sharer.php?u=http://www.peabnew.se/produkter-tjanster/" title="Dela p&#229; Facebook" target="_blank">
+                                            <img src="/Static/Images/Icons/facebook_icon.jpg" alt="Dela p&#229; Facebook" title="Dela p&#229; Facebook" />Facebook</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.peabnew.se/produkter-tjanster/" title="Dela p&#229; LinkedIn" target="_blank">
+                                            <img src="/Static/Images/icons/linkedin_icon.jpg" alt="Dela p&#229; LinkedIn" title="Dela p&#229; LinkedIn" />LinkedIn</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-u-1-3">
+                <div class="right-column">
+                    <div class="small-box">
+                        <div class="box-header">
+                            <h3>Referensprojekt</h3>
+                        </div>
+                        <div class="box-text">
+                            <a href="/bostader--projekt/">
+                                <h3></h3>
+                                <p>Peabs verksamhet sp&auml;nner &ouml;ver ett brett omr&aring;de, och vi &auml;r stolta &ouml;ver att h&auml;r kunna presentera ett urval av det vi har &aring;stadkommit eller &auml;r i f&auml;rd med att konstruera just nu.</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="small-box">
+                        <div class="box-header">
+                            <h3>V&#229;rt h&#229;llbarhetsarbete</h3>
+                        </div>
+                        <div class="box-image">
+                            <a href="/hallbarhet/">
+                                <img src="/Global/PEAB-SE/Images/Hallbarhet/Hallbarhetsredovisning12.jpg?mode=crop&amp;width=55" alt="" title="Bild f&#246;r sidan" />
+                            </a>
+                        </div>
+                        <div class="box-text">
+                            <a href="/hallbarhet/">
+                                <h3></h3>
+                                <p>Allt som vi planerar och genomför ska i sin helhet vara i linje med våra etiska riktlinjer samt ansvarsfullt och långsiktigt utformat. Vi ska därigenom tillgodose miljömässiga, ekonomiska och sociala aspekter.</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer-row pure-g">
+        <div class="pure-u-1 footer-container">
+            <div class="pure-g-r">
+                <div class="pure-u-1-4">
+                    <div class="footer-info">
+                        <h1>Peab - Nordens Samhällsbyggare</h1>
+                        <p>Peab är ett av Nordens ledande bygg- och anläggningsföretag med 13.000 anställda och en omsättning överstigande <span class="ms-rteCustom-Text">40 miljarder kronor</span>. Koncernens dotterföretag har strategiskt placerade kontor i Sverige, Norge och Finland. Aktien är börsnoterad på NASDAQ OMX Stockholm. Koncernkontoret ligger i Förslöv i Skåne.</p>
+                        <p>
+                            <br /><a href="/om-peab/om-cookies/">Om cookies</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="pure-u-1-4">
+                    <div class="footer-contact-us">
+                        <h3>Kontakta oss</h3>
+                        <p>Huvudkontor Peab AB</p>
+                        <p>Margreteorpsvägen 84
+                            <br/>260 92 Förslöv</p>
+                        <ul>
+                            <li>+46 431 890 00 (v&#228;xel)</li>
+                            <li>+46 431 45 15 08 (fax)</li>
+                        </ul>
+
+                        <img src="/Static/Images/Icons/right_arrow.png" alt="right-arrow" />
+                        <a href="/om-peab/kontakta-oss/">Kontakta oss</a>
+                    </div>
+                </div>
+                <div class="pure-u-1-4 footer-shortcuts">
+
+                    <div class="shortcut-list">
+                        <h3>Genv&#228;gar</h3>
+                        <ul>
+                            <li>
+                                <img src="/Static/Images/Icons/right_arrow.png" alt="right-arrow" />
+                                <a href="http://www.peabbostad.se" target="_blank">peabbostad.se</a>
+                            </li>
+                            <li>
+                                <img src="/Static/Images/Icons/right_arrow.png" alt="right-arrow" />
+                                <a href="http://www.peab.com" target="_blank">peab.com</a>
+                            </li>
+                            <li>
+                                <img src="/Static/Images/Icons/right_arrow.png" alt="right-arrow" />
+                                <a href="http://www.peab.no" target="_blank" title="Peab.no">peab.no</a>
+                            </li>
+                            <li>
+                                <img src="/Static/Images/Icons/right_arrow.png" alt="right-arrow" />
+                                <a href="http://www.peab.fi" target="_blank" title="peab.fi">peab.fi</a>
+                            </li>
+                            <li>
+                                <img src="/Static/Images/Icons/right_arrow.png" alt="right-arrow" />
+                                <a href="~/link/42f3931ae17a4bdc9f24c133ed7fb747.aspx" target="_top" title="Press">Press</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="pure-u-1-4">
+                    <div class="footer-social">
+
+                        <h3>Aktuellt fr&#229;n Peab direkt i din inkorg?</h3>
+                        <a class="pure-button button-orange" href="/om-peab/press-och-media/aktuellt-fran-peab/nyhetsbrev/">Prenumerera p&#229; v&#229;rt nyhetsbrev</a>
+
+
+                        <div class="footer-social-follow-list">
+                            <h1>F&#246;lj oss p&#229;:</h1>
+                            <ul>
+                                <li>
+                                    <a href="http://www.facebook.com/peabsverige" target="_blank">
+                                        <img src="/Static/Images/Icons/social.png" class="social-icon social-facebook" alt="facebook" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.youtube.com/user/peab" target="_blank">
+                                        <img src="/Static/Images/Icons/social.png" class="social-icon social-youtube" alt="youtube" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://twitter.com/peab_ab" target="_blank">
+                                        <img src="/Static/Images/Icons/social.png" class="social-icon social-twitter" alt="twitter" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.linkedin.com/company/peab" target="_blank">
+                                        <img src="/Static/Images/Icons/social.png" class="social-icon social-linkedin" alt="linkedin" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        window.console = window.console || {
+            log: function () {}
+        };
+        if (typeof console === "undefined") {
+            console = {};
+            console.log = function () {};
+        }
+    </script>
+    <script src="/Assets/Javascripts/ie_shims.js"></script>
+    <script src="/Assets/Javascripts/helpers.js"></script>
+    <script src="/Assets/Javascripts/load_more_pages.js"></script>
+    <script src="/Assets/Javascripts/knowit_slider.js"></script>
+    <script src="/Assets/Javascripts/tabbed_widget.js"></script>
+    <script src="/Assets/Javascripts/desk_menu.js"></script>
+    <script src="/Assets/Javascripts/resp_menu.1.0.js"></script>
+
+    <script src="/Assets/Javascripts/vendor/matchMedia.js"></script>
+    <script src="/Assets/Javascripts/vendor/matchMedia.addListener.js"></script>
+
+    <script src="/Assets/Javascripts/vendor/enquire.min.js"></script>
+    <script src="/Assets/Javascripts/main.js"></script>
+    <script src="/Assets/Javascripts/knowit_slider.js"></script>
+    <script src="/Assets/Javascripts/angular_factories.js"></script>
+    <script src="/Assets/Javascripts/angular_filters.js"></script>
+    <script src="/Assets/Javascripts/controllers/avaible_jobs_controller.js"></script>
+    <script src="/Assets/Javascripts/controllers/google_maps_controller.js"></script>
+    <script src="/Assets/Javascripts/controllers/list_controller.js"></script>
+    <script src="/Assets/Javascripts/image_fader_carousell.js"></script>
+    <script src="/Assets/Javascripts/header.js"></script>
+    <script src="/Assets/Javascripts/show_hide.js"></script>
+    <script src="/Assets/Javascripts/responsive_design.js"></script>
+    <script src="/Assets/Javascripts/subscribe_press.js"></script>
+    <script src="/Assets/Javascripts/vendor/jquery.lightbox.js"></script>
+    <script src="/Assets/Javascripts/vendor/placeholder_polyfill.jquery.js"></script>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+Skillnader i söken mellan DEV och PROD:
+
+Finns i DEV men inte PROD:
+- Alternative search site (för portalen)
+- Specific site search
+- Laddar om sidan och kör GET så man kan skicka URL:en till ett sökresultat
+
+Finns i PROD men inte DEV:
+- Läser siteSeekerApplianceQcUrl istället för siteSeekerQcUrl
+
+Att fixa
+- Numrering i ol:en när man hoppar till andra sidor

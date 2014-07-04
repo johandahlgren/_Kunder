@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="jquery.flexslider-min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        
+        <script type="text/javascript">
+            
+            var currentData1 = [];
+                
+            var element1 = {};
+            element1.image      = "http://lorempixel.com/500/500/abstract/1";
+            element1.heading    = "Rubrik1";
+            element1.introtext  = "Intro1";
+            element1.href       = "http://www.gp.se";
+            currentData1[0] = element1;
+
+            var element2 = {};
+            element2.image      = "http://lorempixel.com/500/500/abstract/2";
+            element2.heading    = "Rubrik2";
+            element2.introtext  = "Intro2";
+            element2.href       = "http://www.dn.se";
+            currentData1[1] = element2;
+
+            var element3 = {};
+            element3.image      = "";
+            element3.heading    = "Rubrik3";
+            element3.introtext  = "Intro3";
+            element3.href       = "http://www.data.se";
+            currentData1[2] = element3;
+            
+            var element4 = {};
+            element4.image      = "http://lorempixel.com/500/500/abstract/4";
+            element4.heading    = "Rubrik3";
+            element4.introtext  = "Intro3";
+            element4.href       = "http://www.data.se";
+            currentData1[3] = element4;
+            
+            var currentData2 = [];
+                
+            var element1 = {};
+            element1.image      = "http://lorempixel.com/500/500/abstract/6";
+            element1.heading    = "Rubrik6";
+            element1.introtext  = "Intro1";
+            element1.href       = "http://www.gp.se";
+            currentData2[0] = element1;
+
+            var element2 = {};
+            element2.image      = "http://lorempixel.com/500/500/abstract/7";
+            element2.heading    = "Rubrik7";
+            element2.introtext  = "Intro2";
+            element2.href       = "http://www.dn.se";
+            currentData2[1] = element2;
+                    
+            function setMegaMenuImageSlides(elements) {
+                $(".slides").empty();
+                $(".flex-control-nav").remove();
+                $(".flex-direction-nav").remove();
+                $.removeData( $(".flexslider")[0]);
+                
+                var sliderElement       = $("div.flexslider");
+                var ulElement, slideElement, linkElement, imageElement, headingElement, introElement = null;
+
+                ulElement = $(".slides");
+                
+                $(elements).each(function(index, item) {
+                    slideElement    = $("<li>");
+                    ulElement.append(slideElement);
+                    linkElement     = $("<a href=\"" + (item.href || "") + "\"></a>");
+                    slideElement.append(linkElement);
+
+                    imageElement    = $("<img src=\"" + (item.image || "http://www.johanmdahlgren.com/news/screenshot.png") + "\"/>");
+                    headingElement  = $("<h3>" + (item.heading || "") + "</h3>");
+                    introElement    = $("<p>" + (item.introtext || "") + "</p>");
+
+                    linkElement.append(imageElement);
+                    linkElement.append(headingElement);
+                    linkElement.append(introElement);
+                });
+                
+                $(".flexslider").flexslider({slideshow: true, directionNav: false});
+            }
+            
+            $(document).ready(function() {
+                setMegaMenuImageSlides(currentData1);
+            });
+        </script>
+        
+        <link rel="stylesheet" href="flexslider.css" type="text/css" media="screen" />
+        
+        <style type="text/css">
+            .flexslider {width: 500px; margin: 100px auto;}
+        </style>
+    </head>
+    <body>
+        <div class="menu-carousell">
+            <div class="flexslider">
+                <div class="flex-container">
+                    <ul class="slides">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="javascript: setMegaMenuImageSlides(currentData1);" style="position: absolute; right: 10px; top: 10px; z-index: 10000;">List 1</a>
+        <a href="javascript: setMegaMenuImageSlides(currentData2);" style="position: absolute; right: 10px; top: 30px; z-index: 10000;">List 2</a>
+    </body>
+</html>

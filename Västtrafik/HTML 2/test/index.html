@@ -1,0 +1,1398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id="HtmlTag" xmlns="http://www.w3.org/1999/xhtml" lang="sv"><head><title>Startsida - Västtrafik - Västtrafik</title><link rel="canonical" href="http://www.vasttrafik.se/#%21/"><link rel="alternate" type="application/rss+xml" href="http://www.vasttrafik.se/?_escaped_fragment_=%2frss-kallor%2fprenumererar-pa-nyheter%2f" title="Prenumerera på Nyheter"><link rel="alternate" type="application/rss+xml" href="http://www.vasttrafik.se/?_escaped_fragment_=%2frss-kallor%2fprenumerera-pa-trafikstorningar-rss%2f" title="Prenumerera på trafikstörningar RSS">
+    
+
+
+<link rel="shortcut icon" href="http://www.vasttrafik.se/favicon.ico"> 
+
+<!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="http://www.vasttrafik.se/CustomerTemplates/Public/Styles/ie7.css">
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="screen, print" href="index_files/PublicHeader_D7F638ACD1D0C3845085F294DB39BD1C.css">
+
+<link rel="stylesheet" type="text/css" media="print" href="index_files/CommonPrint_6A2AC22A358F42EBDB0D33A79D7C423F.css">
+
+<script src="index_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="index_files/PublicNative_36D915C1B3022C48DF3751B76C1781BD.js"></script>
+
+<script type="text/javascript" src="index_files/PublicHeader_0E04EED4EDDB84F9E8BB05C314C90632.js"></script>
+
+<script type="text/javascript">
+    // server settings
+    (function($, customer) {
+        $.lang({"/general/time/shortdatepattern":"yyMMdd","/general/time/longdatepattern":"yyyy-MM-dd","/general/time/year":"år","/general/time/month":"månad","/general/time/day":"dag","/general/time/days":"dagar","/general/time/hour":"timme","/general/time/hours":"timmar","/general/time/minute":"minut","/general/time/minutes":"minuter","/general/time/approximately":"c:a","/general/time/now":"Nu","/general/time/until":"t.o.m","/general/time/untilfurthernotice":"tills vidare"});
+        $.lang({"/general/error/title":"Tekniskt fel:","/general/error/default":"Försök igen eller kontakta kundservice på 0771-41 43 00"});
+        $.lang({"/general/indicators/tripsaved":"Resvägen är nu sparad i din profil","/general/indicators/tripremoved":"Resvägen är borttagen från din profil","/general/indicators/stopadded":"Hållplatsen är nu sparad i din profil"});
+        $.lang({"/general/buttons/cancel":"Avbryt","/general/buttons/submit":"Skicka","/general/buttons/confirm":"Bekräfta","/general/buttons/close":"Stäng","/general/buttons/choose":"Välj","/general/buttons/update":"Uppdatera","/general/buttons/search":"Sök","/general/buttons/save":"Spara","/general/buttons/pagingfirst":"Första","/general/buttons/pagingprevious":"Föregående","/general/buttons/pagingnext":"Nästa","/general/buttons/paginglast":"Sista","/general/buttons/goback":"Tillbaka","/general/buttons/next":"Nästa","/general/buttons/activate":"Aktivera","/general/buttons/deactivate":"Deaktivera","/general/buttons/change":"Ändra"});
+        $.lang({"/transportmodes/bus":"Buss","/transportmodes/tram":"Spårvagn","/transportmodes/metro":"Tunnelbana","/transportmodes/ferry":"Färja","/transportmodes/walk":"Gå","/transportmodes/taxi":"Förbeställt","/transportmodes/ship":"Båt","/transportmodes/train":"Tåg","/transportmodes/all":"Alla trafikslag"});
+        $.lang({"/quicksearch/tooltip":"Sök här","/quicksearch/watermark":"Sök på västtrafik.se"});
+        $.lang({"/mappopups/stopArea/lines":"Linjer:","/mappopups/stopArea/trafficsituations":"Trafikstörningar:","/mappopups/stopArea/travelfrom":"Res härifrån","/mappopups/stopArea/travelfromtext":"Ange också vart du vill resa för att kunna göra en sökning","/mappopups/stopArea/travelto":"Res hit","/mappopups/stopArea/traveltotext":"Ange också var du vill resa från för att kunna göra en sökning","/mappopups/stopArea/coordinateonmap":"Plats på kartan"});
+        $.lang({"/templates/globalbasket/basket":"Varukorg:","/templates/globalbasket/sum":"Summa:","/templates/globalbasket/items":"varor"});
+        $.lang({"/templates/sharelist/addtofav":"Lägg till bokmärke","/templates/sharelist/favadded":"Bokmärket lades till!","/templates/sharelist/print":"Skriv ut sidan","/templates/sharelist/email":"Skicka länk som e-post","/templates/sharelist/sharetwitter":"Dela på Twitter","/templates/sharelist/sharefacebook":"Dela på Facebook","/templates/sharelist/addtofavtooltip":"Lägg till bokmärke","/templates/sharelist/printtooltip":"Skriv ut sidan","/templates/sharelist/emailtooltip":"Skicka länk som e-post","/templates/sharelist/sharetwittertooltip":"Dela på Twitter","/templates/sharelist/sharefacebooktooltip":"Dela på Facebook","/templates/sharelist/shareemailmodaltitle":"Skicka länk som e-post","/templates/sharelist/fromempty":"Från måste anges","/templates/sharelist/tonotvalid":"En valid E-Post-adress måste anges","/templates/sharelist/errorsendingemail":"Meddelandet kunde tyvärr inte skickas, var god försök senare.","/templates/sharelist/fromname":"Från (namn):","/templates/sharelist/toemail":"E-Post:","/templates/sharelist/send":"Skicka"});
+
+        customer.settings('', {"AutoCompleteMaxResults":12,"BoatLineLayerActive":"false","BoatLineWmsLayerName":"vasttrafik:boats-2400","BusLineLayerActive":"true","BusLineWmsLayerName":"vasttrafik:busses-2400","CardsPerPage":10,"CommuterParkingPoiCategoryId":1,"CommuterParkingsMaxDistanceMeters":5000,"CommuterParkingsMaxNumberResults":5,"DisplayTravelPlannerSettingValues":true,"EPiTrafficSituationsEnabled":true,"HttpsGMapsKey":"","IMFaceTrafficSituationsEnabled":true,"IsInDevelopmentMode":false,"KundoEnabled":false,"MapBoundExtent":[1114112,6225920,1507328,6619136],"MapInitialBounds":"1263060.0, 6399060.0, 1280520.0, 6408420.0","MapLargeStartTileEnabled":false,"MapProjection":"EPSG:2400","MapStopsLayerName":"vasttrafik:Stops","MapTileCacheLayerName":"vasttrafik:lmv-2400","MapTileCacheResolutions":[1024,512,256,128,64,32,16,8,4,2,1,0.5],"MapTileCacheUrl":"http:\/\/map-gwc.vasttrafik.se\/geowebcache\/wms","MapWfsUrl":"http:\/\/www.vasttrafik.se\/geoserver\/wfs\/?rd=map","MapWmsLayerName":"vasttrafik:lmv-2400","MapWmsUrl":"http:\/\/map-wms.vasttrafik.se\/geoserver\/wms","MixedOrderMode":false,"PublicDisqusAPIKey":"dAZ1Utv8fOWfqP3sUMsfBxFdpgjKnZCxexSwUGtD6N7XKvb9D9BZEnF4RyS96Iao","RedirectSearchToHafas":true,"RetailerPoiCategoryId":2,"SelectedMunicipalityCookieName":"TrafficSituationMunicipality","StopDisplayAppendUrlDouble":"\/dubbel","StopDisplayAppendUrlHorizontal":"\/horisontell","StopDisplayAppendUrlVertical":"\/vertikal","StopDisplayClientAddress":"http:\/\/spa.vasttrafik.se\/skylt","StopDisplaysMaxNumberOfRows":30,"TrafficDisturbanceUrl":"#!\/reseinformation\/administrera-trafikforandringar\/","TrafficSituationDefaultName":"Indragen hållplats","TrafficSituationUrlSegmentMaxLength":60,"TrainLineLayerActive":"true","TrainLineWmsLayerName":"vasttrafik:trains-2400","TramLineLayerActive":"true","TramLineWmsLayerName":"vasttrafik:trams-2400","UserProfileCookieName":"VasttrafikProfileCookie"});
+        customer.settings('epi', {"CommuterParkingsLinkUrl":"\/Reseinformation\/pendelparkeringar\/","DownloadFilePage":"\/CustomerTemplates\/Public\/Pages\/DownloadImagePage.aspx","FBApplicationId":"181261078565727","FourHundredFourPage":"\/404\/","HttpsLoginRealUrl":"https:\/\/www.vasttrafik.se\/#!\/mina-sidor\/logga-in\/","LineLinkUrl":"\/Reseinformation\/linjer\/","LoginLinkUrl":"\/mina-sidor\/logga-in\/","LoveCampaign":"\/nu-ger-vi-10000-bilister-chansen-att-aka-gratis-i-tva-veckor\/karlek\/","MaxTravelDate":"2013-09-28 23:59:00","MyPageStartPageLoggedInLinkUrl":"\/mina-sidor-inloggad\/","NewsLinkUrl":"\/?_escaped_fragment_=\/om-vasttrafik\/nyheter\/","NextTripFullScreenUrl":"http:\/\/www.vasttrafik.se\/nasta-tur-fullskarm\/","RetailersLinkUrl":"\/biljetter-priser\/har-koper-du-biljetter\/har-koper-du-biljetter\/","SearchPageLinkUrl":"\/?_escaped_fragment_=\/startsideinformation\/global-meny\/sok\/","SitesterSurveyId":1815,"StartPageRealUrl":"http:\/\/www.vasttrafik.se\/","StopsLinkUrl":"\/Reseinformation\/Hallplatser\/","TimeTablesLinkUrl":"\/Reseinformation\/Tidtabeller\/","TrafficSituationsLinkUrl":"\/trafikstorning\/","WebShopCheckoutUrl":"\/mina-sidor-inloggad\/varukorg\/"});
+        customer.settings('poi', {"PoiDefaultIcons":[null,"","\/Global\/Icons\/retailerIcon.png"]});
+        customer.settings('auth', {
+            'loggedIn': false,
+            'webShop': false,
+            'isCompany': false
+        });
+        customer.settings('mypagesettings', {"MyPageSettingsModules":[{"Display":true,"Name":"MyBookmarks"},{"Display":true,"Name":"News"},{"Display":true,"Name":"PopularFunctions"}],"ZoomMapOnScroll":false});
+    })(jQuery, customer);
+</script>
+
+
+
+    
+    <script type="text/javascript">
+
+        $.pages.load(PAGES_ID, function (node) {
+            $('.topNewsBannerControl', node).topNewsBannerControl();
+            $('.topDisturbanceBannerControl', node).topDisturbanceBannerControl();
+            $('.betaLogoWelcomeBanner', node).betaWelcomeBannerControl();
+        });
+
+        $.pages.enter(PAGES_ID, di(['map'], function(map) {
+            map.enable();
+        }));
+
+        $.pages.leave(PAGES_ID, di(['map'], function (map) {
+            map.disable();
+        }));
+    </script>
+
+        
+        <link rel="stylesheet" type="text/css" media="screen" href="index_files/vasttrafik.css">
+    
+    
+     
+        <script type="text/javascript" src="index_files/vasttrafik.js"></script>
+    
+<script src="index_files/count.js" async=""></script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="description" content="Välkommen till Västtrafik! Vi har hand om kollektivtrafiken i hela Västra Götaland. Gå in på Västtrafik och se hur du tar dig till rätt destination."><meta name="rating" content="General"><meta name="generator" content="EPiServer"><meta name="robots" content="all"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="creation_date" content="Wed, 18 Apr 2007 11:30:00 GMT"><meta name="last-modified" content="Mon, 14 Jun 2010 15:46:01 GMT"><meta name="revised" content="Mon, 14 Jun 2010 15:46:01 GMT"><meta http-equiv="Content-Language" content="sv"><meta http-equiv="Content-Style-Type" content="text/css"><meta http-equiv="Content-Script-Type" content="text/javascript"><meta property="og:url" content="http://www.vasttrafik.se/#!/"><meta property="og:title" content="Startsida - Västtrafik - Västtrafik"><meta property="og:site_name" content="Västtrafik"><meta property="og:description" content="Välkommen till Västtrafik! Vi har hand om kollektivtrafiken i hela Västra Götaland. Gå in på Västtrafik och se hur du tar dig till rätt destination."><meta name="fragment" content="!"><meta name="FilePath" content="/default.aspx"></head>
+<body id="BodyTag" class="js">
+    
+        
+    
+    
+    
+
+
+<input name="GoogleUA" id="GoogleUA" class="googleUA" value="UA-6873116-2" type="hidden"><div id="Site" class="container_12">
+        <div id="SiteHeader" class="grid_12 clearFix panel opaqueEvents">
+            <div class="cornersHolder clearfix">
+	<div class="topLeftBlueCorner">
+
+	</div><div class="topRightBlueCorner">
+
+	</div><div class="blueMiddle">
+
+	</div>
+</div>
+            <div class="clearfix" style="background-color: #0099cc;">
+                
+
+                <div class="grid_3 logoArea">
+                    
+                            <a href="http://www.vasttrafik.se/#%21/">
+                                <img src="index_files/VT-logo.png" alt="Västtrafik">
+                            </a>
+                    
+                </div>
+                <div id="HeaderFunctionsArea" class="grid_9 clearRightMargin"><style>
+    .langPicker{ line-height:1.8333em; color:White;}
+</style><div id="HeaderFunctionsControl">
+
+    <ul class="functions">
+       
+            <li>
+                
+                        <a href="http://www.vasttrafik.se/#%21/startsideinformation/global-meny/vanliga-fragor/" id="HyperLinkCommonQuestionsPage">Vanliga Frågor</a>
+           
+                
+            </li> 
+         
+            <li>
+                
+                <a onclick="javascript:window.location.href = 'http://www.vasttrafik.se/#!/en/';window.location.reload()" class="langPicker">English</a>
+                
+            </li> 
+         
+            <li>
+                
+                        <a href="http://www.vasttrafik.se/#%21/startsideinformation/global-meny/a-o/" id="HyperLinkAlphabeticListPage">A-Ö</a>
+           
+                
+            </li> 
+         
+            <li>
+                
+                        <a href="http://www.vasttrafik.se/#%21/om-vasttrafik/kontakt/" id="HyperLinkContactPage">Kontakt</a>
+           
+                
+            </li> 
+         <li id="MenuRegisterNewUser">
+            
+              
+                <a href="https://www.vasttrafik.se/#%21/mina-sidor/registrera-ny-anvandare/">Ny användare</a>
+            
+        </li>
+        <li class="last">
+            <div id="LoginStatusArea">
+                
+<div id="LoginStatusControl" class="clearfix customer-loginStatus-27">
+    
+            <a href="https://www.vasttrafik.se/#%21/mina-sidor/logga-in/" class="login blueButton">
+                Logga in</a>
+        
+      
+</div>
+
+            </div>
+            
+<div id="LightLoginStatusControl">
+    <span class="lightLoginStatus" style="display: none" title="Klicka för att logga ut"></span>
+     
+</div>
+
+        </li>
+    </ul>
+</div></div>
+            </div>
+            <div id="SearchAndMenuArea" class="grid_12 clearFix clearMargin">
+                <div class="clearfix" style="background-color: #1aa3d1;">
+                    <div id="MainMenuArea"><div id="MainMenuControl">
+    
+            <ul id="MainMenu" class="clearLeftMargin">
+        
+            <li>
+                <a title="Start" class="selected" href="http://www.vasttrafik.se/#%21/">
+                    <img src="index_files/home-icon.gif" alt="Go to startpage">
+                </a>
+                
+            </li>
+        
+            <li>
+                
+                <a href="http://www.vasttrafik.se/#%21/reseinformation/">Reseinformation</a>
+            </li>
+        
+            <li>
+                
+                <a href="http://www.vasttrafik.se/#%21/trafikstorningar/">Trafikstörningar</a>
+            </li>
+        
+            <li>
+                
+                <a href="http://www.vasttrafik.se/#%21/biljetter-priser/">Biljetter och Priser</a>
+            </li>
+        
+            <li>
+                
+                <a href="http://www.vasttrafik.se/#%21/om-vasttrafik/">Om Västtrafik</a>
+            </li>
+        
+            <li>
+                
+                <a href="http://www.vasttrafik.se/#%21/mina-sidor/">Mina Sidor</a>
+            </li>
+        
+            <li>
+                
+                <a href="http://www.vasttrafik.se/#%21/foretag/">Företag</a>
+            </li>
+        
+            </ul>
+        
+</div></div>
+                    <div id="SearchArea" class="clearRightMargin">
+                        
+<div id="QuickSearchControl" class="quickSearchControl">
+    <input value="Sök på vasttrafik.se" name="QuickSearchControl$QuickSearchInput" id="QuickSearchInput" title="Sök här" class="searchInput watermark faq-firstinit" type="text">
+    <input name="QuickSearchControl$QuickSearchButton" value="" id="QuickSearchButton" class="searchButton" type="submit">
+</div>
+                    </div>
+                </div>
+                <div class="cornersHolder clearfix">
+	<div class="bottomLeftLightBlueCorner">
+
+	</div><div class="bottomRightLightBlueCorner">
+
+	</div><div class="lightBlueMiddle">
+
+	</div>
+</div>
+            </div>
+            <div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+        </div>
+        <div id="SiteContent" class="grid_12 clearFix">
+            <div id="LeftContentArea">
+                <div id="BasketGlobalWrapper" class="basketGlobalControl relativePositioning marginBottom customer-basketGlobal-11" style="display:none;">
+    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+        <div id="BasketGlobalPanel" class="whiteBackground specialPadding clearfix panel opaqueEvents">
+            <div class="basketGlobalControlInner clearFix">
+                <a class="basketGlobalBasketLink" href="http://www.vasttrafik.se/#%21/mina-sidor-inloggad/varukorg/">
+                    <span id="LabelBasket" class="boldType">Varukorg:</span>
+                    <span id="LabelNumberOfBasketItems" class="globalBasketNumberOfBasketItems"></span><span>&nbsp;</span>
+                    <span id="LabelItems">varor</span><br>
+                    <span id="LabelSum" class="boldType">Summa:</span>
+                    <span id="LabelAmount" class="globalBasketAmount"></span>
+                </a>
+            </div>
+        </div>
+    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+    <div class="templates" style="display: none;">
+        <span class="personCheckoutPage">/?_escaped_fragment_=/mina-sidor-inloggad/varukorg/</span>
+        <span class="companyCheckoutPage">/?_escaped_fragment_=/mina-sidor-inloggad/sammanfattning-av-bestallning/</span>
+    </div>
+</div>
+
+                <div class="relativePositioning marginBottom" style="display: none; left: -20px;">
+                    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+                        <div id="SubMenuPanel" class="whiteBackground specialPadding clearfix panel opaqueEvents"></div>
+                    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+                </div>
+                <div id="LeftContentAddOnPlaceHolder" class="LeftContentAddonPlaceHolder">         
+                    <div id="LeftContentAddOnModuleWrapper" class="leftContentAddOnControl relativePositioning marginBottom" style="display: none;">
+    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+        <div class="whiteBackground specialPadding clearfix panel opaqueEvents">
+            <div id="LeftContentAddOn">
+            </div>
+        </div>
+    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+</div>
+       
+                </div>
+                <div id="PopularFunctionsPlaceholder" class="popularFunctionsPlaceholder">
+                    <div id="PopularFunctionsModuleWrapper" class="popularFunctionsControl relativePositioning marginBottom customer-popularFunctionsControl-9">
+    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+        <div id="PopularFunctionsPanel" class="whiteBackground specialPadding clearfix panel opaqueEvents">
+            <div class="panelHeader panelHeaderStyle">
+
+Genvägar
+            </div>
+            <div class="panelContent">
+                
+                        <ul id="PopularFunctionsList">
+                    
+                        <li>    
+                            <a href="http://www.vasttrafik.se/#%21/biljetter-priser/enkelbiljett/nytt-sms-system/registrera-sms/" title="Kom igång med sms-biljett här">
+                                <span>Kom igång med sms-biljett</span>
+                                <span class="smallType"> </span>
+                            </a>
+                        </li>
+                    
+                        <li>    
+                            <a href="http://www.vasttrafik.se/#%21/reseinformation/tidtabellsskifte-18-augusti/" title="Så ändras trafiken 18 augusti">
+                                <span>Tidtabellsskifte 18 augusti</span>
+                                <span class="smallType"> Se alla förändringar</span>
+                            </a>
+                        </li>
+                    
+                        <li>    
+                            <a href="http://www.vasttrafik.se/#%21/reseinformation/tidtabeller/" title="Tidtabeller">
+                                <span>Tidtabeller</span>
+                                <span class="smallType"> </span>
+                            </a>
+                        </li>
+                    
+                        <li>    
+                            <a href="http://www.vasttrafik.se/#%21/reseinformation/host2012/" title="För nya resenärer">
+                                <span>För nya resenärer</span>
+                                <span class="smallType"> Välkommen ombord!</span>
+                            </a>
+                        </li>
+                    
+                        <li>    
+                            <a href="http://www.vasttrafik.se/#%21/reseinformation/sa-har-gar-det-till/ar-du-turist/" title="Turist och besökare">
+                                <span>Turist och besökare</span>
+                                <span class="smallType"> Upplev Västra Götaland med oss</span>
+                            </a>
+                        </li>
+                    
+                        </ul>
+                    
+            </div>                                
+        </div>
+    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+</div>
+
+                </div>
+                <div id="TrafficSituationsModulePlaceholder" class="trafficSituationsModulePlaceholder">
+                    
+ 
+<div style="left: -252px; display: none;" id="TrafficSituationsModuleWrapper" class="trafficSituationsModuleControl relativePositioning marginBottom customer-trafficSituationsModuleControl-8">
+    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+        <div id="TrafficSituationsModulePanel" class="whiteBackground specialPadding clearfix panel opaqueEvents">
+            <div class="panelHeader panelHeaderStyle">
+                <a id="HyperLinkHeader" title="Trafikstörningar" href="http://www.vasttrafik.se/#%21/trafikstorningar/">Trafikstörningar</a>
+            </div>
+            <div class="panelContent">
+                <div class="formRow clearfix marginBottom marginTop paddingBottom" style="border-bottom: 1px solid #d5e4eb;">
+                    <div class="formHolder grid_3 clearMargin" style="margin-top: 8px;">
+                        Kommun:
+                    </div>
+                    <div class="formHolder grid_9 clearLeftMargin rightfloating">
+                        <select name="TrafficSituationsControl$RoundedCorners14$DropDownListMunicipalities" id="DropDownListMunicipalities" class="dropDownListMunicipalities marginLeft grid_11">
+	<option selected="selected" value="0">Alla kommuner</option>
+	<option value="37">Ale</option>
+	<option value="6">Alingsås</option>
+	<option value="58">Bengtsfors</option>
+	<option value="30">Bollebygd</option>
+	<option value="11">Borås</option>
+	<option value="69">Dals-Ed</option>
+	<option value="12">Essunga</option>
+	<option value="15">Falköping</option>
+	<option value="33">Färgelanda</option>
+	<option value="36">Grästorp</option>
+	<option value="26">Gullspång</option>
+	<option value="46">Göteborg</option>
+	<option value="51">Götene</option>
+	<option value="40">Herrljunga</option>
+	<option value="19">Hjo</option>
+	<option value="10">Härryda</option>
+	<option value="52">Karlsborg</option>
+	<option value="41">Kungsbacka</option>
+	<option value="29">Kungälv</option>
+	<option value="57">Lerum</option>
+	<option value="21">Lidköping</option>
+	<option value="39">Lilla Edet</option>
+	<option value="53">Lysekil</option>
+	<option value="59">Mariestad</option>
+	<option value="35">Mark</option>
+	<option value="45">Mellerud</option>
+	<option value="31">Munkedal</option>
+	<option value="44">Mölndal</option>
+	<option value="17">Orust</option>
+	<option value="38">Partille</option>
+	<option value="16">Skara</option>
+	<option value="18">Skövde</option>
+	<option value="25">Sotenäs</option>
+	<option value="42">Stenungsund</option>
+	<option value="1">Strömstad</option>
+	<option value="34">Svenljunga</option>
+	<option value="5">Tanum</option>
+	<option value="14">Tibro</option>
+	<option value="55">Tidaholm</option>
+	<option value="27">Tjörn</option>
+	<option value="8">Tranemo</option>
+	<option value="47">Trollhättan</option>
+	<option value="2">Töreboda</option>
+	<option value="43">Uddevalla</option>
+	<option value="50">Ulricehamn</option>
+	<option value="103">Utanför Regionen</option>
+	<option value="22">Vara</option>
+	<option value="4">Vårgårda</option>
+	<option value="13">Vänersborg</option>
+	<option value="48">Åmål</option>
+	<option value="3">Öckerö</option>
+
+</select>
+                    </div>
+                    <div class="formHolder marginTop grid_12 clearLeftMargin rightfloating js-hide">
+                        <div class="css3pie-wrap rightfloating">
+                            <input name="TrafficSituationsControl$RoundedCorners14$ButtonFilterOnMunicipality" value="Filtrera" id="ButtonFilterOnMunicipality" class="blueButton" type="submit">
+                        </div>
+                        <br class="clear">
+                    </div>
+                </div>
+                <div class="hidden">
+                
+               </div> 
+                <!-- Cache HTML -->
+                
+                <ul class="trafficSituationList ordinaryList marginTop">
+                            
+                        <li class=" trafficSituationItem marginBottom severeSeverityListItem">
+                            <a title="Läs mer om trafikstörningen" href="#%21/trafikstorning/111228/" class="trafficSituationLink">Linje 730, förseningar mot Bengtsfors.</a>
+                        </li><li class=" trafficSituationItem marginBottom severeSeverityListItem">
+                            <a title="Läs mer om trafikstörningen" href="#%21/trafikstorning/111216/" class="trafficSituationLink">Linje 5, 6, 10 och 13, stopp i spårvagnstrafiken vid Frihamnen i riktning Brunnsparken/Centralstationen.</a>
+                        </li><li class=" trafficSituationItem marginBottom severeSeverityListItem">
+                            <a title="Läs mer om trafikstörningen" href="#%21/trafikstorning/106806/" class="trafficSituationLink">Alingsåspendeln påverkas av plattformsarbete vid Aspen station från 29 juli</a>
+                        </li><li class=" trafficSituationItem marginBottom normalSeverityListItem">
+                            <a title="Läs mer om trafikstörningen" href="#%21/trafikstorning/111210/" class="trafficSituationLink">Linje 753, hållplats Lövgatan och Enerbacksgatan är tillfälligt indragna i båda riktningar.</a>
+                        </li>
+                    
+                        </ul>
+		
+		
+               
+                <div class="rightfloating marginTop">
+                    <a id="HyperLinkViewAll" title="Se alla trafikstörningar" href="http://www.vasttrafik.se/#%21/trafikstorningar/">Se alla trafikstörningar</a>
+                </div>
+                <div id="TrafficSituationModuleTemplates" class="templates hidden">
+                    <span class="maxItemsToDisplay">4</span>
+                    <span class="severeSeverity">Severe</span>
+                    <span class="normalSeverity">Normal</span>
+                    <span class="slightSeverity">Slight</span>
+                
+                        <ul class="trafficSituationList ordinaryList marginTop">
+                            
+                        <li class=" trafficSituationItem marginBottom">
+                            <a title="templates/stop/trafficsituationlinktooltip" class="trafficSituationLink" href="#"> 
+                                
+                            </a>
+                        </li>
+                    
+                        </ul>
+                    </div>
+            </div>                                
+        </div>
+    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+</div>
+
+                </div>
+                <div id="LeftDisturbanceBannerPlaceHolder" class="leftDisturbanceBannerPlaceholder">
+                    
+                </div>
+                <div id="LeftNewsBannerPlaceHolder" class="leftNewsBannerPlaceholder">
+                    
+
+                </div>
+                <div id="LeftBannerPlaceHolder" class="leftBannerPlaceholder">
+                    <div id="LeftBannerModuleWrapper" class="popularFunctionsControl relativePositioning marginBottom">
+    
+    <div>
+	<!--
+<p><a href="http://www.vasttrafik.se/CustomerTemplates/Public/Pages/IFrame.aspx?id=2034" _mce_href="http://www.vasttrafik.se/CustomerTemplates/Public/Pages/IFrame.aspx?id=2034"><img src="/Global/Banners/sms-v%c3%a4nsterpuff-242x130%20(4).png" _mce_src="/Global/Banners/sms-v%c3%a4nsterpuff-242x130%20(4).png" alt="" width="242" height="130" /></a></p>
+-->
+<p><a title="Läs mer om våra korttidsladdningar" href="http://www.vasttrafik.se/#%21/biljetter-priser/turist---besokskort/"></a></p>
+<p><a title="Res med Västtrafik till fotbolls-EM." href="http://www.vasttrafik.se/#%21/biljetter-priser/turist---besokskort/"></a></p>
+<p><a href="http://www.vasttrafik.se/#%21/biljetter-priser/enkelbiljett/"></a></p>
+<p><a title="Läs mer om våra korttidsladdningar" href="http://www.vasttrafik.se/#%21/biljetter-priser/turist---besokskort/"></a></p>
+</div>
+    
+</div>
+
+                </div>
+                <div id="LatestNewsListPlaceholder" class="latestNewsListPlaceholder">
+                    <div id="LatestNewsModuleWrapper" class="relativePositioning marginBottom latestNewsListControl customer-latestNewsListControl-10">
+    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+        <div id="LatestNewsPanel" class="whiteBackground specialPadding clearfix panel opaqueEvents">
+            <div class="relativePositioning">
+                
+                        <div class="panelHeader panelHeaderStyle">
+                            <a id="HyperLink2" title="Nyheter" href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/"><span>Nyheter</span></a>
+                        </div>
+                        <div class="panelContent">
+                            <ul id="LatestNewsList">
+                    
+                        <li>
+                            <a title="Från den 18 augusti gäller nya tider i kollektivtrafiken. Då byter vi tidtabeller på många av våra linjer, och gör en del andra ändringar." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/nya-tider-fran-18-augusti/"><span>Nya tider från 18 augusti</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Du vet väl att Västtrafiks närtrafik är till för alla? Närtrafik finns för dig som bor på landsbygden och ska in till en tätort." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/nartrafik---till-for-alla-som-reser-mellan-landsbygd-och-tatort/"><span>Närtrafik - till för alla som reser mellan landsbygd och tätort</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Den 23-24 augusti är det gratis att resa med stadsbussarna i Lidköping med vår särskilda sms-biljett." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/gratis-resor-i-lidkoping-23-24-augusti/"><span>Gratis resor i Lidköping 23-24 augusti</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Från och med 19 augusti går linje 25 i Göteborg och Mölndal oftare än tidigare." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/tatare-trafik-pa-linje-25-fran-19-augusti/"><span>Tätare trafik på linje 25 från 19 augusti</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Mellan den 29 juli och 8 december ska plattformarna vid Aspens pendeltågsstation förlängas. Under dessa månader kommer inga pendeltåg att stanna vid Aspen." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/aspens-station-stangs-tillfalligt/"><span>Aspens station stängd 29 juli-8 december</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Mellan 23 juli-19 augusti pågår ett arbete vid Aspen Station som påverkar Alingsåspendeln och vissa Västtåg under nattetid. Arbetet sker mellan kl. 22.00-06.00, på dagarna går tågen enligt tidtabell." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/banarbete-i-aspen-paverkar-alingsaspendeln-och-vasttag/"><span>Banarbete i Aspen påverkar Alingsåspendeln och Västtåg</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Den 5 augusti får linjerna 1, 2, 6, 9, 10, 11, 16, 19 och 25 tillbaka sina vanliga körvägar, eftersom spårarbetet vid Lilla Torget är färdigt." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/fran-58-kor-vi-pa-vastra-hamngatan-igen/"><span>Från 5 augusti kör vi på Västra Hamngatan igen</span></a>
+                        </li> 
+                    
+                        <li>
+                            <a title="Pendelparkeringen i Norsesund är nu färdigbyggd och kan ge plats för ännu fler pendlare som vill parkera med bil eller cykel. Samtidigt är kommunen klar med upprustningen av busshållplatsen, som nu har väderskydd och inom kort även realtidsinformation." href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/pendelparkeringen-i-norsesund-klar/"><span>Pendelparkeringen i Norsesund klar</span></a>
+                        </li> 
+                    
+                            </ul>
+                        </div>
+                    
+            </div>
+            <div class="rightfloating">
+                <a id="HyperLinkViewAllNews" title="Se alla nyheter" href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/">Se alla nyheter</a>
+            </div>     
+        </div>
+    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+</div>
+                </div>
+                <div id="MyBookmarksModulePlaceholder" class="myBookmarksModulePlaceholder">
+                    <div id="MyBookmarksModuleWrapper" class="myBookmarksModuleControl relativePositioning marginBottom customer-myBookmarksModuleControl-7" style="display:none;">
+    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+        <div id="MyBookmarksModulePanel" class="whiteBackground specialPadding clearfix panel opaqueEvents">
+            <div class="relativePositioning">
+                <div class="panelHeader panelHeaderStyle">
+                    <a id="HyperLinkMyBookmarks" title="Mina bokmärken" href="http://www.vasttrafik.se/#%21/mina-sidor-inloggad/mina-favoriter/"><span>Mina bokmärken</span></a>
+                </div>
+                <div class="panelContent">
+                    
+                            <ul class="bookmarksList">
+                                
+                            <li class="bookmarksItem clearfix">
+                                <a title="Layout" class="link" href="http://www.vasttrafik.se/#%21/systempages/layout/"><span>Layout</span></a>
+                            </li>
+                        
+                            </ul>
+                        
+                </div>
+                <div id="Templates" class="templates" style="display:none;">
+                    <span class="nobookmarks">Du har inte lagt till några bokmärken</span>
+                
+                            <ul class="bookmarksList">
+                                
+                            <li class="bookmarksItem clearfix">
+                                <a class="link"></a>
+                            </li>
+                        
+                            </ul>
+                        </div>
+            </div>
+        </div>
+    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+</div>
+                </div>
+            </div>
+            <div id="MainContentArea">
+                <img src="index_files/VT-printlogo.png" alt="" class="printLogo">
+                <div id="MainTopPlaceHolder">
+                    <div id="MainTopPanel" class="panel opaqueEvents"><div id="TopOldIEWarning" class="old-browser-warning nojs-hide hidden">
+        <div class="cornersHolder clearfix">
+	<div class="topLeftYellowCorner">
+
+	</div><div class="topRightYellowCorner">
+
+	</div><div class="yellowMiddle">
+
+	</div>
+</div>
+            <div class="yellowBackground specialPadding clearfix panel opaqueEvents">        
+                <p> 
+                     <span>Det verkar som att du använder en gammal 
+webbläsare. För optimal upplevelse av västtrafik.se rekommenderar vi att
+ du uppgraderar din webbläsare till den senaste versionen. </span> 
+                </p>
+                <a href="#">Stäng</a>
+            </div>
+        <div class="cornersHolder clearfix">
+	<div class="bottomLeftYellowCorner">
+
+	</div><div class="bottomRightYellowCorner">
+
+	</div><div class="yellowMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+    </div><div id="TopBannerModuleWrapper" class="relativePositioning marginBottom">
+    
+    <div>
+	<p><a title="Arbeten påverkar Alingsåspendeln och Västtågen" href="http://www.vasttrafik.se/#%21/om-vasttrafik/nyheter/banarbete-i-aspen-paverkar-alingsaspendeln-och-vasttag/"></a></p>
+</div>
+    
+</div></div>
+                </div>
+                <div class="relativePositioning" style="display: none;">
+                    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+                        <div class="whiteBackground opaqueEvents">
+                            <div id="MainContentPanel" class="whiteBackground contentPadding panel toggleAble opaqueEvents"></div>
+                        </div>
+                    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+                    <a href="#" class="minimize arrowLink expanded"></a>
+                </div>
+                <div class="extra-bottom">
+                </div>
+            </div>
+            <div id="RightContentArea" class="mini">
+                <div class="relativePositioning marginBottom">
+                    <div class="cornersHolder clearfix">
+	<div class="topLeftOrangeCorner">
+
+	</div><div class="topRightOrangeCorner">
+
+	</div><div class="orangeMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+                    <div id="TravelPlannerPanel" class="whiteBackground clearfix panel opaqueEvents">
+                        
+
+<div id="TravelPlannerMain" class="travelPlannerControl clearfix customer-travelPlanner-1">
+    <div id="TravelPlannerHeader" class="travelPlannerHeader clearfix">
+        <h2 class="travelPlannerHeading">
+            Reseplaneraren</h2>
+    </div>
+    <div id="PanelError" class="message clearFloat customer-message-2" style="display: none;">
+	
+        <div style="position: relative; z-index: 99999; float: left; display: block;">
+            <span class="validationIcon"></span><span class="validationArrow"></span>
+        </div>
+        <div id="PanelInnerMessage" class="panelInnerMessage">
+		
+            <div>
+                <span class="close rightfloating nojs-hide">Stäng</span>
+                <span class="boldType" style="text-transform: uppercase; display:block;">
+                <span id="LabelTitle" class="title"></span></span>
+                <span id="LabelErrorMessage" class="messageText">Försök igen eller kontakta kundservice på 0771-41 43 00</span>              
+            </div>
+        
+	</div>
+    
+</div>
+
+    <div id="TravelPlannerSearchFieldArea">
+        <div class="standardSearch grayBox padding marginBottom marginTop">
+            <div class="" style="margin-bottom: 0.4167em;">
+                <label for="TextBoxFrom" id="LabelFrom" class="mainLabel">Från: </label><br>
+                <input value="Adress / plats / hållplats" aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" name="TravelPlanner1$TextBoxFrom" id="TextBoxFrom" class="searchInput inputPadding required ui-autocomplete-3 ui-autocomplete-input watermarked" type="text">
+                
+            </div>
+            <div class="marginBottom">
+                <label for="TextBoxTo" id="LabelTo" class="mainLabel">Till: </label><br>
+                <input value="Adress / plats / hållplats" aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" name="TravelPlanner1$TextBoxTo" id="TextBoxTo" class="searchInput inputPadding required ui-autocomplete-5 ui-autocomplete-input watermarked" type="text">
+                
+            </div>
+            <div class="clearfix marginBottom">
+                <select name="TravelPlanner1$DropDownListWhen" id="DropDownListWhen" class="travelSelectWhen">
+	<option selected="selected" value="1">Jag vill tidigast åka</option>
+	<option value="2">Jag vill vara framme senast</option>
+
+</select>
+                <input name="TravelPlanner1$TextBoxTime" value="13:37" id="TextBoxTime" class="travelInputTime required" type="text">
+                <select name="TravelPlanner1$DropDownListDay" id="DropDownListDay" class="travelSelectDay js-hide">
+	<option selected="selected" value="2013-08-19">Idag  måndag 19 augusti</option>
+	<option value="2013-08-20">Imorgon  tisdag 20 augusti</option>
+	<option value="2013-08-21"> onsdag 21 augusti</option>
+	<option value="2013-08-22"> torsdag 22 augusti</option>
+	<option value="2013-08-23"> fredag 23 augusti</option>
+	<option value="2013-08-24"> lördag 24 augusti</option>
+
+</select>
+                <div class="travelSelectDay nojs-hide">
+                    <input value="2013-08-19" id="dp1376912276266" class="datePickerField hasDatepicker" type="text">
+                    <input value="2013-08-19" class="datePickerHidden" type="hidden">
+                </div>
+            </div>
+        </div>
+        <div id="TravelPlannerSearchAndExtend" class="clearfix" style="margin-top: 10px;">
+            <div class="rightfloating">
+                <input name="TravelPlanner1$ButtonSearchTrip" value="Sök resa" id="ButtonSearchTrip" class="searchButton orangeButton rightfloating" type="submit">
+                <div class="leftfloating" style="margin-top: 4px; margin-right: 10px;">
+                    <span class="link toggleExtendedSearch nojs-hide">
+                        Fler val</span>
+                    <input name="TravelPlanner1$ButtonShowExtendedSearch" value="Fler val" id="ButtonShowExtendedSearch" class="link js-hide" type="submit">
+                </div>
+            </div>
+        </div>
+        <div id="TravelPlanerTemplates" class="templates hidden">
+            <span class="isLoggedIn">
+                False</span>
+        </div>
+    </div>
+</div>
+
+                    </div>
+                    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+                </div>
+                <div class="relativePositioning marginBottom">
+                    <div class="cornersHolder clearfix">
+	<div class="topLeftWhiteCorner">
+
+	</div><div class="topRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div>
+                        <div id="LayerSwitcherPanel" class="whiteBackground specialPadding clearfix panel toggleAble opaqueEvents">
+                            
+    
+<div id="LayerSwitcherControl" class="relativePositioning customer-layerSwitcher-12">
+    <div class="clearfix">
+        <div class="panelHeader panelHeaderStyle">
+            <div class="mapSearchWrapper"><input value="Sök på karta" aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="search watermark ui-autocomplete-24 ui-autocomplete-input"><div class="mapSearchClick"></div></div>
+            <span class="clearfix">Visa på karta</span>
+        </div>
+        <div class="panelContent">
+            <ul class="layers">
+                <li class="lines customer-layerSwitch-17 layerSwitch">
+                    <span>Linjer</span>
+                    <ul class="lineTypes">
+                        <li class="layerSwitch-tram customer-layerSwitch-13 layerSwitch"><span>Spårvagn</span></li>
+                        <li class="layerSwitch-bus customer-layerSwitch-14 layerSwitch"><span>Buss</span></li>
+                        <li class="layerSwitch-train customer-layerSwitch-15 layerSwitch"><span>Tåg</span></li>
+                        <li class="layerSwitch-boat customer-layerSwitch-16 layerSwitch"><span>Båt</span></li>
+                    </ul>
+                </li>
+                <li class="stops customer-layerSwitch-18 layerSwitch hilight"><span>Hållplatser</span></li>
+                
+                <li class="trafficChanges customer-layerSwitch-22 layerSwitch hilight"><span>Trafikstörningar</span></li>
+                <li class="retailers customer-layerSwitch-20 layerSwitch"><span>Försäljningsställen</span></li>
+                <li class="commuterParkings customer-layerSwitch-19 layerSwitch"><span>Pendelparkeringar</span></li>
+                <li class="zones customer-layerSwitch-21 layerSwitch" style="display:none;"><span>Betalzoner</span></li>
+                <li class="ticketControl customer-layerSwitch-23 layerSwitch" style="display:none;"><span>Utökad biljettkontroll</span></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="templates" style="display:none;">
+        <div class="linesNotReady" title="Linjer">
+            Vi är inte riktigt klara med att visa linjerna på kartan. Välkommen tillbaka.
+        </div>
+        <ul class="searchResults defaultSearchResults" style="display:none;">
+            <li id="Li1" title="Visa i karta"><span class="arrowLinkLeft"></span></li>
+        </ul>
+        <ul class="searchResults lineSearchResults" style="display:none;">
+            <li id="Li2" title="Visa i karta"><a class="arrowLinkLeft" href=""></a></li>
+        </ul>
+    </div>
+</div>
+
+                        </div>
+                    <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+                </div>
+                <div id="AboutVT" class="floating relativePositioning marginBottom">
+                    <p>
+                        <span>
+                            © Västtrafik 2012</span></p>
+                    <ul>
+                        <li class="first">
+                            <a id="DisclaimerFirstLink" href="http://www.vasttrafik.se/#%21/om-vasttrafik/hemsidan/ansvarig-utgivare/">Ansvarig utgivare</a></li>
+                        <li class="last">
+                            <a id="DisclaimerSecondLink" href="http://www.vasttrafik.se/#%21/om-vasttrafik/hemsidan/cookies/">Cookies</a></li>
+                    </ul>
+                    <div class="clear">
+                    </div>
+                    <div id="vgr-logo">
+                        <a href="http://www.vgr.se/" target="_blank">
+                            <p>
+                                VÄSTTRAFIK
+                                <br>
+                                - EN DEL AV</p>
+                            <img alt="VÄSTRA GÖTALANDSREGIONEN" src="index_files/vgr1.png" width="40px">
+                            <p>
+                                VÄSTRA
+                                <br>
+                                GÖTALANDSREGIONEN
+                            </p>
+                            <div class="clear">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="MapViewContentArea">
+        </div>
+    <ul style="z-index: 1003; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu-4 ui-menu ui-widget ui-widget-content ui-corner-all"></ul><ul style="z-index: 1003; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu-6 ui-menu ui-widget ui-widget-content ui-corner-all"></ul></div><div class="olMap" id="Map">
+    <div class="olMapViewport olControlDragPanActive olControlZoomBoxActive olControlNavigationActive olControlActive olControlSelectFeatureActive" style="position: relative; overflow: hidden; width: 100%; height: 100%;" id="OpenLayers.Map_2_OpenLayers_ViewPort"><div style="position: absolute; width: 100%; height: 100%; z-index: 999;" id="OpenLayers.Map_2_events"><div style="position: absolute; z-index: 749; left: 0px; top: 0px;" id="OpenLayers.Map_2_OpenLayers_Container"><div class="olLayerDiv" dir="ltr" style="position: absolute; width: 100%; height: 100%; z-index: 100;" id="OpenLayers.Layer.WMS_13"><div style="overflow: hidden; position: absolute; z-index: 1; left: 413px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_003.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv40"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 669px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_011.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv43"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 669px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_008.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv46"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 413px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv49"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 157px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_009.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv52"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 925px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_013.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv55"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 925px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_005.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv58"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 157px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_010.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv61"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: -99px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_004.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv64"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: -99px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_016.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv67"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: -99px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_022.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv70"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 157px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_020.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv73"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 413px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_024.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv76"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 669px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_014.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv79"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 925px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_012.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv82"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 1181px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_007.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv85"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 1181px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_021.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv88"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 1181px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_006.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv91"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 1181px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_002.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv94"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 925px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_023.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv97"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 669px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_017.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv100"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 413px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_015.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv103"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: 157px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_018.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv106"></div><div style="overflow: hidden; position: absolute; z-index: 1; left: -99px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_019.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv109"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 413px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_003.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv163"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 157px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_009.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv165"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 669px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_011.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv167"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 925px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_013.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv169"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 925px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_005.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv171"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 669px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_008.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv173"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 413px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv175"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 157px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_010.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv177"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: -99px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_004.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv179"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: -99px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_016.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv181"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: -99px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_022.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv183"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 157px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_020.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv185"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 413px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_024.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv187"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 669px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_014.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv189"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 925px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_012.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv191"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 1181px; top: 742px; width: 256px; height: 256px;"><img src="index_files/wms_007.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv193"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 1181px; top: 486px; width: 256px; height: 256px;"><img src="index_files/wms_021.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv195"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 1181px; top: 230px; width: 256px; height: 256px;"><img src="index_files/wms_006.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv197"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 1181px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_002.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv199"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 925px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_023.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv201"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 669px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_017.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv203"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 413px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_015.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv205"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: 157px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_018.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv207"></div><div style="overflow: hidden; position: absolute; display: none; z-index: 0; left: -99px; top: -26px; width: 256px; height: 256px;"><img src="index_files/wms_019.png" class="olTileImage" style="width: 256px; height: 256px; position: relative;" id="OpenLayersDiv209"></div></div><div class="olLayerDiv" dir="ltr" style="position: absolute; width: 100%; height: 100%; z-index: 330; left: 0px; top: 0px;" id="OpenLayers.Layer.Vector_128"><svg viewBox="0 0 1080 760" height="760" width="1080" id="OpenLayers.Layer.Vector_128_svgRoot"><g transform="" style="visibility: visible;" id="OpenLayers.Layer.Vector_128_root"><g id="OpenLayers.Layer.Vector_128_vroot"></g><g id="OpenLayers.Layer.Vector_128_troot"></g></g></svg></div><div class="olLayerDiv" dir="ltr" style="position: absolute; width: 100%; height: 100%; z-index: 725; left: 0px; top: 0px;" id="OpenLayers.Layer.Vector_118"><svg viewBox="0 0 1080 760" height="760" width="1080" id="OpenLayers.Layer.Vector_118_svgRoot"></svg></div><div class="olPopup" style="position: absolute; overflow: hidden; width: 0px; height: 0px; left: -78947px; top: 400614px; background-color: white; opacity: 1; border: 0px none; z-index: 751;" id="stopPopup"><div style="position: relative; overflow: hidden;" id="stopPopup_GroupDiv"><div class="olPopupContent" style="width: 0px; height: 0px; position: relative;" id="stopPopup_contentDiv"></div></div></div><div class="olPopup" style="position: absolute; overflow: hidden; width: 0px; height: 0px; left: -78947px; top: 400614px; background-color: white; opacity: 1; border: 0px none; z-index: 752;" id="stopPopup"><div style="position: relative; overflow: hidden;" id="stopPopup_GroupDiv"><div class="olPopupContent" style="width: 0px; height: 0px; position: relative;" id="stopPopup_contentDiv"></div></div></div><div class="olLayerDiv" dir="ltr" style="position: absolute; width: 100%; height: 100%; z-index: 725; left: 0px; top: 0px;" id="OpenLayers.Layer.Vector_151"><svg viewBox="0 0 1080 760" height="760" width="1080" id="OpenLayers.Layer.Vector_151_svgRoot"></svg></div><div class="olPopup" style="position: absolute; overflow: hidden; width: 0px; height: 0px; left: -78947px; top: 400614px; background-color: white; opacity: 1; border: 0px none; z-index: 753;" id="trafficPopup"><div style="position: relative; overflow: hidden;" id="trafficPopup_GroupDiv"><div class="olPopupContent" style="width: 0px; height: 0px; position: relative;" id="trafficPopup_contentDiv"></div></div></div><div class="olPopup" style="position: absolute; overflow: hidden; width: 0px; height: 0px; left: -78947px; top: 400614px; background-color: white; opacity: 1; border: 0px none; z-index: 754;" id="trafficPopup"><div style="position: relative; overflow: hidden;" id="trafficPopup_GroupDiv"><div class="olPopupContent" style="width: 0px; height: 0px; position: relative;" id="trafficPopup_contentDiv"></div></div></div><div class="olLayerDiv" dir="ltr" style="position: absolute; width: 100%; height: 100%; z-index: 725; left: 0px; top: 0px;" id="OpenLayers.Layer.Vector.RootContainer_155"><svg viewBox="0 0 1080 760" height="760" width="1080" id="OpenLayers.Layer.Vector.RootContainer_155_svgRoot"><g transform="" style="visibility: visible;" id="OpenLayers.Layer.Vector.RootContainer_155_root"><g id="OpenLayers.Layer.Vector.RootContainer_155_vroot"></g><g id="OpenLayers.Layer.Vector.RootContainer_155_troot"></g></g><g transform="" style="visibility: visible;" id="OpenLayers.Layer.Vector_118_root"><g id="OpenLayers.Layer.Vector_118_vroot"><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="698" x="1008" preserveAspectRatio="none" r="1" cy="707.8395625000121" cx="1017.504812500003" id="OpenLayers.Geometry.Point_379"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="181" x="518" preserveAspectRatio="none" r="1" cy="190.78193749999627" cx="527.8070000000007" id="OpenLayers.Geometry.Point_381"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="373" x="475" preserveAspectRatio="none" r="1" cy="382.80443750001723" cx="484.55456249999406" id="OpenLayers.Geometry.Point_383"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="227" x="355" preserveAspectRatio="none" r="1" cy="237.180562500027" cx="364.736625000005" id="OpenLayers.Geometry.Point_385"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="467" x="601" preserveAspectRatio="none" r="1" cy="476.7356874999823" cx="610.8153750000056" id="OpenLayers.Geometry.Point_389"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="378" x="504" preserveAspectRatio="none" r="1" cy="387.7896249999758" cx="513.887625000003" id="OpenLayers.Geometry.Point_391"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="438" x="436" preserveAspectRatio="none" r="1" cy="447.65574999997625" cx="445.00431249999383" id="OpenLayers.Geometry.Point_395"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="276" x="620" preserveAspectRatio="none" r="1" cy="285.9933125000098" cx="629.0693750000064" id="OpenLayers.Geometry.Point_399"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="711" x="335" preserveAspectRatio="none" r="1" cy="721.2663124999963" cx="344.80106250000244" id="OpenLayers.Geometry.Point_401"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="155" x="130" preserveAspectRatio="none" r="1" cy="164.7703750000219" cx="139.49800000000687" id="OpenLayers.Geometry.Point_405"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="618" x="571" preserveAspectRatio="none" r="1" cy="627.8381250000093" cx="580.1666874999937" id="OpenLayers.Geometry.Point_407"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="165" x="354" preserveAspectRatio="none" r="1" cy="174.63793750002515" cx="363.3578750000015" id="OpenLayers.Geometry.Point_411"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="131" x="851" preserveAspectRatio="none" r="1" cy="141.12612500000978" cx="860.3226250000007" id="OpenLayers.Geometry.Point_413"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="729" x="371" preserveAspectRatio="none" r="1" cy="738.7765624999884" cx="380.0451874999999" id="OpenLayers.Geometry.Point_417"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="645" x="594" preserveAspectRatio="none" r="1" cy="654.8618124999921" cx="603.5489999999991" id="OpenLayers.Geometry.Point_419"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="291" x="408" preserveAspectRatio="none" r="1" cy="300.9880000000121" cx="417.875312499993" id="OpenLayers.Geometry.Point_421"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="-3" x="411" preserveAspectRatio="none" r="1" cy="6.929187499976251" cx="420.25187500000175" id="OpenLayers.Geometry.Point_423"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="687" x="664" preserveAspectRatio="none" r="1" cy="696.6420625000028" cx="673.0674374999944" id="OpenLayers.Geometry.Point_425"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="433" x="584" preserveAspectRatio="none" r="1" cy="443.03206250001676" cx="593.5698125000054" id="OpenLayers.Geometry.Point_427"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="339" x="319" preserveAspectRatio="none" r="1" cy="349.3852499999921" cx="328.7957500000048" id="OpenLayers.Geometry.Point_429"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="74" x="412" preserveAspectRatio="none" r="1" cy="83.93587500002468" cx="421.18074999999953" id="OpenLayers.Geometry.Point_431"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="735" x="664" preserveAspectRatio="none" r="1" cy="744.5118125000154" cx="673.448312499997" id="OpenLayers.Geometry.Point_433"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="182" x="69" preserveAspectRatio="none" r="1" cy="192.22318750002887" cx="78.93856249999953" id="OpenLayers.Geometry.Point_435"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="622" x="215" preserveAspectRatio="none" r="1" cy="631.6894375000265" cx="224.41987500000687" id="OpenLayers.Geometry.Point_437"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="127" x="313" preserveAspectRatio="none" r="1" cy="137.19087499997113" cx="322.8695000000007" id="OpenLayers.Geometry.Point_439"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="139" x="834" preserveAspectRatio="none" r="1" cy="148.53749999997672" cx="843.5108750000072" id="OpenLayers.Geometry.Point_441"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="219" x="722" preserveAspectRatio="none" r="1" cy="229.42862500000047" cx="731.9353125000052" id="OpenLayers.Geometry.Point_445"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="717" x="433" preserveAspectRatio="none" r="1" cy="727.1510000000126" cx="442.44331250000687" id="OpenLayers.Geometry.Point_447"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="680" x="236" preserveAspectRatio="none" r="1" cy="690.0889375000261" cx="245.25362499999756" id="OpenLayers.Geometry.Point_449"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="158" x="955" preserveAspectRatio="none" r="1" cy="167.7978749999893" cx="964.0595624999987" id="OpenLayers.Geometry.Point_451"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="649" x="652" preserveAspectRatio="none" r="1" cy="658.9550000000163" cx="661.9333749999932" id="OpenLayers.Geometry.Point_455"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="353" x="486" preserveAspectRatio="none" r="1" cy="363.22156249999534" cx="495.36999999999534" id="OpenLayers.Geometry.Point_459"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="345" x="446" preserveAspectRatio="none" r="1" cy="354.76049999997485" cx="455.63087500000256" id="OpenLayers.Geometry.Point_477"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="575" x="545" preserveAspectRatio="none" r="1" cy="585.3657499999972" cx="554.3010625000024" id="OpenLayers.Geometry.Point_479"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="131" x="1024" preserveAspectRatio="none" r="1" cy="141.18487499997718" cx="1033.362812499996" id="OpenLayers.Geometry.Point_481"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="85" x="745" preserveAspectRatio="none" r="1" cy="94.78912500001024" cx="754.3796874999971" id="OpenLayers.Geometry.Point_487"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="723" x="1002" preserveAspectRatio="none" r="1" cy="733.3911250000237" cx="1011.1367500000051" id="OpenLayers.Geometry.Point_491"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="579" x="644" preserveAspectRatio="none" r="1" cy="588.5161874999758" cx="653.8171250000014" id="OpenLayers.Geometry.Point_493"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="228" x="476" preserveAspectRatio="none" r="1" cy="238.3317500000121" cx="485.98249999999825" id="OpenLayers.Geometry.Point_497"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="390" x="598" preserveAspectRatio="none" r="1" cy="399.6469999999972" cx="607.1976874999964" id="OpenLayers.Geometry.Point_499"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="54" x="551" preserveAspectRatio="none" r="1" cy="63.72256249998463" cx="560.8655624999956" id="OpenLayers.Geometry.Point_505"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="449" x="496" preserveAspectRatio="none" r="1" cy="458.86349999997765" cx="505.3570624999993" id="OpenLayers.Geometry.Point_509"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="192" x="230" preserveAspectRatio="none" r="1" cy="201.92581250000512" cx="239.31449999999313" id="OpenLayers.Geometry.Point_511"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="382" x="490" preserveAspectRatio="none" r="1" cy="392.23443750001024" cx="499.2624999999971" id="OpenLayers.Geometry.Point_513"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="358" x="236" preserveAspectRatio="none" r="1" cy="368.4139374999795" cx="245.3689374999958" id="OpenLayers.Geometry.Point_515"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="468" x="443" preserveAspectRatio="none" r="1" cy="478.43106249999255" cx="452.3881249999977" id="OpenLayers.Geometry.Point_517"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="321" x="568" preserveAspectRatio="none" r="1" cy="330.9904375000042" cx="577.3258124999993" id="OpenLayers.Geometry.Point_521"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="256" x="699" preserveAspectRatio="none" r="1" cy="266.48718749999534" cx="708.3855624999997" id="OpenLayers.Geometry.Point_523"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="359" x="429" preserveAspectRatio="none" r="1" cy="369.03125" cx="438.66837499999383" id="OpenLayers.Geometry.Point_525"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="639" x="181" preserveAspectRatio="none" r="1" cy="648.6464375000214" cx="190.19550000000163" id="OpenLayers.Geometry.Point_527"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="560" x="532" preserveAspectRatio="none" r="1" cy="570.0420625000261" cx="541.762625000003" id="OpenLayers.Geometry.Point_529"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="442" x="513" preserveAspectRatio="none" r="1" cy="452.1568124999758" cx="522.0603125000052" id="OpenLayers.Geometry.Point_535"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="466" x="260" preserveAspectRatio="none" r="1" cy="475.6228124999907" cx="269.682687499997" id="OpenLayers.Geometry.Point_545"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="161" x="714" preserveAspectRatio="none" r="1" cy="171.27137500001118" cx="723.609375" id="OpenLayers.Geometry.Point_547"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="114" x="304" preserveAspectRatio="none" r="1" cy="124.37624999997206" cx="313.8109375000058" id="OpenLayers.Geometry.Point_551"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="73" x="540" preserveAspectRatio="none" r="1" cy="82.59543749998556" cx="549.8031875000015" id="OpenLayers.Geometry.Point_557"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="242" x="846" preserveAspectRatio="none" r="1" cy="251.87443750002421" cx="855.932375000004" id="OpenLayers.Geometry.Point_559"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="-6" x="446" preserveAspectRatio="none" r="1" cy="3.712812500016298" cx="455.0694375000021" id="OpenLayers.Geometry.Point_561"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="304" x="495" preserveAspectRatio="none" r="1" cy="314.4250624999986" cx="504.04731249999895" id="OpenLayers.Geometry.Point_563"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="0" x="910" preserveAspectRatio="none" r="1" cy="10.041812499985099" cx="919.9403750000056" id="OpenLayers.Geometry.Point_567"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="318" x="523" preserveAspectRatio="none" r="1" cy="327.55274999997346" cx="532.0711250000022" id="OpenLayers.Geometry.Point_569"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="161" x="423" preserveAspectRatio="none" r="1" cy="170.92568749998463" cx="432.2469374999928" id="OpenLayers.Geometry.Point_571"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="659" x="608" preserveAspectRatio="none" r="1" cy="669.3338750000112" cx="617.7586874999979" id="OpenLayers.Geometry.Point_573"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="309" x="363" preserveAspectRatio="none" r="1" cy="319.2051874999888" cx="372.25800000000163" id="OpenLayers.Geometry.Point_575"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="665" x="1031" preserveAspectRatio="none" r="1" cy="675.3090000000084" cx="1040.6864999999962" id="OpenLayers.Geometry.Point_577"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="545" x="704" preserveAspectRatio="none" r="1" cy="554.8574374999735" cx="713.4225624999963" id="OpenLayers.Geometry.Point_579"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="737" x="683" preserveAspectRatio="none" r="1" cy="747.389749999973" cx="692.4851875000022" id="OpenLayers.Geometry.Point_583"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="304" x="61" preserveAspectRatio="none" r="1" cy="313.9463124999893" cx="70.01068750000559" id="OpenLayers.Geometry.Point_585"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="259" x="34" preserveAspectRatio="none" r="1" cy="269.3456250000163" cx="43.17687500000466" id="OpenLayers.Geometry.Point_587"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="153" x="540" preserveAspectRatio="none" r="1" cy="163.1517500000191" cx="549.2974375000049" id="OpenLayers.Geometry.Point_589"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="472" x="479" preserveAspectRatio="none" r="1" cy="481.79056250001304" cx="488.3038749999978" id="OpenLayers.Geometry.Point_593"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="618" x="646" preserveAspectRatio="none" r="1" cy="627.881875000021" cx="655.6775000000052" id="OpenLayers.Geometry.Point_595"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="721" x="351" preserveAspectRatio="none" r="1" cy="730.7846874999814" cx="360.9351250000036" id="OpenLayers.Geometry.Point_597"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="500" x="198" preserveAspectRatio="none" r="1" cy="509.68743749998976" cx="207.9834375000064" id="OpenLayers.Geometry.Point_599"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="346" x="563" preserveAspectRatio="none" r="1" cy="356.18106249999255" cx="572.6136874999938" id="OpenLayers.Geometry.Point_605"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="278" x="422" preserveAspectRatio="none" r="1" cy="288.149312500027" cx="431.2959375000064" id="OpenLayers.Geometry.Point_611"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="308" x="512" preserveAspectRatio="none" r="1" cy="317.5607500000042" cx="521.6961250000022" id="OpenLayers.Geometry.Point_613"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="223" x="453" preserveAspectRatio="none" r="1" cy="233.420999999973" cx="462.57231249999313" id="OpenLayers.Geometry.Point_623"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="499" x="408" preserveAspectRatio="none" r="1" cy="508.55043750000186" cx="417.3845000000001" id="OpenLayers.Geometry.Point_625"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="716" x="406" preserveAspectRatio="none" r="1" cy="725.5548125000205" cx="415.4993125000037" id="OpenLayers.Geometry.Point_627"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="187" x="1039" preserveAspectRatio="none" r="1" cy="196.75193750002654" cx="1048.5695624999935" id="OpenLayers.Geometry.Point_631"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="419" x="298" preserveAspectRatio="none" r="1" cy="428.71662500000093" cx="307.98418749999837" id="OpenLayers.Geometry.Point_635"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="711" x="300" preserveAspectRatio="none" r="1" cy="721.0392499999725" cx="309.070624999993" id="OpenLayers.Geometry.Point_637"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="691" x="262" preserveAspectRatio="none" r="1" cy="701.2081875000149" cx="271.7482500000042" id="OpenLayers.Geometry.Point_641"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="651" x="213" preserveAspectRatio="none" r="1" cy="660.5764375000144" cx="222.88624999999593" id="OpenLayers.Geometry.Point_643"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="217" x="230" preserveAspectRatio="none" r="1" cy="226.8456250000163" cx="239.75500000000466" id="OpenLayers.Geometry.Point_655"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="247" x="891" preserveAspectRatio="none" r="1" cy="257.3381250000093" cx="900.2557499999966" id="OpenLayers.Geometry.Point_659"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="543" x="369" preserveAspectRatio="none" r="1" cy="552.547812499979" cx="378.4506249999977" id="OpenLayers.Geometry.Point_663"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="691" x="643" preserveAspectRatio="none" r="1" cy="700.7366874999716" cx="652.1330000000016" id="OpenLayers.Geometry.Point_665"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="297" x="317" preserveAspectRatio="none" r="1" cy="307.23056250001537" cx="326.48156250000466" id="OpenLayers.Geometry.Point_667"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="367" x="439" preserveAspectRatio="none" r="1" cy="377.36656250001397" cx="448.4351250000036" id="OpenLayers.Geometry.Point_669"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="309" x="390" preserveAspectRatio="none" r="1" cy="318.62206249998417" cx="399.38062500000524" id="OpenLayers.Geometry.Point_671"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="716" x="382" preserveAspectRatio="none" r="1" cy="726.2993750000023" cx="391.11474999999336" id="OpenLayers.Geometry.Point_673"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="423" x="439" preserveAspectRatio="none" r="1" cy="433.047187499993" cx="448.32050000000163" id="OpenLayers.Geometry.Point_675"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="313" x="330" preserveAspectRatio="none" r="1" cy="322.71593750000466" cx="339.4247500000056" id="OpenLayers.Geometry.Point_679"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="218" x="663" preserveAspectRatio="none" r="1" cy="227.78962499997579" cx="672.5059374999983" id="OpenLayers.Geometry.Point_681"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="341" x="484" preserveAspectRatio="none" r="1" cy="350.5048124999739" cx="493.3058124999952" id="OpenLayers.Geometry.Point_683"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="321" x="163" preserveAspectRatio="none" r="1" cy="331.16618749999907" cx="172.88499999999476" id="OpenLayers.Geometry.Point_685"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="217" x="34" preserveAspectRatio="none" r="1" cy="227.47924999997485" cx="43.751687500000116" id="OpenLayers.Geometry.Point_687"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="690" x="669" preserveAspectRatio="none" r="1" cy="700.4017500000191" cx="678.6718125000043" id="OpenLayers.Geometry.Point_689"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="308" x="523" preserveAspectRatio="none" r="1" cy="317.85237500001676" cx="532.3852500000066" id="OpenLayers.Geometry.Point_691"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="238" x="34" preserveAspectRatio="none" r="1" cy="248.00325000000885" cx="43.92318749999686" id="OpenLayers.Geometry.Point_693"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="177" x="679" preserveAspectRatio="none" r="1" cy="187.44774999999208" cx="688.8235624999943" id="OpenLayers.Geometry.Point_695"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="551" x="637" preserveAspectRatio="none" r="1" cy="561.2236249999842" cx="646.8148125000007" id="OpenLayers.Geometry.Point_697"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="186" x="648" preserveAspectRatio="none" r="1" cy="196.2660625000135" cx="657.1296250000014" id="OpenLayers.Geometry.Point_701"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="385" x="549" preserveAspectRatio="none" r="1" cy="394.6613125000149" cx="558.7576249999984" id="OpenLayers.Geometry.Point_703"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="271" x="309" preserveAspectRatio="none" r="1" cy="281.1468749999767" cx="318.8841875000071" id="OpenLayers.Geometry.Point_705"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-large.png" height="19" width="19" y="297" x="585" preserveAspectRatio="none" r="1" cy="306.6428125000093" cx="594.8788749999949" id="OpenLayers.Geometry.Point_707"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-large.png" height="19" width="19" y="300" x="518" preserveAspectRatio="none" r="1" cy="309.5070624999935" cx="527.9252500000002" id="OpenLayers.Geometry.Point_713"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="343" x="295" preserveAspectRatio="none" r="1" cy="353.3931875000126" cx="304.69493749999674" id="OpenLayers.Geometry.Point_715"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="28" x="408" preserveAspectRatio="none" r="1" cy="38.27637500001583" cx="417.8218124999985" id="OpenLayers.Geometry.Point_717"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="279" x="272" preserveAspectRatio="none" r="1" cy="289.42306250002" cx="281.82137499999953" id="OpenLayers.Geometry.Point_719"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="483" x="554" preserveAspectRatio="none" r="1" cy="492.5114375000121" cx="563.575874999995" id="OpenLayers.Geometry.Point_723"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="500" x="480" preserveAspectRatio="none" r="1" cy="509.59018749999814" cx="489.7493749999994" id="OpenLayers.Geometry.Point_725"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="430" x="287" preserveAspectRatio="none" r="1" cy="439.8018124999944" cx="296.8029999999999" id="OpenLayers.Geometry.Point_727"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="740" x="991" preserveAspectRatio="none" r="1" cy="749.7388749999809" cx="1000.495187499997" id="OpenLayers.Geometry.Point_729"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="181" x="424" preserveAspectRatio="none" r="1" cy="191.00337499997113" cx="433.4487499999959" id="OpenLayers.Geometry.Point_735"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="531" x="624" preserveAspectRatio="none" r="1" cy="540.7304374999949" cx="633.6886875000055" id="OpenLayers.Geometry.Point_737"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="265" x="225" preserveAspectRatio="none" r="1" cy="274.58281250001164" cx="234.4444999999978" id="OpenLayers.Geometry.Point_743"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="520" x="495" preserveAspectRatio="none" r="1" cy="529.7404375000042" cx="504.4296875" id="OpenLayers.Geometry.Point_747"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="205" x="58" preserveAspectRatio="none" r="1" cy="215.14562500000466" cx="67.62987499999872" id="OpenLayers.Geometry.Point_749"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="484" x="465" preserveAspectRatio="none" r="1" cy="493.6134375000256" cx="474.50187500000175" id="OpenLayers.Geometry.Point_751"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="151" x="110" preserveAspectRatio="none" r="1" cy="160.8661875000107" cx="119.79700000000594" id="OpenLayers.Geometry.Point_753"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="246" x="290" preserveAspectRatio="none" r="1" cy="255.87075000000186" cx="299.2610624999943" id="OpenLayers.Geometry.Point_761"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="634" x="588" preserveAspectRatio="none" r="1" cy="643.8550624999916" cx="597.3785000000062" id="OpenLayers.Geometry.Point_765"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="492" x="244" preserveAspectRatio="none" r="1" cy="501.9416874999879" cx="253.01124999999593" id="OpenLayers.Geometry.Point_767"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="416" x="515" preserveAspectRatio="none" r="1" cy="426.48356249998324" cx="524.8926875000034" id="OpenLayers.Geometry.Point_769"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="101" x="535" preserveAspectRatio="none" r="1" cy="111.19750000000931" cx="544.3589999999967" id="OpenLayers.Geometry.Point_771"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="171" x="388" preserveAspectRatio="none" r="1" cy="180.8386874999851" cx="397.19087500000023" id="OpenLayers.Geometry.Point_777"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="594" x="559" preserveAspectRatio="none" r="1" cy="604.2319375000079" cx="568.5588750000024" id="OpenLayers.Geometry.Point_779"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="167" x="1026" preserveAspectRatio="none" r="1" cy="176.55550000001676" cx="1035.7560625000042" id="OpenLayers.Geometry.Point_783"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="363" x="221" preserveAspectRatio="none" r="1" cy="373.26874999998836" cx="230.6172499999957" id="OpenLayers.Geometry.Point_785"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="355" x="526" preserveAspectRatio="none" r="1" cy="364.92831250000745" cx="535.3252499999944" id="OpenLayers.Geometry.Point_787"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="49" x="596" preserveAspectRatio="none" r="1" cy="58.992749999975786" cx="605.9290000000037" id="OpenLayers.Geometry.Point_793"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="265" x="642" preserveAspectRatio="none" r="1" cy="274.81462499999907" cx="651.1084375000064" id="OpenLayers.Geometry.Point_795"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="315" x="536" preserveAspectRatio="none" r="1" cy="325.43137499998556" cx="545.6193749999948" id="OpenLayers.Geometry.Point_799"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="315" x="20" preserveAspectRatio="none" r="1" cy="324.5773749999935" cx="29.800124999994296" id="OpenLayers.Geometry.Point_803"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="370" x="523" preserveAspectRatio="none" r="1" cy="380.2908124999958" cx="532.0054999999993" id="OpenLayers.Geometry.Point_805"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="-3" x="567" preserveAspectRatio="none" r="1" cy="6.894124999991618" cx="576.1841249999998" id="OpenLayers.Geometry.Point_807"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="344" x="506" preserveAspectRatio="none" r="1" cy="353.71387500001583" cx="515.6847500000003" id="OpenLayers.Geometry.Point_811"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="223" x="421" preserveAspectRatio="none" r="1" cy="232.71149999997579" cx="430.2960624999978" id="OpenLayers.Geometry.Point_813"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="372" x="565" preserveAspectRatio="none" r="1" cy="381.9955000000191" cx="574.3794999999955" id="OpenLayers.Geometry.Point_815"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="233" x="805" preserveAspectRatio="none" r="1" cy="243.18993749999208" cx="814.6776875000069" id="OpenLayers.Geometry.Point_823"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="182" x="651" preserveAspectRatio="none" r="1" cy="191.89949999999953" cx="660.8643124999944" id="OpenLayers.Geometry.Point_825"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="554" x="336" preserveAspectRatio="none" r="1" cy="564.3364375000237" cx="345.622000000003" id="OpenLayers.Geometry.Point_829"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="668" x="573" preserveAspectRatio="none" r="1" cy="677.5083749999758" cx="582.509625000006" id="OpenLayers.Geometry.Point_831"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="170" x="57" preserveAspectRatio="none" r="1" cy="179.6888124999823" cx="66.24762500000361" id="OpenLayers.Geometry.Point_835"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="141" x="416" preserveAspectRatio="none" r="1" cy="151.15881250001257" cx="425.49349999999686" id="OpenLayers.Geometry.Point_837"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="688" x="1042" preserveAspectRatio="none" r="1" cy="697.7365625000093" cx="1051.8651875000069" id="OpenLayers.Geometry.Point_839"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="700" x="1038" preserveAspectRatio="none" r="1" cy="710.3404999999912" cx="1047.2493125000037" id="OpenLayers.Geometry.Point_845"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-large.png" height="19" width="19" y="399" x="567" preserveAspectRatio="none" r="1" cy="408.77581249998184" cx="576.6966249999969" id="OpenLayers.Geometry.Point_847"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="389" x="434" preserveAspectRatio="none" r="1" cy="399.27318750001723" cx="443.2915625000023" id="OpenLayers.Geometry.Point_863"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-large.png" height="19" width="19" y="323" x="500" preserveAspectRatio="none" r="1" cy="332.93599999998696" cx="509.74493749999965" id="OpenLayers.Geometry.Point_867"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="21" x="568" preserveAspectRatio="none" r="1" cy="30.53531250002561" cx="577.2603125000023" id="OpenLayers.Geometry.Point_873"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="150" x="984" preserveAspectRatio="none" r="1" cy="159.68774999998277" cx="993.4495000000024" id="OpenLayers.Geometry.Point_877"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="169" x="96" preserveAspectRatio="none" r="1" cy="178.94250000000466" cx="105.05056249999325" id="OpenLayers.Geometry.Point_881"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="631" x="1029" preserveAspectRatio="none" r="1" cy="641.3049374999828" cx="1038.0061249999999" id="OpenLayers.Geometry.Point_883"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="193" x="35" preserveAspectRatio="none" r="1" cy="203.4058124999865" cx="44.92712500000198" id="OpenLayers.Geometry.Point_885"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="145" x="328" preserveAspectRatio="none" r="1" cy="154.64325000002282" cx="337.36506250000093" id="OpenLayers.Geometry.Point_887"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="220" x="384" preserveAspectRatio="none" r="1" cy="229.65706250001676" cx="393.3229374999937" id="OpenLayers.Geometry.Point_889"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/stopAreaIcon-small.png" height="19" width="19" y="127" x="241" preserveAspectRatio="none" r="1" cy="137.49381249997532" cx="250.9265624999971" id="OpenLayers.Geometry.Point_891"></image></g><g id="OpenLayers.Layer.Vector_118_troot"></g></g><g transform="" style="visibility: visible;" id="OpenLayers.Layer.Vector_151_root"><g id="OpenLayers.Layer.Vector_151_vroot"><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="251.87443750002421" cx="855.932375000004" id="OpenLayers.Geometry.Point_213"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="238.9972500000149" cx="908.8182499999966" id="OpenLayers.Geometry.Point_215"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="448.05793750000885" cx="445.45212499999616" id="OpenLayers.Geometry.Point_217"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="228.40331249998417" cx="921.3786874999932" id="OpenLayers.Geometry.Point_221"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="331.16618749999907" cx="172.88499999999476" id="OpenLayers.Geometry.Point_223"></circle><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="667" x="665" preserveAspectRatio="none" r="1" cy="700.4017500000191" cx="678.6718125000043" id="OpenLayers.Geometry.Point_225"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="91" x="1014" preserveAspectRatio="none" r="1" cy="123.7945625000284" cx="1028.3792499999981" id="OpenLayers.Geometry.Point_231"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="108" x="1019" preserveAspectRatio="none" r="1" cy="141.18487499997718" cx="1033.362812499996" id="OpenLayers.Geometry.Point_233"></image><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="206.75337499997113" cx="620.5766250000015" id="OpenLayers.Geometry.Point_247"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="680.7371249999851" cx="642.1932499999966" id="OpenLayers.Geometry.Point_253"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="700.7366874999716" cx="652.1330000000016" id="OpenLayers.Geometry.Point_255"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="691.5863125000033" cx="627.6705625000031" id="OpenLayers.Geometry.Point_257"></circle><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="62" x="740" preserveAspectRatio="none" r="1" cy="94.78912500001024" cx="754.3796874999971" id="OpenLayers.Geometry.Point_259"></image><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="232.71149999997579" cx="430.2960624999978" id="OpenLayers.Geometry.Point_265"></circle><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconSlight.png" height="33" width="28" y="285" x="518" preserveAspectRatio="none" r="1" cy="317.85237500001676" cx="532.3852500000066" id="OpenLayers.Geometry.Point_269"></image><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="675.3090000000084" cx="1040.6864999999962" id="OpenLayers.Geometry.Point_277"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="697.7365625000093" cx="1051.8651875000069" id="OpenLayers.Geometry.Point_279"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="628.429375000007" cx="976.8864999999932" id="OpenLayers.Geometry.Point_281"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="635.6488125000033" cx="1004.547312499999" id="OpenLayers.Geometry.Point_283"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="641.3049374999828" cx="1038.0061249999999" id="OpenLayers.Geometry.Point_285"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="337.9758750000037" cx="473.67549999999756" id="OpenLayers.Geometry.Point_309"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="313.9463124999893" cx="70.01068750000559" id="OpenLayers.Geometry.Point_317"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="381.1588750000228" cx="37.433687500000815" id="OpenLayers.Geometry.Point_321"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="639.5838750000112" cx="707.9851875000022" id="OpenLayers.Geometry.Point_331"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="661.3905624999898" cx="715.6060624999955" id="OpenLayers.Geometry.Point_333"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="191.00337499997113" cx="433.4487499999959" id="OpenLayers.Geometry.Point_335"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="319.2051874999888" cx="372.25800000000163" id="OpenLayers.Geometry.Point_337"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="318.62206249998417" cx="399.38062500000524" id="OpenLayers.Geometry.Point_339"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="333.9838125000242" cx="262.80118749999383" id="OpenLayers.Geometry.Point_343"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="320.12274999998044" cx="273.60606249999546" id="OpenLayers.Geometry.Point_345"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="289.42306250002" cx="281.82137499999953" id="OpenLayers.Geometry.Point_347"></circle><circle cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" r="0" cy="233.420999999973" cx="462.57231249999313" id="OpenLayers.Geometry.Point_349"></circle><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="300" x="496" preserveAspectRatio="none" r="1" cy="332.93599999998696" cx="509.74493749999965" id="OpenLayers.Geometry.Point_351"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="426" x="491" preserveAspectRatio="none" r="1" cy="458.86349999997765" cx="505.3570624999993" id="OpenLayers.Geometry.Point_353"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="459" x="506" preserveAspectRatio="none" r="1" cy="491.9451250000275" cx="520.2443124999991" id="OpenLayers.Geometry.Point_355"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="295" x="518" preserveAspectRatio="none" r="1" cy="327.55274999997346" cx="532.0711250000022" id="OpenLayers.Geometry.Point_357"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="483" x="514" preserveAspectRatio="none" r="1" cy="516.3720624999842" cx="527.5609375000058" id="OpenLayers.Geometry.Point_359"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconNormal.png" height="33" width="28" y="627" x="688" preserveAspectRatio="none" r="1" cy="659.7381874999846" cx="701.752687500004" id="OpenLayers.Geometry.Point_371"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconSevere.png" height="33" width="28" y="223" x="213" preserveAspectRatio="none" r="1" cy="256.1579999999958" cx="227.11643749999348" id="OpenLayers.Geometry.Point_375"></image><image cursor="pointer" stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke-opacity="1" stroke="#000000" fill-opacity="1" fill="#000000" style="opacity: 1" xlink:href="http://www.vasttrafik.se/CustomerTemplates/Public/Images/MapImages/trafficChangeIconSevere.png" height="33" width="28" y="242" x="220" preserveAspectRatio="none" r="1" cy="274.58281250001164" cx="234.4444999999978" id="OpenLayers.Geometry.Point_377"></image></g><g id="OpenLayers.Layer.Vector_151_troot"></g></g></svg></div></div></div><div unselectable="on" class="olControlSelectFeature olControlNoSelect" style="position: absolute; z-index: 1002;" id="OpenLayers.Control.SelectFeature_132"></div><div unselectable="on" class="olControl olControlNoSelect" style="position: absolute; z-index: 1003;" id="OpenLayers.Control_142"></div><div unselectable="on" class="olControlSelectFeature olControlNoSelect" style="position: absolute; z-index: 1004;" id="OpenLayers.Control.SelectFeature_140"></div><div unselectable="on" class="olControlSelectFeature olControlNoSelect" style="position: absolute; z-index: 1005;" id="OpenLayers.Control.SelectFeature_161"></div></div></div><div id="MapFunctions" class="opaqueEvents">
+        <button id="TogglePanelsButton" title="Visa bara karta">
+            &nbsp;</button>
+        <button id="ZoomOutButton" title="Zooma ut">
+            &nbsp;</button>
+        <div id="ZoomSlider">
+            <div class="ui-slider-0 ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+            <a style="left: 54.5455%;" class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+        </div>
+        <button id="ZoomInButton" title="Zooma in">
+            &nbsp;</button>
+    </div><div class="templates" style="display: none;">
+        <div class="arrow arrowShow">
+            &nbsp;</div>
+        
+        <div id="IndicatorArea">
+            <div class="indicator relativePositioning">
+                
+                    <div class="indicatorInner">
+                        <span class="loading">
+                            Laddar...</span>
+                    </div>
+                <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+            </div>
+        </div>
+        <a class="autocompleteRow lightBlue uihelper uihelper:clearCorner clearfix"><span class="place"></span>&nbsp;<span class="municipality boldType"></span></a><a class="autocompleteSmallRow lightBlue uihelper uihelper:clearCorner clearfix">
+                <span class="place"></span>&nbsp;<span class="municipality boldType"></span></a>
+        <ul>
+            <li class="autocompleteOptionsRow">
+                <div class="autocompleteOptionsHolder">
+                    <div class="leftfloating" style="margin-right: 12px;">
+                        <span class="labelStops">
+                            Hållplats</span>
+                    </div>
+                    <div class="leftfloating">
+                        <span class="labelAddresses">
+                            Adress</span>
+                    </div>
+                </div>
+            </li>
+            <li class="autocompleteLastRow"></li>
+        </ul>
+        <div class="stopPopup">
+            <div class="trafficSituationHolder" style="display: none;">
+                <div>
+                    <span class="boldType clearfix trafficSituationsLabel">
+                        Trafikstörningar:
+                    </span>
+                    <div class="popupTrafficSituations clearfix">
+                    </div>
+                </div>
+            </div>
+            <div class="travelInfoHolder">
+                <div>
+                    <span class="boldType clearfix linesLabel">
+                        Linjer:
+                    </span>
+                    <div class="lines clearfix">
+                    </div>
+                </div>
+                <div class="travelInfo marginTop clearFloat">
+                    <a class="travelFrom" href="#">
+                        Res härifrån
+                    </a><span>&nbsp;-</span> <a class="travelTo" href="#">
+                        Res hit
+                    </a>
+                    <br>
+                    <div class="travelFromToHolder" style="display: none;">
+                        <div class="dottedHorizontalDivider marginBottom">
+                            &nbsp;</div>
+                        <div class="clearfix">
+                            <div class="paddingBottom">
+                                <span class="boldType travelFromTo-head"></span>
+                                <a class="travelFromToHolder-close" alternatetext="Stäng" href="#"></a>
+                            </div>
+                            <div>
+                                <span class="clearfix travelFromTo-text"></span>
+                            </div>
+                            <div class="travelWhen" style="display: none;">
+                                <div class="grayBox padding clearfix">
+                                    <select id="DropDownListFromToWhen" class="travelSelectWhen marginBottom">
+                                    </select>
+                                    <input id="TextBoxFromToTime" class="textBoxFromToTime required" type="text">
+                                    <select id="DropDownListFromToDay" class="travelSelectDay" style="float: right;">
+                                    </select>
+                                </div>
+                                <div class="rightfloating marginTop clearfix">
+                                    <input value="Sök resa" id="ButtonSearchFromTo" class="searchButton orangeButton rightfloating" type="submit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="stopId data"></span><span class="externalId data"></span><span class="municipality data">
+            </span><span class="stopAreaName data"></span>
+        </div>
+        <div class="popup">
+            <div class="popup-t">
+            </div>
+            <div class="popup-l">
+            </div>
+            <div class="popup-r">
+            </div>
+            <div class="popup-b">
+            </div>
+            <div class="popup-lt">
+            </div>
+            <div class="popup-rt">
+            </div>
+            <div class="popup-lb">
+            </div>
+            <div class="popup-rb">
+            </div>
+            <div class="popup-content">
+                <div class="popup-header head">
+                    <a class="popup-title name" href="#"></a>
+                    <div class="popup-header-gradient">
+                    </div>
+                    <a class="popup-close close" alternatetext="Stäng" href="#"></a>
+                </div>
+                <div class="popup-body body">
+                </div>
+            </div>
+        </div>
+        
+<a class="lineIcon  " style="background-color:;color:;" title="[Missing text /transportmodes/ for sv]  - ">
+    <span class="lineNumber"></span>
+    <span class="lineId data">0</span>
+</a>
+        <div class="divLineIcon ">
+            <span class="lineNumber"></span><span class="lineId data"></span>
+        </div>
+        <div class="poiPopup">
+            <div class="text">
+            </div>
+        </div>
+        <div class="trafficPopup">
+            <div class="travelInfo">
+                <div class="description">
+                </div>
+                <br>
+                <div>
+                    Giltig från:<br>
+                    <span class="validFrom"></span>
+                </div>
+                <br>
+                <div>
+                    Giltig tom:<br>
+                    <span class="validTo"></span>
+                </div>
+                <ul class="paging simplePagerNav clearfix"></ul>
+            </div>
+        </div>
+    </div><div id="fb-root">
+    </div><div class="customer-sitesterSurvey-26" id="SitesterSurveyArea">
+    </div><div class="hidden twitter-facebook-logout">
+        <div class="fb-logout hidden">
+           
+              Du är nu utloggad, men fortfarande inloggad på Facebook. Vill du logga ut även från Facebook, klicka <a href="https://www.facebook.com/" target="_blank">här</a>
+          
+        </div>
+        <div class="tw-logout hidden">
+            
+              Du är nu utloggad, men fortfarande inloggad på Twitter. Vill du logga ut även från Twitter, klicka <a href="https://twitter.com/logout" target="_blank">här</a>
+          
+        </div>
+    </div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="«Förra"><span class="ui-icon ui-icon-circle-triangle-w">«Förra</span></a><a class="ui-datepicker-next ui-corner-all" onclick="DP_jQuery_1376912276264.datepicker._adjustDate('#dp1376912276266', +1, 'M');" title="Nästa»"><span class="ui-icon ui-icon-circle-triangle-e">Nästa»</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">Augusti</span>&nbsp;<span class="ui-datepicker-year">2013</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th><span title="Måndag">Må</span></th><th><span title="Tisdag">Ti</span></th><th><span title="Onsdag">On</span></th><th><span title="Torsdag">To</span></th><th><span title="Fredag">Fr</span></th><th class="ui-datepicker-week-end"><span title="Lördag">Lö</span></th><th class="ui-datepicker-week-end"><span title="Söndag">Sö</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td></tr><tr><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">13</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">14</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">15</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">16</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">17</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">18</span></td></tr><tr><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">19</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">20</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">21</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">22</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">23</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">24</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">25</a></td></tr><tr><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">26</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">27</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">28</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">29</a></td><td class=" " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1376912276264.datepicker._selectDay('#dp1376912276266',7,2013, this);return false;"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div><ul style="z-index: 1003; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu-25 ui-menu ui-widget ui-widget-content ui-corner-all"></ul><div style="position: fixed; top: -49px; z-index: 99999999;" class="ui-loadIndicator-28" id="LoadIndicatorArea">
+            <div class="indicator relativePositioning">
+                
+                    <div class="indicatorInner">
+                        <img src="index_files/ajax-loader-bg-white-small.gif" alt="">
+                        <span class="loading">
+                            Laddar...</span>
+                    </div>
+                <div class="cornersHolder clearfix">
+	<div class="bottomLeftWhiteCorner">
+
+	</div><div class="bottomRightWhiteCorner">
+
+	</div><div class="whiteMiddle">
+
+	</div>
+</div><div class="shadows">
+	<div class="tre">
+
+	</div><div class="tl">
+
+	</div><div class="tr">
+
+	</div><div class="lre">
+
+	</div><div class="rre">
+
+	</div><div class="bre">
+
+	</div><div class="bl">
+
+	</div><div class="br">
+
+	</div>
+</div>
+            </div>
+        </div><div id="faq-quick-search" class="relativePositioning marginBottom" style="display:none;"></div></body></html>

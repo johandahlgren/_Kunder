@@ -1,0 +1,1096 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <link rel="shortcut icon" href="https://ssl.gstatic.com/docs/spreadsheets/forms/favicon_jfk2.png" type="image/x-icon">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10; chrome=1;">
+    <meta name="fragment" content="!">
+    <base target="_blank">
+    <title>SCA Tork - JAD Web Survey (English)</title>
+    <link rel="stylesheet" type="text/css" href="">
+
+    <link href='/static/forms/client/css/107533221-formview_ltr.css' type='text/css' rel='stylesheet'>
+    <style type="text/css">
+        body {
+            background: #efefef;
+            font-family: Helvetica;
+            font-size: 14px;
+            padding: 0 0 0 10px;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: normal;
+            background: #003366;
+            color: #fff;
+            padding: 15px 10px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 7px 0;
+        }
+        textarea {
+            width: 300px;
+            height: 50px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            margin-top: -10px;
+        }
+        select {
+            margin-top: 10px;
+            background: #fff;
+        }
+        /* .ss-form-container {width: 550px; display:block; float: left; height:1200px;} */
+        .input-text {
+            font-size: 14px;
+            border: 1px solid #ddd;
+            width: 180px;
+            padding: 4px 3px;
+        }
+        .knapp {
+            background: #666;
+            border-radius: 20px;
+            color: #fff;
+            padding: 5px 15px 8px 15px;
+            border: none;
+            font-size: 15px;
+            margin: 10px 0 0 0;
+        }
+        .knapp:hover {
+            background: #333;
+            cursor: pointer;
+        }
+        .ss-q-title {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .ss-required-asterisk {
+            font-size: 12px;
+            color: #333;
+        }
+        .progress-label {
+            background: #fff;
+            display: block;
+            margin: 10px 0 0 20px;
+            padding: 3px 5px;
+        }
+        .required-message {
+            display: none;
+        }
+    </style>
+
+
+    <link href='/static/forms/client/css/1446748018-mobile_formview_ltr.css' type='text/css' rel='stylesheet' media='screen and (max-device-width: 721px)'>
+    <script type="text/javascript">
+        /**
+         * @license
+         *! H5F
+         * https://github.com/ryanseddon/H5F/
+         * Copyright (c) Ryan Seddon | Licensed MIT
+         */
+
+        (function (e, t) {
+            "function" == typeof define && define.amd ? define(t) : e.H5F = t()
+        })(this, function () {
+            var e, t, a, i, n, r, s, l, u, o, c, d, v, f, p, m, h, g, b, y, w, C, N, A, E, $, k = document,
+                x = k.createElement("input"),
+                q = /^[a-zA-Z0-9.!#$%&'*+-\/=?\^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                M = /[a-z][\-\.+a-z]*:\/\//i,
+                L = /^(input|select|textarea)$/i;
+            return r = function (e, t) {
+                var a = !e.nodeType || !1,
+                    i = {
+                        validClass: "valid",
+                        invalidClass: "error",
+                        requiredClass: "required",
+                        placeholderClass: "placeholder"
+                    };
+                if ("object" == typeof t)
+                    for (var r in i) t[r] === void 0 && (t[r] = i[r]);
+                if (n = t || i, a)
+                    for (var l = 0, u = e.length; u > l; l++) s(e[l]);
+                else s(e)
+            }, s = function (a) {
+                var i, n = a.elements,
+                    r = n.length,
+                    s = !!a.attributes.novalidate;
+                if (b(a, "invalid", u, !0), b(a, "blur", u, !0), b(a, "input", u, !0), b(a, "keyup", u, !0), b(a, "focus", u, !0), b(a, "change", u, !0), b(a, "click", o, !0), b(a, "submit", function (i) {
+                    e = !0, t || s || a.checkValidity() || w(i)
+                }, !1), !v())
+                    for (a.checkValidity = function () {
+                        return c(a)
+                    }; r--;) i = !!n[r].attributes.required, "fieldset" !== n[r].nodeName.toLowerCase() && l(n[r])
+            }, l = function (e) {
+                var t = e,
+                    a = g(t),
+                    n = {
+                        type: t.getAttribute("type"),
+                        pattern: t.getAttribute("pattern"),
+                        placeholder: t.getAttribute("placeholder")
+                    },
+                    r = /^(email|url)$/i,
+                    s = /^(input|keyup)$/i,
+                    l = r.test(n.type) ? n.type : n.pattern ? n.pattern : !1,
+                    u = f(t, l),
+                    o = m(t, "step"),
+                    v = m(t, "min"),
+                    h = m(t, "max"),
+                    b = !("" === t.validationMessage || void 0 === t.validationMessage);
+                t.checkValidity = function () {
+                    return c.call(this, t)
+                }, t.setCustomValidity = function (e) {
+                    d.call(t, e)
+                }, t.validity = {
+                    valueMissing: a,
+                    patternMismatch: u,
+                    rangeUnderflow: v,
+                    rangeOverflow: h,
+                    stepMismatch: o,
+                    customError: b,
+                    valid: !(a || u || o || v || h || b)
+                }, n.placeholder && !s.test(i) && p(t)
+            }, u = function (e) {
+                var t = C(e) || e,
+                    a = /^(input|keyup|focusin|focus|change)$/i,
+                    r = /^(submit|image|button|reset)$/i,
+                    s = /^(checkbox|radio)$/i,
+                    o = !0;
+                !L.test(t.nodeName) || r.test(t.type) || r.test(t.nodeName) || (i = e.type, v() || l(t), t.validity.valid && ("" !== t.value || s.test(t.type)) || t.value !== t.getAttribute("placeholder") && t.validity.valid ? (A(t, [n.invalidClass, n.requiredClass]), N(t, n.validClass)) : a.test(i) ? t.validity.valueMissing && A(t, [n.requiredClass, n.invalidClass, n.validClass]) : t.validity.valueMissing ? (A(t, [n.invalidClass, n.validClass]), N(t, n.requiredClass)) : t.validity.valid || (A(t, [n.validClass, n.requiredClass]), N(t, n.invalidClass)), "input" === i && o && (y(t.form, "keyup", u, !0), o = !1))
+            }, c = function (t) {
+                var a, i, n, r, s = !1;
+                if ("form" === t.nodeName.toLowerCase()) {
+                    a = t.elements;
+                    for (var l = 0, o = a.length; o > l; l++) i = a[l], n = !!i.attributes.required, r = !!i.attributes.pattern, "fieldset" !== i.nodeName.toLowerCase() && (n || r && n) && (u(i), i.validity.valid || s || (e && i.focus(), s = !0));
+                    return !s
+                }
+                return u(t), t.validity.valid
+            }, d = function (e) {
+                var t = this;
+                t.validationMessage = e
+            }, o = function (e) {
+                var a = C(e);
+                a.attributes.formnovalidate && "submit" === a.type && (t = !0)
+            }, v = function () {
+                return E(x, "validity") && E(x, "checkValidity")
+            }, f = function (e, t) {
+                if ("email" === t) return !q.test(e.value);
+                if ("url" === t) return !M.test(e.value);
+                if (t) {
+                    var i = e.getAttribute("placeholder"),
+                        n = e.value;
+                    return a = RegExp("^(?:" + t + ")$"), n === i ? !1 : "" === n ? !1 : !a.test(e.value)
+                }
+                return !1
+            }, p = function (e) {
+                var t = {
+                        placeholder: e.getAttribute("placeholder")
+                    },
+                    a = /^(focus|focusin|submit)$/i,
+                    r = /^(input|textarea)$/i,
+                    s = /^password$/i,
+                    l = !!("placeholder" in x);
+                l || !r.test(e.nodeName) || s.test(e.type) || ("" !== e.value || a.test(i) ? e.value === t.placeholder && a.test(i) && (e.value = "", A(e, n.placeholderClass)) : (e.value = t.placeholder, b(e.form, "submit", function () {
+                    i = "submit", p(e)
+                }, !0), N(e, n.placeholderClass)))
+            }, m = function (e, t) {
+                var a = parseInt(e.getAttribute("min"), 10) || 0,
+                    i = parseInt(e.getAttribute("max"), 10) || !1,
+                    n = parseInt(e.getAttribute("step"), 10) || 1,
+                    r = parseInt(e.value, 10),
+                    s = (r - a) % n;
+                return g(e) || isNaN(r) ? "number" === e.getAttribute("type") ? !0 : !1 : "step" === t ? e.getAttribute("step") ? 0 !== s : !1 : "min" === t ? e.getAttribute("min") ? a > r : !1 : "max" === t ? e.getAttribute("max") ? r > i : !1 : void 0
+            }, h = function (e) {
+                var t = !!e.attributes.required;
+                return t ? g(e) : !1
+            }, g = function (e) {
+                var t = e.getAttribute("placeholder"),
+                    a = /^(checkbox|radio)$/i,
+                    i = !!e.attributes.required;
+                return !(!i || "" !== e.value && e.value !== t && (!a.test(e.type) || $(e)))
+            }, b = function (e, t, a, i) {
+                E(window, "addEventListener") ? e.addEventListener(t, a, i) : E(window, "attachEvent") && window.event !== void 0 && ("blur" === t ? t = "focusout" : "focus" === t && (t = "focusin"), e.attachEvent("on" + t, a))
+            }, y = function (e, t, a, i) {
+                E(window, "removeEventListener") ? e.removeEventListener(t, a, i) : E(window, "detachEvent") && window.event !== void 0 && e.detachEvent("on" + t, a)
+            }, w = function (e) {
+                e = e || window.event, e.stopPropagation && e.preventDefault ? (e.stopPropagation(), e.preventDefault()) : (e.cancelBubble = !0, e.returnValue = !1)
+            }, C = function (e) {
+                return e = e || window.event, e.target || e.srcElement
+            }, N = function (e, t) {
+                var a;
+                e.className ? (a = RegExp("(^|\\s)" + t + "(\\s|$)"), a.test(e.className) || (e.className += " " + t)) : e.className = t
+            }, A = function (e, t) {
+                var a, i, n = "object" == typeof t ? t.length : 1,
+                    r = n;
+                if (e.className)
+                    if (e.className === t) e.className = "";
+                    else
+                        for (; n--;) a = RegExp("(^|\\s)" + (r > 1 ? t[n] : t) + "(\\s|$)"), i = e.className.match(a), i && 3 === i.length && (e.className = e.className.replace(a, i[1] && i[2] ? " " : ""))
+            }, E = function (e, t) {
+                var a = typeof e[t],
+                    i = RegExp("^function|object$", "i");
+                return !!(i.test(a) && e[t] || "unknown" === a)
+            }, $ = function (e) {
+                for (var t = document.getElementsByName(e.name), a = 0; t.length > a; a++)
+                    if (t[a].checked) return !0;
+                return !1
+            }, {
+                setup: r
+            }
+        });
+    </script>
+    <link rel="alternate" type="text/xml+oembed" href="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/oembed?url=https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/viewform&amp;format=xml">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="SCA Tork - JAD Web Survey (English)">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Google Docs">
+    <meta property="og:url" content="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/viewform">
+    <meta property="og:image" content="https://ssl.gstatic.com/docs/forms/social/social-forms.png">
+    <meta property="og:image:width" content="90">
+    <meta property="og:image:height" content="90">
+</head>
+
+<body dir="ltr" class="ss-base-body">
+    <div itemscope itemtype="http://schema.org/CreativeWork/FormObject">
+        <meta itemprop="name" content="SCA Tork - JAD Web Survey (English)">
+
+
+        <meta itemprop="url" content="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/viewform">
+        <meta itemprop="embedUrl" content="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/viewform?embedded=true">
+        <meta itemprop="faviconUrl" content="https://ssl.gstatic.com/docs/spreadsheets/forms/favicon_jfk2.png">
+
+
+
+
+            <div class="question">
+                <div class="ss-top-of-page">
+                    <div class="ss-form-heading">
+                        <h1 class="ss-form-title" dir="ltr">What is your main reason for visiting this site?</h1>
+                        <hr class="ss-email-break" style="display:none;">
+                        <div class="ss-required-asterisk" aria-hidden="true">*Required</div>
+                    </div>
+                </div>
+                <div class="ss-form">
+                    <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                        <ol role="list" class="ss-question-list" style="padding-left: 0">
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                    <div class="ss-form-entry">
+                                        <ul class="ss-choices" role="radiogroup" aria-label="What is your main reason for visiting this site?  ">
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Looking to equip / refurbish washroom" id="group_25969295_1" role="radio" class="ss-q-radio" aria-label="Looking to equip / refurbish washroom" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Looking to equip / refurbish washroom</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Considering a new hand-drying system" id="group_25969295_2" role="radio" class="ss-q-radio" aria-label="Considering a new hand-drying system" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Considering a new hand-drying system</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Looking for information on hand dryers" id="group_25969295_3" role="radio" class="ss-q-radio" aria-label="Looking for information on hand dryers" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Looking for information on hand dryers</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="Looking for information on paper towels" id="group_25969295_4" role="radio" class="ss-q-radio" aria-label="Looking for information on paper towels" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Looking for information on paper towels</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.25969295" value="__other_option__" id="group_25969295_5" role="radio" class="ss-q-radio ss-q-other-toggle" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Other: Please specify</span>
+                                                </label>
+                                                <br/>
+                                                <br/>
+                                                <textarea class="ss-q-other input-text textarea" name="entry.25969295.other_option_response" id="entry_25969295_other_option_response"></textarea>
+                                            </li>
+                                        </ul>
+                                        <div class="error-message" id="1023764457_errorMessage"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="draftResponse" value="[,,&quot;1387285303679806635&quot;]">
+                            <input type="hidden" name="pageHistory" value="0">
+                            <input type="hidden" name="fbzx" value="1387285303679806635">
+                            <div class="ss-item ss-navigate">
+                                <table id="navigation-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                <input type="submit" name="continue" value="Next &raquo;" id="ss-submit" class="knapp">
+                                            </td>
+                                            <td id="progress-container">
+                                                <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block"></div>
+                                                <div id="progress-label" class="progress-label">16 % ifyllt</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ol>
+                    </form>
+                </div>
+            </div>
+            
+            
+            
+            <div class="question">
+                <div class="ss-top-of-page">
+                    <div class="ss-form-heading">
+                        <h1 class="ss-form-title" dir="ltr">Did you find what you were looking for?</h1>
+
+
+                        <hr class="ss-email-break" style="display:none;">
+                        <div class="ss-required-asterisk" aria-hidden="true">*Required</div>
+                    </div>
+                </div>
+                <div class="ss-form">
+                    <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                        <ol role="list" class="ss-question-list" style="padding-left: 0">
+                            <div class="errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item  ss-page-break">
+                                    <div class="ss-form-entry">
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                    <div class="ss-form-entry">
+                                        <ul class="ss-choices" role="radiogroup" aria-label="Did you find what you were looking for?  ">
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1905772560" value="Yes" id="group_1905772560_1" role="radio" class="ss-q-radio" aria-label="Yes" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">Yes</span>
+                                                </label>
+                                            </li>
+                                            <li class="ss-choice-item">
+                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1905772560" value="No" id="group_1905772560_2" role="radio" class="ss-q-radio" aria-label="No" required="" aria-required="true"></span>
+                                                    <span class="ss-choice-label">No</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                        <div class="error-message" id="1482422619_errorMessage"></div>
+                                        <div class="required-message">Det här är en obligatorisk fråga</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="draftResponse" value="[[[,25969295,[&quot;Looking to equip / refurbish washroom&quot;]
+,0]
+]
+,,&quot;8706713354076597374&quot;]
+">
+                            <input type="hidden" name="pageHistory" value="0,1">
+
+
+                            <input type="hidden" name="fbzx" value="8706713354076597374">
+
+                            <div class="ss-item ss-navigate">
+                                <table id="navigation-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                <!-- <input type="submit" name="back" value="« Bakåt" formnovalidate="" class="knapp"> -->
+                                                <input type="submit" name="continue" value="Next »" id="ss-submit" class="knapp">
+                                            </td>
+                                            <td id="progress-container">
+                                                <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block">
+                                                    <div class="progress-bar-horizontal" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-live="polite">
+                                                        <div class="progress-bar-thumb" style="width: 33%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div id="progress-label" class="progress-label">33 % ifyllt</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ol>
+                    </form>
+                </div>
+            </div>
+        
+           <div class="question">
+                <div class="ss-top-of-page">
+                    <div class="ss-form-heading">
+                        <h1 class="ss-form-title" dir="ltr">Please select what content on this site you found useful?</h1>
+
+
+                        <hr class="ss-email-break" style="display:none;">
+                        <div class="ss-required-asterisk" aria-hidden="true">*Required</div>
+                    </div>
+                </div>
+                <div class="ss-form">
+                    <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                        <ol role="list" class="ss-question-list" style="padding-left: 0">
+                            <div class="errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item  ss-page-break">
+                                    <div class="ss-form-entry">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ss-form-question errorbox-good" role="listitem">
+                                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                    <div class="ss-form-entry">
+                                        <label class="ss-q-item-label" for="entry_918625145">
+                                            <ul class="ss-choices" role="radiogroup" aria-label="Please select what content on this site you found useful?  ">
+                                                <li class="ss-choice-item">
+                                                    <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1589043157" value="Video" id="group_1589043157_1" role="radio" class="ss-q-radio" aria-label="Video" required="" aria-required="true"></span>
+                                                        <span class="ss-choice-label">Video</span>
+                                                    </label>
+                                                </li>
+                                                <li class="ss-choice-item">
+                                                    <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1589043157" value="Downloads" id="group_1589043157_2" role="radio" class="ss-q-radio" aria-label="Downloads" required="" aria-required="true"></span>
+                                                        <span class="ss-choice-label">Downloads</span>
+                                                    </label>
+                                                </li>
+                                                <li class="ss-choice-item">
+                                                    <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1589043157" value="General site content" id="group_1589043157_3" role="radio" class="ss-q-radio" aria-label="General site content" required="" aria-required="true"></span>
+                                                        <span class="ss-choice-label">General site content</span>
+                                                    </label>
+                                                </li>
+                                                <li class="ss-choice-item">
+                                                    <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1589043157" value="List of Key decisions&nbsp;" id="group_1589043157_4" role="radio" class="ss-q-radio" aria-label="List of Key decisions&nbsp;" required="" aria-required="true"></span>
+                                                        <span class="ss-choice-label">List of Key decisions&nbsp;</span>
+                                                    </label>
+                                                </li>
+                                                <li class="ss-choice-item">
+                                                    <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1589043157" value="__other_option__" id="group_1589043157_5" role="radio" class="ss-q-radio ss-q-other-toggle" required="" aria-required="true"></span>
+                                                        <span class="ss-choice-label">Övrigt:</span>
+                                                    </label>
+                                                    <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.1589043157.other_option_response" value="" class="ss-q-other input-text" id="entry_1589043157_other_option_response" dir="auto" aria-label="Övrigt"></span>
+                                                </li>
+                                            </ul>
+                                            <div class="error-message" id="918625145_errorMessage"></div>
+                                            <div class="required-message">Det här är en obligatorisk fråga</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="draftResponse" value="[[[,25969295,[&quot;Looking to equip / refurbish washroom&quot;]
+,0]
+,[,1905772560,[&quot;Yes&quot;]
+,0]
+]
+,,&quot;8706713354076597374&quot;]
+">
+                            <input type="hidden" name="pageHistory" value="0,1,2">
+
+
+                            <input type="hidden" name="fbzx" value="8706713354076597374">
+
+                            <div class="ss-item ss-navigate">
+                                <table id="navigation-table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                <!-- <input type="submit" name="back" value="« Bakåt" formnovalidate="" class="knapp"> -->
+                                                <input type="submit" name="continue" value="Next »" id="ss-submit" class="knapp">
+                                            </td>
+                                            <td id="progress-container">
+                                                <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block">
+                                                    <div class="progress-bar-horizontal" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-live="polite">
+                                                        <div class="progress-bar-thumb" style="width: 50%;"></div>
+                                                    </div>
+                                                </div>
+                                                <div id="progress-label" class="progress-label">50 % ifyllt</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ol>
+                    </form>
+                </div>
+                                    <div class="ss-footer">
+                                        <div class="ss-attribution"></div>
+                                        <div class="ss-legal">
+                                            <div class="disclaimer-separator"></div>
+
+
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <br>
+                                            <!-- HÄR KOMMER DEL 4 -->
+
+
+                                            <div class="ss-form-container">
+                                                <div class="ss-header-image"></div>
+                                                <div class="ss-top-of-page">
+                                                    <div class="ss-form-heading">
+                                                        <h1 class="ss-form-title" dir="ltr">In what capacity are you visiting this site?</h1>
+
+
+                                                        <hr class="ss-email-break" style="display:none;">
+                                                        <div class="ss-required-asterisk" aria-hidden="true">*Required</div>
+                                                    </div>
+                                                </div>
+                                                <div class="ss-form">
+                                                    <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                                                        <ol role="list" class="ss-question-list" style="padding-left: 0">
+                                                            <div class="errorbox-good" role="listitem">
+                                                                <div dir="ltr" class="ss-item  ss-page-break">
+                                                                    <div class="ss-form-entry">
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="ss-form-question errorbox-good" role="listitem">
+                                                                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                                                    <div class="ss-form-entry">
+                                                                        <!--
+<label class="ss-q-item-label" for="entry_1285701913"><div class="ss-q-title">In what capacity are you visiting this site?
+<label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+<span class="ss-required-asterisk">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
+-->
+
+                                                                        <ul class="ss-choices" role="radiogroup" aria-label="In what capacity are you visiting this site?  ">
+                                                                            <li class="ss-choice-item">
+                                                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2077881227" value="Professional reasons" id="group_2077881227_1" role="radio" class="ss-q-radio" aria-label="Professional reasons" required="" aria-required="true"></span>
+                                                                                    <span class="ss-choice-label">Professional reasons</span>
+                                                                                </label>
+                                                                            </li>
+                                                                            <li class="ss-choice-item">
+                                                                                <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.2077881227" value="Private reasons" id="group_2077881227_2" role="radio" class="ss-q-radio" aria-label="Private reasons" required="" aria-required="true"></span>
+                                                                                    <span class="ss-choice-label">Private reasons</span>
+                                                                                </label>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <div class="error-message" id="1285701913_errorMessage"></div>
+                                                                        <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" name="draftResponse" value="[[[,25969295,[&quot;Looking to equip / refurbish washroom&quot;]
+,0]
+,[,1905772560,[&quot;Yes&quot;]
+,0]
+,[,1589043157,[&quot;Video&quot;]
+,0]
+]
+,,&quot;8706713354076597374&quot;]
+">
+                                                            <input type="hidden" name="pageHistory" value="0,1,2,4">
+
+
+                                                            <input type="hidden" name="fbzx" value="8706713354076597374">
+
+                                                            <div class="ss-item ss-navigate">
+                                                                <table id="navigation-table">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                                                <!-- <input type="submit" name="back" value="« Bakåt" formnovalidate="" class="knapp"> -->
+                                                                                <input type="submit" name="continue" value="Next »" id="ss-submit" class="knapp">
+                                                                            </td>
+                                                                            <td id="progress-container">
+                                                                                <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block">
+                                                                                    <div class="progress-bar-horizontal" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-live="polite">
+                                                                                        <div class="progress-bar-thumb" style="width: 83%;"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="progress-label" class="progress-label">83 % ifyllt</div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </ol>
+                                                    </form>
+                                                </div>
+                                                <div class="ss-footer">
+                                                    <div class="ss-attribution"></div>
+                                                    <div class="ss-legal">
+                                                        <div class="disclaimer-separator"></div>
+
+
+
+
+
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <br>
+                                                        <!-- HÄR KOMMER DEL 5 (FEM) -->
+
+
+
+
+
+                                                        <div class="ss-form-container">
+                                                            <div class="ss-header-image"></div>
+                                                            <div class="ss-top-of-page">
+                                                                <div class="ss-form-heading">
+                                                                    <h1 class="ss-form-title" dir="ltr">Please state your industry:</h1>
+
+                                                                    <hr class="ss-email-break" style="display:none;">
+                                                                    <div class="ss-required-asterisk" aria-hidden="true">*Obligatorisk</div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="ss-form">
+                                                                <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                                                                    <ol role="list" class="ss-question-list" style="padding-left: 0">
+                                                                        <div class="errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item  ss-page-break">
+                                                                                <div class="ss-form-entry">
+
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ss-form-question errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                                                                <div class="ss-form-entry">
+                                                                                    <label class="ss-q-item-label" for="entry_1259309318">
+                                                                                        <div class="ss-q-title">Please state your industry:
+                                                                                            <label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+                                                                                            <span class="ss-required-asterisk">*</span>
+                                                                                        </div>
+                                                                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                                                                    </label>
+                                                                                    <select name="entry.1259309318" id="entry_1259309318" aria-label="Please state your industry:  " aria-required="true" required="">
+                                                                                        <option value=""></option>
+                                                                                        <option value="Public Service and Education (e.g. public administration, education, other public activities)" selected="">Public Service and Education (e.g. public administration, education, other public activities)</option>
+                                                                                        <option value="Trade &amp; Service Enterprises (e.g. transportation, retail, other service companies)">Trade &amp; Service Enterprises (e.g. transportation, retail, other service companies)</option>
+                                                                                        <option value="Hotel, Catering and Tourism (e.g. hotel &amp; lodgings, food service, recreation and events)">Hotel, Catering and Tourism (e.g. hotel &amp; lodgings, food service, recreation and events)</option>
+                                                                                        <option value="Healthcare (e.g. hospital, long term, care provider, other healthcare)">Healthcare (e.g. hospital, long term, care provider, other healthcare)</option>
+                                                                                        <option value="Industrial (e.g. food industry, manufacturing)">Industrial (e.g. food industry, manufacturing)</option>
+                                                                                    </select>
+                                                                                    <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ss-form-question errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                                                                <div class="ss-form-entry">
+                                                                                    <label class="ss-q-item-label" for="entry_1300131796">
+                                                                                        <div class="ss-q-title">Please state your industry 2:
+                                                                                            <label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+                                                                                            <span class="ss-required-asterisk">*</span>
+                                                                                        </div>
+                                                                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                                                                    </label>
+                                                                                    <select name="entry.1300131796" id="entry_1300131796" aria-label="Please state your industry 2:  " aria-required="true" required="" class="valid">
+                                                                                        <option value=""></option>
+                                                                                        <option value="Universities">Universities</option>
+                                                                                        <option value="Secondary Schools">Secondary Schools</option>
+                                                                                        <option value="Primary Schools">Primary Schools</option>
+                                                                                        <option value="Pre Primary (e.g. Kindergartens)">Pre Primary (e.g. Kindergartens)</option>
+                                                                                        <option value="Defense">Defense</option>
+                                                                                        <option value="Government &amp; Judiciary Administration">Government &amp; Judiciary Administration</option>
+                                                                                        <option value="Legal Law Enforcement &amp; Protection (e.g. police officers, fire fighters)">Legal Law Enforcement &amp; Protection (e.g. police officers, fire fighters)</option>
+                                                                                        <option value="Prisons">Prisons</option>
+                                                                                        <option value="Other Public Administration">Other Public Administration</option>
+                                                                                        <option value="Non-Governmental Organizations">Non-Governmental Organizations</option>
+                                                                                        <option value="Religious Institutions">Religious Institutions</option>
+                                                                                        <option value="Other">Other</option>
+                                                                                        <option value="----">----</option>
+                                                                                        <option value="Petrol Stations">Petrol Stations</option>
+                                                                                        <option value="Retail Outlets">Retail Outlets</option>
+                                                                                        <option value="Wholesalers">Wholesalers</option>
+                                                                                        <option value="Financial Institutions">Financial Institutions</option>
+                                                                                        <option value="Media &amp; Entertainment">Media &amp; Entertainment</option>
+                                                                                        <option value="Small service providers (e.g. hairdressers, beauty salons)">Small service providers (e.g. hairdressers, beauty salons)</option>
+                                                                                        <option value="General Office Buildings">General Office Buildings</option>
+                                                                                        <option value="Other">Other</option>
+                                                                                        <option value="----">----</option>
+                                                                                        <option value="Luxury Hotels &amp; Resorts">Luxury Hotels &amp; Resorts</option>
+                                                                                        <option value="3* Hotels">3* Hotels</option>
+                                                                                        <option value="1*-2* Hotels">1*-2* Hotels</option>
+                                                                                        <option value="Budget Accommodation (e.g. camping)">Budget Accommodation (e.g. camping)</option>
+                                                                                        <option value="Cruise Ships">Cruise Ships</option>
+                                                                                        <option value="Catering Services">Catering Services</option>
+                                                                                        <option value="Cafés, bars and pubs">Cafés, bars and pubs</option>
+                                                                                        <option value="Quick Service Restaurants">Quick Service Restaurants</option>
+                                                                                        <option value="Full Service Restaurants">Full Service Restaurants</option>
+                                                                                        <option value="Self Service Restaurants">Self Service Restaurants</option>
+                                                                                        <option value="Casinos &amp; Gambling">Casinos &amp; Gambling</option>
+                                                                                        <option value="Amusement Parks and Zoos">Amusement Parks and Zoos</option>
+                                                                                        <option value="Cinemas, Museums &amp; Theatres">Cinemas, Museums &amp; Theatres</option>
+                                                                                        <option value="Event catering (e.g. conferences and exhibitions)">Event catering (e.g. conferences and exhibitions)</option>
+                                                                                        <option value="Sports, Health and Social Clubs">Sports, Health and Social Clubs</option>
+                                                                                        <option value="Stadiums">Stadiums</option>
+                                                                                        <option value="Other">Other</option>
+                                                                                        <option value="----">----</option>
+                                                                                        <option value="Homes for the elderly">Homes for the elderly</option>
+                                                                                        <option value="Other Long Term Care">Other Long Term Care</option>
+                                                                                        <option value="Public hospital &amp; clinics">Public hospital &amp; clinics</option>
+                                                                                        <option value="Private hospital &amp; clinics">Private hospital &amp; clinics</option>
+                                                                                        <option value="Small General Practitioners">Small General Practitioners</option>
+                                                                                        <option value="Other HC Practitioners6">Other HC Practitioners6</option>
+                                                                                        <option value="Medical Centers, Labs &amp; Research">Medical Centers, Labs &amp; Research</option>
+                                                                                        <option value="Other">Other</option>
+                                                                                        <option value="----">----</option>
+                                                                                        <option value="Agriculture">Agriculture</option>
+                                                                                        <option value="Fishing">Fishing</option>
+                                                                                        <option value="Food &amp; Beverage Processing">Food &amp; Beverage Processing</option>
+                                                                                        <option value="Clean Hi-Tech Industry">Clean Hi-Tech Industry</option>
+                                                                                        <option value="Chemical Industry">Chemical Industry</option>
+                                                                                        <option value="Natural Resource Industry">Natural Resource Industry</option>
+                                                                                        <option value="Printing">Printing</option>
+                                                                                        <option value="Utilities (e.g. electrticity, water treatment)">Utilities (e.g. electrticity, water treatment)</option>
+                                                                                        <option value="Construction">Construction</option>
+                                                                                        <option value="General Manufacturing">General Manufacturing</option>
+                                                                                        <option value="Tradesmen (e.g. painter, electrician, carpenter etc.)">Tradesmen (e.g. painter, electrician, carpenter etc.)</option>
+                                                                                        <option value="Workshops (e.g. maintenance, repair)">Workshops (e.g. maintenance, repair)</option>
+                                                                                        <option value="Other">Other</option>
+                                                                                    </select>
+                                                                                    <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ss-form-question errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                                                                <div class="ss-form-entry">
+                                                                                    <label class="ss-q-item-label" for="entry_1042842913">
+                                                                                        <div class="ss-q-title">Are you?
+                                                                                            <label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+                                                                                            <span class="ss-required-asterisk">*</span>
+                                                                                        </div>
+                                                                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                                                                    </label>
+
+                                                                                    <ul class="ss-choices" role="radiogroup" aria-label="Are you?  ">
+                                                                                        <li class="ss-choice-item">
+                                                                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1758642093" value="A purchaser" id="group_1758642093_1" role="radio" class="ss-q-radio" aria-label="A purchaser" required="" aria-required="true"></span>
+                                                                                                <span class="ss-choice-label">A purchaser</span>
+                                                                                            </label>
+                                                                                        </li>
+                                                                                        <li class="ss-choice-item">
+                                                                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1758642093" value="A decision-maker" id="group_1758642093_2" role="radio" class="ss-q-radio" aria-label="A decision-maker" required="" aria-required="true"></span>
+                                                                                                <span class="ss-choice-label">A decision-maker</span>
+                                                                                            </label>
+                                                                                        </li>
+                                                                                        <li class="ss-choice-item">
+                                                                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1758642093" value="An influencer" id="group_1758642093_3" role="radio" class="ss-q-radio" aria-label="An influencer" required="" aria-required="true"></span>
+                                                                                                <span class="ss-choice-label">An influencer</span>
+                                                                                            </label>
+                                                                                        </li>
+                                                                                        <li class="ss-choice-item">
+                                                                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1758642093" value="__other_option__" id="group_1758642093_4" role="radio" class="ss-q-radio ss-q-other-toggle" required="" aria-required="true"></span>
+                                                                                                <span class="ss-choice-label">Övrigt:</span>
+                                                                                            </label>
+                                                                                            <span class="ss-q-other-container goog-inline-block"><input type="text" name="entry.1758642093.other_option_response" value="" class="ss-q-other input-text" id="entry_1758642093_other_option_response" dir="auto" aria-label="Övrigt"></span>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <div class="error-message" id="1042842913_errorMessage"></div>
+                                                                                    <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ss-form-question errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                                                                <div class="ss-form-entry">
+                                                                                    <label class="ss-q-item-label" for="entry_384766623">
+                                                                                        <div class="ss-q-title">How many employees does your company have?
+                                                                                            <label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+                                                                                            <span class="ss-required-asterisk">*</span>
+                                                                                        </div>
+                                                                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                                                                    </label>
+                                                                                    <select name="entry.384766623" id="entry_384766623" aria-label="How many employees does your company have?  " aria-required="true" required="">
+                                                                                        <option value=""></option>
+                                                                                        <option value="< 10">&lt; 10</option>
+                                                                                        <option value="10 - 50">10 - 50</option>
+                                                                                        <option value="50 - 100">50 - 100</option>
+                                                                                        <option value="100 - 500">100 - 500</option>
+                                                                                        <option value="500 - 1000">500 - 1000</option>
+                                                                                        <option value="1000+&nbsp;">1000+&nbsp;</option>
+                                                                                    </select>
+                                                                                    <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ss-form-question errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                                                                                <div class="ss-form-entry">
+                                                                                    <label class="ss-q-item-label" for="entry_1183530186">
+                                                                                        <div class="ss-q-title">Are you?
+                                                                                            <label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+                                                                                            <span class="ss-required-asterisk">*</span>
+                                                                                        </div>
+                                                                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                                                                    </label>
+
+                                                                                    <ul class="ss-choices" role="radiogroup" aria-label="Are you?  ">
+                                                                                        <li class="ss-choice-item">
+                                                                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1775879920" value="Male" id="group_1775879920_1" role="radio" class="ss-q-radio" aria-label="Male" required="" aria-required="true"></span>
+                                                                                                <span class="ss-choice-label">Male</span>
+                                                                                            </label>
+                                                                                        </li>
+                                                                                        <li class="ss-choice-item">
+                                                                                            <label><span class="ss-choice-item-control goog-inline-block"><input type="radio" name="entry.1775879920" value="Female" id="group_1775879920_2" role="radio" class="ss-q-radio" aria-label="Female" required="" aria-required="true"></span>
+                                                                                                <span class="ss-choice-label">Female</span>
+                                                                                            </label>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                    <div class="error-message" id="1183530186_errorMessage"></div>
+                                                                                    <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ss-form-question errorbox-good" role="listitem">
+                                                                            <div dir="ltr" class="ss-item ss-item-required ss-select">
+                                                                                <div class="ss-form-entry">
+                                                                                    <label class="ss-q-item-label" for="entry_912308335">
+                                                                                        <div class="ss-q-title">What is your age?
+                                                                                            <label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+                                                                                            <span class="ss-required-asterisk">*</span>
+                                                                                        </div>
+                                                                                        <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+                                                                                    </label>
+                                                                                    <select name="entry.912308335" id="entry_912308335" aria-label="What is your age?  " aria-required="true" required="">
+                                                                                        <option value=""></option>
+                                                                                        <option value="< 30">&lt; 30</option>
+                                                                                        <option value="30 - 50">30 - 50</option>
+                                                                                        <option value="50+">50+</option>
+                                                                                    </select>
+                                                                                    <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input type="hidden" name="draftResponse" value="[[[,25969295,[&quot;Looking for information on paper towels&quot;]
+,0]
+,[,1905772560,[&quot;Yes&quot;]
+,0]
+,[,1589043157,[&quot;Video&quot;]
+,0]
+,[,2077881227,[&quot;Professional reasons&quot;]
+,0]
+,[,1259309318,[&quot;Public Service and Education (e.g. public administration, education, other public activities)&quot;]
+,0]
+]
+,,&quot;-4881817039069612939&quot;]
+">
+                                                                        <input type="hidden" name="pageHistory" value="0,1,2,4,5">
+
+
+                                                                        <input type="hidden" name="fbzx" value="-4881817039069612939">
+
+                                                                        <div class="ss-item ss-navigate">
+                                                                            <table id="navigation-table">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                                                            <input type="submit" name="submit" value="Send" id="ss-submit" class="knapp">
+                                                                                        </td>
+                                                                                        <td id="progress-container">
+                                                                                            <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block">
+                                                                                                <div class="progress-bar-horizontal" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-live="polite">
+                                                                                                    <div class="progress-bar-thumb" style="width: 100%;"></div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div id="progress-label" class="progress-label">100 %: Du är klar.</div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+                                                                    </ol>
+                                                                </form>
+                                                            </div>
+
+
+
+
+
+
+
+
+
+
+                                                            <br>
+                                                            <br>
+                                                            <br>
+                                                            <br>
+                                                            <br>
+                                                            <!-- HÄR ÄR DEL 6 (NÄR MAN SVARAT NEJ PÅ FRÅGA 2) -->
+
+
+
+
+
+                                                            <div class="ss-form-container">
+                                                                <div class="ss-header-image"></div>
+                                                                <div class="ss-top-of-page">
+                                                                    <div class="ss-form-heading">
+                                                                        <h1 class="ss-form-title" dir="ltr">Please state why?</h1>
+
+
+                                                                        <hr class="ss-email-break" style="display:none;">
+                                                                        <div class="ss-required-asterisk" aria-hidden="true">*Required</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ss-form">
+                                                                    <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                                                                        <ol role="list" class="ss-question-list" style="padding-left: 0">
+                                                                            <div class="errorbox-good" role="listitem">
+                                                                                <div dir="ltr" class="ss-item  ss-page-break">
+                                                                                    <div class="ss-form-entry">
+
+
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ss-form-question errorbox-good" role="listitem">
+                                                                                <div dir="ltr" class="ss-item ss-item-required ss-text">
+                                                                                    <div class="ss-form-entry">
+                                                                                        <!--
+<label class="ss-q-item-label" for="entry_1165832298"><div class="ss-q-title">Please state why?
+<label for="itemView.getDomIdToLabel()" aria-label="(Obligatoriskt fält)"></label>
+<span class="ss-required-asterisk">*</span></div>
+<div class="ss-q-help ss-secondary-text" dir="ltr"></div></label>
+-->
+
+                                                                                        <br>
+                                                                                        <textarea class="textarea"></textarea>
+
+                                                                                        <!-- <input type="text" name="entry.1165832298" value="" class="ss-q-short" id="entry_1165832298" dir="auto" aria-label="Please state why?  " aria-required="true" required="" title=""> -->
+                                                                                        <div class="error-message" id="455110891_errorMessage"></div>
+                                                                                        <div class="required-message">Det här är en obligatorisk fråga</div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <input type="hidden" name="draftResponse" value="[[[,25969295,[&quot;Looking to equip / refurbish washroom&quot;]
+,0]
+,[,1905772560,[&quot;No&quot;]
+,0]
+]
+,,&quot;8706713354076597374&quot;]
+">
+                                                                            <input type="hidden" name="pageHistory" value="0,1,3">
+
+
+                                                                            <input type="hidden" name="fbzx" value="8706713354076597374">
+
+                                                                            <div class="ss-item ss-navigate">
+                                                                                <table id="navigation-table">
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                                                                <!-- <input type="submit" name="back" value="« Bakåt" formnovalidate="" class="knapp"> -->
+                                                                                                <input type="submit" name="continue" value="Next »" id="ss-submit" class="knapp">
+                                                                                            </td>
+                                                                                            <td id="progress-container">
+                                                                                                <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block">
+                                                                                                    <div class="progress-bar-horizontal" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-live="polite">
+                                                                                                        <div class="progress-bar-thumb" style="width: 66%;"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div id="progress-label" class="progress-label">66 % ifyllt</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </div>
+                                                                        </ol>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="ss-footer">
+                                                                    <div class="ss-attribution"></div>
+                                                                    <div class="ss-legal">
+                                                                        <div class="disclaimer-separator"></div>
+
+
+
+
+                                                                        <br>
+                                                                        <br>
+                                                                        <br>
+                                                                        <br>
+                                                                        <br>
+                                                                        <!-- SISTA DELEN -->
+
+
+
+
+
+                                                                        <div class="ss-form-container">
+                                                                            <div class="ss-header-image"></div>
+                                                                            <div class="ss-top-of-page">
+                                                                                <div class="ss-form-heading">
+                                                                                    <h1 class="ss-form-title" dir="ltr">Avsluta genom att klicka på Skicka.</h1>
+
+
+                                                                                    <hr class="ss-email-break" style="display:none;">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="ss-form">
+                                                                                <form action="https://docs.google.com/forms/d/11fOQ2Xun8H0mMIvbv4KpdDgYHbeixHHQl-kH98JihQk/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                                                                                    <ol role="list" class="ss-question-list" style="padding-left: 0">
+                                                                                        <!-- <div class="ss-submit-message">Avsluta genom att klicka på Skicka.</div> -->
+                                                                                        <input type="hidden" name="draftResponse" value="[[[,25969295,[&quot;Looking to equip / refurbish washroom&quot;]
+,0]
+,[,1905772560,[&quot;No&quot;]
+,0]
+,[,1165832298,[&quot;asd&quot;]
+,0]
+,[,2077881227,[&quot;Private reasons&quot;]
+,0]
+]
+,,&quot;8706713354076597374&quot;]
+">
+                                                                                        <input type="hidden" name="pageHistory" value="0,1,3,4,-3">
+
+
+                                                                                        <input type="hidden" name="fbzx" value="8706713354076597374">
+
+                                                                                        <div class="ss-item ss-navigate">
+                                                                                            <table id="navigation-table">
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                                                                                                            <!-- <input type="submit" name="back" value="« Bakåt" formnovalidate="" class="knapp"> -->
+                                                                                                            <input type="submit" name="submit" value="Send" id="ss-submit" class="knapp">
+                                                                                                            <td id="progress-container">
+                                                                                                                <div id="progress-bar" class="jfk-progressBar-nonBlocking progress-bar-horizontal goog-inline-block">
+                                                                                                                    <div class="progress-bar-horizontal" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-live="polite">
+                                                                                                                        <div class="progress-bar-thumb" style="width: 100%;"></div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div id="progress-label" class="progress-label">100 %: Du är klar.</div>
+                                                                                                            </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                        </div>
+                                                                                    </ol>
+                                                                                </form>
+                                                                            </div>
+                                                                            <div class="ss-footer">
+                                                                                <div class="ss-attribution"></div>
+                                                                                <div class="ss-legal">
+                                                                                    <div class="disclaimer-separator"></div>
+
+
+
+
+
+                                                                                    <script type='text/javascript' src='/static/forms/client/js/522206728-formviewer_prd__sv.js'></script>
+                                                                                    <script type="text/javascript">
+                                                                                        H5F.setup(document.getElementById('ss-form'));
+                                                                                        _initFormViewer(
+                                                                                            "[16,,[]\n]\n");
+                                                                                    </script>
+                                                                                </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

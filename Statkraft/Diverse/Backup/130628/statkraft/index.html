@@ -1,0 +1,290 @@
+<html>
+	<head>
+		 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	    <meta charset="utf-8">
+	    <script src="jquery-1.8.2.min.js"></script>
+	    <script src="jquery.carouFredSel-6.2.1-packed.js"></script>
+	    <script src="tempo.min.js"></script>
+	    <script src="chart.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+		
+		<script type="text/javascript">
+			var countdown 					= 20; //600
+			var currentCountdown 			= countdown;
+			var countdownSliderStartHeight 	= 999;
+			var plantPresentationTemplate 	= null;
+			var fredselHasBeenInitialized	= false;
+			var valueColor					= "rgb(0, 220, 0)";
+			var fillerColor					= "rgb(220, 220, 220)";
+						
+			function checkTimeout()
+			{
+				currentCountdown = currentCountdown - 1;
+				
+				$("#countdownSlider").height((currentCountdown / countdown) * countdownSliderStartHeight);
+				
+				if (currentCountdown <= 0)
+				{
+					refresh();
+				}
+			}
+			
+			function refresh()
+			{
+				currentCountdown = countdown;
+				$("#countdownSlider").height(countdownSliderStartHeight);
+				
+				$.getJSON("jsonData.json", function(response) {
+					plantPresentationTemplate.into($("#windspeed .container")).render(response.measurements.windspeed, function(a,b,c) {console.log("eee",a,b,c);});
+					plantPresentationTemplate.into($("#capacity .container")).render(response.measurements.capacity);
+					plantPresentationTemplate.into($("#availability .container")).render(response.measurements.availability);
+
+					$("#nordpool").text(response.marketValue.nordpool);
+					$("#nasdaq").text(response.marketValue.nasdaq);
+					
+					$("#totalProductionValue").text(response.totalProductionValue);
+					
+					setupMaps();
+					setupCharts();
+					setupFanSpeed();
+					
+					var updateTime = new Date();
+					var padding = "";
+					if (updateTime.getMinutes() < 10)
+					{
+						padding = "0";
+					}
+					$("#latestUpdate").text(updateTime.getHours() + ":" + padding + updateTime.getMinutes());
+					
+					if (!fredselHasBeenInitialized)
+					{
+						initializeFredsel();
+						fredselHasBeenInitialized = true;
+					}
+				});
+			}
+			
+			function setupMaps()
+			{
+				//------------------------------------------------------------
+				// Add the type as a prefix to the maps to create unique ids.
+				//------------------------------------------------------------
+				
+				$(".map").each(function() {
+					$(this).attr("id", $(this).closest(".slide").attr("id") + "_" + $(this).attr("id"));
+				});
+				
+				$(".map").each(function() {
+					setupMap($(this).attr("id"), new google.maps.LatLng(parseInt($(this).attr("data-lat")), parseInt($(this).attr("data-long"))));
+				});
+			}
+			
+			function setupMap(aDivId, aLocation) 
+			{
+				var mapOptions = {
+					zoom: 4,
+					center: aLocation,
+					disableDefaultUI: true,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				
+				var map = new google.maps.Map(document.getElementById(aDivId), mapOptions);
+				
+				var marker = new google.maps.Marker({
+					position: aLocation,
+					map: map
+				});
+			}
+			
+			function setupCharts()
+			{
+				$(".plantPresentation").each(function() {
+					if ($(this).closest(".slide").attr("id") != "windspeed")
+					{
+						setupChart($(this));
+					}
+				});
+
+			}
+			
+			function setupChart(presentationObject)
+			{
+				var data = [
+					{
+						value: parseInt($(presentationObject).attr("data-value")),
+						value: 23,
+						color: valueColor
+					},
+					{
+						value: 100 - parseInt($(presentationObject).attr("data-value")),
+						color : fillerColor
+					}			
+				];
+				
+				var ctx = $(presentationObject).find(".chart").get(0).getContext("2d");
+				var myNewChart = new Chart(ctx).Pie(data);
+			}
+			
+			function setupFanSpeed()
+			{
+				$(".windicon").each(function() {
+					var dataValue = parseInt($(this).closest(".plantPresentation").attr("data-value"));
+					var windSpeed = 4000 - ((4000 / 25) * dataValue) + 500;
+					console.log("windSpeed: " + windSpeed);
+					if (dataValue > 0)
+					{
+						$(this).css("-webkit-animation-duration", windSpeed + "ms");
+					}
+				});
+				
+			}
+			
+			function initializeFredsel()
+			{
+				$(".slide").height($(window).height());
+				$(".slide").width($(window).width());
+				
+				$("#slides").carouFredSel({
+					items       : 1,
+					//direction   : "up",
+					auto: false,
+					/*
+					auto : {
+						//easing      	: "elastic",
+						duration    	: 1000,
+						timeoutDuration	: 5000,
+						pauseOnHover	: false
+					},
+					*/
+					prev : "#prev",
+					next : "#next"
+				});
+			}
+					
+			$(window).load(function (){
+				plantPresentationTemplate = Tempo.prepare("templates");
+				countdownSliderStartHeight = $("#countdown").height() - 2;
+				//setInterval(checkTimeout, 500);
+				refresh();
+			});
+			
+		</script>
+		
+		<style type="text/css">
+			* {font-family: arial;}
+			body {margin: 0; padding: 0; background-attachment: fixed; background-image: url("http://upload.wikimedia.org/wikipedia/commons/e/ed/Wind_turbines_in_Austria_-_June_2006.jpg"); background-size: cover;}
+			#slides {overflow: hidden;}
+			#admin {position: fixed; bottom: 20px; left: 20px; z-index: 10;}
+			#countdown {position: fixed; bottom: 20px; right: 20px; z-index: 10; width: 20px; height: 60px; border: 1px solid rgba(2550, 2550, 2550, 0.85); border-radius: 5px; position: absolute;}
+			#countdownSlider {position: absolute; bottom: 0; width: 18px; height: 58px; border-radius: 3px; background-color: rgba(2550, 2550, 2550, 0.85); margin: 1px;}
+			#latestUpdateContainer {position: absolute; bottom: 20px; right: 60px; font-size: 80px; color: white; text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.55); line-height: 35px;}
+			.windicon {float: left; margin: 40px 20px 0 0; width: 100px; height: 100px; display: none; background-image: url("images/windiee.png"); background-size: cover; background-repeat: no-repeat; background-position: center; -webkit-animation: rotate-360 linear infinite;}
+			#windspeed .windicon {display: block;}
+			#windspeed .chart {display: none;}
+			.adminButton {float: left; background-color: rgba(255, 255, 255, 0.75); padding: 10px 20px; border-radius: 5px; margin-right: 10px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.85); min-width: 30px; text-align: center;}
+			.adminButton:hover {cursor: pointer; background-color: white;}
+			.slide {float: left;}
+			.container {display: table; margin: 0 auto; margin-top: 50px;}
+			.title {font-size: 150px; color: rgb(255, 255, 255); text-align: center; text-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5); margin-top: 20px;}
+			.plantPresentation {width: 400px; float: left; margin: 0 40px; background-color: white; border-radius: 10px; box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.75);}
+			.plantName {line-height: 100px; font-size: 50px; color: black; text-align: center; white-space: nowrap;}
+			.mapContainer {width: 380px; height: 300px; padding: 10px;}
+			.map {width: 100%; height: 100%; border: 1px solid rgb(200, 200, 200);}
+			.valueContainer {display: table; margin: 0 auto;}
+			.chart {float: left; margin: 30px 20px 0 0;}
+			.value {float: left; font-family: impact; font-size: 150px; color: rgb(0, 0, 0); text-align: center; text-shadow: 2px 2px 25px rgba(0, 0, 0, 0.25);}
+			.unit {font-size: 50px;}
+			.infobox {width: 1100px; background-color: white; border-radius: 10px; box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.75); font-size: 100px; text-align: center; line-height: 210px;}
+			@-moz-keyframes rotate-360 {
+			    from { -moz-transform: rotate(0deg); }
+			    to { -moz-transform: rotate(360deg); }
+			}
+			@-webkit-keyframes rotate-360 {
+			    from { -webkit-transform: rotate(0deg); }
+			    to { -webkit-transform: rotate(360deg); }
+			}
+			@keyframes rotate-360 {
+			    from {transform:rotate(0deg);}
+			    to {transform:rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="admin">
+			<div id="prev" class="adminButton"><<</div>
+			<div id="pause" class="adminButton" onclick="$('#slides').trigger('pause'); $('#pause').hide(); $('#play').show();">||</div>
+			<div id="play" class="adminButton" style="display: none;" onclick="$('#slides').trigger('play'); $('#play').hide(); $('#pause').show();">></div>
+			<div id="next" class="adminButton">>></div>
+		</div>
+		
+		<div id="latestUpdateContainer">
+			<span class="unit">Updated </span>
+			<span id="latestUpdate"></span>
+		</div>
+		
+		<div id="countdown" onclick="refresh();">
+			<div id="countdownSlider"></div>
+		</div>
+
+		<div id="slides">
+			<div id="windspeed" class="slide">
+				<div class="title">Windspeed</div>
+				<div class="container">
+				</div>
+			</div>
+			<div id="capacity" class="slide">
+				<div class="title">Capacity</div>
+				<div class="container">
+				</div>
+			</div>
+			<div id="availability" class="slide">
+				<div class="title">Availability</div>
+				<div class="container">
+				</div>
+			</div>
+			<div id="marketValue" class="slide">
+				<div class="title">Market value</div>
+				<div class="container">
+					<div class="infobox">
+						Nordpool: <span id="nordpool"></span> <span class="unit">NOK</span><br/>
+						Nasdaq: <span id="nasdaq"></span> <span class="unit">NOK</span>
+					</div>
+				</div>
+			</div>
+			<div id="totalProduction" class="slide">
+				<div class="title">Total production today</div>
+				<div class="container">
+					<div class="infobox">
+						<span id="totalProductionValue"></span> <span class="unit">MW/h</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-------------->
+		<!-- TEMPLATE -->
+		<!-------------->
+		
+		<div id="templates">
+			<div class="plantPresentation" data-value="{{value}}" data-template>
+				<div class="plantName">
+					{{name}}
+				</div>
+				<div  class="mapContainer">
+					<div id="map_{{plantId}}" class="map" data-lat="__.lat" data-long="__.long"></div>
+				</div>
+				<div class="valueContainer">
+					<canvas class="chart" width="120" height="120"></canvas>
+					<div class="windicon"></div>
+					<div class="value">
+						{{value}}<span class="unit">{{unit}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!------------------>
+		<!-- END TEMPLATE -->
+		<!------------------>
+	</body>
+</html>

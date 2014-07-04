@@ -1,0 +1,91 @@
+{
+	"measurements": {
+		"windspeed": 
+		[
+			{
+				"plantId": 2,
+				"name": "Instaspin",
+				"long": 7,
+				"lat": 60,
+				"value": 25,
+				"unit": "m/s"
+			},
+			{
+				"plantId": 1,
+				"name": "Superpower 34",
+				"long": 34,
+				"lat": 12,
+				"value": 15,
+				"unit": "m/s"
+			},
+			{
+				"plantId": 3,
+				"name": "Windmaster 21",
+				"long": 23,
+				"lat": -17,
+				"value": 1,
+				"unit": "m/s"
+			}
+		],
+		"capacity":
+		[
+			{
+				"plantId": 2,
+				"name": "Instaspin",
+				"long": -1,
+				"lat": 67,
+				"value": 86,
+				"unit": "%"
+			},
+			{
+				"plantId": 1,
+				"name": "Superpower 34",
+				"long": 34,
+				"lat": 12,
+				"value": 35,
+				"unit": "%"
+			},
+			{
+				"plantId": 3,
+				"name": "Windmaster 21",
+				"long": 23,
+				"lat": -67,
+				"value": 32,
+				"unit": "%"
+			}
+		],
+		"availability": 
+		[
+			{
+				"plantId": 3,
+				"name": "Windmaster 21",
+				"long": 23,
+				"lat": -67,
+				"value": 56,
+				"unit": "%"
+			},
+			{
+				"plantId": 2,
+				"name": "Instaspin",
+				"long": -1,
+				"lat": 67,
+				"value": 44,
+				"unit": "%"
+			},
+			{
+				"plantId": 1,
+				"name": "Superpower 34",
+				"long": 34,
+				"lat": 12,
+				"value": 14,
+				"unit": "%"
+			}
+		]
+	},
+	"marketValue": 
+	{
+		"nordpool": 120,
+		"nasdaq": 79
+	},
+	"totalProductionValue": 23413
+}

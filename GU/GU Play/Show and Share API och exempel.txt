@@ -1,0 +1,175 @@
+---------------------------
+URL till S&S:
+---------------------------
+
+http://sns-lyk-1.it.gu.se
+
+---------------------------
+User guide:
+---------------------------
+
+http://www.cisco.com/en/US/docs/video/digital_media_systems/5_x/5_2/showandshare/user/guide/ssuser.pdf
+
+---------------------------
+Admin guide:
+---------------------------
+
+http://www.cisco.com/en/US/docs/video/digital_media_systems/5_x/5_2/showandshare/admin/guide/ssadmin.pdf
+
+---------------------------
+API:
+---------------------------
+
+http://www.cisco.com/en/US/docs/video/digital_media_systems/5_x/5_2/showandshare/api/api_sns_5_2_3.pdf
+
+---------------------------
+Översikt över funktioner:
+---------------------------
+
+http://www.cisco.com/en/US/prod/collateral/video/ps9339/ps6681/data_sheet_c78-565776.pdf
+
+---------------------------
+Skrytvideo: 
+---------------------------
+
+http://www.youtube.com/watch?v=ZzquCVvS0qQ
+
+----------------------------------------------
+Exempelanrop till SnS-servicen med en sökning
+----------------------------------------------
+
+http://portalen.test.it.gu.se/infoglueDeliverWorking/ViewPage!renderDecoratedPage.action?siteNodeId=626305&contentId=-1&textQuery=%20
+
+--------------------------
+|                        |
+|    API-slagningar      |
+|                        |
+--------------------------
+
+URL:
+https://sns-lyk-1.it.gu.se:443/vportal/services/xml/api
+
+HEADERS:
+Content-Type = application/xml
+
+---------------------------
+QUERY (hämta enstaka film):
+---------------------------
+
+<xml-fragment xmlns:vp="http://model.data.core.vportal.cisco.com/vp_ns">
+	<vp:vportal>
+		<vportal_id>1</vportal_id>
+	</vp:vportal>
+	<vp:vprequest>
+		<query>getContentById</query>
+	</vp:vprequest>
+	<vp:vportal>
+		<vportal_id>1</vportal_id>
+	</vp:vportal>
+	<vp:vpcontent>
+		<id>
+			<ccsid>C-8673b5ef-8eb7-49c0-8b72-db2e2eb3133a:1</ccsid>
+		</id>
+	</vp:vpcontent>
+</xml-fragment>
+
+----------------------
+QUERY (sök på sträng):
+----------------------
+
+<xml-fragment xmlns:vp="http://model.data.core.vportal.cisco.com/vp_ns">
+	<vp:vportal>
+		<vportal_id>1</vportal_id>
+	</vp:vportal>
+	<vp:vprequest>
+		<query>searchContent</query>
+	</vp:vprequest>
+	<vp:vpcontentsearch>
+		<locale>en_US</locale>
+		<start>0</start>
+		<limit>10</limit>
+		<contentType>VIDEO_PORTAL</contentType>
+		<searchQuery>
+			<searchText> </searchText>
+			<fields>
+				<field>title</field>
+				<field>description</field>
+				<field>author</field>
+				<field>com.cisco.vportal.1.tags</field>
+			</fields>
+			<searchParamList>
+				<searchParam>
+					<fieldName>searchType</fieldName>
+					<fieldValue>content/composite/vp</fieldValue>
+					<paramClause>EQUAL</paramClause>
+					<boost>0.9</boost>
+				</searchParam>
+				
+			</searchParamList>
+			<sortCriteriaList>
+				<sortCriteria>
+					<fieldName>com.cisco.vportal.1.addedDate</fieldName>
+					<sortingOrder>DESCENDING</sortingOrder>
+					<sortingPriority>0.1</sortingPriority>
+				</sortCriteria>
+			</sortCriteriaList>
+			<queryRangeList/>
+			<queryPhraseList/>
+			<sortCriteriaList/>
+		</searchQuery>
+		<contentGroupId></contentGroupId>
+	</vp:vpcontentsearch>
+</xml-fragment>
+
+------------------------
+QUERY (sök på kategori):
+------------------------
+
+<xml-fragment xmlns:vp="http://model.data.core.vportal.cisco.com/vp_ns">
+	<vp:vportal>
+		<vportal_id>1</vportal_id>
+	</vp:vportal>
+	<vp:vprequest>
+		<query>searchContent</query>
+	</vp:vprequest>
+	<vp:vpcontentsearch>
+		<locale>en_US</locale>
+		<start>0</start>
+		<limit>10</limit>
+		<contentType>VIDEO_PORTAL</contentType>
+		<searchQuery>
+			<searchText/>
+			<fields>
+				<field>title</field>
+				<field>description</field>
+				<field>author</field>
+				<field>com.cisco.vportal.1.tags</field>
+			</fields>
+			<searchParamList>
+				<searchParam>
+					<fieldName>searchType</fieldName>
+					<fieldValue>content/composite/vp</fieldValue>
+					<paramClause>EQUAL</paramClause>
+					<boost>0.9</boost>
+				</searchParam>
+				<searchParam>
+					<fieldName>contentState</fieldName>
+					<fieldValue>PUBLISHED</fieldValue>
+					<paramClause>EQUAL</paramClause>
+					<boost>0.9</boost>
+				</searchParam>
+			</searchParamList>
+			<sortCriteriaList/>
+			<queryRangeList>
+				<queryRange>
+					<fieldName>expirationDate</fieldName>
+					<startValue>1262564865332</startValue>
+					<endValue>9999999999999</endValue>
+					<inclusive>true</inclusive>
+					<boost>0.9</boost>
+				</queryRange>
+			</queryRangeList>
+		</searchQuery>
+		<contentGroupId> CATEGORY_PATH </contentGroupId>
+	</vp:vpcontentsearch>
+</xml-fragment>
